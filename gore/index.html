@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bloodier · Brutal Diablo</title>
+<meta name="description" content="Every kill is different, and the blood stays. 162 death animations, blood that pools, drips and leaves footprints. Brutal Diablo, a free Diablo (1996) fan mod in development.">
+<link rel="canonical" href="https://brutaldiablo.com/gore/">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/img/mark_64.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="/img/mark_180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bloodier · Brutal Diablo">
+<meta property="og:description" content="Every kill is different, and the blood stays. 162 death animations. Free fan mod in development.">
+<meta property="og:url" content="https://brutaldiablo.com/gore/">
+<meta property="og:image" content="https://brutaldiablo.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@brutaldiablo">
+<meta name="theme-color" content="#0c0908">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: one full-bleed image opens the page; everything after it sits in a single 64ch column,
+   sections parted by a thin ember rule. Single dark theme by choice: this is a dungeon. */
+:root{
+  --ink:#0c0908;        /* the page, warm near-black */
+  --stone:#17120f;      /* raised surfaces */
+  --stone-2:#241c17;    /* borders, hover */
+  --bone:#e8dcc4;       /* text */
+  --ash:#a3957f;        /* muted text */
+  --ember:#b4281d;      /* the accent: dried blood, the monogram's red */
+  --torch:#e58b3a;      /* highlights, links on hover */
+  --display:"Cinzel",Georgia,"Times New Roman",serif;
+  --body:"Crimson Pro",Georgia,"Times New Roman",serif;
+  --ui:system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--bone);font-family:var(--body);font-size:1.2rem;line-height:1.55}
+a{color:var(--bone);text-decoration-color:var(--ember);text-underline-offset:.15em;text-decoration-thickness:1px}
+a:hover{color:var(--torch)}
+:focus-visible{outline:2px solid var(--torch);outline-offset:3px}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:1.5rem;letter-spacing:.04em;text-transform:uppercase;color:var(--bone)}
+p{margin:0}
+.wrap{max-width:64ch;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--ink)}
+.hero img.bg{width:100%;height:auto;max-height:78vh;object-fit:cover;object-position:50% 45%;filter:saturate(1.05)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,9,8,.15) 0%,rgba(12,9,8,0) 30%,rgba(12,9,8,.55) 65%,var(--ink) 100%)}
+.hero .text{position:relative;z-index:1;margin-top:-9rem;padding-bottom:2rem;display:grid;gap:1rem;justify-items:start}
+.mark{width:84px;height:84px;border-radius:50%;box-shadow:0 0 0 2px var(--ink),0 0 0 3px var(--stone-2),0 10px 30px rgba(0,0,0,.6)}
+h1{font-size:clamp(2.4rem,7vw,4.4rem);letter-spacing:.06em;text-transform:uppercase;color:var(--bone);text-shadow:0 2px 24px rgba(0,0,0,.8)}
+h1 small{display:block;font-family:var(--ui);font-weight:600;font-size:.8rem;letter-spacing:.3em;color:var(--torch);margin-bottom:.6rem}
+.pitch{font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.3;max-width:28ch}
+.pitch em{font-style:italic;color:var(--ash)}
+.ctas{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.4rem}
+.btn{display:inline-flex;align-items:center;gap:.55em;font-family:var(--ui);font-weight:600;font-size:.95rem;letter-spacing:.02em;text-decoration:none;padding:.7em 1.1em;border:1px solid var(--stone-2);background:var(--stone);color:var(--bone);border-radius:3px;transition:border-color .15s,background .15s}
+.btn:hover{border-color:var(--torch);color:var(--bone);background:var(--stone-2)}
+.btn.primary{background:var(--ember);border-color:#d4463a;color:#fff6ea}
+.btn.primary:hover{background:#c9311f;color:#fff}
+.btn svg{width:1.1em;height:1.1em;fill:currentColor}
+
+/* sections */
+section{padding-block:3rem;border-top:1px solid var(--stone-2)}
+section .wrap{display:grid;gap:1.1rem}
+section h2::before{content:"";display:inline-block;width:.55em;height:.55em;background:var(--ember);transform:rotate(45deg);margin-right:.7em;vertical-align:.08em}
+.lead{font-size:1.3rem}
+ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:.8rem}
+ul.plain li{padding-left:1.4rem;position:relative}
+ul.plain li::before{content:"";position:absolute;left:0;top:.6em;width:.5em;height:.5em;background:var(--ember);transform:rotate(45deg)}
+ul.plain b{font-weight:600;color:var(--bone)}
+.muted{color:var(--ash)}
+small,.small{font-size:.95rem}
+
+/* follow */
+.links{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.6rem;list-style:none;margin:0;padding:0}
+.links a{display:flex;align-items:center;gap:.7em;padding:.8em .9em;background:var(--stone);border:1px solid var(--stone-2);border-radius:3px;text-decoration:none;font-family:var(--ui);font-size:.95rem;font-weight:600}
+.links a:hover{border-color:var(--torch);color:var(--bone)}
+.links svg{width:1.25em;height:1.25em;fill:var(--ash);flex:none}
+.links a:hover svg{fill:var(--torch)}
+.links span small{display:block;font-weight:400;color:var(--ash);font-size:.8rem;letter-spacing:.02em}
+
+/* tips */
+.tipbox{border:1px solid var(--stone-2);background:var(--stone);padding:1.3rem 1.4rem;display:grid;gap:1rem;border-left:3px solid var(--ember)}
+
+/* contact */
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem}
+.mail code{font-family:var(--ui);font-size:1.05rem;background:var(--stone);border:1px solid var(--stone-2);padding:.5em .8em;border-radius:3px;user-select:all}
+.copy{font-family:var(--ui);font-size:.85rem;font-weight:600;background:none;border:1px solid var(--stone-2);color:var(--ash);padding:.5em .8em;border-radius:3px;cursor:pointer}
+.copy:hover{border-color:var(--torch);color:var(--bone)}
+
+footer{border-top:1px solid var(--stone-2);padding-block:2.2rem 3rem;color:var(--ash);font-size:.95rem}
+footer .wrap{display:grid;gap:.5rem}
+footer a{color:var(--ash)}
+
+@media (max-width:600px){
+  .hero img.bg{aspect-ratio:4/3;max-height:52vh}
+  .hero .text{margin-top:-5rem}
+  .mark{width:64px;height:64px}
+  body{font-size:1.1rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.hero video.bg{width:100%;height:auto;max-height:82vh;object-fit:cover;object-position:50% 40%;display:block}
+.hero .text{margin-top:-11rem}
+.iconrow{margin-top:.6rem;list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.iconrow a{display:grid;place-items:center;width:2.6rem;height:2.6rem;border:1px solid var(--stone-2);background:rgba(23,18,15,.7);border-radius:3px;transition:border-color .15s}
+.iconrow a:hover{border-color:var(--torch)}.iconrow svg{width:1.15rem;height:1.15rem;fill:var(--ash)}.iconrow a:hover svg{fill:var(--torch)}
+.painting{margin:1.4rem calc(50% - 50vw) 0;width:100vw;max-width:100vw}
+.painting img{width:100%;max-height:60vh;object-fit:cover;object-position:50% 60%;filter:brightness(.92)}
+.painting figcaption{font-family:var(--ui);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);text-align:center;padding:.6rem 1rem 0}
+footer .iconrow{margin-top:.6rem;margin-top:.6rem}
+@media (max-width:600px){.hero video.bg{aspect-ratio:4/3;max-height:56vh}.hero .text{margin-top:-6rem}}
+
+.strips{display:grid;gap:3rem;margin-top:.5rem}
+.strip{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.strip:nth-child(even) .media{order:-1}
+.strip h3{font-family:var(--display);font-size:1.2rem;letter-spacing:.06em;text-transform:uppercase;color:var(--torch);margin-bottom:.5rem}
+.strip .media{margin:0;border:1px solid var(--stone-2);background:var(--stone)}
+.strip .media video,.strip .media img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+.strip .media figcaption{font-family:var(--ui);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ash);padding:.5rem .7rem}
+.strip ul.plain{margin-top:.6rem;font-size:1.08rem}
+#about .wrap{max-width:1000px}
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--stone-2)}
+.rows a{display:grid;grid-template-columns:2rem 1fr auto 1.2rem;align-items:center;gap:1rem;padding:.9em .4em;border-bottom:1px solid var(--stone-2);text-decoration:none;font-family:var(--ui);font-weight:600;transition:background .15s}
+.rows a:hover{background:var(--stone);color:var(--bone)}.rows svg{width:1.3rem;height:1.3rem;fill:var(--ash)}.rows a:hover svg{fill:var(--torch)}
+.rows small{font-weight:400;color:var(--ash);font-size:.9rem}.rows .arr{color:var(--ash);font-family:var(--ui)}
+@media (max-width:760px){.strip{grid-template-columns:1fr}.strip:nth-child(even) .media{order:0}}
+
+.hero video.bg{max-height:62vh}
+.hero .text{margin-top:-8rem;padding-bottom:1.6rem}
+h1{font-size:clamp(2.2rem,5.5vw,3.4rem)}
+.mark{width:64px;height:64px}
+section{padding-block:2.4rem}
+.strips{gap:2rem}
+.strip{grid-template-columns:2fr 3fr;gap:1.6rem}
+.strip:nth-child(even){grid-template-columns:3fr 2fr}
+.strip h3{font-size:1.05rem}
+.strip p{font-size:1.1rem}
+#follow .wrap{max-width:1000px}
+.rows{display:grid;grid-template-columns:1fr 1fr;gap:0 2.5rem;border-top:0}
+.rows li{border-top:1px solid var(--stone-2)}.rows a{border-bottom:0}
+.pair{max-width:1000px;margin-inline:auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.pair section{border-top:0;padding-block:0}.pair section .wrap{padding:0;max-width:none}
+.pairwrap{border-top:1px solid var(--stone-2);padding-block:2.4rem}
+@media (max-width:760px){.strip,.strip:nth-child(even){grid-template-columns:1fr}.rows{grid-template-columns:1fr}.pair{grid-template-columns:1fr}}
+
+.tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);gap:.5rem}
+.tiles a{display:grid;justify-items:center;text-align:center;gap:.45rem;padding:1rem .4rem .8rem;background:var(--stone);border:1px solid var(--stone-2);border-radius:3px;text-decoration:none;font-family:var(--ui);font-weight:600;font-size:.85rem;transition:border-color .15s}
+.tiles a:hover{border-color:var(--torch);color:var(--bone)}.tiles svg{width:1.7rem;height:1.7rem;fill:var(--ash)}.tiles a:hover svg{fill:var(--torch)}
+.tiles small{display:block;font-weight:400;color:var(--ash);font-size:.7rem;overflow-wrap:anywhere}
+.followhead{display:flex;flex-wrap:wrap;align-items:center;gap:1rem}.followhead h2{margin-right:auto}
+@media (max-width:860px){.tiles{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:480px){.tiles{grid-template-columns:repeat(3,1fr)}.tiles small{display:none}}
+
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:1.2rem;padding:.5rem max(16px,env(safe-area-inset-right,0px)) .5rem max(16px,env(safe-area-inset-left,0px));background:rgba(12,9,8,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--stone-2)}
+.bar .home{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.9rem;text-decoration:none}
+.bar .home img{border-radius:50%}
+.bar .anchors{display:flex;gap:1.1rem;margin-left:auto;font-family:var(--ui);font-size:.85rem;font-weight:600}
+.bar .anchors a{text-decoration:none;color:var(--ash)}.bar .anchors a:hover{color:var(--torch)}
+.bar .btn{padding:.4em .8em;font-size:.82rem}
+.hero{margin-top:-3.2rem}
+[id]{scroll-margin-top:4rem}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (max-width:760px){.bar .anchors{display:none}}
+
+.status{display:flex;flex-wrap:wrap;gap:.5rem;font-family:var(--ui);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ash)}
+.status span{border:1px solid var(--stone-2);padding:.3em .6em;border-radius:2px;background:rgba(23,18,15,.7)}
+.status span:first-child{color:var(--torch);border-color:var(--torch)}
+
+.copy{display:inline-grid;place-items:center;width:2.4rem;height:2.4rem;padding:0}
+.copy svg{width:1.15rem;height:1.15rem;fill:currentColor;grid-area:1/1}
+.copy .i-ok{opacity:0}.copy.done .i-clip{opacity:0}.copy.done .i-ok{opacity:1}.copy.done{color:var(--torch);border-color:var(--torch)}
+
+.strip p.next{margin-top:.6rem;color:var(--ash);font-style:italic}
+
+.hero .pitch{max-width:none}
+@media (min-width:600px){.hero .pitch em{white-space:nowrap}}
+
+.mail{display:inline-flex;flex-wrap:nowrap;align-items:stretch;gap:0;max-width:100%;width:fit-content;border:1px solid var(--stone-2);border-radius:3px;background:var(--stone);transition:border-color .15s}
+.mail:hover,.mail:focus-within{border-color:var(--torch)}
+.mail code{border:0;border-radius:0;background:none;padding:.55em .8em;min-width:0;overflow-wrap:anywhere;display:flex;align-items:center}
+.mail .copy{border:0;border-left:1px solid var(--stone-2);border-radius:0;height:auto;width:2.8rem;background:none;color:var(--ash)}
+.mail .copy:hover{color:var(--bone);background:var(--stone-2)}
+.mail .copy.done{color:var(--torch)}
+
+.cmp{position:relative;touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
+.cmp canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--stone)}
+.cmp video{position:absolute;width:2px;height:2px;opacity:0;pointer-events:none;left:0;top:0}
+.cmp .lab{position:absolute;top:.6rem;font-family:var(--ui);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bone);background:rgba(12,9,8,.72);padding:.3em .55em;border-radius:2px;pointer-events:none}
+.cmp .lab.l{left:.6rem}.cmp .lab.r{right:.6rem;color:var(--torch)}
+.cmp .handle{position:absolute;top:0;bottom:2.1rem;left:50%;width:2px;margin-left:-1px;background:var(--bone);box-shadow:0 0 8px rgba(0,0,0,.6);pointer-events:none}
+.cmp .handle::after{content:"";position:absolute;top:50%;left:50%;width:1.9rem;height:1.9rem;margin:-.95rem 0 0 -.95rem;border-radius:50%;background:var(--ink);border:2px solid var(--bone);box-shadow:0 2px 10px rgba(0,0,0,.6)}
+.cmp .handle::before{content:"\2039\00a0\203A";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;color:var(--bone);font-family:var(--ui);font-size:.95rem;font-weight:700;white-space:nowrap}
+.cmp input[type=range]{position:absolute;left:0;right:0;bottom:0;width:100%;height:1px;opacity:0;margin:0}
+.cmp:focus-within .handle::after{border-color:var(--torch)}
+
+.cmp .side{position:absolute;left:0;top:0;width:100%;aspect-ratio:16/9;pointer-events:none}
+.cmp .side.l{clip-path:inset(0 calc((1 - var(--s, .5)) * 100%) 0 0)}
+.cmp .side.r{clip-path:inset(0 0 0 calc(var(--s, .5) * 100%))}
+.cmp .lab{white-space:nowrap}
+
+/* DISCORD_HIDDEN: the server is not ready yet. Delete this block to show every Discord link again. */
+.dc{display:none!important}
+.tiles{grid-template-columns:repeat(6,1fr)}
+.btn.dc-alt{background:var(--ember);border-color:#d4463a;color:#fff6ea}
+.btn.dc-alt:hover{background:#c9311f;color:#fff}
+@media (max-width:860px){.tiles{grid-template-columns:repeat(3,1fr)}}
+/* /DISCORD_HIDDEN */
+
+.wip{font-family:var(--ui);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);font-style:normal}
+.wip::before{content:"* "}
+figcaption .wip{display:block;margin-top:.35rem;opacity:.8}
+.hero-wip{position:absolute;z-index:2;top:calc(3.2rem + .7rem);right:max(16px,env(safe-area-inset-right,0px));background:rgba(12,9,8,.65);padding:.3em .6em;border-radius:2px}
+@media (max-width:600px){.hero-wip{font-size:.6rem}}
+
+.cmp .handle{bottom:auto;height:0;padding-bottom:56.25%}
+
+.wip{display:inline-block;background:rgba(12,9,8,.7);color:var(--bone);opacity:.85;padding:.3em .6em;border-radius:2px;font-size:.62rem;letter-spacing:.1em}
+.cmp .framenote{position:absolute;left:0;top:0;width:100%;aspect-ratio:16/9;pointer-events:none}
+.cmp .framenote .wip{position:absolute;right:.6rem;bottom:.6rem}
+.hv{position:relative}
+.hv .wip{position:absolute;z-index:2;right:max(16px,env(safe-area-inset-right,0px));bottom:.8rem}
+@media (max-width:600px){.wip{font-size:.55rem;letter-spacing:.06em}.hv .wip{bottom:auto;top:.6rem}}
+
+@media (max-width:600px){.hv .wip{top:calc(3.2rem + .5rem)}}
+
+/* gore page */
+.gore-hero .text{margin-top:-9rem}
+.gore-hero h1 small{margin-bottom:.4rem}
+.wide .wrap{max-width:1000px}
+section .wrap>*{min-width:0}
+.tile,.fig{min-width:0;overflow:hidden}
+.grid{list-style:none;margin:.4rem 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.6rem}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tile{margin:0;border:1px solid var(--stone-2);background:var(--stone)}
+.tile video{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:var(--ink)}
+.tile.w video{aspect-ratio:4/3}
+.tile figcaption{font-family:var(--ui);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ash);padding:.5rem .6rem}
+.fig{margin:0;border:1px solid var(--stone-2);background:var(--stone)}
+.fig video{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:var(--ink)}
+.fig figcaption{font-family:var(--ui);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ash);padding:.5rem .7rem}
+.facts{display:flex;flex-wrap:wrap;gap:.5rem;font-family:var(--ui);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ash)}
+.facts span{border:1px solid var(--stone-2);padding:.3em .6em;border-radius:2px;background:rgba(23,18,15,.7)}
+.facts span:first-child{color:var(--torch);border-color:var(--torch)}
+.cmpwrap .cmp{border:1px solid var(--stone-2);background:var(--stone)}
+.cmpwrap figcaption{font-family:var(--ui);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ash);padding:.5rem .7rem}
+.next3d{border:1px solid var(--stone-2);border-left:3px solid var(--ember);background:var(--stone);padding:1.1rem 1.3rem;display:grid;gap:.5rem;margin-top:.6rem}
+.next3d h3{font-family:var(--display);font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;color:var(--torch)}
+.tribute{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:2rem;align-items:center}
+.tribute .reel{margin:0;border:1px solid var(--stone-2);background:var(--ink)}
+.tribute .reel video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:var(--ink)}
+.tribute-text{display:grid;gap:1rem}
+@media (max-width:760px){.tribute{grid-template-columns:minmax(0,1fr)}.tribute .reel{max-width:340px;margin-inline:auto}}
+@media (max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.three{grid-template-columns:minmax(0,1fr)}.gore-hero .text{margin-top:-6rem}}
+</style>
+</head>
+<body>
+<a id="top"></a><nav class="bar"><a class="home" href="/"><img src="/img/mark_180.png" width="28" height="28" alt="">Brutal Diablo</a><div class="anchors"><a href="#deaths">Deaths</a><a href="#blood">Blood</a><a href="#fire">Fire</a><a href="#h">1996</a><a href="#doom">Doom</a></div><a class="btn" href="/">Home</a></nav>
+<header class="hero gore-hero">
+  <div class="hv"><video class="bg" autoplay loop muted playsinline preload="metadata" poster="/img/gore/hero_poster.jpg" width="1280" height="720" aria-label="The Warrior in a Cathedral corner, zombies falling and blood on the walls"><source src="/img/gore/hero.mp4" type="video/mp4"></video></div>
+  <div class="wrap text">
+    <h1><small>Brutal Diablo</small>Bloodier</h1>
+    <p class="pitch">It bleeds. So it can die. And it leaves a mess behind.</p>
+  </div>
+</header>
+<main>
+<section id="deaths" class="wide"><div class="wrap"><h2>Every death is different</h2>
+<p class="lead">Every monster has several ways to die. They split, burst, lose their heads. The Cathedral alone has 162 death animations.</p>
+<div class="facts"><span>162 deaths</span></div>
+<p class="muted small">Same zombie, same sword, ten different kills.</p>
+<ul class="grid"><li><figure class="tile "><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_gib.jpg" data-src="/img/gore/death_gib.mp4" aria-label="Gib"></video><figcaption>Gib</figcaption></figure></li><li><figure class="tile "><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_burst.jpg" data-src="/img/gore/death_burst.mp4" aria-label="Burst"></video><figcaption>Burst</figcaption></figure></li><li><figure class="tile "><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_pop.jpg" data-src="/img/gore/death_pop.mp4" aria-label="Pop"></video><figcaption>Pop</figcaption></figure></li><li><figure class="tile "><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_bisect.jpg" data-src="/img/gore/death_bisect.mp4" aria-label="Bisect"></video><figcaption>Bisect</figcaption></figure></li><li><figure class="tile "><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_split.jpg" data-src="/img/gore/death_split.mp4" aria-label="Split"></video><figcaption>Split</figcaption></figure></li><li><figure class="tile "><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_rend.jpg" data-src="/img/gore/death_rend.mp4" aria-label="Rend"></video><figcaption>Rend</figcaption></figure></li><li><figure class="tile "><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_decap.jpg" data-src="/img/gore/death_decap.mp4" aria-label="Decapitate"></video><figcaption>Decapitate</figcaption></figure></li><li><figure class="tile "><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_dismember.jpg" data-src="/img/gore/death_dismember.mp4" aria-label="Dismember"></video><figcaption>Dismember</figcaption></figure></li><li><figure class="tile "><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_eviscerate.jpg" data-src="/img/gore/death_eviscerate.mp4" aria-label="Eviscerate"></video><figcaption>Eviscerate</figcaption></figure></li><li><figure class="tile "><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_shred.jpg" data-src="/img/gore/death_shred.mp4" aria-label="Shred"></video><figcaption>Shred</figcaption></figure></li></ul>
+<div class="next3d"><h3>In Development: deaths from 3D models</h3><p>Today every death is made from the game's own 2D sprites, frame by frame. Now we're trying to recreate the monsters' original 3D models, so the deaths can be worked out from the models themselves: a new way to fall every time, and much cooler to watch.</p></div>
+</div></section>
+<section id="blood" class="wide"><div class="wrap"><h2>Blood that stays</h2>
+<p class="lead">Nothing in the Cathedral gets cleaned up. The blood pools on the stone and slowly dries, splatters the walls and creeps down in drips. Walk through it, and the dungeon remembers where you went: your bloody footprints lead the way.</p>
+<ul class="grid three">
+<li><figure class="fig"><video muted loop playsinline preload="none" width="960" height="720" poster="/img/gore/blood_pool.jpg" data-src="/img/gore/blood_pool.mp4" aria-label="A pool spreads, then dries"></video><figcaption>A pool spreads, then dries</figcaption></figure></li>
+<li><figure class="fig"><video muted loop playsinline preload="none" width="960" height="720" poster="/img/gore/blood_wall.jpg" data-src="/img/gore/blood_wall.mp4" aria-label="Wall blood, with drips"></video><figcaption>Wall blood, with drips</figcaption></figure></li>
+<li><figure class="fig"><video muted loop playsinline preload="none" width="960" height="720" poster="/img/gore/blood_steps.jpg" data-src="/img/gore/blood_steps.mp4" aria-label="Footprints across the pools"></video><figcaption>Footprints across the pools</figcaption></figure></li>
+</ul></div></section>
+<section id="fire" class="wide"><div class="wrap"><h2>Fire</h2>
+<p class="lead">Fire kills in its own ways. Monsters burn, explode, turn to ash. Cast a Fire Wall over a bloodbath and the whole room lights up, the Warrior's shadow stretched long across it.</p>
+<ul class="grid three"><li><figure class="tile w"><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/fire_ashfall.jpg" data-src="/img/gore/fire_ashfall.mp4" aria-label="Ashfall"></video><figcaption>Ashfall</figcaption></figure></li><li><figure class="tile w"><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/fire_torch.jpg" data-src="/img/gore/fire_torch.mp4" aria-label="Torch"></video><figcaption>Torch</figcaption></figure></li><li><figure class="tile w"><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/fire_detonate.jpg" data-src="/img/gore/fire_detonate.mp4" aria-label="Detonate"></video><figcaption>Detonate</figcaption></figure></li></ul>
+<figure class="fig"><video muted loop playsinline preload="none" width="960" height="720" poster="/img/gore/fire_wall.jpg" data-src="/img/gore/fire_wall.mp4" aria-label="A Fire Wall over the bloodbath"></video><figcaption>A Fire Wall over the bloodbath</figcaption></figure>
+</div></section>
+<section id="h" class="wide"><div class="wrap"><h2>Press H for 1996</h2>
+<p>Diablo (1996) never stopped running. It's right there under the blood, swing for swing. Drag the divider to peel it back. In the game, H does the same, anytime.</p>
+<div class="cmpwrap"><figure class="media cmp" data-src="/img/pair_fight.mp4" data-poster="/img/pair_fight_poster.jpg" style="margin:0"><canvas width="1280" height="720" aria-label="The same fight with the original graphics on the left and Brutal Diablo on the right"></canvas><video muted playsinline loop preload="auto" src="/img/pair_fight.mp4" aria-hidden="true" tabindex="-1"></video><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span class="handle" aria-hidden="true"></span><span class="framenote"><span class="wip">Work in progress, not the final version</span></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between Diablo (1996) and Brutal Diablo"><figcaption>The Cathedral, level one</figcaption></figure></div>
+</div></section>
+<section id="doom" class="wide"><div class="wrap"><div class="tribute">
+<figure class="reel"><video controls playsinline preload="none" width="720" height="1280" poster="/img/gore/doom_tribute.jpg" aria-label="The Warrior cornered in the Cathedral by zombies, cut to At Doom's Gate"><source src="/img/gore/doom_tribute.mp4" type="video/mp4"></video></figure>
+<div class="tribute-text"><h2>A nod to Brutal Doom</h2>
+<p>Brutal Doom showed how much fun a bloodier classic can be. So we let Doom's riff loose in Diablo's Cathedral. Sound on.</p></div>
+</div></div></section>
+<section id="wip"><div class="wrap"><h2>Work in progress</h2>
+<p>This is a mod in development, so what you see here is not final. The deaths so far cover the Cathedral's monsters and are made from the 2D sprites; the 3D versions are in development. The rest of the dungeon follows, level by level.</p>
+<div><a class="btn primary" href="/">&larr; Back to Brutal Diablo</a></div>
+</div></section>
+</main>
+<footer><div class="wrap"><p>Fan mod, not affiliated with Blizzard Entertainment. Diablo is a trademark of Blizzard Entertainment, Inc.</p><p>Brewed in Czechia 🇨🇿🍻 · Runs on <a href="https://github.com/diasurgical/devilutionX">DevilutionX</a>.</p><p><a href="/">brutaldiablo.com</a></p></div></footer>
+<script>
+(function(){
+  var vs=[].slice.call(document.querySelectorAll('video[data-src]')),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function load(v){if(!v.getAttribute('src')){v.setAttribute('src',v.dataset.src);v.load()}}
+  if(!('IntersectionObserver' in window)){if(!reduce)vs.forEach(function(v){load(v);v.play().catch(function(){})});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+    if(e.isIntersecting){if(!reduce){load(v);v.play().catch(function(){})}}else{v.pause()}})},{rootMargin:'200px 0px',threshold:.1});
+  vs.forEach(function(v){io.observe(v)});
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.cmp').forEach(function(f){
+    var c=f.querySelector('canvas'),x=c.getContext('2d'),v=f.querySelector('video'),r=f.querySelector('input'),h=f.querySelector('.handle'),split=.5,poster=new Image(),live=false;
+    poster.onload=function(){if(!live)draw(poster,poster.naturalWidth,poster.naturalHeight/2)};poster.src=f.dataset.poster;
+    function draw(src,w,hh){var W=c.width,H=c.height,s=Math.round(W*split),sw=Math.round(w*split);
+      try{if(s>0)x.drawImage(src,0,0,sw,hh,0,0,s,H);if(s<W)x.drawImage(src,sw,hh,w-sw,hh,s,0,W-s,H)}catch(e){}}
+    function frame(){if(v.readyState>=2){live=true;draw(v,v.videoWidth,v.videoHeight/2)}}
+    function loop(){frame();if(!v.paused){if(v.requestVideoFrameCallback)v.requestVideoFrameCallback(loop);else requestAnimationFrame(loop)}}
+    v.addEventListener('play',loop);v.addEventListener('loadeddata',frame);v.addEventListener('seeked',frame);
+    function set(p){split=Math.max(0,Math.min(1,p));f.style.setProperty('--s',split);h.style.left=(split*100)+'%';r.value=Math.round(split*100);if(live)frame();else if(poster.complete&&poster.naturalWidth)draw(poster,poster.naturalWidth,poster.naturalHeight/2)}
+    function fromX(e){var b=c.getBoundingClientRect();set((e.clientX-b.left)/b.width)}
+    var drag=false;
+    f.addEventListener('pointerdown',function(e){drag=true;try{f.setPointerCapture(e.pointerId)}catch(_){}fromX(e)});
+    f.addEventListener('pointermove',function(e){if(drag||e.pointerType==='mouse')fromX(e)});
+    f.addEventListener('pointerup',function(){drag=false});f.addEventListener('pointercancel',function(){drag=false});
+    r.addEventListener('input',function(){set(r.value/100)});
+    var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!reduce){v.play().catch(function(){})}else{v.pause()}})},{threshold:.25}).observe(f)}
+    else if(!reduce){v.play().catch(function(){})}
+  });
+})();
+</script>
+<script data-goatcounter="https://brutaldiablo.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
