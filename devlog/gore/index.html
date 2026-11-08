@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The blood Diablo was meant to have · Brutal Diablo devlog</title>
+<meta name="description" content="How Brutal Diablo recreated Diablo's blood: the Butcher's room as the reference, a red that survives every monster, drops shaded from the stone, floors and walls that keep it.">
+<link rel="canonical" href="https://brutaldiablo.com/devlog/gore/">
+<link rel="alternate" type="application/rss+xml" title="Brutal Diablo devlog" href="/devlog/feed.xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/img/mark_64.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="/img/mark_180.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The blood Diablo was meant to have">
+<meta property="og:description" content="How Brutal Diablo recreated Diablo's blood, from the Butcher's room to the walls. A devlog.">
+<meta property="og:url" content="https://brutaldiablo.com/devlog/gore/">
+<meta property="og:image" content="https://brutaldiablo.com/img/devlog/gore/og_post.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@brutaldiablo">
+<meta name="theme-color" content="#0c0908">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="/devlog/devlog.css">
+</head>
+<body>
+<nav class="bar"><a class="home" href="/"><img src="/img/mark_180.png" width="28" height="28" alt="">Brutal Diablo</a><div class="navlinks"><a href="/gore/">Gore</a><a href="/devlog/" aria-current="page">Devlog</a></div><a class="btn primary dc" href="https://discord.gg/NsG8gnhnJH"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>Discord</a></nav>
+<main>
+<header class="posthero">
+  <video class="bg" autoplay loop muted playsinline preload="metadata" poster="/img/gore/hero_poster.jpg" width="1280" height="720" aria-label="The Warrior in a Cathedral corner, zombies falling and blood on the floor and walls"><source src="/img/gore/hero.mp4" type="video/mp4"></video>
+<div class="col posthead">
+  <p class="eyebrow">Devlog</p>
+  <h1>The blood Diablo was meant to have</h1>
+  <p class="stand">Diablo's makers wanted it gritty and gory. The game shipped with most of its blood painted into the floor of one room. We went back to that room to learn how they did it, then taught the engine to paint blood the same way, everywhere, as it happens.</p>
+  <div class="byline"><span>10 min read</span><span><time datetime="2026-11-08">8 November 2026</time></span></div>
+</div>
+</header>
+<article class="col">
+
+<h2 id="gritty">Gritty and gory</h2>
+<p>In 1994 Condor, the small studio that became Blizzard North, sent out a pitch for a game called Diablo. On its seventh page, among the art requirements, is a line we keep coming back to:</p>
+<blockquote><p>"Each monster will have multiple graphic deaths and will require at least 50 frames of animations."</p><cite>Condor, the <a href="http://www.graybeardgames.com/download/diablo_pitch.pdf">Diablo pitch</a>, 1994</cite></blockquote>
+<p>Erich Schaefer, the game's lead designer and art director, remembered the mood they were after:</p>
+<blockquote><p>"We wanted it to be gritty and gory. I wanted you to kill the first monster by bludgeoning its head in with a shovel, before you even got a sword."</p><cite>Erich Schaefer to IGN, <a href="https://web.archive.org/web/20170731050137/http://www.ign.com/articles/2017/07/30/20-years-of-diablo-an-ign-retrospective">20 Years of Diablo</a>, 2017</cite></blockquote>
+<p>The game that came out in 1996 is dark and grim and we love it, but it isn't very bloody. Every zombie in the Cathedral falls the same way. A hit throws a few red specks, and when the fight is over the floor is clean. Here is the same fight twice, swing for swing. Drag the divider:</p>
+<figure class="out"><div class="cmp" data-src="/img/pair_fight.mp4" data-poster="/img/pair_fight_poster.jpg" role="group" aria-label="The same fight in Diablo (1996) and in Brutal Diablo"><canvas width="1280" height="720"></canvas><video muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"></video><span class="side l"><span class="tag l">Diablo (1996)</span></span><span class="side r"><span class="tag r">Brutal Diablo</span></span><span class="handle" aria-hidden="true"></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between Diablo (1996) and Brutal Diablo"></div><figcaption>Five zombies in a Cathedral corner. In 1996 they fall the same way and leave nothing behind; in Brutal Diablo the blood stays. Work in progress, not the final version.</figcaption></figure>
+<p>Brutal Diablo is our try at the game they described: the same game, the same rules, only bloodier.</p>
+
+<h2 id="room">Where Diablo already bled</h2>
+<p>Everyone who played Diablo remembers the Butcher's room. "Ah, fresh meat!", a charge, and a floor so soaked you can barely see the stone. That room became the reference for everything in this post, so we went and looked at it closely.</p>
+<p>Its blood isn't an effect. Blizzard North's artists painted it straight into the floor and wall tiles, and that's why it looks so good. The stone's shading carries through the blood. The tops of the flagstones poke out where it's thin, and the cracks between them stay dark. The pools have pale, wet-looking curls on them, the splats are shaped like stars, the edges are hard, and the whole thing is dark, closer to old wine than to paint. Move over the picture to look closer:</p>
+<figure class="out"><div class="frame loupe"><span class="tag l">Diablo (1996)</span><img class="px" src="/img/devlog/gore/room.png" width="1120" height="744" alt="The Butcher's room in Diablo (1996) seen whole: blood painted over its floor and up its walls, bodies on spikes and hooks"><span class="lens" aria-hidden="true"></span></div><figcaption>The Butcher's room in Diablo (1996), lit evenly so every stain shows; in the game it sits in the dark. Every drop of this blood was painted by hand into the floor and wall tiles.</figcaption></figure>
+<p>So we set ourselves one rule: our blood should look as if it belongs in that room. If you can't tell a fresh kill from the painted floor around it, it's right.</p>
+
+<h2 id="source">Where the blood comes from</h2>
+<p>Blood needs a body. In 1996 each monster has one death, a short animation drawn by Blizzard North. We made new ones out of the same sprites: the monster's own pixels, split into pieces along its body and thrown through the same camera the original art was drawn with. A zombie can now burst, lose its head, split down the middle or come apart in strips.</p>
+<ul class="grid">
+<li><figure><div class="frame"><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_burst.jpg" data-src="/img/gore/death_burst.mp4" aria-label="Burst"></video></div></figure></li>
+<li><figure><div class="frame"><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_decap.jpg" data-src="/img/gore/death_decap.mp4" aria-label="Decapitate"></video></div></figure></li>
+<li><figure><div class="frame"><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_split.jpg" data-src="/img/gore/death_split.mp4" aria-label="Split"></video></div></figure></li>
+<li><figure><div class="frame"><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_gib.jpg" data-src="/img/gore/death_gib.mp4" aria-label="Gib"></video></div></figure></li>
+<li><figure><div class="frame"><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_eviscerate.jpg" data-src="/img/gore/death_eviscerate.mp4" aria-label="Eviscerate"></video></div></figure></li>
+<li><figure><div class="frame"><video muted loop playsinline preload="none" width="480" height="480" poster="/img/gore/death_shred.jpg" data-src="/img/gore/death_shred.mp4" aria-label="Shred"></video></div></figure></li>
+</ul>
+<p>Two rules made this harder than it sounds. A new death has to last exactly as long as the old one, frame for frame, because its last frame is gameplay. That's when the monster's tile frees up and its corpse appears, and in single player it decides the order of the random rolls that come after it. Change that, and it's no longer the same game. And skeletons don't bleed. They throw chips of bone, taken from the brightest pixels of their own sprite.</p>
+<p>Each of these deaths has a sound effect of its own for now. Both the deaths and their sounds are a first step: we hope to replace them with deaths made from 3D models. The blood they spill is what the rest of this post is about.</p>
+
+<h2 id="red">A red that survives every monster</h2>
+<p>Diablo's monsters share their sprites. A Ghoul is a Zombie and a Horror is a Skeleton, recoloured by a translation table: a small file that says "draw colour 230 as colour 140 instead". It was a brilliant trick in a time when every kilobyte counted, and it's the first thing that broke our blood.</p>
+<p>The game's palette has a fine red ramp, colours 224 to 239. Paint blood with it, then pick a monster and see what its table makes of it:</p>
+<div class="widget" id="trn">
+  <div class="row mons"><span class="k">Monster</span><button class="chip" data-v="Zombie">Zombie</button><button class="chip" data-v="Ghoul">Ghoul</button><button class="chip" data-v="Skeleton">Skeleton</button><button class="chip" data-v="Horror">Horror</button><button class="chip" data-v="Dark One">Dark One</button></div>
+  <div class="wlab"><span>The game's red, 224–239, through the <b class="mname">Skeleton</b>'s table</span></div>
+  <div class="ramp r224"></div>
+  <div class="wlab"><span>Colours 48–59, which no table in the game touches, on the level's own palette</span></div>
+  <div class="ramp r48"></div>
+  <div class="row lvls"><span class="k">Level</span><button class="chip" data-v="l1_1">Cathedral</button><button class="chip" data-v="l2_1">Catacombs</button><button class="chip" data-v="l3_1">Caves</button><button class="chip" data-v="l4_1">Hell</button></div>
+</div>
+<p>A Skeleton would bleed grey, a Horror dark grey and a Dark One pale blue, and even the Ghoul would bleed a flat cartoon red. Three of the nine sprite sets in the Cathedral are skeletons, so that's a lot of grey blood. We went looking for colours no table touches and found one: twelve shades of red at 48 to 59 that every translation table in the game leaves alone, the unique monsters' included. Blood stayed red on every monster.</p>
+<p>Then we went down the stairs. Colours 48 to 59 belong to the part of the palette each area brings with it, and they're red only in the Cathedral. Switch the level above: in the Catacombs the same twelve colours are khaki, in the Caves brown, in Hell a dusty mauve. Our blood went khaki with them.</p>
+<p>The fix waits until everything else is done. When a monster is drawn, after its own table, the blood is moved to the red that every area shares, because colours 128 to 255 are the same in all of the game's palettes:</p>
+<figure class="out"><div class="cmp" role="group" aria-label="The Catacombs before and after the fix"><div class="imgs"><img class="a" src="/img/devlog/gore/ramp_old.jpg" width="960" height="626" alt="A fight in the Catacombs with khaki-grey blood"><img class="b" src="/img/devlog/gore/ramp_new.jpg" width="960" height="626" alt="The same fight with red blood"></div><span class="side l"><span class="tag l">Before</span></span><span class="side r"><span class="tag r">After</span></span><span class="handle" aria-hidden="true"></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between before and after"></div><figcaption>The Catacombs, the same moment twice: the level's own colours 48–59, then the shared red.</figcaption></figure>
+<div class="deadend"><span class="k">Dead end</span><p>Our first version moved the blood to the far end of the red ramp, and the pools went almost black, even in the Cathedral:</p>
+<div class="cmp" role="group" aria-label="The pools with the kept remap and with the rejected one"><div class="imgs"><img class="a" src="/img/devlog/gore/remap_good.jpg" width="442" height="257" alt="Pools in the Cathedral, red"><img class="b" src="/img/devlog/gore/remap_black.jpg" width="442" height="257" alt="The same pools with the rejected remap, nearly black"></div><span class="side l"><span class="tag l">Red</span></span><span class="side r"><span class="tag r">Rejected</span></span><span class="handle" aria-hidden="true"></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between the kept and the rejected remap"></div>
+<p>The reason is how Diablo does light. Its palette is cut into runs of sixteen shades, and to darken a pixel the game moves it a few steps down its run. Step off the end, and the pixel turns black. Move the darkness:</p>
+<div class="widget" id="run">
+  <div class="wlab"><span>The red run, 224–239, and where two pools sit on it</span><span>Darkness: <b class="sval">none</b></span></div>
+  <div class="ramp"></div>
+  <input type="range" min="0" max="7" value="0" aria-label="How dark the spot is, in steps">
+  <div class="swatchpair"><span class="k">Kept: starts at step 8</span><div class="big kept"></div><span class="k">Rejected: starts at step 12, <b class="rejn">still red</b></span><div class="big rej"></div></div>
+</div>
+<p>The rejected blood sat too close to the end of its run, so a little shadow pushed it over the edge. Starting it earlier fixed it: now the dark of the dungeon darkens our blood exactly as much as it darkens Blizzard's.</p></div>
+
+<h2 id="box">Leaving the box</h2>
+<p>Every frame of a sprite lives in a box, 128 by 96 pixels for a zombie, and a death drawn ahead of time can't throw anything outside it. The blood that flies across the room comes from a second layer that runs live in the game. Drag the divider to switch it off:</p>
+<figure class="out"><div class="cmp" data-src="/img/devlog/gore/live_pair.mp4" data-poster="/img/devlog/gore/live_pair.jpg" role="group" aria-label="One kill with the live blood layer off and on"><canvas width="960" height="720"></canvas><video muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"></video><span class="side l"><span class="tag l">The death alone</span></span><span class="side r"><span class="tag r">With the live layer</span></span><span class="handle" aria-hidden="true"></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between the death alone and the death with the live layer"></div><figcaption>The same blow twice, slowed down for the first second. On the left, everything stays inside the sprite's box; on the right, the drops leave it.</figcaption></figure>
+<p>The live layer throws its drops on the game's own clock, twenty ticks a second. Each drop's height is kept apart from its place on the floor, so a drop in the air still belongs to the tile under it: it hides behind the right wall and takes the right light, without the renderer ever knowing about height.</p>
+<p>It also rolls its own dice. When a monster dies, Diablo resets its random numbers to pick the loot, and the loot must never change because something bled. In multiplayer every player's game throws its own spray and nothing extra goes over the network. Two players see different drops from the same kill, which costs nothing for something you only look at.</p>
+
+<h2 id="drops">From square confetti to drops</h2>
+<p>The live layer was first written for the original art, where a drop is one pixel. Brutal Diablo draws the game four times larger, and those drops became flat squares of 4×4 pixels: red confetti next to the recreated art. Now each drop is drawn in the fine pixels, with its head at its exact position, a dark rim, a highlight up and to the left, a streak behind it when it's fast, and a star where it lands, pointing the way it flew:</p>
+<figure><div class="cmp" role="group" aria-label="The same frame of a kill with the old drops and the new"><div class="imgs"><img class="a" src="/img/devlog/gore/kill_old.jpg" width="540" height="450" alt="Square blood drops a moment after a kill"><img class="b" src="/img/devlog/gore/kill_new.jpg" width="540" height="450" alt="The same moment with drops drawn in the fine pixels"></div><span class="side l"><span class="tag l">Squares</span></span><span class="side r"><span class="tag r">Drops</span></span><span class="handle" aria-hidden="true"></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between the old drops and the new"></div><figcaption>Four tenths of a second after the blow, the same frame twice, at the size the game draws it.</figcaption></figure>
+<p>For the pools we tried four looks in the game, on the same fight, frame for frame: glossy, grim, thick, and one that copies the Butcher's room. The last one won, and it's the idea in this post we're proudest of.</p>
+<p>Each blood pixel takes its shade from the floor under it. Remember the runs of sixteen: a lit floor pixel tells you how many steps the light has moved it, so you know the shade it had before the light. The blood takes that same shade from its own red, and then the same light darkens both. Thin blood lets the tops of the stones through, thick blood is flat and dark, as in the painted room. The test was the room itself:</p>
+<figure class="out"><div class="cmp" data-src="/img/devlog/gore/room_pair.mp4" data-poster="/img/devlog/gore/room_pair.jpg" role="group" aria-label="A kill inside the Butcher's room with the old blood and the new"><canvas width="960" height="720"></canvas><video muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"></video><span class="side l"><span class="tag l">Old</span></span><span class="side r"><span class="tag r">New</span></span><span class="handle" aria-hidden="true"></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between the old blood and the new"></div><figcaption>A kill inside the Butcher's room, at the size the game draws it, slowed down for the first second (the Butcher held still for the test). The new blood is hard to tell from the floor Blizzard North painted, and that's the point.</figcaption></figure>
+<div class="deadend"><span class="k">Dead ends</span><p>We built glossy, grim and thick first. Each looked good on its own, as a fresh effect laid over the floor, and that was the trouble: you could always see it was laid over. After playing with them we wrote ourselves one line, make it as much a part of the original game as possible, and the fourth look came from that. The same kill, a second later, in all four:</p>
+<ul class="grid two looks"><li><figure><div class="frame"><img src="/img/devlog/gore/look_glossy.jpg" width="432" height="280" alt="Glossy blood: bright, flat red pools with a sheen" loading="lazy"></div><figcaption>Glossy: bright, with a sheen.</figcaption></figure></li><li><figure><div class="frame"><img src="/img/devlog/gore/look_grim.jpg" width="432" height="280" alt="Grim blood: darker red, thinner pools" loading="lazy"></div><figcaption>Grim: darker and duller.</figcaption></figure></li><li><figure><div class="frame"><img src="/img/devlog/gore/look_thick.jpg" width="432" height="280" alt="Thick blood: heavy, opaque red pools" loading="lazy"></div><figcaption>Thick: it covers the stone.</figcaption></figure></li><li><figure><div class="frame"><img src="/img/devlog/gore/look_room.jpg" width="432" height="280" alt="The kept look: blood shaded from the stones under it" loading="lazy"></div><figcaption>The Butcher's room: shaded from the stone. Kept.</figcaption></figure></li></ul></div>
+
+<h3 id="try">Try it</h3>
+<p>Here is the same blood code, carried over from the game to your browser, on a patch of the Cathedral's own floor in the game's light. There are no walls, so no wall blood, but the drops, the marks and the pools are the game's. Hit the zombie, or kill it:</p>
+<div class="widget" id="strike">
+  <div class="stage"><canvas width="688" height="496" style="width:100%;height:auto;display:block;background:#000;cursor:pointer;-webkit-tap-highlight-color:transparent" role="img" aria-label="A Zombie standing on a patch of Cathedral floor, lit by one light. Striking it throws drops of blood that leave star-shaped marks and pools on the stones."></canvas><p class="hint" aria-hidden="true">Click near the zombie to hit it from that side</p></div>
+  <div class="row acts"><button class="btn" type="button" data-act="hit">Hit</button><button class="btn primary" type="button" data-act="kill">Kill</button><button class="chip clean" type="button" data-act="wash">Clean the floor</button></div>
+  <div class="wlab"><span class="n-msg">Click the floor next to the zombie and you hit it from there, so the blood flies the other way. Kill finishes it off, and the body bleeds a pool. The blood stays and slowly dries darker.</span></div>
+</div>
+
+<h2 id="floor">A floor, not a lattice or a carpet</h2>
+<p>Blood on the floor is stored per tile. Each floor tile remembers how much blood soaked into it and which colours, one byte each. It costs almost nothing, and it lasts the whole level.</p>
+<p>Our first try drew each tile's stain inside its own diamond, and the floor turned into a lattice, every blob cut along the same diagonals. Now each tile paints its pixels from the splashes of all its neighbours, so a splash crosses tile edges freely, and the rim of a pool is pushed in and out per pixel so it's ragged:</p>
+<div class="widget" id="stains">
+  <div class="row"><span class="k">Draw stains</span><button class="chip" data-v="alone" aria-pressed="true" aria-label="Each tile draws its own stain alone, clipped to its own diamond">Each tile alone</button><button class="chip" data-v="neighbours" aria-pressed="false" aria-label="Each tile draws its diamond from its neighbours' splashes too, as the game does">From the neighbours</button></div>
+  <canvas width="864" height="512" style="width:100%;height:auto;display:block;background:#000" role="img" aria-label="A patch of Cathedral floor after a fight, its blood stains drawn either by each tile alone, which cuts them along the tiles' diagonals, or from each tile's neighbours, which lets them run across"></canvas>
+  <div class="wlab"><span class="n-msg">The game's stain code on the game's floor, after the same fight, drawn both ways.</span></div>
+</div>
+<p>The next problem was a long fight in a doorway: every tile soaked to its maximum and the floor became a red carpet. Now each little block of tiles holds a limit, and when a new stain needs room the oldest one makes way. Never the newest, so fresh blood always shows.</p>
+<figure class="chart"><svg viewBox="0 0 640 260" role="img" aria-label="Share of red pixels against kills: without the limit 8.0, 9.5, 10.2 and 11.1 percent at 30, 60, 90 and 120 kills; with it 6.1, 6.7, 6.8 and 6.8 percent">
+  <g class="grid"><line x1="60" y1="210" x2="610" y2="210"/><line x1="60" y1="160" x2="610" y2="160"/><line x1="60" y1="110" x2="610" y2="110"/><line x1="60" y1="60" x2="610" y2="60"/></g>
+  <text x="50" y="214" text-anchor="end">0%</text><text x="50" y="164" text-anchor="end">4%</text><text x="50" y="114" text-anchor="end">8%</text><text x="50" y="64" text-anchor="end">12%</text>
+  <text x="196" y="232" text-anchor="middle">30</text><text x="333" y="232" text-anchor="middle">60</text><text x="471" y="232" text-anchor="middle">90</text><text x="608" y="232" text-anchor="middle">120 kills</text>
+  <polyline fill="none" stroke="#a3957f" stroke-width="2.5" stroke-dasharray="6 5" points="196,110 333,91.25 471,82.5 608,71.25"/>
+  <polyline fill="none" stroke="#b4281d" stroke-width="3.5" points="196,133.75 333,126.25 471,125 608,125"/>
+  <circle cx="608" cy="71.25" r="4" fill="#a3957f"/><circle cx="608" cy="125" r="5" fill="#b4281d"/>
+  <text x="600" y="58" text-anchor="end">without the limit: 11.1%</text><text x="600" y="146" text-anchor="end" style="fill:#e8dcc4">with it: 6.8%</text>
+</svg><figcaption>120 kills on one spot, two a second, measured as the share of red pixels around it. Without the limit the floor keeps soaking; with it, the spot levels off as spatter on stone.</figcaption></figure>
+<p>And the blood stays. We tried stains that fade or thin out with time and dropped both, because nothing should take blood off a floor nobody is fighting on. It only dries: fresh blood is a shade lighter and wet, and after about a minute and a half it's two shades darker and dull:</p>
+<figure class="out"><div class="frame"><img src="/img/devlog/gore/age.jpg" width="1230" height="300" alt="Four moments of the same pools drying darker"></div><figcaption>The same pools, fresh to dry.</figcaption></figure>
+
+<h2 id="walls">Blood on the walls</h2>
+<p>A drop that hits a wall the camera can see paints a blot. A second drop close to it doesn't add a new spot; it makes the blot bigger, so a wall that took many hits gets large painted shapes instead of a cloud of specks. Each blot throws a few small drops of its own, runs down in drips over about a second, and blood gathers at the foot of the wall.</p>
+<figure class="out"><div class="frame"><video muted loop playsinline preload="none" width="960" height="720" poster="/img/gore/blood_wall.jpg" data-src="/img/gore/blood_wall.mp4" aria-label="Blood hitting a wall and running down in drips"></video></div><figcaption>Blots that grow, and drips that run.</figcaption></figure>
+<div class="deadend"><span class="k">A bug that took a while</span><p>In the first version, when the hero walked away, the blood on a wall jumped to a different pattern:</p>
+<div class="frame"><img src="/img/devlog/gore/wall_bug.jpg" width="1200" height="315" alt="Three frames of the same wall: the blood pattern changes as the hero steps away"></div>
+<p>Diablo doesn't clear the screen between frames. With the camera standing still, the wall was drawn again over the same stone, and the code that decides which pixels belong to the wall couldn't tell them apart. Fixed, a blot holds its place and only fades with the light:</p>
+<div class="frame"><img src="/img/devlog/gore/wall_fix.jpg" width="1200" height="333" alt="The same wall: the broken build with part of the blot missing, the fixed build, and the fixed build after a walk"></div></div>
+<p>The last step was the light. Blood on a wall now takes its shade from the stone under it, the same way as on the floor, so a blot in the shadow of an arch is darker than one by a torch:</p>
+<figure><div class="cmp" role="group" aria-label="Wall blood as flat paint and lit as the stone"><div class="imgs"><img class="a" src="/img/devlog/gore/wall_light_old.jpg" width="520" height="522" alt="Wall blood as flat bright paint"><img class="b" src="/img/devlog/gore/wall_light_new.jpg" width="520" height="522" alt="The same wall blood shaded as the stone under it"></div><span class="side l"><span class="tag l">Paint</span></span><span class="side r"><span class="tag r">Lit as stone</span></span><span class="handle" aria-hidden="true"></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between flat wall blood and wall blood lit as stone"></div><figcaption>The same wall in the Cathedral.</figcaption></figure>
+
+<h2 id="dead">Footprints, and the pools under the dead</h2>
+<p>Walk through a pool and you leave red footprints for the next eight tiles. Every corpse bleeds a pool that spreads from under it for fifteen seconds, and a kill on top of an old pool makes it bigger, in the pool's own colour.</p>
+<ul class="grid two wide43">
+<li><figure><div class="frame"><video muted loop playsinline preload="none" width="960" height="720" poster="/img/gore/blood_pool.jpg" data-src="/img/gore/blood_pool.mp4" aria-label="A pool spreads under the dead"></video></div><figcaption>A pool spreads, then dries.</figcaption></figure></li>
+<li><figure><div class="frame"><video muted loop playsinline preload="none" width="960" height="720" poster="/img/gore/blood_steps.jpg" data-src="/img/gore/blood_steps.mp4" aria-label="Footprints through the pools"></video></div><figcaption>Footprints through the pools.</figcaption></figure></li>
+</ul>
+
+<h2 id="h">Press H for 1996</h2>
+<p>All of this is drawn on top of the game Blizzard North made, which keeps running underneath, swing for swing. That's how the slider at the top of this post works, and in the game the H key does the same, anytime: one press and you're back in 1996, the blood gone with the new art.</p>
+
+<h2 id="next">What's next</h2>
+<p>We're working on rebuilding the monsters in 3D, so the game could make its deaths instead of us drawing them one by one, ahead of time, for the Cathedral's monsters. The blood is ready for them: it's the same red on every level. That's a story for a later post. Brutal Diablo is free, and coming early 2027.</p>
+<p>Thanks to <a href="https://github.com/diasurgical/devilutionX">DevilutionX</a>, which keeps Diablo running on today's machines and made all of this possible, and to Blizzard North, who painted the Butcher's room in the first place. More of the gore, in motion, is on the <a href="/gore/">gore page</a>, and if you'd like to talk about any of this, or tell us what we got wrong, come to our <a href="https://discord.gg/NsG8gnhnJH">Discord</a>.</p>
+<h2>Tips</h2>
+<div class="tipbox"><p>Brutal Diablo will be free once released. Throw a coin and it goes into dev time, GPU hours and coffee.</p><p>This mod is a love letter to the original game, so nothing here is for sale. But every tip really helps us keep the development going. Thank you.</p><div><a class="btn primary" href="https://ko-fi.com/brutaldiablo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.351 2.715c-2.7 0-4.986.025-6.83.26C2.078 3.285 0 5.154 0 8.61c0 3.506.182 6.13 1.585 8.493 1.584 2.701 4.233 4.182 7.662 4.182h.83c4.209 0 6.494-2.234 7.637-4a9.5 9.5 0 0 0 1.091-2.338C21.792 14.688 24 12.22 24 9.208v-.415c0-3.247-2.13-5.507-5.792-5.87-1.558-.156-2.65-.208-6.857-.208m0 1.947c4.208 0 5.09.052 6.571.182 2.624.311 4.13 1.584 4.13 4v.39c0 2.156-1.792 3.844-3.87 3.844h-.935l-.156.649c-.208 1.013-.597 1.818-1.039 2.546-.909 1.428-2.545 3.064-5.922 3.064h-.805c-2.571 0-4.831-.883-6.078-3.195-1.09-2-1.298-4.155-1.298-7.506 0-2.181.857-3.402 3.012-3.714 1.533-.233 3.559-.26 6.39-.26m6.547 2.287c-.416 0-.65.234-.65.546v2.935c0 .311.234.545.65.545 1.324 0 2.051-.754 2.051-2s-.727-2.026-2.052-2.026m-10.39.182c-1.818 0-3.013 1.48-3.013 3.142 0 1.533.858 2.857 1.949 3.897.727.701 1.87 1.429 2.649 1.896a1.47 1.47 0 0 0 1.507 0c.78-.467 1.922-1.195 2.623-1.896 1.117-1.039 1.974-2.364 1.974-3.897 0-1.662-1.247-3.142-3.039-3.142-1.065 0-1.792.545-2.338 1.298-.493-.753-1.246-1.298-2.312-1.298"/></svg>Tip on Ko-fi</a></div></div>
+</article>
+</main>
+<footer><div class="col"><p>Fan mod, not affiliated with Blizzard Entertainment. Diablo is a trademark of Blizzard Entertainment, Inc.</p><p>Brewed in Czechia 🇨🇿🍻 · Runs on <a href="https://github.com/diasurgical/devilutionX">DevilutionX</a>.</p><p><a href="/">brutaldiablo.com</a> · <a href="/devlog/feed.xml">RSS</a></p></div></footer>
+<script src="/devlog/devlog.js"></script>
+<script src="/devlog/gore/gore.js"></script>
+<script src="/devlog/gore/blood.js"></script>
+<script src="/devlog/gore/strike.js"></script>
+<script src="/devlog/gore/stains.js"></script>
+<script data-goatcounter="https://brutaldiablo.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

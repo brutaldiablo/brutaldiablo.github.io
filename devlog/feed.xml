@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Brutal Diablo devlog</title>
+  <link>https://brutaldiablo.com/devlog/</link>
+  <atom:link href="https://brutaldiablo.com/devlog/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>How the bigger pieces of Brutal Diablo were made: the tech, the dead ends and what we learned.</description>
+  <language>en</language>
+  <lastBuildDate>Sun, 08 Nov 2026 12:00:00 +0100</lastBuildDate>
+  <image><url>https://brutaldiablo.com/img/mark_180.png</url><title>Brutal Diablo devlog</title><link>https://brutaldiablo.com/devlog/</link></image>
+  <item>
+    <title>The blood Diablo was meant to have</title>
+    <link>https://brutaldiablo.com/devlog/gore/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/devlog/gore/</guid>
+    <pubDate>Sun, 08 Nov 2026 12:00:00 +0100</pubDate>
+    <description><![CDATA[<p><img src="https://brutaldiablo.com/img/devlog/gore/og_post.jpg" alt="" width="1200" height="630"></p><p>Diablo's makers wanted it gritty and gory. The game shipped with most of its blood painted into the floor of one room. We went back to that room to learn how they did it, then taught the engine to paint blood the same way, everywhere, as it happens.</p>]]></description>
+  </item>
+</channel>
+</rss>

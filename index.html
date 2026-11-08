@@ -6,6 +6,7 @@
 <title>Brutal Diablo</title>
 <meta name="description" content="Chasing the Diablo fever dream we all had in 1996. Same game. Improved graphics, darker, bloodier. A free fan mod in development, coming early 2027.">
 <link rel="canonical" href="https://brutaldiablo.com/">
+<link rel="alternate" type="application/rss+xml" title="Brutal Diablo devlog" href="/devlog/feed.xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/img/mark_64.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="/img/mark_180.png">
@@ -145,6 +146,7 @@ section{padding-block:2.4rem}
 .strip h3{font-size:1.05rem}
 .strip p{font-size:1.1rem}
 #follow .wrap{max-width:1000px}
+#download .wrap{max-width:1000px}
 .rows{display:grid;grid-template-columns:1fr 1fr;gap:0 2.5rem;border-top:0}
 .rows li{border-top:1px solid var(--stone-2)}.rows a{border-bottom:0}
 .pair{max-width:1000px;margin-inline:auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -170,10 +172,10 @@ section{padding-block:2.4rem}
 [id]{scroll-margin-top:4rem}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media (max-width:760px){.bar .anchors{display:none}}
+@media (max-width:760px){.bar .anchors a{display:none}.bar .anchors a.isnew{display:inline-flex}.bar .anchors{margin-left:auto}}
 
-.status{display:flex;flex-wrap:wrap;gap:.5rem;font-family:var(--ui);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ash)}
-.status span{border:1px solid var(--stone-2);padding:.3em .6em;border-radius:2px;background:rgba(23,18,15,.7)}
+.status{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;font-family:var(--ui);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ash)}
+.status span{display:inline-flex;align-items:center;height:2.1em;padding:0 .6em;line-height:1;white-space:nowrap;border:1px solid var(--stone-2);border-radius:2px;background:rgba(23,18,15,.7)}
 .status span:first-child{color:var(--torch);border-color:var(--torch)}
 
 .copy{display:inline-grid;place-items:center;width:2.4rem;height:2.4rem;padding:0}
@@ -225,10 +227,30 @@ figcaption .wip{display:block;margin-top:.35rem;opacity:.8}
 @media (max-width:600px){.wip{font-size:.55rem;letter-spacing:.06em}.hv .wip{bottom:auto;top:.6rem}}
 
 @media (max-width:600px){.hv .wip{top:calc(3.2rem + .5rem)}}
+
+/* the devlog band */
+.devlog-band .wrap{max-width:1000px}
+.feature{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:0;text-decoration:none;border:1px solid var(--stone-2);background:var(--stone);border-radius:3px;overflow:hidden;transition:border-color .15s}
+.feature:hover{border-color:var(--torch);color:var(--bone)}
+.feature .fimg img{width:100%;height:100%;object-fit:cover;display:block}
+.feature .ftext{display:grid;gap:.8rem;align-content:center;padding:1.6rem 1.7rem}
+.feature .fmeta{font-family:var(--ui);font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--torch)}
+.feature .ftitle{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,3vw,2rem);line-height:1.12;letter-spacing:.03em;text-wrap:balance}
+.feature .fdek{font-size:1.1rem;color:var(--bone)}
+.feature .btn{justify-self:start;pointer-events:none}
+@media (max-width:760px){.feature{grid-template-columns:minmax(0,1fr)}.feature .fimg img{aspect-ratio:1200/630;height:auto}}
+
+/* a new section, marked in the menu */
+.bar .anchors a.isnew{display:inline-flex;align-items:center;gap:.4em;color:var(--bone)}
+.newtag{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1;padding:.3em .45em;border-radius:2px;background:var(--ember);color:#fff6ea}
+
+/* narrow phones: the bar on one line */
+.bar .home{white-space:nowrap}
+@media (max-width:420px){.bar{gap:.7rem}.bar .home{font-size:.8rem;gap:.45rem}.bar .navlinks,.bar .anchors{gap:.75rem}.bar .btn{padding:.4em .6em}}
 </style>
 </head>
 <body>
-<a id="top"></a><nav class="bar"><a class="home" href="#top"><img src="img/mark_180.png" width="28" height="28" alt="">Brutal Diablo</a><div class="anchors"><a href="#about">About</a><a href="#download">Downloads</a><a href="#follow">Follow</a><a href="#tips">Tips</a><a href="#contact">Contact</a></div><a class="btn primary dc" href="https://discord.gg/NsG8gnhnJH"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a></nav>
+<a id="top"></a><nav class="bar"><a class="home" href="#top"><img src="img/mark_180.png" width="28" height="28" alt="">Brutal Diablo</a><div class="anchors"><a href="#about">About</a><a href="#devlog" class="isnew">Devlog<span class="newtag">New</span></a><a href="#download">Downloads</a><a href="#follow">Follow</a><a href="#tips">Tips</a><a href="#contact">Contact</a></div><a class="btn primary dc" href="https://discord.gg/NsG8gnhnJH"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a></nav>
 <header class="hero">
   <div class="hv"><video class="bg" autoplay loop muted playsinline preload="metadata" poster="img/loop_church_poster.jpg" width="1280" height="720" aria-label="Tristram's church at night in Brutal Diablo, its windows lit red"><source src="img/loop_church.mp4" type="video/mp4"></video></div>
   <div class="wrap text">
@@ -242,10 +264,16 @@ figcaption .wip{display:block;margin-top:.35rem;opacity:.8}
 <main>
 <section id="about"><div class="wrap"><h2>What it is</h2><p class="lead">Diablo (1996), modded. Same game, same quests, same Butcher, with a visual uplift.</p>
 <div class="strips">
-  <div class="strip" id="same-game"><div><h3>Same game</h3><p>Nothing rebalanced, nothing “reimagined”. The quests, the monsters, the loot: all where you left them in 1996. The only thing added is running in town. Underneath, it’s still the original game, running as it always did. Brutal Diablo only changes what you see. Miss the old pixels? Press H to switch, anytime, like in Diablo II: Resurrected.</p></div><figure class="media cmp" data-src="img/pair_walk.mp4" data-poster="img/pair_walk_poster.jpg"><canvas width="1280" height="720" aria-label="The same scene with the original graphics on the left and Brutal Diablo on the right"></canvas><video muted playsinline loop preload="auto" src="img/pair_walk.mp4" aria-hidden="true" tabindex="-1"></video><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span class="handle" aria-hidden="true"></span><span class="framenote"><span class="wip">Work in progress, not the final version</span></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between Diablo (1996) and Brutal Diablo"><figcaption>Tristram by day, the Warrior on his way to the church</figcaption></figure></div>
-  <div class="strip" id="darker"><div><h3>Improved graphics, darker</h3><p>The game’s art, recreated to match the original. Nothing invented: the same shapes and the same frames, the way your memory says they looked.</p><p style="margin-top:.6rem">Torches that actually light things. Shadows the town never had. Tristram at night is a different place now.</p></div><figure class="media cmp" data-src="img/pair_forge.mp4" data-poster="img/pair_forge_poster.jpg"><canvas width="1280" height="720" aria-label="The same scene with the original graphics on the left and Brutal Diablo on the right"></canvas><video muted playsinline loop preload="auto" src="img/pair_forge.mp4" aria-hidden="true" tabindex="-1"></video><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span class="handle" aria-hidden="true"></span><span class="framenote"><span class="wip">Work in progress, not the final version</span></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between Diablo (1996) and Brutal Diablo"><figcaption>Griswold’s forge, noon to midnight</figcaption></figure></div>
-  <div class="strip" id="bloodier"><div><h3>Bloodier</h3><p>Every monster has several ways to die. The blood sprays, pools on the floor, runs down the walls and stays.</p><p style="margin-top:.6rem"><a href="/gore/">More gore &rarr;</a></p><p class="next">In development: deaths worked out from 3D models of the monsters, so no two kills look the same. More blood, more particles.</p></div><figure class="media cmp" data-src="img/pair_fight.mp4" data-poster="img/pair_fight_poster.jpg"><canvas width="1280" height="720" aria-label="The same scene with the original graphics on the left and Brutal Diablo on the right"></canvas><video muted playsinline loop preload="auto" src="img/pair_fight.mp4" aria-hidden="true" tabindex="-1"></video><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span class="handle" aria-hidden="true"></span><span class="framenote"><span class="wip">Work in progress, not the final version</span></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between Diablo (1996) and Brutal Diablo"><figcaption>The Cathedral, level one</figcaption></figure></div>
+  <div class="strip" id="same-game"><div><h3>Same game</h3><p>Nothing rebalanced, nothing “reimagined”. The quests, the monsters, the loot: all where you left them in 1996. The only thing added is running in town. Underneath, it’s still the original game, running as it always did. Brutal Diablo only changes what you see. Miss the old pixels? Press H to switch, anytime, like in Diablo II: Resurrected.</p></div><figure class="media cmp" data-src="img/pair_walk.mp4" data-poster="img/pair_walk_poster.jpg"><canvas width="1280" height="720" aria-label="The same scene with the original graphics on the left and Brutal Diablo on the right"></canvas><video muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"></video><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span class="handle" aria-hidden="true"></span><span class="framenote"><span class="wip">Work in progress, not the final version</span></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between Diablo (1996) and Brutal Diablo"><figcaption>Tristram by day, the Warrior on his way to the church</figcaption></figure></div>
+  <div class="strip" id="darker"><div><h3>Improved graphics, darker</h3><p>The game’s art, recreated to match the original. Nothing invented: the same shapes and the same frames, the way your memory says they looked.</p><p style="margin-top:.6rem">Torches that actually light things. Shadows the town never had. Tristram at night is a different place now.</p></div><figure class="media cmp" data-src="img/pair_forge.mp4" data-poster="img/pair_forge_poster.jpg"><canvas width="1280" height="720" aria-label="The same scene with the original graphics on the left and Brutal Diablo on the right"></canvas><video muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"></video><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span class="handle" aria-hidden="true"></span><span class="framenote"><span class="wip">Work in progress, not the final version</span></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between Diablo (1996) and Brutal Diablo"><figcaption>Griswold’s forge, noon to midnight</figcaption></figure></div>
+  <div class="strip" id="bloodier"><div><h3>Bloodier</h3><p>Every monster has several ways to die. The blood sprays, pools on the floor, runs down the walls and stays.</p><p style="margin-top:.6rem"><a href="/gore/">More gore &rarr;</a> &nbsp; <a href="/devlog/gore/">How we made it &rarr;</a></p><p class="next">In development: deaths worked out from 3D models of the monsters, so no two kills look the same. More blood, more particles.</p></div><figure class="media cmp" data-src="img/pair_fight.mp4" data-poster="img/pair_fight_poster.jpg"><canvas width="1280" height="720" aria-label="The same scene with the original graphics on the left and Brutal Diablo on the right"></canvas><video muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"></video><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span class="handle" aria-hidden="true"></span><span class="framenote"><span class="wip">Work in progress, not the final version</span></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between Diablo (1996) and Brutal Diablo"><figcaption>The Cathedral, level one</figcaption></figure></div>
 </div></div></section>
+<section id="devlog" class="devlog-band"><div class="wrap">
+<div class="followhead"><h2>Devlog</h2><a class="btn" href="/devlog/">All posts</a></div>
+<p class="lead">How it's made: the tech, the dead ends, what we learned. Written for people who know Diablo well.</p>
+<a class="feature" href="/devlog/gore/"><span class="fimg"><img src="/img/devlog/gore/og.jpg" width="1200" height="630" alt="The Warrior in a Cathedral corner, zombies falling, blood on the floor and walls" loading="lazy"></span><span class="ftext"><span class="fmeta">Latest post · 10 min read</span><span class="ftitle">The blood Diablo was meant to have</span><span class="fdek">In 1994 its makers promised "multiple graphic deaths" for every monster. We went back to the Butcher's room to learn how they painted blood, then taught the engine to paint it the same way. With a blood tool you can play with.</span><span class="btn primary">Read the post &rarr;</span></span></a>
+<p class="muted small">New posts land with the bigger features. Follow them by <a href="/devlog/feed.xml">RSS</a> or on the Discord.</p>
+</div></section>
 <section id="download"><div class="wrap"><h2>Downloads</h2><p class="lead">Bits from the workbench.</p><p>Material from the development process lands here as we make it. And in early 2027, the mod itself. Nothing up yet.</p><p class="muted small">Where we are: Tristram, the Cathedral and the Catacombs are done. The rest of the dungeon follows, level by level.</p></div></section>
 <section id="follow"><div class="wrap"><div class="followhead"><h2>Follow</h2><a class="btn primary dc" href="https://discord.gg/NsG8gnhnJH"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-discord"/></svg>Join the Discord</a></div><p>New clips most days, bugs included. Pick your poison:</p><ul class="tiles"><li><a href="https://www.youtube.com/@brutaldiablo"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube"/></svg><span>YouTube<small>@brutaldiablo</small></span></a></li>
 <li><a href="https://www.instagram.com/brutaldiablo/"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-instagram"/></svg><span>Instagram<small>@brutaldiablo</small></span></a></li>
@@ -308,8 +336,9 @@ document.querySelectorAll('.copy').forEach(function(b){
     f.addEventListener('pointerup',function(){drag=false});f.addEventListener('pointercancel',function(){drag=false});
     r.addEventListener('input',function(){set(r.value/100)});
     var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!reduce){v.play().catch(function(){})}else{v.pause()}})},{threshold:.25}).observe(f)}
-    else if(!reduce){v.play().catch(function(){})}
+    var go=function(){if(!v.getAttribute('src')){v.setAttribute('src',f.dataset.src);v.preload='auto';v.load()}if(!reduce)v.play().catch(function(){})};
+    if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go()}else{v.pause()}})},{rootMargin:'300px 0px',threshold:0}).observe(f)}
+    else{go()}
   });
 })();
 </script>
