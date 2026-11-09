@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dusting off Diablo's loot · Brutal Diablo devlog</title>
+<meta name="description" content="How we repainted all 179 of Diablo's inventory pictures, and why the hardest part was leaving them alone.">
+<link rel="canonical" href="https://brutaldiablo.com/devlog/items/">
+<link rel="alternate" type="application/rss+xml" title="Brutal Diablo devlog" href="/devlog/feed.xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/img/mark_64.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="/img/mark_180.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dusting off Diablo's loot">
+<meta property="og:description" content="How we repainted all 179 of Diablo's inventory pictures, and why the hardest part was leaving them alone.">
+<meta property="og:url" content="https://brutaldiablo.com/devlog/items/">
+<meta property="og:image" content="https://brutaldiablo.com/img/devlog/items/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@brutaldiablo">
+<meta name="theme-color" content="#0c0908">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="/devlog/devlog.css">
+<link rel="stylesheet" href="items.css">
+<noscript><style>#light canvas,#light .lhandle,#light .srow,#light .acts,#light .wlab{display:none!important}</style></noscript>
+</head>
+<body>
+<nav class="bar"><a class="home" href="/"><img src="/img/mark_180.png" width="28" height="28" alt="">Brutal Diablo</a><div class="navlinks"><a href="/">Home</a><a href="/devlog/" aria-current="page">Devlog</a></div><a class="btn primary dc" href="https://discord.gg/NsG8gnhnJH"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>Discord</a></nav>
+<main>
+<header class="col posthead" style="padding-top:2.4rem">
+  <p class="eyebrow">Devlog</p>
+  <h1>Dusting off Diablo's loot</h1>
+  <p class="stand">How we repainted all 179 of Diablo's inventory pictures, and why the hardest part was leaving them alone.</p>
+  <div class="byline"><span>5 min read</span><span><time datetime="2026-11-09">9 November 2026</time></span></div>
+</header>
+<article class="col">
+
+<p>If you played Diablo back then, you know this grid by heart: ten slots across, four down, and the red tint saying you're too weak for what you just found. We spent whole evenings at Griswold's counting gold we didn't have.</p>
+<p>A splint mail, then and now. Drag the divider:</p>
+<figure class="items"><div class="cmp cap2 notags" style="--w:232" role="group" aria-label="A splint mail in its inventory slots in Diablo (1996) and in Brutal Diablo"><div class="imgs"><img class="a" src="img/splint_1996.webp" width="232" height="348" alt="A splint mail in its six inventory slots, as Diablo drew it in 1996"><img class="b" src="img/splint_brutal.webp" width="232" height="348" alt="The same splint mail in Brutal Diablo"></div><span class="side l"><span class="tag l">Diablo (1996)</span></span><span class="side r"><span class="tag r">Brutal Diablo</span></span><span class="handle" aria-hidden="true"></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between Diablo (1996) and Brutal Diablo"></div><div class="legend" aria-hidden="true"><span>&larr; Diablo (1996)</span><span class="r">Brutal Diablo &rarr;</span></div><figcaption>Captured in the game. Every stud and lace is where Blizzard North put it.</figcaption></figure>
+<p>All 179 pictures got this, the eleven mouse cursors in their file included, each checked against 1996 at every step. Here's how: an upscaler that wasn't enough, five painting models in a bake-off, the game's own colours and a little shine.</p>
+
+<h2 id="bigger">Bigger is the easy part</h2>
+<p>Brutal Diablo draws the whole game four times wider and taller than the original 640×480. The inventory hadn't even tried yet: a sword 28 pixels wide was stretched over 112, and it showed.</p>
+<p>For the rest of the game we picked 4x-SGI as the default, until something better turns up. It's an upscaler trained on 1990s computer graphics and made for pre-rendered sprites like Diablo's. It draws each picture four times larger, then we snap the colours back to the game's and cut the outline clean. Below, "4x-SGI" means that whole chain. On the full helm:</p>
+<div class="widget stepper" data-state='{"st":"1996"}'>
+  <div class="stage"><div class="pic cap2" style="--w:232"><img src="img/recipe_1996.webp" data-src="img/recipe_{st}.webp" width="232" height="232" alt="The full helm at one step of 4x-SGI"></div></div>
+  <div class="rangewrap"><input type="range" min="0" max="3" value="0" data-key="st" data-values='["1996","raw","locked","final"]' data-labels='["Diablo (1996)","The upscaler&apos;s picture","Colours locked","Outline cut: 4x-SGI"]' aria-label="Step through 4x-SGI"><div class="ticks"><span>1996</span><span>Upscaled</span><span>Locked</span><span>Cut</span></div></div>
+  <div class="wlab"><span>Step: <b data-label="st">Diablo (1996)</b></span></div>
+  <p class="cap" data-caption-key="st" data-captions='{"1996":"The 1996 picture, every pixel four times larger, as Brutal Diablo showed it until now.","raw":"4x-SGI&apos;s picture, still inside the 1996 staircase outline.","locked":"The game&apos;s colours back. The staircase stays.","final":"Outline cut clean. Our default for the rest of the game, for now."}'>The 1996 picture, every pixel four times larger, as Brutal Diablo showed it until now.</p>
+</div>
+<p>Up close you see the limits: flat areas go soft and painted detail smears. Items sit still right under your nose, so for them it wasn't going to do.</p>
+<p>We tried to squeeze more out of it: depth models for shape, Potrace to trace the outline and then every colour edge, the upscaler twice, the old pixel-art filters xBR and hqx. Two of them on the same helm, beside 4x-SGI:</p>
+<figure class="out"><ul class="gal">
+  <li><figure><div class="pic cap2" style="--w:232"><img src="img/recipe_final.webp" width="232" height="232" alt="The full helm through 4x-SGI" loading="lazy"></div><figcaption>4x-SGI, for comparison.</figcaption></figure></li>
+  <li><figure><div class="pic cap2" style="--w:232"><img src="img/dead_edges_levels.webp" width="232" height="232" alt="The helm rebuilt from its colour edges, traced by Potrace" loading="lazy"></div><figcaption>Potrace on every colour edge: a cartoon.</figcaption></figure></li>
+  <li><figure><div class="pic cap2" style="--w:232"><img src="img/dead_depth_da2.webp" width="232" height="232" alt="The helm lit from Depth Anything V2's depth" loading="lazy"></div><figcaption>Depth Anything V2's depth: shinier, still smeared.</figcaption></figure></li>
+</ul></figure>
+<p>Each changed something; none made the helm look painted. The detail wasn't in the picture, so something had to paint it.</p>
+
+<h2 id="painters">Five painters, one bake-off</h2>
+<p>That takes a painting model. Most are diffusion models: they learned to clean noise out of pictures, step by step, toward a text description. Hand one our picture under a layer of noise and it repaints it as much as we let it, and will just as happily redesign it.</p>
+<p>We tried five on 15 items: SeedVR2, Clarity, Nano Banana Pro, SDXL with a tile ControlNet (an add-on network that keeps the painter to our picture's shapes), and FLUX.1-dev with Jasper's upscaler ControlNet. On our items SeedVR2 added very little, and SDXL went plastic the moment it got more freedom. The final three, on 30 items:</p>
+<figure class="out"><div class="widget stepper" data-state='{"item":"cleaver"}'>
+  <div class="row"><span class="k">Item</span><button class="chip" type="button" data-key="item" data-v="cleaver">Cleaver</button><button class="chip" type="button" data-key="item" data-v="full_helm">Full Helm</button><button class="chip" type="button" data-key="item" data-v="long_war_bow">Long War Bow</button></div>
+  <div class="cols5">
+    <figure><div class="pic cap2" style="--w:232"><img src="img/bake_orig_cleaver.webp" data-src="img/bake_orig_{item}.webp" width="232" height="348" alt="Diablo (1996)" loading="lazy"></div><figcaption>Diablo (1996)</figcaption></figure>
+    <figure><div class="pic cap2" style="--w:232"><img src="img/bake_recipe_cleaver.webp" data-src="img/bake_recipe_{item}.webp" width="232" height="348" alt="4x-SGI" loading="lazy"></div><figcaption>4x-SGI</figcaption></figure>
+    <figure><div class="pic cap2" style="--w:232"><img src="img/bake_flux_cleaver.webp" data-src="img/bake_flux_{item}.webp" width="232" height="348" alt="Flux" loading="lazy"></div><figcaption>Flux</figcaption></figure>
+    <figure><div class="pic cap2" style="--w:232"><img src="img/bake_clarity_cleaver.webp" data-src="img/bake_clarity_{item}.webp" width="232" height="348" alt="Clarity" loading="lazy"></div><figcaption>Clarity</figcaption></figure>
+    <figure><div class="pic cap2" style="--w:232"><img src="img/bake_nano_cleaver.webp" data-src="img/bake_nano_{item}.webp" width="232" height="348" alt="Nano Banana Pro" loading="lazy"></div><figcaption>Nano Banana Pro</figcaption></figure>
+  </div>
+  <p class="cap">Flux and Clarity at the same light touch, Nano Banana Pro asked nicely to keep the design; all three finished with the same outline and colour snap as 4x-SGI.</p>
+</div></figure>
+<p>Nano Banana Pro painted the prettiest pictures, but it invented too much:</p>
+<figure class="out"><ul class="pairs">
+  <li><figure><div class="pic cap2" style="--w:232"><img src="img/nano_1996_tower_shield.webp" width="232" height="348" alt="The tower shield in Diablo (1996)" loading="lazy"></div><figcaption>Diablo (1996)</figcaption></figure><figure><div class="pic cap2" style="--w:232"><img src="img/nano_nano_tower_shield.webp" width="232" height="348" alt="Nano Banana Pro's tower shield" loading="lazy"></div><figcaption>Nano Banana Pro</figcaption></figure><p>The tower shield's plain straps became a big ornate cross.</p></li>
+  <li><figure><div class="pic cap2" style="--w:232"><img src="img/nano_1996_kite_shield.webp" width="232" height="348" alt="The kite shield in Diablo (1996)" loading="lazy"></div><figcaption>Diablo (1996)</figcaption></figure><figure><div class="pic cap2" style="--w:232"><img src="img/nano_nano_kite_shield.webp" width="232" height="348" alt="Nano Banana Pro's kite shield" loading="lazy"></div><figcaption>Nano Banana Pro</figcaption></figure><p>The kite shield came back covered in knotwork.</p></li>
+</ul><figcaption>Each next to the picture it was meant to keep.</figcaption></figure>
+<p>Clarity stayed faithful only at a light touch. Flux won, keeping Blizzard North's shapes from one short description per picture ("butcher's cleaver", "steel gauntlet hand pointer") and the same seed every time, so a rerun paints the same picture.</p>
+<p>How much Flux may repaint is one number: 0 changes nothing, 1 starts from pure noise. We stepped it from 0.25 to 0.45 on all 30 items. Watch the blood on the cleaver:</p>
+<div class="widget stepper" data-state='{"item":"cleaver","s":"0.40"}'>
+  <div class="row"><span class="k">Item</span><button class="chip" type="button" data-key="item" data-v="cleaver">Cleaver</button><button class="chip" type="button" data-key="item" data-v="crown">Crown</button></div>
+  <div class="stage"><div class="pic cap2" style="--w:232"><img src="img/dial_0.40_cleaver.webp" data-src="img/dial_{s}_{item}.webp" width="232" height="348" alt="The item at one strength"></div></div>
+  <div class="rangewrap"><input type="range" min="0" max="5" value="4" data-key="s" data-values='["orig","0.25","0.30","0.35","0.40","0.45"]' data-labels='["Diablo (1996)","0.25","0.30","0.35","0.40, kept","0.45"]' aria-label="Flux's strength"><div class="ticks"><span>1996</span><span>.25</span><span>.30</span><span>.35</span><span>.40</span><span>.45</span></div></div>
+  <div class="wlab"><span>Strength: <b data-label="s">0.40, kept</b></span></div>
+</div>
+<p>Up to 0.40 every item gains brushwork and stays itself; at 0.45 the blood grows new shapes. We kept 0.40 and ran the other 149, about half an hour on one rented GPU.</p>
+<p>Last, the colours. Flux paints in millions; Diablo shows 256 at a time, and items use only numbers 128 to 254 of those, plus black: the half that never changes between levels, so a sword looks the same in town as in Hell. We snap each pixel to the nearest shade among the runs its 1996 neighbourhood used, which keeps a blue gem blue. A cleaver patch, enlarged three times:</p>
+<figure class="items"><div class="cmp cap2" style="--w:216" role="group" aria-label="A patch of the cleaver: Flux's colours against the game's"><div class="imgs"><img class="a px" src="img/pal_raw_zoom.webp" width="216" height="216" alt="A patch of Flux's cleaver in its own colours, enlarged" style="image-rendering:pixelated"><img class="b px" src="img/pal_locked_zoom.webp" width="216" height="216" alt="The same patch in the game's colours" style="image-rendering:pixelated"></div><span class="side l"><span class="tag l">Flux</span></span><span class="side r"><span class="tag r">Locked</span></span><span class="handle" aria-hidden="true"></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between Flux's colours and the game's"></div><figcaption>Almost 10,000 colours in Flux's cleaver at game size, 32 once locked. Good luck telling them apart in the game.</figcaption></figure>
+<p>The game's colour tricks need that. An item you can't use is drawn red through a table that swaps each colour (like the monsters' in our <a href="/devlog/gore/">blood post</a>); on the game's colours it works as in 1996:</p>
+<figure class="items"><div class="cmp cap2" style="--w:360" role="group" aria-label="A splint mail the hero can't wear, in Diablo (1996) and in Brutal Diablo"><div class="imgs"><img class="a" src="img/red_1996.webp" width="360" height="340" alt="A red splint mail in the bag, Diablo (1996)" loading="lazy"><img class="b" src="img/red_brutal.webp" width="360" height="340" alt="The same red splint mail, Brutal Diablo" loading="lazy"></div><span class="side l"><span class="tag l">Diablo (1996)</span></span><span class="side r"><span class="tag r">Brutal Diablo</span></span><span class="handle" aria-hidden="true"></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between Diablo (1996) and Brutal Diablo"></div><figcaption>A splint mail our hero is too weak to wear.</figcaption></figure>
+
+<h2 id="darker">We tried to make them evil</h2>
+<p>Once the pictures were faithful, we wanted them a bit more ours. This is Brutal Diablo, after all. On an early version we tried grim, blood in the grooves, a hellfire glow, and all three:</p>
+<div class="widget stepper" data-state='{"item":"tower_shield","g":"evil_base"}'>
+  <div class="row"><span class="k">Item</span><button class="chip" type="button" data-key="item" data-v="tower_shield">Tower Shield</button><button class="chip" type="button" data-key="item" data-v="book_blue">Blue Book</button></div>
+  <div class="stage"><div class="pic cap2" style="--w:232"><img src="img/grade_evil_base_tower_shield.webp" data-src="img/grade_{g}_{item}.webp" width="232" height="348" alt="The item in one grade"></div></div>
+  <div class="rangewrap"><input type="range" min="0" max="6" value="0" data-key="g" data-values='["evil_base","evil_grim","evil_blood","evil_hell","evil_cursed","grim_soft","grim_50"]' data-labels='["As repainted","Grim","Blood","Hellfire","Cursed","Grim, soft","Grim, half strength"]' aria-label="Step through the grades"><div class="ticks"><span>None</span><span>Grim</span><span>Blood</span><span>Fire</span><span>All</span><span>Soft</span><span>Half</span></div></div>
+  <div class="wlab"><span>Grade: <b data-label="g">As repainted</b></span></div>
+  <p class="cap" data-caption-key="g" data-captions='{"evil_base":"The picture every grade started from.","evil_grim":"Colder, darker, soot on the edges. A mood, nothing new drawn.","evil_blood":"Blood in the grooves, dripping down. Out.","evil_hell":"A red glow from below, embers in the cracks. Out.","evil_cursed":"Everything at once. We may have got carried away.","grim_soft":"Grim, softer. One of the last two.","grim_50":"Grim at half strength. The other one."}'>The picture every grade started from.</p>
+</div>
+<p>Blood and fire went first: they add what the items never had. Nano Banana Pro's three evil repaints didn't stay either. Grim came closest, two softer takes to the end, and then we shipped none. Brutal Diablo adds detail and gore; the items' colours stay Blizzard North's.</p>
+
+<h2 id="shine">Shape and shine</h2>
+<p>Faithful, but flat: Flux's steel and leather catch the light alike. Blizzard North rendered Diablo's heroes and monsters from 3D models, and the items look like they got the same treatment. We wanted that shine back.</p>
+<p>For the shape, Depth Anything V2 guesses from one picture how far away each pixel is, and from that we work out which way each bit of surface faces. Arkaine's Valor (lighter is nearer):</p>
+<figure><div class="two-up">
+  <figure><div class="pic cap2" style="--w:232"><img src="img/depth_src_arkaines_valor.webp" width="232" height="348" alt="Arkaine's Valor as Flux repainted it, before any shading" loading="lazy"></div><figcaption>The picture it was given</figcaption></figure>
+  <figure><div class="pic cap2" style="--w:232"><img src="img/depth_arkaines_valor.webp" width="232" height="348" alt="Depth Anything V2's depth for Arkaine's Valor, in grey: the shoulders and chest nearest" loading="lazy"></div><figcaption>Depth Anything V2's guess</figcaption></figure>
+</div><figcaption>The raw output. Nobody told it this was armour; it found the shoulders and chest by itself.</figcaption></figure>
+<p>For the shine, each item's colour runs are marked steel, silver, gold, glass, gems, paint, wood, leather or paper. Gold gets a warm highlight, leather almost none, then the same snap to the game's colours. How strong? A dial:</p>
+<div class="widget stepper" data-state='{"item":"gothic_plate","m":"mat040"}'>
+  <div class="row"><span class="k">Item</span><button class="chip" type="button" data-key="item" data-v="gothic_plate">Gothic Plate</button><button class="chip" type="button" data-key="item" data-v="amulet">Amulet</button></div>
+  <div class="stage"><div class="pic cap2" style="--w:232"><img src="img/mat_mat040_gothic_plate.webp" data-src="img/mat_{m}_{item}.webp" width="232" height="348" alt="The item at one strength of shading"></div></div>
+  <div class="rangewrap"><input type="range" min="0" max="4" value="3" data-key="m" data-values='["orig","plain","mat020","mat040","mat100"]' data-labels='["Diablo (1996)","Repainted, unlit","0.2","0.4, kept","1.0"]' aria-label="How strong the shading is"><div class="ticks"><span>1996</span><span>Unlit</span><span>0.2</span><span>0.4</span><span>1.0</span></div></div>
+  <div class="wlab"><span>Shading: <b data-label="m">0.4, kept</b></span></div>
+</div>
+<p>At 1.0 everything looks wet, like somebody licked it, and our first try ran at about that. It also taught us to put a floor under the darkening: without one, a book's pages went black and the snap to the game's colours frayed them pink. We kept 0.4.</p>
+<p>One more fix: our first version lit the items from the upper left. We measured the shading in the 1996 pictures, and Blizzard North lit most of them from the upper right, so we flipped it.</p>
+<p>Move the light around Arkaine's Valor yourself (drag it, or use the arrow keys):</p>
+<div class="widget" id="light">
+  <div class="lstage"><canvas tabindex="0" role="slider" aria-label="The light around Arkaine's Valor. Drag it, or use the arrow keys; Home puts it back where we shipped it" aria-valuemin="-180" aria-valuemax="180" aria-valuenow="45" aria-valuetext="45° right of up, as shipped" width="452" height="568"></canvas><span class="lhandle" aria-hidden="true"></span><noscript><div class="pic cap2" style="--w:232"><img src="img/light_upper_right_arkaines_valor.webp" width="232" height="348" alt="Arkaine's Valor lit from the upper right, as shipped"></div></noscript></div>
+  <div class="srow"><span class="k">Strength</span><input type="range" min="0" max="1" step="0.05" value="0.4" aria-label="How strong the shading is"><b class="sval">0.40 (shipped)</b></div>
+  <div class="row acts"><button class="chip" type="button" data-act="lock" aria-pressed="true">Snap to the game's colours</button><button class="btn reset" type="button" data-act="reset">Reset</button></div>
+  <div class="wlab"><span class="lmsg">Light: 45° right of up, as shipped. Snapped to the game’s colours.</span></div>
+</div>
+
+<h2 id="h">Press H</h2>
+<p>The pictures show up in five places: bag and belt, your cursor, and three that DevilutionX added: the stash, Griswold's visual store and his list with pictures. We make them once and they go everywhere; underneath, the game still thinks in the old sizes and slots. Pick a place, then press H (or the key below) for 1996:</p>
+<figure class="out"><div class="widget stepper" data-state='{"place":"bag","mode":"brutal"}'>
+  <div class="row"><span class="k">Place</span><button class="chip" type="button" data-key="place" data-v="bag">The bag</button><button class="chip" type="button" data-key="place" data-v="stash">Stash</button><button class="chip" type="button" data-key="place" data-v="visual">Visual store</button><button class="chip" type="button" data-key="place" data-v="list">Griswold's list</button><button class="chip" type="button" data-key="place" data-v="held">On the cursor</button></div>
+  <div class="stage"><div class="pic cap2" style="--w:900"><img src="img/place_bag_brutal.webp" data-src="img/place_{place}_{mode}.webp" width="900" height="322" alt="The pictures in the game" loading="lazy"></div></div>
+  <div class="row"><button class="chip hkey" type="button" data-key="mode" data-toggle='["brutal","1996"]' data-h><kbd>H</kbd><span data-labels-for="mode" data-labels-map='{"brutal":"Brutal Diablo","1996":"Diablo (1996)"}'>Brutal Diablo</span></button></div>
+  <p class="cap" data-caption-key="place" data-captions='{"bag":"The bag. H sends the items back to 1996 with everything else.","stash":"The stash, same pictures.","visual":"The red ones need more than our hero has. Griswold sells them anyway.","list":"The list draws items at half size. Halved from the new pictures, they keep their detail.","held":"The held item is the pointer, so the pointers were redone too."}'>The bag. H sends the items back to 1996 with everything else.</p>
+</div></figure>
+<p>And a full bag, then and now. Same loot, thirty years apart:</p>
+<figure class="out"><div class="cmp cap2" style="--w:1160" role="group" aria-label="A full bag in Diablo (1996) and in Brutal Diablo"><div class="imgs"><img class="a" src="img/gridd_1996.webp" width="1160" height="464" alt="A bag of armour, helms and potions in Diablo (1996)" loading="lazy"><img class="b" src="img/gridd_brutal.webp" width="1160" height="464" alt="The same bag in Brutal Diablo" loading="lazy"></div><span class="side l"><span class="tag l">Diablo (1996)</span></span><span class="side r"><span class="tag r">Brutal Diablo</span></span><span class="handle" aria-hidden="true"></span><input type="range" min="0" max="100" value="50" aria-label="Move the divider between Diablo (1996) and Brutal Diablo"></div><figcaption>All 179 are recreated to match the original; these are the ones that fit one bag.</figcaption></figure>
+<p>Seventy-one of them are on the <a href="/items/">items page</a>, beside 1996. Tell us which one we got wrong (there's always one) on our <a href="https://discord.gg/NsG8gnhnJH">Discord</a>. Brutal Diablo is free and coming early 2027.</p>
+
+<h2>Thanks</h2>
+<p>To the <a href="https://github.com/diasurgical/devilutionX">DevilutionX</a> folks, who keep Diablo running on today's machines. To Blizzard North, for these items and the fever dream we're still chasing. And to the model makers: Black Forest Labs for FLUX.1-dev, Jasper for the upscaler ControlNet, the Depth Anything V2 authors, and ChrisNonyminus for 4x-SGI.</p>
+<h2>Tips</h2>
+<div class="tipbox"><p>Brutal Diablo will be free once released. Throw a coin and it goes into dev time, GPU hours and coffee.</p><p>This mod is a love letter to the original game, so nothing here is for sale. But every tip really helps us keep the development going. Thank you.</p><div><a class="btn primary" href="https://ko-fi.com/brutaldiablo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.351 2.715c-2.7 0-4.986.025-6.83.26C2.078 3.285 0 5.154 0 8.61c0 3.506.182 6.13 1.585 8.493 1.584 2.701 4.233 4.182 7.662 4.182h.83c4.209 0 6.494-2.234 7.637-4a9.5 9.5 0 0 0 1.091-2.338C21.792 14.688 24 12.22 24 9.208v-.415c0-3.247-2.13-5.507-5.792-5.87-1.558-.156-2.65-.208-6.857-.208m0 1.947c4.208 0 5.09.052 6.571.182 2.624.311 4.13 1.584 4.13 4v.39c0 2.156-1.792 3.844-3.87 3.844h-.935l-.156.649c-.208 1.013-.597 1.818-1.039 2.546-.909 1.428-2.545 3.064-5.922 3.064h-.805c-2.571 0-4.831-.883-6.078-3.195-1.09-2-1.298-4.155-1.298-7.506 0-2.181.857-3.402 3.012-3.714 1.533-.233 3.559-.26 6.39-.26m6.547 2.287c-.416 0-.65.234-.65.546v2.935c0 .311.234.545.65.545 1.324 0 2.051-.754 2.051-2s-.727-2.026-2.052-2.026m-10.39.182c-1.818 0-3.013 1.48-3.013 3.142 0 1.533.858 2.857 1.949 3.897.727.701 1.87 1.429 2.649 1.896a1.47 1.47 0 0 0 1.507 0c.78-.467 1.922-1.195 2.623-1.896 1.117-1.039 1.974-2.364 1.974-3.897 0-1.662-1.247-3.142-3.039-3.142-1.065 0-1.792.545-2.338 1.298-.493-.753-1.246-1.298-2.312-1.298"/></svg>Tip on Ko-fi</a></div></div>
+</article>
+</main>
+<footer><div class="col"><p>Fan mod, not affiliated with Blizzard Entertainment. &copy;1996 Blizzard Entertainment, Inc. All rights reserved. Diablo is a trademark of Blizzard Entertainment, Inc.</p><p>Brewed in Czechia 🇨🇿🍻 · Runs on <a href="https://github.com/diasurgical/devilutionX">DevilutionX</a>.</p><p><a href="/">brutaldiablo.com</a> · <a href="/devlog/feed.xml">RSS</a></p></div></footer>
+<script defer src="/devlog/devlog.js"></script>
+<script defer src="items.js"></script>
+<script defer src="light-data.js"></script>
+<script defer src="light.js"></script>
+<script data-goatcounter="https://brutaldiablo.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

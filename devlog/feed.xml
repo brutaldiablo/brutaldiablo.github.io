@@ -6,8 +6,15 @@
   <atom:link href="https://brutaldiablo.com/devlog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>How the bigger pieces of Brutal Diablo were made: the tech, the dead ends and what we learned.</description>
   <language>en</language>
-  <lastBuildDate>Sun, 08 Nov 2026 12:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Mon, 09 Nov 2026 09:03:00 +0100</lastBuildDate>
   <image><url>https://brutaldiablo.com/img/mark_180.png</url><title>Brutal Diablo devlog</title><link>https://brutaldiablo.com/devlog/</link></image>
+  <item>
+    <title>Dusting off Diablo's loot</title>
+    <link>https://brutaldiablo.com/devlog/items/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/devlog/items/</guid>
+    <pubDate>Mon, 09 Nov 2026 09:03:00 +0100</pubDate>
+    <description><![CDATA[<p><img src="https://brutaldiablo.com/img/devlog/items/og.jpg" alt="" width="1200" height="630"></p><p>How we repainted all 179 of Diablo's inventory pictures, and why the hardest part was leaving them alone.</p>]]></description>
+  </item>
   <item>
     <title>The blood Diablo was meant to have</title>
     <link>https://brutaldiablo.com/devlog/gore/</link>

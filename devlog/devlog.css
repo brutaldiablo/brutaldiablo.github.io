@@ -86,7 +86,7 @@ figcaption{font-family:var(--ui);font-size:.82rem;line-height:1.45;color:var(--a
 .cmp canvas{display:block;width:100%;height:auto;background:var(--ink)}
 .cmp video{position:absolute;width:2px;height:2px;opacity:0;pointer-events:none;left:0;top:0}
 .cmp .imgs{position:relative;display:grid}
-.cmp .imgs img{grid-area:1/1;width:100%;height:auto;display:block}
+.cmp .imgs img{grid-area:1/1;width:100%;height:auto;display:block;pointer-events:none;-webkit-user-drag:none}
 .cmp .imgs img.b{clip-path:inset(0 0 0 calc(var(--s,.5) * 100%))}
 .cmp .side{position:absolute;inset:0;pointer-events:none}
 .cmp .side.l{clip-path:inset(0 calc((1 - var(--s,.5)) * 100%) 0 0)}
@@ -173,3 +173,4 @@ footer a{color:var(--ash)}
 /* narrow phones: the bar on one line */
 .bar .home{white-space:nowrap}
 @media (max-width:420px){.bar{gap:.7rem}.bar .home{font-size:.8rem;gap:.45rem}.bar .navlinks,.bar .anchors{gap:.75rem}.bar .btn{padding:.4em .6em}}
+@media (max-width:380px){.bar{gap:.55rem}.bar .home{font-size:.72rem;letter-spacing:.03em;gap:.4rem}.bar .home img{width:24px;height:24px}.bar .navlinks{gap:.6rem;font-size:.8rem}}

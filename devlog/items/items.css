@@ -1,0 +1,55 @@
+/* The items post's own pieces, on top of devlog.css. */
+
+/* pictures of the game's art: never larger than two device pixels a picture pixel. --w is the picture's width in the
+   markup; these are the cap's values for common screens, before items.js makes it exact */
+:root{--k2:1}
+@media (max-resolution:1dppx){:root{--k2:2}}
+@media (min-resolution:2.01dppx){:root{--k2:.6667}}
+.cap2{max-width:calc(var(--w,232) * var(--k2) * 1px)}
+.pic{margin-inline:auto;width:100%}
+.pic img{width:100%;height:auto;image-rendering:auto}
+figure.items{justify-items:center}
+figure.items figcaption{justify-self:stretch}
+.cmp.cap2{margin-inline:auto;width:100%}
+/* a slider too narrow for its tags: a legend under it */
+.cmp.notags .tag{display:none}
+figure.items .legend{display:flex;justify-content:space-between;gap:1rem;width:100%;max-width:22rem;font-family:var(--ui);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:var(--bone)}
+figure.items .legend .r{color:var(--torch)}
+
+/* the stepped sequences */
+.stepper{justify-items:stretch}
+.stepper .stage{display:grid;justify-items:center;gap:.4rem}
+.stepper .stage img{width:100%;height:auto}
+.stepper .rangewrap{display:grid;gap:.25rem}
+.stepper .ticks{display:flex;justify-content:space-between;color:var(--ash);font-size:.68rem;letter-spacing:.06em}
+.stepper .cap{color:var(--ash);font-size:.82rem;line-height:1.45;min-height:2.4em}
+.chip.hkey{font-family:var(--display);font-weight:800;letter-spacing:.06em}
+.chip.hkey kbd{font:inherit;display:inline-block;min-width:1.4em;text-align:center;border:1px solid var(--ash);border-radius:3px;padding:0 .3em;margin-right:.35em}
+.cols5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.5rem;width:100%}
+.cols5 figure,.pairs figure,.gal figure{margin:0;justify-items:center}
+.cols5 figcaption,.pairs figcaption,.gal figcaption{text-align:center;justify-self:stretch}
+@media (max-width:700px){.cols5{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.gal{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,232px));justify-content:center;gap:.6rem .9rem}
+@media (max-width:700px){.gal{gap:.6rem .4rem}}
+.gal figcaption{text-align:center}
+.pairs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem 1.2rem}
+.pairs li{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem;align-items:end}
+.pairs li>p{grid-column:1/-1;font-family:var(--ui);font-size:.82rem;color:var(--ash);margin:0}
+@media (max-width:600px){.pairs{grid-template-columns:minmax(0,1fr)}}
+.two-up{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;max-width:520px;margin-inline:auto;width:100%}
+.two-up figure{margin:0;justify-items:center}
+
+/* Try it */
+#light .lstage{position:relative;display:grid;justify-items:center}
+#light canvas{display:block;cursor:grab;border:1px solid var(--stone-2);background:#0c0908;max-width:100%}
+#light canvas:active{cursor:grabbing}
+/* on touch only the sun takes a drag, so a swipe over the picture still scrolls the page */
+#light .lhandle{position:absolute;left:0;top:0;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;touch-action:none;cursor:grab}
+#light:not(.ready) .lhandle{display:none}
+#light .acts{gap:.6rem}
+#light .srow{display:grid;grid-template-columns:auto 1fr auto;gap:.8rem;align-items:center}
+#light .srow .k{color:var(--ash);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+#light .srow b{color:var(--bone);font-weight:600;min-width:6.5em;text-align:right}
+#light .lmsg{min-height:2.6em}
+#light .reset{margin-left:auto}
+#light:not(.ready) canvas{opacity:.4}
