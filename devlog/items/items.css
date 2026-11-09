@@ -26,8 +26,9 @@ figure.items .legend .r{color:var(--torch)}
 .chip.hkey{font-family:var(--display);font-weight:800;letter-spacing:.06em}
 .chip.hkey kbd{font:inherit;display:inline-block;min-width:1.4em;text-align:center;border:1px solid var(--ash);border-radius:3px;padding:0 .3em;margin-right:.35em}
 .cols5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.5rem;width:100%}
-.cols5 figure,.pairs figure,.gal figure{margin:0;justify-items:center}
-.cols5 figcaption,.pairs figcaption,.gal figcaption{text-align:center;justify-self:stretch}
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;width:100%;max-width:44rem;margin-inline:auto}
+.cols5 figure,.cols3 figure,.pairs figure,.gal figure{margin:0;justify-items:center}
+.cols5 figcaption,.cols3 figcaption,.pairs figcaption,.gal figcaption{text-align:center;justify-self:stretch}
 @media (max-width:700px){.cols5{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .gal{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,232px));justify-content:center;gap:.6rem .9rem}
 @media (max-width:700px){.gal{gap:.6rem .4rem}}
