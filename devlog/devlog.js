@@ -32,11 +32,16 @@
         try{if(s>0)x.drawImage(src,0,0,sw,hh,0,0,s,H);if(s<W)x.drawImage(src,sw,hh,w-sw,hh,s,0,W-s,H)}catch(e){}};
       frame=function(){if(v.readyState>=2){live=true;draw(v,v.videoWidth,v.videoHeight/2)}else if(poster.complete&&poster.naturalWidth)draw(poster,poster.naturalWidth,poster.naturalHeight/2)};
       poster.onload=function(){if(!live)draw(poster,poster.naturalWidth,poster.naturalHeight/2)};poster.src=f.dataset.poster;
-      var loop=function(){frame();if(!v.paused){if(v.requestVideoFrameCallback)v.requestVideoFrameCallback(loop);else requestAnimationFrame(loop)}};
-      v.addEventListener('play',loop);v.addEventListener('loadeddata',frame);v.addEventListener('seeked',frame);
-      var started=false;
+      // one draw loop at a time: a pause ends it, a play starts it only if none is running
+      var running=false,loop=function(){frame();if(v.paused){running=false;return}if(v.requestVideoFrameCallback)v.requestVideoFrameCallback(loop);else requestAnimationFrame(loop)};
+      v.addEventListener('play',function(){if(!running){running=true;loop()}});v.addEventListener('loadeddata',frame);v.addEventListener('seeked',frame);
+      var started=false,seen=false;
       var go=function(){if(!started){started=true;v.src=f.dataset.src;v.load()}if(!reduce)v.play().catch(function(){})};
-      if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)go();else v.pause()})},{threshold:.2}).observe(f)}else go();
+      if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){seen=e.isIntersecting;if(e.isIntersecting)go();else v.pause()})},{threshold:.2}).observe(f)}else{seen=true;go()}
+      // a page may point the slider at another pair (data-src, data-poster) and send 'cmpsource': the new poster
+      // shows until the new video has a frame, and it plays only where the slider would play anyway
+      f.addEventListener('cmpsource',function(){live=false;poster.src=f.dataset.poster;
+        if(started){v.src=f.dataset.src;v.load();if(seen&&!reduce)v.play().catch(function(){})}});
     }
     function set(p){split=Math.max(0,Math.min(1,p));f.style.setProperty('--s',split);h.style.left=(split*100)+'%';r.value=Math.round(split*100);frame()}
     function fromX(e){var b=f.getBoundingClientRect();set((e.clientX-b.left)/b.width)}

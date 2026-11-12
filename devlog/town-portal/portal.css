@@ -1,0 +1,73 @@
+/* The town portal post's own pieces, on top of devlog.css. Started from the items post's items.css. */
+
+/* pictures of the game's art: never larger than two device pixels a picture pixel. --w is the picture's width in the
+   markup; these are the cap's values for common screens, before portal.js makes it exact */
+:root{--k2:1}
+@media (max-resolution:1dppx){:root{--k2:2}}
+@media (min-resolution:2.01dppx){:root{--k2:.6667}}
+.cap2{max-width:calc(var(--w,232) * var(--k2) * 1px)}
+.pic{margin-inline:auto;width:100%}
+.pic img{width:100%;height:auto;image-rendering:auto}
+figure.items{justify-items:center}
+figure.items figcaption{justify-self:stretch}
+.cmp.cap2{margin-inline:auto;width:100%}
+
+/* the stepped sequences */
+.stepper{justify-items:stretch}
+.stepper .stage{display:grid;justify-items:center;gap:.4rem}
+.stepper .stage img{width:100%;height:auto}
+.stepper .rangewrap{display:grid;gap:.25rem}
+.stepper .cap,.layers .cap{color:var(--ash);font-size:.82rem;line-height:1.45;min-height:2.4em}
+/* this post's range: a fixed 18 px thumb, so the ticks under it can sit exactly under each stop */
+.stepper input[type=range]{-webkit-appearance:none;appearance:none;height:22px;background:transparent;margin:0}
+.stepper input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:rgba(163,149,127,.35)}
+.stepper input[type=range]::-moz-range-track{height:4px;border-radius:2px;background:rgba(163,149,127,.35)}
+.stepper input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;margin-top:-7px;border-radius:50%;background:var(--ember);border:2px solid var(--bone)}
+.stepper input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--ember);border:2px solid var(--bone)}
+.stepper .ticks{position:relative;height:1.3em;margin:0 9px;color:var(--ash);font-size:.68rem;letter-spacing:.06em}
+.stepper .ticks span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+/* a stack: every picture of an animated stepper in one cell, one shown */
+.stepper .stack{position:relative;display:grid}
+.stepper .stack img{grid-area:1/1}
+/* until portal.js has set the stack up (or without it), the first picture shows */
+.stepper .stack.ready img{opacity:0}
+.stepper .stack.ready img.on{opacity:1}
+
+/* galleries and pairs */
+.gal{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,232px));justify-content:center;gap:.6rem .9rem}
+@media (max-width:700px){.gal{gap:.6rem .4rem}}
+.gal figure{margin:0;justify-items:center}
+.gal figcaption{text-align:center;justify-self:stretch}
+.two-up{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;max-width:900px;margin-inline:auto;width:100%}
+.two-up figure{margin:0;justify-items:center}
+
+/* the other Diablos: four short clips in a grid, each letterboxed into the same 4:3 box (the Diablo III clip is 16:9) */
+.games{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem 1.2rem}
+.games figure{margin:0;display:grid;gap:.35rem;align-content:start}
+.games video{width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;background:#000;border:1px solid var(--stone-2)}
+.games b{font-family:var(--display);font-weight:800;font-size:.95rem;letter-spacing:.04em}
+.games figcaption{font-family:var(--ui);font-size:.82rem;color:var(--ash);line-height:1.45}
+.games figcaption a{color:var(--ash)}
+@media (max-width:600px){.games{grid-template-columns:minmax(0,1fr)}}
+.shared{margin:0;padding-left:1.2em;display:grid;gap:.35rem}
+.shared b{font-weight:600}
+
+/* the layers toy */
+.layers .stage{display:grid;justify-items:center;position:relative}
+.layers canvas{width:100%;max-width:640px;height:auto;display:block;background:#000;border:1px solid var(--stone-2)}
+.layers video{position:absolute;width:2px;height:2px;opacity:0;pointer-events:none;left:0;top:0}
+.shared .ours{color:var(--ash)}
+@media (max-width:420px){.stepper .ticks{font-size:.6rem;letter-spacing:0}}
+.scenes{display:grid;gap:.6rem}
+.scenes .row{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+.scenes .row .k{color:var(--ash);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-right:.4rem;min-width:6.5rem}
+
+/* without the script: the toy's whole grid and the first scene's poster instead of the empty canvases */
+.noscript-poster{width:100%;height:auto;display:block}
+
+/* the reel's posts as icons, the homepage's icon row */
+.iconrow{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.iconrow a{display:grid;place-items:center;width:2.6rem;height:2.6rem;border:1px solid var(--stone-2);background:rgba(23,18,15,.7);border-radius:3px;transition:border-color .15s}
+.iconrow a:hover,.iconrow a:focus-visible{border-color:var(--torch)}
+.iconrow svg{width:1.15rem;height:1.15rem;fill:var(--ash)}
+.iconrow a:hover svg,.iconrow a:focus-visible svg{fill:var(--torch)}
