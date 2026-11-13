@@ -4,7 +4,7 @@
   <title>Девлог Brutal Diablo</title>
   <link>https://brutaldiablo.com/ru/devlog/</link>
   <atom:link href="https://brutaldiablo.com/ru/devlog/feed.xml" rel="self" type="application/rss+xml"/>
-  <description>Как делались крупные части Brutal Diablo: технологии, тупики и чему мы научились.</description>
+  <description>Как делались большие куски Brutal Diablo: что под капотом, какие были тупики и чему мы научились.</description>
   <language>ru</language>
   <lastBuildDate>Thu, 12 Nov 2026 09:30:00 +0100</lastBuildDate>
   <image><url>https://brutaldiablo.com/img/mark_180.png</url><title>Девлог Brutal Diablo</title><link>https://brutaldiablo.com/ru/devlog/</link></image>
@@ -13,17 +13,17 @@
     <link>https://brutaldiablo.com/ru/devlog/town-portal/</link>
     <guid isPermaLink="true">https://brutaldiablo.com/ru/devlog/town-portal/</guid>
     <pubDate>Thu, 12 Nov 2026 09:30:00 +0100</pubDate>
-    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/town-portal/og.jpg" width="1200"/></p><p>Как Town Portal из Diablo снова ожил и почему большая его часть осталась такой, какой её нарисовали в Blizzard North.</p>]]></description>
+    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/town-portal/og.jpg" width="1200"/></p><p>Как Town Portal из Diablo снова ожил и почему почти всё в нём осталось таким, каким его нарисовали в Blizzard North.</p>]]></description>
   </item>
   <item>
     <title>Стряхиваем пыль с лута Diablo</title>
     <link>https://brutaldiablo.com/ru/devlog/items/</link>
     <guid isPermaLink="true">https://brutaldiablo.com/ru/devlog/items/</guid>
     <pubDate>Mon, 09 Nov 2026 09:03:00 +0100</pubDate>
-    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/items/og.jpg" width="1200"/></p><p>Как мы перерисовали все 179 картинок инвентаря Diablo и почему труднее всего было оставить их в покое.</p>]]></description>
+    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/items/og.jpg" width="1200"/></p><p>Как мы перерисовали все 179 картинок из инвентаря Diablo и почему труднее всего было оставить их в покое.</p>]]></description>
   </item>
   <item>
-    <title>Кровь, которая должна была быть в Diablo</title>
+    <title>Кровь, которой заслуживала Diablo</title>
     <link>https://brutaldiablo.com/ru/devlog/gore/</link>
     <guid isPermaLink="true">https://brutaldiablo.com/ru/devlog/gore/</guid>
     <pubDate>Sun, 08 Nov 2026 12:00:00 +0100</pubDate>
