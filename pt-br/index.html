@@ -241,6 +241,19 @@ figcaption .wip{display:block;margin-top:.35rem;opacity:.8}
 .feature .btn{justify-self:start;pointer-events:none}
 @media (max-width:760px){.feature{grid-template-columns:minmax(0,1fr)}.feature .fimg img{aspect-ratio:1200/630;height:auto}}
 
+/* the earlier posts, under the latest */
+.earlier{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1rem;margin-top:1rem}
+.mini{display:grid;grid-template-columns:13rem minmax(0,1fr);text-decoration:none;border:1px solid var(--stone-2);background:var(--stone);border-radius:3px;overflow:hidden;transition:border-color .15s}
+.mini:hover{border-color:var(--torch);color:var(--bone)}
+.mini img{width:100%;height:100%;min-height:8.125rem;object-fit:contain;background:#000;display:block}
+.devfoot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem 1.5rem;margin-top:1.2rem}
+.devfoot p{margin:0}
+.mini .mt{display:grid;gap:.4rem;align-content:center;padding:.9rem 1.1rem}
+.mini .meta{font-family:var(--ui);font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ash)}
+.mini .mtitle{font-family:var(--display);font-weight:700;font-size:1.2rem;line-height:1.15;text-wrap:balance}
+.mini .mdek{font-size:.88rem;line-height:1.45;color:var(--ash)}
+@media (max-width:560px){.earlier{grid-template-columns:minmax(0,1fr)}.mini{grid-template-columns:8rem minmax(0,1fr)}.mini img{min-height:5rem}.mini .mt{padding:.75rem .9rem}.mini .mtitle{font-size:1.1rem}.mini .mdek{display:none}}
+
 /* a new section, marked in the menu */
 .bar .anchors a.isnew{display:inline-flex;align-items:center;gap:.4em;color:var(--bone)}
 .newtag{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1;padding:.3em .45em;border-radius:2px;background:var(--ember);color:#fff6ea}
@@ -270,10 +283,11 @@ figcaption .wip{display:block;margin-top:.35rem;opacity:.8}
 <div class="strip" id="items"><div><h3>Itens</h3><p>Todos os itens do jogo, recriados fiéis ao original. O Tetris de inventário continua sofrido do mesmo jeito.</p><p style="margin-top:.6rem"><a href="/pt-br/items/">Veja o loot →</a>   <a href="/pt-br/devlog/items/">Como fizemos →</a></p></div><figure class="media cmp" data-poster="/img/pair_items_poster.jpg" data-src="/img/pair_items.mp4"><canvas aria-label="A mesma mochila, Diablo (1996) à esquerda e Brutal Diablo à direita" height="720" width="1280"></canvas><video aria-hidden="true" loop="" muted="" playsinline="" preload="none" tabindex="-1"></video><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span aria-hidden="true" class="handle"></span><input aria-label="Mova o divisor entre Diablo (1996) e Brutal Diablo" max="100" min="0" type="range" value="50"/><figcaption>Uma mochila de lendas, com a Cota de Talas no topo</figcaption></figure></div>
 </div></div></section>
 <section class="devlog-band" id="devlog"><div class="wrap">
-<div class="followhead"><h2>Devlog</h2><a class="btn" href="/pt-br/devlog/">Todos os posts</a></div>
+<h2>Devlog</h2>
 <p class="lead">Como o mod é feito: a tecnologia, os becos sem saída, o que aprendemos. Escrito para quem conhece bem o Diablo.</p>
-<a class="feature" href="/pt-br/devlog/town-portal/"><span class="fimg"><img alt="O Town Portal à noite no Diablo (1996) ao lado do Brutal Diablo" height="630" loading="lazy" src="/img/devlog/town-portal/og.jpg" width="1200"/></span><span class="ftext"><span class="fmeta">Post mais recente · 4 min de leitura</span><span class="ftitle">Ele chama o seu nome?</span><span class="fdek">Como o Town Portal do Diablo voltou à vida, e por que a maior parte dele ficou como a Blizzard North desenhou.</span><span class="btn primary">Ler o post →</span></span></a>
-<p class="muted small">Posts novos saem junto com as novidades maiores. Acompanhe por <a href="/pt-br/devlog/feed.xml">RSS</a> ou no Discord.</p>
+<a class="feature" href="/pt-br/devlog/town-portal/"><span class="fimg"><img alt="O Town Portal à noite no Diablo (1996) ao lado do Brutal Diablo" height="630" loading="lazy" src="/img/devlog/town-portal/og.jpg" width="1200"/></span><span class="ftext"><span class="fmeta"><time datetime="2026-11-12">12 de novembro de 2026</time> · 4 min de leitura</span><span class="ftitle">Ele chama o seu nome?</span><span class="fdek">Como o Town Portal do Diablo voltou à vida, e por que a maior parte dele ficou como a Blizzard North desenhou.</span><span class="btn primary">Ler o post →</span></span></a>
+<div class="earlier"><a class="mini" href="/pt-br/devlog/items/"><img alt="A Cota de Talas no Diablo (1996) ao lado do Brutal Diablo" height="300" loading="lazy" src="/img/devlog/items/card.jpg" width="480"/><span class="mt"><span class="meta"><time datetime="2026-11-09">9 de novembro de 2026</time> · 5 min de leitura</span><span class="mtitle">Tirando a poeira do loot do Diablo</span><span class="mdek">Como repintamos todas as 179 imagens de inventário do Diablo, e por que o mais difícil foi não mexer nelas.</span></span></a><a class="mini" href="/pt-br/devlog/gore/"><img alt="O Guerreiro num canto da Catedral, sangue no chão e nas paredes" height="300" loading="lazy" src="/img/devlog/gore/card.jpg" width="480"/><span class="mt"><span class="meta"><time datetime="2026-11-08">8 de novembro de 2026</time> · 10 min de leitura</span><span class="mtitle">O sangue que o Diablo era para ter</span><span class="mdek">A sala do Açougueiro como referência, um vermelho que sobrevive a qualquer monstro, gotas sombreadas a partir da pedra, e pisos e paredes que guardam o sangue.</span></span></a></div>
+<div class="devfoot"><p class="muted small">Posts novos saem junto com as novidades maiores. Acompanhe por <a href="/pt-br/devlog/feed.xml">RSS</a> ou no Discord.</p><a class="btn" href="/pt-br/devlog/">Todos os posts</a></div>
 </div></section>
 <section id="download"><div class="wrap"><h2>Downloads</h2><p class="lead">Pedaços direto da bancada.</p><p>O material do desenvolvimento vai aparecendo aqui conforme a gente produz. E, no início de 2027, o mod em si. Por enquanto, nada.</p><p class="muted small">Onde estamos: Tristram, a Catedral e as Catacumbas estão prontas. O resto da masmorra vem depois, nível por nível.</p></div></section>
 <section id="follow"><div class="wrap"><div class="followhead"><h2>Siga</h2><a class="btn primary dc" href="https://discord.gg/NsG8gnhnJH"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><use href="#i-discord"></use></svg>Entre no Discord</a></div><p>Clipes novos quase todo dia, com bugs e tudo. Escolha o seu veneno:</p><ul class="tiles"><li><a href="https://www.youtube.com/@brutaldiablo"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><use href="#i-youtube"></use></svg><span>YouTube<small>@brutaldiablo</small></span></a></li>

@@ -241,6 +241,19 @@ figcaption .wip{display:block;margin-top:.35rem;opacity:.8}
 .feature .btn{justify-self:start;pointer-events:none}
 @media (max-width:760px){.feature{grid-template-columns:minmax(0,1fr)}.feature .fimg img{aspect-ratio:1200/630;height:auto}}
 
+/* the earlier posts, under the latest */
+.earlier{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1rem;margin-top:1rem}
+.mini{display:grid;grid-template-columns:13rem minmax(0,1fr);text-decoration:none;border:1px solid var(--stone-2);background:var(--stone);border-radius:3px;overflow:hidden;transition:border-color .15s}
+.mini:hover{border-color:var(--torch);color:var(--bone)}
+.mini img{width:100%;height:100%;min-height:8.125rem;object-fit:contain;background:#000;display:block}
+.devfoot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem 1.5rem;margin-top:1.2rem}
+.devfoot p{margin:0}
+.mini .mt{display:grid;gap:.4rem;align-content:center;padding:.9rem 1.1rem}
+.mini .meta{font-family:var(--ui);font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ash)}
+.mini .mtitle{font-family:var(--display);font-weight:700;font-size:1.2rem;line-height:1.15;text-wrap:balance}
+.mini .mdek{font-size:.88rem;line-height:1.45;color:var(--ash)}
+@media (max-width:560px){.earlier{grid-template-columns:minmax(0,1fr)}.mini{grid-template-columns:8rem minmax(0,1fr)}.mini img{min-height:5rem}.mini .mt{padding:.75rem .9rem}.mini .mtitle{font-size:1.1rem}.mini .mdek{display:none}}
+
 /* a new section, marked in the menu */
 .bar .anchors a.isnew{display:inline-flex;align-items:center;gap:.4em;color:var(--bone)}
 .newtag{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1;padding:.3em .45em;border-radius:2px;background:var(--ember);color:#fff6ea}
@@ -270,10 +283,11 @@ figcaption .wip{display:block;margin-top:.35rem;opacity:.8}
 <div class="strip" id="items"><div><h3>Przedmioty</h3><p>Każdy przedmiot w grze, odtworzony wiernie według oryginału. Tetris w ekwipunku dalej boli dokładnie tak samo.</p><p style="margin-top:.6rem"><a href="/pl/items/">Zobacz łupy →</a>   <a href="/pl/devlog/items/">Jak je zrobiliśmy →</a></p></div><figure class="media cmp" data-poster="/img/pair_items_poster.jpg" data-src="/img/pair_items.mp4"><canvas aria-label="Ten sam plecak: Diablo (1996) po lewej, Brutal Diablo po prawej" height="720" width="1280"></canvas><video aria-hidden="true" loop="" muted="" playsinline="" preload="none" tabindex="-1"></video><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span aria-hidden="true" class="handle"></span><input aria-label="Przesuń suwak między Diablo (1996) a Brutal Diablo" max="100" min="0" type="range" value="50"/><figcaption>Plecak pełen legend, na wierzchu Karacenowa Zbroja</figcaption></figure></div>
 </div></div></section>
 <section class="devlog-band" id="devlog"><div class="wrap">
-<div class="followhead"><h2>Devlog</h2><a class="btn" href="/pl/devlog/">Wszystkie wpisy</a></div>
+<h2>Devlog</h2>
 <p class="lead">Jak to powstaje: technikalia, ślepe uliczki i to, czego się nauczyliśmy. Pisane dla ludzi, którzy dobrze znają Diablo.</p>
-<a class="feature" href="/pl/devlog/town-portal/"><span class="fimg"><img alt="Town Portal nocą: Diablo (1996) obok Brutal Diablo" height="630" loading="lazy" src="/img/devlog/town-portal/og.jpg" width="1200"/></span><span class="ftext"><span class="fmeta">Najnowszy wpis · 4 min czytania</span><span class="ftitle">Woła cię po imieniu?</span><span class="fdek">Jak Town Portal z Diablo znów ożył i dlaczego prawie wszystko zostało w nim tak, jak narysowało to Blizzard North.</span><span class="btn primary">Czytaj wpis →</span></span></a>
-<p class="muted small">Nowe wpisy pojawiają się razem z większymi nowościami. Śledź je przez <a href="/pl/devlog/feed.xml">RSS</a> albo na Discordzie.</p>
+<a class="feature" href="/pl/devlog/town-portal/"><span class="fimg"><img alt="Town Portal nocą: Diablo (1996) obok Brutal Diablo" height="630" loading="lazy" src="/img/devlog/town-portal/og.jpg" width="1200"/></span><span class="ftext"><span class="fmeta"><time datetime="2026-11-12">12 listopada 2026</time> · 4 min czytania</span><span class="ftitle">Woła cię po imieniu?</span><span class="fdek">Jak Town Portal z Diablo znów ożył i dlaczego prawie wszystko zostało w nim tak, jak narysowało to Blizzard North.</span><span class="btn primary">Czytaj wpis →</span></span></a>
+<div class="earlier"><a class="mini" href="/pl/devlog/items/"><img alt="Karacenowa Zbroja w Diablo (1996) obok Brutal Diablo" height="300" loading="lazy" src="/img/devlog/items/card.jpg" width="480"/><span class="mt"><span class="meta"><time datetime="2026-11-09">9 listopada 2026</time> · 5 min czytania</span><span class="mtitle">Odkurzamy loot z Diablo</span><span class="mdek">Jak przemalowaliśmy wszystkie 179 obrazków ekwipunku z Diablo i dlaczego najtrudniej było zostawić je w spokoju.</span></span></a><a class="mini" href="/pl/devlog/gore/"><img alt="Wojownik w kącie Katedry, krew na podłodze i ścianach" height="300" loading="lazy" src="/img/devlog/gore/card.jpg" width="480"/><span class="mt"><span class="meta"><time datetime="2026-11-08">8 listopada 2026</time> · 10 min czytania</span><span class="mtitle">Krew, jaka miała być w Diablo</span><span class="mdek">Komnata Rzeźnika jako wzorzec, czerwień, która przetrwa każdego potwora, krople cieniowane według kamienia oraz podłogi i ściany, na których krew zostaje.</span></span></a></div>
+<div class="devfoot"><p class="muted small">Nowe wpisy pojawiają się razem z większymi nowościami. Śledź je przez <a href="/pl/devlog/feed.xml">RSS</a> albo na Discordzie.</p><a class="btn" href="/pl/devlog/">Wszystkie wpisy</a></div>
 </div></section>
 <section id="download"><div class="wrap"><h2>Pobierz</h2><p class="lead">Kawałki prosto z warsztatu.</p><p>Materiały z prac nad modem lądują tu na bieżąco. A na początku 2027 sam mod. Na razie nic tu nie ma.</p><p class="muted small">Gdzie jesteśmy: Tristram, Katedra i Katakumby są gotowe. Reszta lochów w drodze, poziom po poziomie.</p></div></section>
 <section id="follow"><div class="wrap"><div class="followhead"><h2>Śledź</h2><a class="btn primary dc" href="https://discord.gg/NsG8gnhnJH"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><use href="#i-discord"></use></svg>Wbij na Discorda</a></div><p>Nowe klipy prawie codziennie, razem z bugami. Do wyboru, do koloru:</p><ul class="tiles"><li><a href="https://www.youtube.com/@brutaldiablo"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><use href="#i-youtube"></use></svg><span>YouTube<small>@brutaldiablo</small></span></a></li>

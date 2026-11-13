@@ -241,6 +241,19 @@ figcaption .wip{display:block;margin-top:.35rem;opacity:.8}
 .feature .btn{justify-self:start;pointer-events:none}
 @media (max-width:760px){.feature{grid-template-columns:minmax(0,1fr)}.feature .fimg img{aspect-ratio:1200/630;height:auto}}
 
+/* the earlier posts, under the latest */
+.earlier{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1rem;margin-top:1rem}
+.mini{display:grid;grid-template-columns:13rem minmax(0,1fr);text-decoration:none;border:1px solid var(--stone-2);background:var(--stone);border-radius:3px;overflow:hidden;transition:border-color .15s}
+.mini:hover{border-color:var(--torch);color:var(--bone)}
+.mini img{width:100%;height:100%;min-height:8.125rem;object-fit:contain;background:#000;display:block}
+.devfoot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem 1.5rem;margin-top:1.2rem}
+.devfoot p{margin:0}
+.mini .mt{display:grid;gap:.4rem;align-content:center;padding:.9rem 1.1rem}
+.mini .meta{font-family:var(--ui);font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ash)}
+.mini .mtitle{font-family:var(--display);font-weight:700;font-size:1.2rem;line-height:1.15;text-wrap:balance}
+.mini .mdek{font-size:.88rem;line-height:1.45;color:var(--ash)}
+@media (max-width:560px){.earlier{grid-template-columns:minmax(0,1fr)}.mini{grid-template-columns:8rem minmax(0,1fr)}.mini img{min-height:5rem}.mini .mt{padding:.75rem .9rem}.mini .mtitle{font-size:1.1rem}.mini .mdek{display:none}}
+
 /* a new section, marked in the menu */
 .bar .anchors a.isnew{display:inline-flex;align-items:center;gap:.4em;color:var(--bone)}
 .newtag{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1;padding:.3em .45em;border-radius:2px;background:var(--ember);color:#fff6ea}
@@ -270,10 +283,11 @@ figcaption .wip{display:block;margin-top:.35rem;opacity:.8}
 <div class="strip" id="items"><div><h3>Предметы</h3><p>Каждый предмет в игре, воссозданный по оригиналу. Тетрис в инвентаре остался таким же мучительным.</p><p style="margin-top:.6rem"><a href="/ru/items/">Посмотреть добычу →</a>   <a href="/ru/devlog/items/">Как мы их сделали →</a></p></div><figure class="media cmp" data-poster="/img/pair_items_poster.jpg" data-src="/img/pair_items.mp4"><canvas aria-label="Тот же рюкзак: слева Diablo (1996), справа Brutal Diablo" height="720" width="1280"></canvas><video aria-hidden="true" loop="" muted="" playsinline="" preload="none" tabindex="-1"></video><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span aria-hidden="true" class="handle"></span><input aria-label="Двигайте ползунок между Diablo (1996) и Brutal Diablo" max="100" min="0" type="range" value="50"/><figcaption>Рюкзак с легендами, сверху Шинная Кольчуга</figcaption></figure></div>
 </div></div></section>
 <section class="devlog-band" id="devlog"><div class="wrap">
-<div class="followhead"><h2>Девлог</h2><a class="btn" href="/ru/devlog/">Все посты</a></div>
+<h2>Девлог</h2>
 <p class="lead">Как это делается: технологии, тупики и чему мы научились. Написано для тех, кто хорошо знает Diablo.</p>
-<a class="feature" href="/ru/devlog/town-portal/"><span class="fimg"><img alt="Town Portal ночью: Diablo (1996) рядом с Brutal Diablo" height="630" loading="lazy" src="/img/devlog/town-portal/og.jpg" width="1200"/></span><span class="ftext"><span class="fmeta">Свежий пост · 4 мин чтения</span><span class="ftitle">Он зовёт вас по имени?</span><span class="fdek">Как Town Portal из Diablo снова ожил и почему почти всё в нём осталось таким, каким его нарисовали в Blizzard North.</span><span class="btn primary">Читать пост →</span></span></a>
-<p class="muted small">Новые посты выходят вместе с крупными фичами. Следите за ними по <a href="/ru/devlog/feed.xml">RSS</a> или в Discord.</p>
+<a class="feature" href="/ru/devlog/town-portal/"><span class="fimg"><img alt="Town Portal ночью: Diablo (1996) рядом с Brutal Diablo" height="630" loading="lazy" src="/img/devlog/town-portal/og.jpg" width="1200"/></span><span class="ftext"><span class="fmeta"><time datetime="2026-11-12">12 ноября 2026 г.</time> · 4 мин чтения</span><span class="ftitle">Он зовёт вас по имени?</span><span class="fdek">Как Town Portal из Diablo снова ожил и почему почти всё в нём осталось таким, каким его нарисовали в Blizzard North.</span><span class="btn primary">Читать пост →</span></span></a>
+<div class="earlier"><a class="mini" href="/ru/devlog/items/"><img alt="Шинная Кольчуга в Diablo (1996) рядом с Brutal Diablo" height="300" loading="lazy" src="/img/devlog/items/card.jpg" width="480"/><span class="mt"><span class="meta"><time datetime="2026-11-09">9 ноября 2026 г.</time> · 5 мин чтения</span><span class="mtitle">Стряхиваем пыль с лута Diablo</span><span class="mdek">Как мы перерисовали все 179 картинок из инвентаря Diablo и почему труднее всего было оставить их в покое.</span></span></a><a class="mini" href="/ru/devlog/gore/"><img alt="Воин в углу Собора, кровь на полу и стенах" height="300" loading="lazy" src="/img/devlog/gore/card.jpg" width="480"/><span class="mt"><span class="meta"><time datetime="2026-11-08">8 ноября 2026 г.</time> · 10 мин чтения</span><span class="mtitle">Кровь, которой заслуживала Diablo</span><span class="mdek">Комната Мясника как образец, красный, который выживает на любом монстре, капли, которые берут оттенок у камня, а ещё полы и стены, на которых кровь остаётся.</span></span></a></div>
+<div class="devfoot"><p class="muted small">Новые посты выходят вместе с крупными фичами. Следите за ними по <a href="/ru/devlog/feed.xml">RSS</a> или в Discord.</p><a class="btn" href="/ru/devlog/">Все посты</a></div>
 </div></section>
 <section id="download"><div class="wrap"><h2>Скачать</h2><p class="lead">Кое-что с верстака.</p><p>Материалы из разработки будут появляться здесь по мере готовности. А в начале 2027 года появится и сам мод. Пока тут пусто.</p><p class="muted small">Где мы сейчас: Тристрам, Собор и Катакомбы готовы. Остальное подземелье на подходе, уровень за уровнем.</p></div></section>
 <section id="follow"><div class="wrap"><div class="followhead"><h2>Соцсети</h2><a class="btn primary dc" href="https://discord.gg/NsG8gnhnJH"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><use href="#i-discord"></use></svg>Заходите в Discord</a></div><p>Новые клипы почти каждый день, вместе с багами. Выбирайте яд по вкусу:</p><ul class="tiles"><li><a href="https://www.youtube.com/@brutaldiablo"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><use href="#i-youtube"></use></svg><span>YouTube<small>@brutaldiablo</small></span></a></li>

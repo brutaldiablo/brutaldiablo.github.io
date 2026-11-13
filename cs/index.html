@@ -241,6 +241,19 @@ figcaption .wip{display:block;margin-top:.35rem;opacity:.8}
 .feature .btn{justify-self:start;pointer-events:none}
 @media (max-width:760px){.feature{grid-template-columns:minmax(0,1fr)}.feature .fimg img{aspect-ratio:1200/630;height:auto}}
 
+/* the earlier posts, under the latest */
+.earlier{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1rem;margin-top:1rem}
+.mini{display:grid;grid-template-columns:13rem minmax(0,1fr);text-decoration:none;border:1px solid var(--stone-2);background:var(--stone);border-radius:3px;overflow:hidden;transition:border-color .15s}
+.mini:hover{border-color:var(--torch);color:var(--bone)}
+.mini img{width:100%;height:100%;min-height:8.125rem;object-fit:contain;background:#000;display:block}
+.devfoot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem 1.5rem;margin-top:1.2rem}
+.devfoot p{margin:0}
+.mini .mt{display:grid;gap:.4rem;align-content:center;padding:.9rem 1.1rem}
+.mini .meta{font-family:var(--ui);font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ash)}
+.mini .mtitle{font-family:var(--display);font-weight:700;font-size:1.2rem;line-height:1.15;text-wrap:balance}
+.mini .mdek{font-size:.88rem;line-height:1.45;color:var(--ash)}
+@media (max-width:560px){.earlier{grid-template-columns:minmax(0,1fr)}.mini{grid-template-columns:8rem minmax(0,1fr)}.mini img{min-height:5rem}.mini .mt{padding:.75rem .9rem}.mini .mtitle{font-size:1.1rem}.mini .mdek{display:none}}
+
 /* a new section, marked in the menu */
 .bar .anchors a.isnew{display:inline-flex;align-items:center;gap:.4em;color:var(--bone)}
 .newtag{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1;padding:.3em .45em;border-radius:2px;background:var(--ember);color:#fff6ea}
@@ -270,10 +283,11 @@ figcaption .wip{display:block;margin-top:.35rem;opacity:.8}
 <div class="strip" id="items"><div><h3>Předměty</h3><p>Každý předmět ve hře, znovu vytvořený podle originálu. Inventářový Tetris bolí pořád stejně.</p><p style="margin-top:.6rem"><a href="/cs/items/">Mrkni na kořist →</a>   <a href="/cs/devlog/items/">Jak jsme je dělali →</a></p></div><figure class="media cmp" data-poster="/img/pair_items_poster.jpg" data-src="/img/pair_items.mp4"><canvas aria-label="Stejný batoh, vlevo Diablo (1996), vpravo Brutal Diablo" height="720" width="1280"></canvas><video aria-hidden="true" loop="" muted="" playsinline="" preload="none" tabindex="-1"></video><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span aria-hidden="true" class="handle"></span><input aria-label="Posuň dělicí čáru mezi verzemi Diablo (1996) a Brutal Diablo" max="100" min="0" type="range" value="50"/><figcaption>Batoh plný legend, navrchu Lamelová Zbroj</figcaption></figure></div>
 </div></div></section>
 <section class="devlog-band" id="devlog"><div class="wrap">
-<div class="followhead"><h2>Devlog</h2><a class="btn" href="/cs/devlog/">Všechny články</a></div>
+<h2>Devlog</h2>
 <p class="lead">Jak to vzniká: technologie, slepé uličky, co jsme se naučili. Psané pro lidi, co Diablo dobře znají.</p>
-<a class="feature" href="/cs/devlog/town-portal/"><span class="fimg"><img alt="Town Portal v noci, Diablo (1996) vedle Brutal Diablo" height="630" loading="lazy" src="/img/devlog/town-portal/og.jpg" width="1200"/></span><span class="ftext"><span class="fmeta">Nejnovější článek · 4 min čtení</span><span class="ftitle">Volá tě jménem?</span><span class="fdek">Jak Town Portal z Diabla znovu ožil a proč z něj většina zůstala tak, jak ji nakreslili v Blizzard North.</span><span class="btn primary">Přečíst článek →</span></span></a>
-<p class="muted small">Nové články vycházejí s většími novinkami. Sleduj je přes <a href="/cs/devlog/feed.xml">RSS</a> nebo na Discordu.</p>
+<a class="feature" href="/cs/devlog/town-portal/"><span class="fimg"><img alt="Town Portal v noci, Diablo (1996) vedle Brutal Diablo" height="630" loading="lazy" src="/img/devlog/town-portal/og.jpg" width="1200"/></span><span class="ftext"><span class="fmeta"><time datetime="2026-11-12">12. listopadu 2026</time> · 4 min čtení</span><span class="ftitle">Volá tě jménem?</span><span class="fdek">Jak Town Portal z Diabla znovu ožil a proč z něj většina zůstala tak, jak ji nakreslili v Blizzard North.</span><span class="btn primary">Přečíst článek →</span></span></a>
+<div class="earlier"><a class="mini" href="/cs/devlog/items/"><img alt="Lamelová Zbroj, Diablo (1996) vedle Brutal Diablo" height="300" loading="lazy" src="/img/devlog/items/card.jpg" width="480"/><span class="mt"><span class="meta"><time datetime="2026-11-09">9. listopadu 2026</time> · 5 min čtení</span><span class="mtitle">Oprašujeme loot z Diabla</span><span class="mdek">Jak jsme přemalovali všech 179 obrázků z inventáře Diabla a proč bylo nejtěžší nechat je na pokoji.</span></span></a><a class="mini" href="/cs/devlog/gore/"><img alt="Válečník v rohu Katedrály, krev na podlaze i na zdech" height="300" loading="lazy" src="/img/devlog/gore/card.jpg" width="480"/><span class="mt"><span class="meta"><time datetime="2026-11-08">8. listopadu 2026</time> · 10 min čtení</span><span class="mtitle">Krev, jakou mělo Diablo mít</span><span class="mdek">Řezníkova místnost jako předloha, červená, která přežije každé monstrum, kapky stínované podle kamene a podlahy a zdi, na kterých krev zůstane.</span></span></a></div>
+<div class="devfoot"><p class="muted small">Nové články vycházejí s většími novinkami. Sleduj je přes <a href="/cs/devlog/feed.xml">RSS</a> nebo na Discordu.</p><a class="btn" href="/cs/devlog/">Všechny články</a></div>
 </div></section>
 <section id="download"><div class="wrap"><h2>Ke stažení</h2><p class="lead">Střípky z dílny.</p><p>Sem budou průběžně přibývat materiály z vývoje. A začátkem roku 2027 i samotný mod. Zatím tu nic není.</p><p class="muted small">Kde jsme: Tristram, Katedrála a Katakomby jsou hotové. Zbytek podzemí přijde na řadu, patro po patru.</p></div></section>
 <section id="follow"><div class="wrap"><div class="followhead"><h2>Sleduj</h2><a class="btn primary dc" href="https://discord.gg/NsG8gnhnJH"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><use href="#i-discord"></use></svg>Přidej se na Discord</a></div><p>Nové klipy skoro každý den, i s bugy. Vyber si svůj jed:</p><ul class="tiles"><li><a href="https://www.youtube.com/@brutaldiablo"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><use href="#i-youtube"></use></svg><span>YouTube<small>@brutaldiablo</small></span></a></li>
