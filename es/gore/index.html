@@ -23,7 +23,7 @@
 <meta content="#0c0908" name="theme-color"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&amp;family=Crimson+Pro:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&amp;family=Golos+Text:wght@400..700&amp;display=swap" rel="stylesheet"/>
 <style>
 /* Layout: one full-bleed image opens the page; everything after it sits in a single 64ch column,
    sections parted by a thin ember rule. Single dark theme by choice: this is a dungeon. */
@@ -35,20 +35,20 @@
   --ash:#a3957f;        /* muted text */
   --ember:#b4281d;      /* the accent: dried blood, the monogram's red */
   --torch:#e58b3a;      /* highlights, links on hover */
-  --display:"Cinzel",Georgia,"Times New Roman",serif;
-  --body:"Crimson Pro",Georgia,"Times New Roman",serif;
-  --ui:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --display:"Brygada 1918",Georgia,"Times New Roman",serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ui:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--ink);color:var(--bone);font-family:var(--body);font-size:1.2rem;line-height:1.55}
+body{margin:0;background:var(--ink);color:var(--bone);font-family:var(--body);font-size:1.06rem;line-height:1.5}
 a{color:var(--bone);text-decoration-color:var(--ember);text-underline-offset:.15em;text-decoration-thickness:1px}
 a:hover{color:var(--torch)}
 :focus-visible{outline:2px solid var(--torch);outline-offset:3px}
 img{max-width:100%;display:block}
-h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.1;text-wrap:balance;margin:0}
-h2{font-size:1.5rem;letter-spacing:.04em;text-transform:uppercase;color:var(--bone)}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:1.62rem;letter-spacing:0;color:var(--bone)}
 p{margin:0}
 .wrap{max-width:64ch;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 
@@ -58,10 +58,10 @@ p{margin:0}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,9,8,.15) 0%,rgba(12,9,8,0) 30%,rgba(12,9,8,.55) 65%,var(--ink) 100%)}
 .hero .text{position:relative;z-index:1;margin-top:-9rem;padding-bottom:2rem;display:grid;gap:1rem;justify-items:start}
 .mark{width:84px;height:84px;border-radius:50%;box-shadow:0 0 0 2px var(--ink),0 0 0 3px var(--stone-2),0 10px 30px rgba(0,0,0,.6)}
-h1{font-size:clamp(2.4rem,7vw,4.4rem);letter-spacing:.06em;text-transform:uppercase;color:var(--bone);text-shadow:0 2px 24px rgba(0,0,0,.8)}
-h1 small{display:block;font-family:var(--ui);font-weight:600;font-size:.8rem;letter-spacing:.3em;color:var(--torch);margin-bottom:.6rem}
-.pitch{font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.3;max-width:28ch}
-.pitch em{font-style:italic;color:var(--ash)}
+h1{font-size:clamp(2.6rem,7.5vw,4.75rem);letter-spacing:-.005em;color:var(--bone);text-shadow:0 2px 24px rgba(0,0,0,.8)}
+h1 small{display:block;font-family:var(--ui);font-weight:600;font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--torch);margin-bottom:.6rem}
+.pitch{font-size:clamp(1.15rem,2.6vw,1.5rem);line-height:1.35;max-width:28ch}
+.pitch em{font-family:var(--display);font-style:italic;font-size:1.1em;color:var(--ash)}
 .ctas{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.4rem}
 .btn{display:inline-flex;align-items:center;gap:.55em;font-family:var(--ui);font-weight:600;font-size:.95rem;letter-spacing:.02em;text-decoration:none;padding:.7em 1.1em;border:1px solid var(--stone-2);background:var(--stone);color:var(--bone);border-radius:3px;transition:border-color .15s,background .15s}
 .btn:hover{border-color:var(--torch);color:var(--bone);background:var(--stone-2)}
@@ -73,13 +73,13 @@ h1 small{display:block;font-family:var(--ui);font-weight:600;font-size:.8rem;let
 section{padding-block:3rem;border-top:1px solid var(--stone-2)}
 section .wrap{display:grid;gap:1.1rem}
 section h2::before{content:"";display:inline-block;width:.55em;height:.55em;background:var(--ember);transform:rotate(45deg);margin-right:.7em;vertical-align:.08em}
-.lead{font-size:1.3rem}
+.lead{font-size:1.15rem}
 ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:.8rem}
 ul.plain li{padding-left:1.4rem;position:relative}
 ul.plain li::before{content:"";position:absolute;left:0;top:.6em;width:.5em;height:.5em;background:var(--ember);transform:rotate(45deg)}
 ul.plain b{font-weight:600;color:var(--bone)}
 .muted{color:var(--ash)}
-small,.small{font-size:.95rem}
+small,.small{font-size:.86rem}
 
 /* follow */
 .links{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.6rem;list-style:none;margin:0;padding:0}
@@ -98,7 +98,7 @@ small,.small{font-size:.95rem}
 .copy{font-family:var(--ui);font-size:.85rem;font-weight:600;background:none;border:1px solid var(--stone-2);color:var(--ash);padding:.5em .8em;border-radius:3px;cursor:pointer}
 .copy:hover{border-color:var(--torch);color:var(--bone)}
 
-footer{border-top:1px solid var(--stone-2);padding-block:2.2rem 3rem;color:var(--ash);font-size:.95rem}
+footer{border-top:1px solid var(--stone-2);padding-block:2.2rem 3rem;color:var(--ash);font-size:.86rem}
 footer .wrap{display:grid;gap:.5rem}
 footer a{color:var(--ash)}
 
@@ -106,7 +106,7 @@ footer a{color:var(--ash)}
   .hero img.bg{aspect-ratio:4/3;max-height:52vh}
   .hero .text{margin-top:-5rem}
   .mark{width:64px;height:64px}
-  body{font-size:1.1rem}
+  body{font-size:1rem}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
@@ -124,11 +124,11 @@ footer .iconrow{margin-top:.6rem;margin-top:.6rem}
 .strips{display:grid;gap:3rem;margin-top:.5rem}
 .strip{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
 .strip:nth-child(even) .media{order:-1}
-.strip h3{font-family:var(--display);font-size:1.2rem;letter-spacing:.06em;text-transform:uppercase;color:var(--torch);margin-bottom:.5rem}
+.strip h3{font-family:var(--display);font-size:1.3rem;letter-spacing:0;color:var(--torch);margin-bottom:.5rem}
 .strip .media{margin:0;border:1px solid var(--stone-2);background:var(--stone)}
 .strip .media video,.strip .media img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
 .strip .media figcaption{font-family:var(--ui);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ash);padding:.5rem .7rem}
-.strip ul.plain{margin-top:.6rem;font-size:1.08rem}
+.strip ul.plain{margin-top:.6rem;font-size:1rem}
 #about .wrap{max-width:1000px}
 .rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--stone-2)}
 .rows a{display:grid;grid-template-columns:2rem 1fr auto 1.2rem;align-items:center;gap:1rem;padding:.9em .4em;border-bottom:1px solid var(--stone-2);text-decoration:none;font-family:var(--ui);font-weight:600;transition:background .15s}
@@ -138,14 +138,14 @@ footer .iconrow{margin-top:.6rem;margin-top:.6rem}
 
 .hero video.bg{max-height:62vh}
 .hero .text{margin-top:-8rem;padding-bottom:1.6rem}
-h1{font-size:clamp(2.2rem,5.5vw,3.4rem)}
+h1{font-size:clamp(2.4rem,6vw,3.7rem)}
 .mark{width:64px;height:64px}
 section{padding-block:2.4rem}
 .strips{gap:2rem}
 .strip{grid-template-columns:2fr 3fr;gap:1.6rem}
 .strip:nth-child(even){grid-template-columns:3fr 2fr}
-.strip h3{font-size:1.05rem}
-.strip p{font-size:1.1rem}
+.strip h3{font-size:1.15rem}
+.strip p{font-size:1rem}
 #follow .wrap{max-width:1000px}
 .rows{display:grid;grid-template-columns:1fr 1fr;gap:0 2.5rem;border-top:0}
 .rows li{border-top:1px solid var(--stone-2)}.rows a{border-bottom:0}
@@ -163,7 +163,7 @@ section{padding-block:2.4rem}
 @media (max-width:480px){.tiles{grid-template-columns:repeat(3,1fr)}.tiles small{display:none}}
 
 .bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:1.2rem;padding:.5rem max(16px,env(safe-area-inset-right,0px)) .5rem max(16px,env(safe-area-inset-left,0px));background:rgba(12,9,8,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--stone-2)}
-.bar .home{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.9rem;text-decoration:none}
+.bar .home{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:700;letter-spacing:0;font-size:1.05rem;text-decoration:none}
 .bar .home img{border-radius:50%}
 .bar .anchors{display:flex;gap:1.1rem;margin-left:auto;font-family:var(--ui);font-size:.85rem;font-weight:600}
 .bar .anchors a{text-decoration:none;color:var(--ash)}.bar .anchors a:hover{color:var(--torch)}
@@ -182,7 +182,7 @@ html{scroll-behavior:smooth}
 .copy svg{width:1.15rem;height:1.15rem;fill:currentColor;grid-area:1/1}
 .copy .i-ok{opacity:0}.copy.done .i-clip{opacity:0}.copy.done .i-ok{opacity:1}.copy.done{color:var(--torch);border-color:var(--torch)}
 
-.strip p.next{margin-top:.6rem;color:var(--ash);font-style:italic}
+.strip p.next{margin-top:.6rem;color:var(--ash);font-family:var(--display);font-style:italic;font-size:1.06em}
 
 .hero .pitch{max-width:none}
 @media (min-width:600px){.hero .pitch em{white-space:nowrap}}
@@ -258,10 +258,10 @@ section .wrap>*{min-width:0}
 .toc{opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}.toc.shown{opacity:1;visibility:visible}
 @media (min-width:1400px){.toc{display:block}}
 .quote{margin:0;padding:.1rem 0 .1rem 1.1rem;border-left:3px solid var(--ember);display:grid;gap:.35rem}
-.quote p{font-size:1.45rem;line-height:1.35;font-style:italic}
+.quote p{font-family:var(--display);font-size:1.35rem;line-height:1.4;font-style:italic}
 .quote cite{font-family:var(--ui);font-style:normal;font-size:.8rem;color:var(--ash)}
 .next3d{border:1px solid var(--stone-2);border-left:3px solid var(--ember);background:var(--stone);padding:1.1rem 1.3rem;display:grid;gap:.5rem;margin-top:.6rem}
-.next3d h3{font-family:var(--display);font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;color:var(--torch)}
+.next3d h3{font-family:var(--display);font-size:1.15rem;letter-spacing:0;color:var(--torch)}
 .tribute{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:2rem;align-items:center}
 .tribute .reel{margin:0;border:1px solid var(--stone-2);background:var(--ink)}
 .tribute .reel video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:var(--ink)}
@@ -276,7 +276,7 @@ section .wrap>*{min-width:0}
 
 /* narrow phones: the bar on one line */
 .bar .home{white-space:nowrap}
-@media (max-width:420px){.bar{gap:.7rem}.bar .home{font-size:.8rem;gap:.45rem}.bar .navlinks,.bar .anchors{gap:.75rem}.bar .btn{padding:.4em .6em}}
+@media (max-width:420px){.bar{gap:.7rem}.bar .home{font-size:.95rem;gap:.45rem}.bar .navlinks,.bar .anchors{gap:.75rem}.bar .btn{padding:.4em .6em}}
 </style>
 <!--i18n-head--><link rel="alternate" hreflang="en" href="https://brutaldiablo.com/gore/"><link rel="alternate" hreflang="es" href="https://brutaldiablo.com/es/gore/"><link rel="alternate" hreflang="pt-BR" href="https://brutaldiablo.com/pt-br/gore/"><link rel="alternate" hreflang="cs" href="https://brutaldiablo.com/cs/gore/"><link rel="alternate" hreflang="de" href="https://brutaldiablo.com/de/gore/"><link rel="alternate" hreflang="ru" href="https://brutaldiablo.com/ru/gore/"><link rel="alternate" hreflang="pl" href="https://brutaldiablo.com/pl/gore/"><link rel="alternate" hreflang="x-default" href="https://brutaldiablo.com/gore/"><meta property="og:locale" content="es_ES"><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="pt_BR"><meta property="og:locale:alternate" content="cs_CZ"><meta property="og:locale:alternate" content="de_DE"><meta property="og:locale:alternate" content="ru_RU"><meta property="og:locale:alternate" content="pl_PL"><style>.lang{position:relative;font-family:var(--ui);font-size:.8rem;font-weight:600;flex:none}.lang summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35em;color:var(--ash);padding:.35em .15em;letter-spacing:.05em;white-space:nowrap;user-select:none}.lang summary::-webkit-details-marker{display:none}.lang .flag{display:inline-flex;flex:none;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px rgba(232,220,196,.18)}.lang .flag svg{display:block}.lang summary:hover,.lang[open] summary{color:var(--torch)}.lang ul{position:absolute;right:0;top:calc(100% + .55rem);margin:0;padding:.35rem 0;list-style:none;background:var(--stone);border:1px solid var(--stone-2);border-radius:6px;min-width:9.5rem;box-shadow:0 10px 28px rgba(0,0,0,.55);z-index:40}.lang li a{display:flex;align-items:center;gap:.65em;padding:.45rem 1rem;color:var(--bone);text-decoration:none;font-size:.9rem}.lang li a:hover{background:var(--stone-2);color:var(--torch)}.lang li a[aria-current]{color:var(--torch)}@media (max-width:480px){.bar .btn.dc{width:2.8em;overflow:hidden;white-space:nowrap;justify-content:flex-start;gap:3em;padding-left:.78em;padding-right:0}.bar .btn.dc svg{flex:none}}@media (max-width:420px){.lang summary .code{display:none}}</style><script>window.BD_LANG="es";window.BD_T={"Copy the address":"Copiar la dirección","Copied":"Copiado","Press H for 1996":"Pulsa H y es 1996","Quest item":"Objeto de misión","Unique":"Único","Magic":"Mágico","Gold":"Oro","Potion":"Poción","Elixir":"Elixir","Scroll":"Pergamino","Book":"Libro","All":"Todos","Uniques":"Únicos","Quest items":"Objetos de misión","Armour":"Armaduras","Weapons":"Armas","Jewellery":"Joyas","Potions, scrolls and books":"Pociones, pergaminos y libros","Show":"Mostrar","H: show every item as in Diablo (1996)":"H: mostrar todos los objetos como en Diablo (1996)","{label}, {n} item":"{label}, {n} objeto","{label}, {n} items":"one:{label}, {n} objeto | other:{label}, {n} objetos","Showing {label}: {n} item.":"Mostrando {label}: {n} objeto.","Showing {label}: {n} items.":"one:Mostrando {label}: {n} objeto. | other:Mostrando {label}: {n} objetos.","Press for 1996":"Pulsa para ver 1996","Back to now":"Volver al presente","Press H for Brutal Diablo":"Pulsa H para volver a Brutal Diablo","Showing every item as {name}.":"Mostrando todos los objetos como en {name}.","Zombie":"Zombi","Ghoul":"Necrófago","Skeleton":"Esqueleto","Horror":"Horror","Dark One":"El oscuro","In this post":"En esta entrada","none":"ninguna","{n} step":"{n} paso","{n} steps":"one:{n} paso | other:{n} pasos","black":"negro","still red":"sigue rojo","This browser cannot unpack the floor; try a current one.":"Este navegador no puede descomprimir el suelo; prueba con uno actual.","The floor did not load.":"El suelo no se cargó.","straight up":"justo arriba","straight down":"justo abajo","{deg}° right of up":"{deg}° a la derecha de la vertical","{deg}° left of up":"{deg}° a la izquierda de la vertical","Light: {side}, as shipped.":"Luz: {side}, como en el mod.","Light: {side}.":"Luz: {side}.","Snapped to the game’s colours.":"Ajustado a los colores del juego.","Free colours, not snapped to the game’s.":"Colores libres, sin ajustar a los del juego.","shipped":"en el mod","{side}, as shipped":"{side}, como en el mod","{base}: {label}":"{base}: {label}"};function bdT(s,v){var d=window.BD_T,r=d&&d[s]!=null?d[s]:s;return v?r.replace(/\{(\w+)\}/g,function(m,k){return v[k]!=null?v[k]:m}):r}function bdN(n,one,other,v){var d=window.BD_T,r=d&&d[other],o={n:n};for(var k in v)o[k]=v[k];if(r==null)return bdT(n===1?one:other,o);var c="other";try{c=new Intl.PluralRules(window.BD_LANG).select(n)}catch(e){}var f={};r.split("|").forEach(function(p){var i=p.indexOf(":");f[p.slice(0,i).trim()]=p.slice(i+1).trim()});return (f[c]!=null?f[c]:f.other).replace(/\{(\w+)\}/g,function(m,k){return o[k]!=null?o[k]:m})}function bdKeep(e){var a=e.target.closest&&e.target.closest('a[data-lang]');if(a)try{localStorage.setItem('bd-lang',a.getAttribute('data-lang'))}catch(_){}}['click','auxclick','contextmenu'].forEach(function(t){document.addEventListener(t,bdKeep)});document.addEventListener('click',function(e){document.querySelectorAll('details.lang[open]').forEach(function(x){if(!x.contains(e.target))x.removeAttribute('open')})});</script><!--/i18n-head--></head>
 <body>
