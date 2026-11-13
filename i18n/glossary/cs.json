@@ -1,0 +1,557 @@
+{
+ "Adria": {
+  "tr": "Adria",
+  "from": "game",
+  "kind": "name"
+ },
+ "Amulet": {
+  "tr": "Amulet",
+  "from": "game",
+  "kind": "name"
+ },
+ "Amulet of balance": {
+  "tr": "Amulet rovnováhy",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Amulet of the fox": {
+  "tr": "Amulet lišky",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Amulet of vitality": {
+  "tr": "Amulet vitality",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Anvil of Fury": {
+  "tr": "Kovadlina Zuřivosti",
+  "from": "game",
+  "kind": "item"
+ },
+ "Arkaine's Valor": {
+  "tr": "Arkainova Chrabrost",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bastard Sword": {
+  "tr": "Meč Bastard",
+  "from": "game",
+  "kind": "item"
+ },
+ "Black Mushroom": {
+  "tr": "Černá Houba",
+  "from": "game",
+  "kind": "item"
+ },
+ "Black Razor": {
+  "tr": "Černá Břitva",
+  "from": "game",
+  "kind": "item"
+ },
+ "Blood Stone": {
+  "tr": "Krvavý Kámen",
+  "from": "game",
+  "kind": "item"
+ },
+ "Book of Charged Bolt": {
+  "tr": "Kniha - Blesková Střela",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Book of Firebolt": {
+  "tr": "Kniha - Ohnivá Střela",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Brain": {
+  "tr": "Mozek",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bramble": {
+  "tr": "Réva",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bronze Amulet of the fox": {
+  "tr": "Bronzový Amulet lišky",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Bronze Ring": {
+  "tr": "Bronzový Prsten",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Cap": {
+  "tr": "Šišák",
+  "from": "game",
+  "kind": "item"
+ },
+ "Catacombs": {
+  "tr": "Katakomby",
+  "from": "game",
+  "kind": "name"
+ },
+ "Cathedral": {
+  "tr": "Katedrála",
+  "from": "game",
+  "kind": "name"
+ },
+ "Caves": {
+  "tr": "Jeskyně",
+  "from": "game",
+  "kind": "name"
+ },
+ "Chain Mail": {
+  "tr": "Kroužková Zbroj",
+  "from": "game",
+  "kind": "name"
+ },
+ "Charged Bolt": {
+  "tr": "Blesková Střela",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Claymore": {
+  "tr": "Claymore",
+  "from": "game",
+  "kind": "item"
+ },
+ "Cleaver": {
+  "tr": "Sekáček",
+  "from": "game",
+  "kind": "name"
+ },
+ "Constricting Ring": {
+  "tr": "Stahující Prsten",
+  "from": "game",
+  "kind": "item"
+ },
+ "Crown": {
+  "tr": "Koruna",
+  "from": "game",
+  "kind": "item"
+ },
+ "Dagger": {
+  "tr": "Dýka",
+  "from": "game",
+  "kind": "item"
+ },
+ "Dark One": {
+  "tr": "Temný",
+  "from": "game",
+  "kind": "name"
+ },
+ "Elixir of Dexterity": {
+  "tr": "Elixír Obratnosti",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Magic": {
+  "tr": "Elixír Magie",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Strength": {
+  "tr": "Elixír Síly",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Vitality": {
+  "tr": "Elixír Vitality",
+  "from": "game",
+  "kind": "item"
+ },
+ "Empyrean Band": {
+  "tr": "Empyreanský Kroužek",
+  "from": "game",
+  "kind": "item"
+ },
+ "Fire Wall": {
+  "tr": "Ohnivá Zeď",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Full Helm": {
+  "tr": "Hrncová Helma",
+  "from": "game",
+  "kind": "name"
+ },
+ "Full Plate Mail": {
+  "tr": "Plná Plátová Zbroj",
+  "from": "game",
+  "kind": "item"
+ },
+ "Fungal Tome": {
+  "tr": "Plesnivá Kniha",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ghoul": {
+  "tr": "Ghůl",
+  "from": "game",
+  "kind": "name"
+ },
+ "Golden Elixir": {
+  "tr": "Zlatý Elixír",
+  "from": "game",
+  "kind": "item"
+ },
+ "Gonnagal's Dirk": {
+  "tr": "Gonnagalův Nůž",
+  "from": "game",
+  "kind": "item"
+ },
+ "Gothic Plate": {
+  "tr": "Gotické Pláty",
+  "from": "game",
+  "kind": "name"
+ },
+ "Great Axe": {
+  "tr": "Velká Sekera",
+  "from": "game",
+  "kind": "item"
+ },
+ "Great Helm": {
+  "tr": "Římská Helma",
+  "from": "game",
+  "kind": "item"
+ },
+ "Griswold": {
+  "tr": "Griswold",
+  "from": "game",
+  "kind": "name"
+ },
+ "Gryphon's Claw": {
+  "tr": "Gryfův Dráp",
+  "from": "game",
+  "kind": "item"
+ },
+ "Harlequin Crest": {
+  "tr": "Harlekýnský Odznak",
+  "from": "game",
+  "kind": "item"
+ },
+ "Hell": {
+  "tr": "Peklo",
+  "from": "site",
+  "note": "the game's Czech keeps the English \"Hell\"; the site says Peklo"
+ },
+ "Hellfire": {
+  "tr": "Hellfire",
+  "from": "site",
+  "note": "the owner's decision: stays in English, as the expansion's name and as the name of a look on the items devlog"
+ },
+ "Horror": {
+  "tr": "Horor",
+  "from": "game",
+  "kind": "name"
+ },
+ "Kite Shield": {
+  "tr": "Mandlový Štít",
+  "from": "game",
+  "kind": "name"
+ },
+ "Lazarus": {
+  "tr": "Lazarus",
+  "from": "site",
+  "note": "declined on the game's stem Lazarus-: Lazarusův, Lazarusem (as the game's Lazarusova Hůl), not Lazar-"
+ },
+ "Long Staff": {
+  "tr": "Dlouhá Hůl",
+  "from": "game",
+  "kind": "item"
+ },
+ "Long War Bow": {
+  "tr": "Dlouhý Válečný Luk",
+  "from": "game",
+  "kind": "name"
+ },
+ "Magic Rock": {
+  "tr": "Kouzelný Kámen",
+  "from": "game",
+  "kind": "item"
+ },
+ "Mail": {
+  "tr": "Zbroj",
+  "from": "game",
+  "kind": "name"
+ },
+ "Messerschmidt's Reaver": {
+  "tr": "Messerschmidtův Plenitel",
+  "from": "game",
+  "kind": "item"
+ },
+ "Morning Star": {
+  "tr": "Jitřenka",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ogden": {
+  "tr": "Ogden",
+  "from": "game",
+  "kind": "name"
+ },
+ "Optic Amulet": {
+  "tr": "Optický Amulet",
+  "from": "game",
+  "kind": "item"
+ },
+ "OverLord's Helm": {
+  "tr": "Mocipánova Helma",
+  "from": "game",
+  "kind": "item"
+ },
+ "Plate Mail": {
+  "tr": "Plátová Zbroj",
+  "from": "game",
+  "kind": "name"
+ },
+ "Potion of Full Healing": {
+  "tr": "Lektvar Plného Léčení",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Full Mana": {
+  "tr": "Lektvar Plné Many",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Full Rejuvenation": {
+  "tr": "Lektvar Plného Omlazení",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Healing": {
+  "tr": "Lektvar Léčení",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Mana": {
+  "tr": "Lektvar Many",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Rejuvenation": {
+  "tr": "Lektvar Omlazení",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of balance": {
+  "tr": "Prsten rovnováhy",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Engagement": {
+  "tr": "Zásnubní Prsten",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of magic": {
+  "tr": "Prsten magie",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Regha": {
+  "tr": "Prsten Reghy",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of the fox": {
+  "tr": "Prsten lišky",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Truth": {
+  "tr": "Prsten Pravdy",
+  "from": "game",
+  "kind": "item"
+ },
+ "Royal Circlet": {
+  "tr": "Královská Čelenka",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scimitar": {
+  "tr": "Scimitar",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll": {
+  "tr": "Svitek",
+  "from": "game",
+  "kind": "name"
+ },
+ "Scroll of Fireball": {
+  "tr": "Svitek Ohnivé Koule",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Healing": {
+  "tr": "Svitek Léčení",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Identify": {
+  "tr": "Svitek Identifikace",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Stone Curse": {
+  "tr": "Svitek Kamenné Kletby",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Town Portal": {
+  "tr": "Svitek Městského Portálu",
+  "from": "game",
+  "kind": "item"
+ },
+ "Skeleton": {
+  "tr": "Skelet",
+  "from": "game",
+  "kind": "name"
+ },
+ "Skeleton King": {
+  "tr": "Král Kostlivců",
+  "from": "game",
+  "kind": "name"
+ },
+ "Skull Cap": {
+  "tr": "Šišák s Nánosníkem",
+  "from": "game",
+  "kind": "item"
+ },
+ "Sorcerer": {
+  "tr": "Čaroděj",
+  "from": "game",
+  "kind": "name"
+ },
+ "Spectral Elixir": {
+  "tr": "Spektrální Elixír",
+  "from": "game",
+  "kind": "item"
+ },
+ "Splint Mail": {
+  "tr": "Lamelová Zbroj",
+  "from": "game",
+  "kind": "name"
+ },
+ "Staff of Lazarus": {
+  "tr": "Lazarusova Hůl",
+  "from": "game",
+  "kind": "item"
+ },
+ "Stone Curse": {
+  "tr": "Kamenná Kletba",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Stonecleaver": {
+  "tr": "Sekač Kamene",
+  "from": "game",
+  "kind": "item"
+ },
+ "Tavern Sign": {
+  "tr": "Vývěsní Štít",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Bleeder": {
+  "tr": "Prsten Krvácení",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Butcher": {
+  "tr": "Řezník",
+  "from": "game",
+  "kind": "name"
+ },
+ "The Butcher's Cleaver": {
+  "tr": "Řezníkův Sekáček",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Executioner's Blade": {
+  "tr": "Čepel Popravčího",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Grandfather": {
+  "tr": "Praotec",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Needler": {
+  "tr": "Jehelníček",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Protector": {
+  "tr": "Ochránce",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Rainbow Cloak": {
+  "tr": "Duhový Plášť",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Undead Crown": {
+  "tr": "Nemrtvá Koruna",
+  "from": "game",
+  "kind": "item"
+ },
+ "Thinking Cap": {
+  "tr": "Přemýšlející Šišák",
+  "from": "game",
+  "kind": "item"
+ },
+ "Tower Shield": {
+  "tr": "Pavéza",
+  "from": "game",
+  "kind": "item"
+ },
+ "Town Portal": {
+  "tr": "Town Portal",
+  "from": "site",
+  "note": "the owner's decision: the name stays in English in every language, the spell, the scroll's portal and the devlog's subject alike; build the sentence so it needs no case ending (\"portál Town Portal\" where the language needs a noun to decline). The item \"Scroll of Town Portal\" keeps the game's name."
+ },
+ "town portal": {
+  "tr": "Town Portal",
+  "from": "site",
+  "note": "in running text too: the name stays in English, written Town Portal"
+ },
+ "Veil of Steel": {
+  "tr": "Ocelový Závoj",
+  "from": "game",
+  "kind": "item"
+ },
+ "War Staff": {
+  "tr": "Válečná Hůl",
+  "from": "game",
+  "kind": "item"
+ },
+ "Warrior": {
+  "tr": "Válečník",
+  "from": "game",
+  "kind": "name"
+ },
+ "Windforce": {
+  "tr": "Větrná Síla",
+  "from": "game",
+  "kind": "item"
+ },
+ "Wizardspike": {
+  "tr": "Kouzelníkův Hrot",
+  "from": "game",
+  "kind": "item"
+ },
+ "Zombie": {
+  "tr": "Zombík",
+  "from": "game",
+  "kind": "name"
+ }
+}

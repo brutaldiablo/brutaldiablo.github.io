@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Предметы · Brutal Diablo</title>
+<meta content="Каждый предмет из Diablo (1996), воссозданный таким, каким вы его помните. Нажмите H, и старые картинки вернутся. Brutal Diablo — бесплатный фанатский мод, в разработке." name="description"/>
+<link href="/ru/devlog/feed.xml" rel="alternate" title="Девлог Brutal Diablo" type="application/rss+xml"/>
+<link href="https://brutaldiablo.com/ru/items/" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" sizes="32x32"/>
+<link href="/img/mark_64.png" rel="icon" sizes="64x64" type="image/png"/>
+<link href="/img/mark_180.png" rel="apple-touch-icon"/>
+<meta content="website" property="og:type"/>
+<meta content="Предметы · Brutal Diablo" property="og:title"/>
+<meta content="Каждый предмет из Diablo (1996), воссозданный таким, каким вы его помните. Нажмите H, и старые картинки вернутся. Brutal Diablo — бесплатный фанатский мод, в разработке." property="og:description"/>
+<meta content="https://brutaldiablo.com/ru/items/" property="og:url"/>
+<meta content="https://brutaldiablo.com/img/items/og.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@brutaldiablo" name="twitter:site"/>
+<meta content="#0c0908" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&amp;family=Crimson+Pro:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Layout: the site's look (the gore page and the devlog): a bar, an opening with the showcase slider beside its text,
+   then sections in a 1000px column parted by a thin ember rule. Single dark theme by choice: this is a dungeon. */
+:root{
+  --ink:#0c0908;--stone:#17120f;--stone-2:#241c17;--bone:#e8dcc4;--ash:#a3957f;--ember:#b4281d;--torch:#e58b3a;
+  --display:"Cinzel",Georgia,"Times New Roman",serif;
+  --body:"Crimson Pro",Georgia,"Times New Roman",serif;
+  --ui:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gold:#d8b45a;--blue:#8080ff;--white:#ececec;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--bone);font-family:var(--body);font-size:1.2rem;line-height:1.55}
+a{color:var(--bone);text-decoration-color:var(--ember);text-underline-offset:.15em;text-decoration-thickness:1px}
+a:hover{color:var(--torch)}
+:focus-visible{outline:2px solid var(--torch);outline-offset:3px}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:1.5rem;letter-spacing:.04em;text-transform:uppercase}
+p{margin:0}
+[id]{scroll-margin-top:4rem}
+.wrap{max-width:1000px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.lead{font-size:1.3rem}
+
+/* the bar: the logo and Home, Discord */
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:1.2rem;padding:.5rem max(16px,env(safe-area-inset-right,0px)) .5rem max(16px,env(safe-area-inset-left,0px));background:rgba(12,9,8,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--stone-2)}
+.bar .home{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.9rem;text-decoration:none;white-space:nowrap}
+.bar .home img{border-radius:50%}
+.bar .navlinks{display:flex;gap:1.1rem;margin-left:auto;font-family:var(--ui);font-size:.85rem;font-weight:600}
+.bar .navlinks a{text-decoration:none;color:var(--ash)}.bar .navlinks a:hover,.bar .navlinks a[aria-current]{color:var(--torch)}
+.btn{display:inline-flex;align-items:center;gap:.55em;font-family:var(--ui);font-weight:600;font-size:.95rem;letter-spacing:.02em;text-decoration:none;padding:.7em 1.1em;border:1px solid var(--stone-2);background:var(--stone);color:var(--bone);border-radius:3px;transition:border-color .15s,background .15s;cursor:pointer}
+.btn:hover{border-color:var(--torch);color:var(--bone);background:var(--stone-2)}
+.btn.primary{background:var(--ember);border-color:#d4463a;color:#fff6ea}
+.btn.primary:hover{background:#c9311f;color:#fff}
+.btn svg{width:1.1em;height:1.1em;fill:currentColor}
+.bar .btn{padding:.4em .8em;font-size:.82rem}
+@media (max-width:420px){.bar{gap:.7rem}.bar .home{font-size:.8rem;gap:.45rem}.bar .navlinks{gap:.75rem}.bar .btn{padding:.4em .6em}}
+
+/* the opening: the title and the pitch, the showcase (Splint Mail's before/after slider) beside them, the body and
+   the buttons under the pitch; on a phone the showcase sits between the pitch and the body */
+.open{padding-block:2.6rem 2.8rem;background:radial-gradient(ellipse at 75% 30%,rgba(180,40,29,.12),transparent 60%)}
+.open .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"t s" "b s";column-gap:3rem;row-gap:1.1rem;align-items:center}
+.open .t{grid-area:t;display:grid;gap:1.1rem;align-self:end;max-width:62ch}
+.open .b{grid-area:b;display:grid;gap:1.1rem;align-self:start;max-width:62ch}
+.open .intro{color:var(--torch);font-style:italic}
+.showcase{grid-area:s;display:grid;gap:.45rem;justify-items:center;min-width:0}
+/* the showcase's scale: one capture pixel is two device pixels (the script sets the exact width; these are its
+   values for common screens, before it runs) */
+.cmp.show{--k:1;width:calc(var(--w) * var(--k) * 1px);max-width:100%}
+@media (max-resolution:1dppx){.cmp.show{--k:2}}
+@media (min-resolution:2.01dppx){.cmp.show{--k:.6667}}
+.cmp.show .imgs img{image-rendering:pixelated}
+.cmp.show .lab{display:none}
+.showcase .legend{display:flex;justify-content:space-between;gap:1rem;width:100%;font-family:var(--ui);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.showcase .legend .r{color:var(--torch)}
+.showcase .cap{max-width:30ch;text-align:center;font-size:1rem;line-height:1.35;color:var(--ash)}
+.showcase .cap b{display:block;font-family:var(--display);font-weight:600;font-size:1.05rem;letter-spacing:.04em;color:var(--bone)}
+h1{font-size:clamp(2.4rem,6vw,3.6rem);letter-spacing:.06em;text-transform:uppercase;text-shadow:0 2px 24px rgba(0,0,0,.8)}
+h1 small{display:block;font-family:var(--ui);font-weight:600;font-size:.8rem;letter-spacing:.3em;color:var(--torch);margin-bottom:.5rem}
+.pitch{font-size:clamp(1.3rem,2.6vw,1.6rem);line-height:1.3}
+.pitch em{color:var(--ash)}
+.ctas{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.2rem}
+@media (max-width:820px){.open .wrap{grid-template-columns:minmax(0,1fr);grid-template-areas:"t" "s" "b";row-gap:1.4rem}.open{padding-block:1.8rem 2.2rem}.open .t{align-self:auto}}
+
+/* sections */
+section{padding-block:2.6rem;border-top:1px solid var(--stone-2)}
+section .wrap{display:grid;gap:1.1rem}
+section .wrap>*{min-width:0}
+section h2::before{content:"";display:inline-block;width:.55em;height:.55em;background:var(--ember);transform:rotate(45deg);margin-right:.7em;vertical-align:.08em}
+figure{margin:0;display:grid;gap:.45rem;min-width:0}
+figcaption{font-family:var(--ui);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ash);padding:.1rem .1rem 0}
+.two{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:1.6rem;align-items:start}
+.side-text{display:grid;gap:1rem;align-content:start}
+/* a pair stacked: the same picture from the same moment, 1996 above ours */
+.stack{display:grid;gap:.7rem}
+.stack .row{display:flex;flex-direction:column-reverse;gap:.3rem}
+.stack .row img{width:100%;height:auto;display:block;border:1px solid var(--stone-2);background:var(--stone)}
+/* the label sits above its row, never over the items */
+.stack .lab{font-family:var(--ui);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:var(--bone)}
+.stack .lab.r{color:var(--torch)}
+@media (max-width:760px){.two{grid-template-columns:minmax(0,1fr)}}
+
+/* the before/after slider, two images: .a on the left, .b on the right (as devlog.js) */
+.cmp{position:relative;touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none;border:1px solid var(--stone-2);background:var(--stone)}
+.cmp .imgs{position:relative;display:grid}
+.cmp .imgs img{grid-area:1/1;width:100%;height:auto;display:block;pointer-events:none;-webkit-user-drag:none}
+.cmp .imgs img.b{clip-path:inset(0 0 0 calc(var(--s,.5) * 100%))}
+.cmp .side{position:absolute;inset:0;pointer-events:none}
+.cmp .side.l{clip-path:inset(0 calc((1 - var(--s,.5)) * 100%) 0 0)}
+.cmp .side.r{clip-path:inset(0 0 0 calc(var(--s,.5) * 100%))}
+.cmp .lab{position:absolute;top:.6rem;font-family:var(--ui);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bone);background:rgba(12,9,8,.72);padding:.3em .55em;border-radius:2px;pointer-events:none;white-space:nowrap}
+.cmp .lab.l{left:.6rem}.cmp .lab.r{right:.6rem;color:var(--torch)}
+.cmp .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;margin-left:-1px;background:var(--bone);box-shadow:0 0 8px rgba(0,0,0,.6);pointer-events:none}
+.cmp .handle::after{content:"";position:absolute;top:50%;left:50%;width:1.9rem;height:1.9rem;margin:-.95rem 0 0 -.95rem;border-radius:50%;background:var(--ink);border:2px solid var(--bone);box-shadow:0 2px 10px rgba(0,0,0,.6)}
+.cmp .handle::before{content:"\2039\00a0\203A";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;color:var(--bone);font-family:var(--ui);font-size:.95rem;font-weight:700;white-space:nowrap}
+.cmp input[type=range]{position:absolute;left:0;right:0;bottom:0;width:100%;height:1px;opacity:0;margin:0}
+.cmp:focus-within .handle::after{border-color:var(--torch)}
+.cmp figcaption{position:absolute;left:0;right:0;bottom:0;padding:.45rem .6rem;background:linear-gradient(0deg,rgba(12,9,8,.85),rgba(12,9,8,0));pointer-events:none}
+@media (max-width:600px){.cmp .lab{font-size:.58rem;letter-spacing:.1em}}
+/* the gallery's bits: pixel pictures, the game's quality colours, the stone H key */
+.pix{image-rendering:pixelated}
+.q-unique{color:var(--gold)}.q-magic{color:var(--blue)}.q-normal{color:var(--white)}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hkey{display:inline-flex;align-items:center;gap:.5rem;align-self:center}
+.hkey .hl{font-family:var(--ui);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ash)}
+.hkey button{width:2.3rem;height:2.3rem;font-family:var(--display);font-weight:800;font-size:1.05rem;color:#e8dcc4;cursor:pointer;
+  border:1px solid #8a7344;border-radius:5px;background:linear-gradient(#4a3e33,#1c1612);
+  box-shadow:inset 0 1px 0 rgba(255,240,200,.25),inset 0 -3px 0 rgba(0,0,0,.55),0 2px 0 #000;transition:all .12s}
+.hkey button:hover{border-color:#caa65c}
+.hkey button[aria-pressed=true]{color:#ffd9a8;border-color:var(--torch);transform:translateY(2px);
+  background:linear-gradient(#5a2a1a,#2a120c);box-shadow:inset 0 2px 4px rgba(0,0,0,.6),0 0 12px rgba(229,139,58,.55)}
+.hkey[data-on=true] .hl{color:var(--torch)}
+
+/* the haul: every picture from the bags in its own slot cells, packed as a sheet; chips filter it, H turns it all
+   over at once, a press shows one item's 1996 picture while held */
+.haul{position:relative;border:2px solid #9b7f45;border-radius:3px;background:linear-gradient(#120d09,#080605);box-shadow:inset 0 0 0 1px #000,0 6px 18px rgba(0,0,0,.5);padding:10px}
+.haulbar{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem .6rem;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;flex:1 1 auto;min-width:0}
+.chip{font-family:var(--ui);font-size:.78rem;font-weight:600;letter-spacing:.02em;color:#a8946c;background:linear-gradient(#241b14,#120e0a);border:1px solid #6e5a33;border-radius:999px;padding:.3em .75em;cursor:pointer;white-space:nowrap}
+.chip:hover{color:#e8dcc4;border-color:#c4a25e}
+.chip[aria-pressed=true]{color:#f6e7c6;border-color:#e0c27a;background:linear-gradient(#3a2c1f,#17110c);box-shadow:0 0 10px rgba(229,139,58,.15)}
+.chip .n{color:var(--ash);font-weight:500;margin-left:.35em}
+.chip[aria-pressed=true] .n{color:var(--torch)}
+.haulbar .hkey{margin:0 0 0 auto}
+.gstate{font-family:var(--ui);font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:.28em .6em;border-radius:2px;background:rgba(12,9,8,.82);color:var(--torch);white-space:nowrap}
+.gstate.old{color:var(--bone)}
+.gsheet{position:relative;display:grid;grid-auto-flow:dense;justify-content:center;touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.gcard{position:relative;margin:0;padding:0;border:0;border-radius:0;background:transparent;cursor:pointer;display:grid;place-items:center;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
+.gcard .pic{display:block;background-repeat:no-repeat;box-shadow:0 0 0 1px #000,0 0 0 2px #3b2f1d}
+.gcard:hover .pic,.gcard.peek .pic{box-shadow:0 0 0 1px #000,0 0 0 2px #c4a25e}
+.gcard:focus-visible{outline:none}.gcard:focus-visible .pic{box-shadow:0 0 0 2px var(--torch)}
+.gcard.peek::after{content:attr(data-peek);position:absolute;left:50%;bottom:2px;transform:translateX(-50%);font-family:var(--ui);font-size:.5rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;background:rgba(12,9,8,.85);color:var(--bone);padding:.15em .4em;border-radius:2px;pointer-events:none}
+.gtip{position:absolute;z-index:5;left:0;top:0;max-width:min(22rem,calc(100% - 8px));border:2px solid #9b7f45;border-radius:3px;background:linear-gradient(#17110c,#0a0806);box-shadow:inset 0 0 0 1px #000,0 6px 18px rgba(0,0,0,.6);padding:.4rem .75rem;text-align:center;pointer-events:none;display:grid;gap:.1rem;justify-items:center}
+.gtip .tn{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:.03em;line-height:1.2}
+.gtip .tk{font-family:var(--ui);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ash)}
+.gtip .tl{font-style:italic;color:#d6cab2;font-size:.95rem;line-height:1.25}
+.haulstill{display:grid;gap:10px;justify-items:center}
+.haulstill img{width:100%;max-width:1160px;height:auto}
+@media (min-resolution:2.01dppx){.haulstill img{max-width:773px}}
+@media (max-width:600px){.haul{padding:8px 6px}.chip{font-size:.72rem;padding:.28em .6em}.haulbar .hkey .hl{display:none}}
+
+/* tips, footer */
+.tipbox{border:1px solid var(--stone-2);background:var(--stone);padding:1.3rem 1.4rem;display:grid;gap:1rem;border-left:3px solid var(--ember)}
+footer{border-top:1px solid var(--stone-2);padding-block:2.2rem 3rem;color:var(--ash);font-size:.95rem}
+footer .wrap{display:grid;gap:.5rem}
+footer a{color:var(--ash)}
+@media (max-width:600px){body{font-size:1.1rem}}
+.endlinks{display:flex;flex-wrap:wrap;gap:.7rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+<!--i18n-head--><link rel="alternate" hreflang="en" href="https://brutaldiablo.com/items/"><link rel="alternate" hreflang="es" href="https://brutaldiablo.com/es/items/"><link rel="alternate" hreflang="pt-BR" href="https://brutaldiablo.com/pt-br/items/"><link rel="alternate" hreflang="cs" href="https://brutaldiablo.com/cs/items/"><link rel="alternate" hreflang="de" href="https://brutaldiablo.com/de/items/"><link rel="alternate" hreflang="ru" href="https://brutaldiablo.com/ru/items/"><link rel="alternate" hreflang="pl" href="https://brutaldiablo.com/pl/items/"><link rel="alternate" hreflang="x-default" href="https://brutaldiablo.com/items/"><meta property="og:locale" content="ru_RU"><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="es_ES"><meta property="og:locale:alternate" content="pt_BR"><meta property="og:locale:alternate" content="cs_CZ"><meta property="og:locale:alternate" content="de_DE"><meta property="og:locale:alternate" content="pl_PL"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600;700&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap"><style>:root{--display:"Cinzel","Cormorant SC",Georgia,"Times New Roman",serif;--body:"Crimson Pro","EB Garamond",Georgia,"Times New Roman",serif}</style><style>.lang{position:relative;font-family:var(--ui);font-size:.8rem;font-weight:600;flex:none}.lang summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35em;color:var(--ash);padding:.35em .15em;letter-spacing:.05em;white-space:nowrap;user-select:none}.lang summary::-webkit-details-marker{display:none}.lang .flag{display:inline-flex;flex:none;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px rgba(232,220,196,.18)}.lang .flag svg{display:block}.lang summary:hover,.lang[open] summary{color:var(--torch)}.lang ul{position:absolute;right:0;top:calc(100% + .55rem);margin:0;padding:.35rem 0;list-style:none;background:var(--stone);border:1px solid var(--stone-2);border-radius:6px;min-width:9.5rem;box-shadow:0 10px 28px rgba(0,0,0,.55);z-index:40}.lang li a{display:flex;align-items:center;gap:.65em;padding:.45rem 1rem;color:var(--bone);text-decoration:none;font-size:.9rem}.lang li a:hover{background:var(--stone-2);color:var(--torch)}.lang li a[aria-current]{color:var(--torch)}@media (max-width:480px){.bar .btn.dc{width:2.8em;overflow:hidden;white-space:nowrap;justify-content:flex-start;gap:3em;padding-left:.78em;padding-right:0}.bar .btn.dc svg{flex:none}}@media (max-width:420px){.lang summary .code{display:none}}</style><script>window.BD_LANG="ru";window.BD_T={"Copy the address":"Скопировать адрес","Copied":"Скопировано","Press H for 1996":"Нажмите H, и вы в 1996-м","Quest item":"Квестовый предмет","Unique":"Уникальный","Magic":"Магический","Gold":"Золото","Potion":"Зелье","Elixir":"Эликсир","Scroll":"Свиток","Book":"Книга","All":"Все","Uniques":"Уникальные","Quest items":"Квестовые","Armour":"Доспехи","Weapons":"Оружие","Jewellery":"Украшения","Potions, scrolls and books":"Зелья, свитки и книги","Show":"Показать","H: show every item as in Diablo (1996)":"H: показать все предметы как в Diablo (1996)","{label}, {n} item":"{Label}, {n} предмет","{label}, {n} items":"one:{Label}, {n} предмет | few:{Label}, {n} предмета | many:{Label}, {n} предметов | other:{Label}, {n} предмета","Showing {label}: {n} item.":"Показываем {label}: {n} предмет.","Showing {label}: {n} items.":"one:Показываем {label}: {n} предмет. | few:Показываем {label}: {n} предмета. | many:Показываем {label}: {n} предметов. | other:Показываем {label}: {n} предмета.","Press for 1996":"Назад в 1996-й","Back to now":"Обратно в наши дни","Press H for Brutal Diablo":"Нажмите H, чтобы вернуть Brutal Diablo","Showing every item as {name}.":"Все предметы показаны как в {name}.","Zombie":"Зомби","Ghoul":"Упырь","Skeleton":"Скелет","Horror":"Ужас","Dark One":"Тёмный","In this post":"В этом посте","none":"нет","{n} step":"{n} шаг","{n} steps":"one:{n} шаг | few:{n} шага | many:{n} шагов | other:{n} шага","black":"чёрный","still red":"всё ещё красный","This browser cannot unpack the floor; try a current one.":"Этот браузер не может распаковать пол; попробуйте современный.","The floor did not load.":"Пол не загрузился.","straight up":"строго сверху","straight down":"строго снизу","{deg}° right of up":"{deg}° вправо от вертикали","{deg}° left of up":"{deg}° влево от вертикали","Light: {side}, as shipped.":"Свет: {side}, как в игре.","Light: {side}.":"Свет: {side}.","Snapped to the game’s colours.":"Привязано к цветам игры.","Free colours, not snapped to the game’s.":"Свободные цвета, без привязки к игровым.","shipped":"в игре","{side}, as shipped":"{side}, как в игре","{base}: {label}":"{base}: {label}"};function bdT(s,v){var d=window.BD_T,r=d&&d[s]!=null?d[s]:s;return v?r.replace(/\{(\w+)\}/g,function(m,k){return v[k]!=null?v[k]:m}):r}function bdN(n,one,other,v){var d=window.BD_T,r=d&&d[other],o={n:n};for(var k in v)o[k]=v[k];if(r==null)return bdT(n===1?one:other,o);var c="other";try{c=new Intl.PluralRules(window.BD_LANG).select(n)}catch(e){}var f={};r.split("|").forEach(function(p){var i=p.indexOf(":");f[p.slice(0,i).trim()]=p.slice(i+1).trim()});return (f[c]!=null?f[c]:f.other).replace(/\{(\w+)\}/g,function(m,k){return o[k]!=null?o[k]:m})}function bdKeep(e){var a=e.target.closest&&e.target.closest('a[data-lang]');if(a)try{localStorage.setItem('bd-lang',a.getAttribute('data-lang'))}catch(_){}}['click','auxclick','contextmenu'].forEach(function(t){document.addEventListener(t,bdKeep)});document.addEventListener('click',function(e){document.querySelectorAll('details.lang[open]').forEach(function(x){if(!x.contains(e.target))x.removeAttribute('open')})});</script><!--/i18n-head--></head>
+<body>
+<nav class="bar"><a class="home" href="/ru/"><img alt="" height="28" src="/img/mark_180.png" width="28"/>Brutal Diablo</a><div class="navlinks"><a href="/ru/">Главная</a></div><a class="btn primary dc" href="https://discord.gg/NsG8gnhnJH"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"></path></svg>Discord</a><!--i18n-switch--><details class="lang" translate="no"><summary aria-label="Язык: Русский"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#d52b1e"/><rect width="30" height="13.33" fill="#0039a6"/><rect width="30" height="6.67" fill="#fff"/></svg></span><span class="code">RU</span></summary><ul><li><a href="/items/" hreflang="en" lang="en" data-lang="en"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><clipPath id="uklen"><path d="M15 10h15v10zv10H0zH0V0zV0h15z"/></clipPath><rect width="30" height="20" fill="#012169"/><path d="M0 0l30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0l30 20M30 0L0 20" stroke="#c8102e" stroke-width="2.4" clip-path="url(#uklen)"/><path d="M15 0v20M0 10h30" stroke="#fff" stroke-width="6.5"/><path d="M15 0v20M0 10h30" stroke="#c8102e" stroke-width="3.8"/></svg></span>English</a></li><li><a href="/es/items/" hreflang="es" lang="es" data-lang="es"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#aa151b"/><rect y="5" width="30" height="10" fill="#f1bf00"/></svg></span>Español</a></li><li><a href="/pt-br/items/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-br"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#009c3b"/><path d="M15 2.6L27.6 10 15 17.4 2.4 10z" fill="#ffdf00"/><circle cx="15" cy="10" r="4.3" fill="#002776"/></svg></span>Português</a></li><li><a href="/cs/items/" hreflang="cs" lang="cs" data-lang="cs"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#d7141a"/><rect width="30" height="10" fill="#fff"/><path d="M0 0l15 10L0 20z" fill="#11457e"/></svg></span>Čeština</a></li><li><a href="/de/items/" hreflang="de" lang="de" data-lang="de"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#ffce00"/><rect width="30" height="13.33" fill="#dd0000"/><rect width="30" height="6.67" fill="#000"/></svg></span>Deutsch</a></li><li><a href="/ru/items/" hreflang="ru" lang="ru" data-lang="ru" aria-current="true"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#d52b1e"/><rect width="30" height="13.33" fill="#0039a6"/><rect width="30" height="6.67" fill="#fff"/></svg></span>Русский</a></li><li><a href="/pl/items/" hreflang="pl" lang="pl" data-lang="pl"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#dc143c"/><rect width="30" height="10" fill="#fff"/></svg></span>Polski</a></li></ul></details><!--/i18n-switch--></nav>
+<header class="open"><div class="wrap">
+<div class="t">
+<h1><small>Brutal Diablo</small>Предметы</h1>
+<p class="pitch">А, свежий лут!</p>
+</div>
+<div class="showcase"><figure class="cmp show" style="--w:232"><div class="imgs"><img alt="Шинная Кольчуга, Diablo (1996)" class="a" height="348" src="/items/img/splint_1996.webp" width="232"/><img alt="Шинная Кольчуга, Brutal Diablo" class="b" height="348" src="/items/img/splint_brutal.webp" width="232"/></div><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span aria-hidden="true" class="handle"></span><input aria-label="Двигайте ползунок между Diablo (1996) и Brutal Diablo: Шинная Кольчуга" max="100" min="0" type="range" value="50"/></figure><div aria-hidden="true" class="legend"><span>← Diablo (1996)</span><span class="r">Brutal Diablo →</span></div>
+<p class="cap"><b>Шинная Кольчуга</b>Самурайский доспех в готическом соборе. В 1996-м вопросов никто не задавал, и мы начинать не будем.</p></div>
+<div class="b">
+<p>Каждый предмет в игре, вплоть до вывески таверны Огдена, воссоздан по оригиналу. Формы и цвета Blizzard North остаются.</p>
+<p class="intro">Семьдесят один из них — ниже.</p>
+<div class="ctas"><a class="btn primary" href="#haul">Посмотреть добычу ↓</a><a class="btn" href="#haul" id="hgo">Нажмите H, и вы в 1996-м</a></div>
+</div>
+</div></header>
+<main>
+<section aria-labelledby="haul-h" id="haul"><div class="wrap"><h2 id="haul-h">Тетрис в инвентаре, уровень «эксперт»</h2>
+<p class="lead">Зажмите любой предмет, чтобы увидеть его картинку 1996 года.</p>
+<div class="galhost"><noscript><div class="haulstill"><img alt="Рюкзак с лутом в Brutal Diablo" height="464" loading="lazy" src="/items/img/grida_brutal.webp" width="1160"/><img alt="Рюкзак с лутом в Brutal Diablo" height="464" loading="lazy" src="/items/img/gridb_brutal.webp" width="1160"/><img alt="Рюкзак с лутом в Brutal Diablo" height="464" loading="lazy" src="/items/img/gridc_brutal.webp" width="1160"/><img alt="Рюкзак с лутом в Brutal Diablo" height="464" loading="lazy" src="/items/img/gridd_brutal.webp" width="1160"/><img alt="Рюкзак с лутом в Brutal Diablo" height="464" loading="lazy" src="/items/img/gride_brutal.webp" width="1160"/><img alt="Рюкзак с лутом в Brutal Diablo" height="464" loading="lazy" src="/items/img/gridf_brutal.webp" width="1160"/></div></noscript></div>
+<p aria-live="polite" class="status sr"></p>
+</div></section>
+<section id="rest"><div class="wrap"><h2>Пояс и лавка</h2>
+<p class="lead">Пояс, по которому вы в панике колотите, когда появляется Мясник, и полки Гризвольда. Цены он по-прежнему задирает. Мы проверили.</p>
+<div class="two"><figure><figure class="cmp" style="--w:960"><div class="imgs"><img alt="Полки Гризвольда, Diablo (1996)" class="a" height="1026" loading="lazy" src="/items/img/visual_1996.webp" width="960"/><img alt="Полки Гризвольда, Brutal Diablo" class="b" height="1026" loading="lazy" src="/items/img/visual_brutal.webp" width="960"/></div><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span aria-hidden="true" class="handle"></span><input aria-label="Двигайте ползунок между Diablo (1996) и Brutal Diablo: полки Гризвольда" max="100" min="0" type="range" value="50"/></figure><figcaption>Полки Гризвольда в визуальном магазине DevilutionX</figcaption></figure><div class="side-text"><figure><figure class="stack"><div class="row"><img alt="Пояс, Diablo (1996)" height="105" loading="lazy" src="/items/img/belt_1996.webp" width="726"/><span class="lab l">Diablo (1996)</span></div><div class="row"><img alt="Пояс, Brutal Diablo" height="105" loading="lazy" src="/items/img/belt_brutal.webp" width="726"/><span class="lab r">Brutal Diablo</span></div></figure><figcaption>Пояс</figcaption></figure></div></div>
+<p>В игре клавиша та же: H, когда угодно и где угодно.</p>
+<div class="endlinks"><a class="btn primary" href="/ru/">← Назад к Brutal Diablo</a><a class="btn" href="/ru/devlog/items/">Как мы их сделали →</a></div>
+</div></section>
+<section id="tips"><div class="wrap"><h2>Донаты</h2><div class="tipbox"><p>Когда Brutal Diablo выйдет, он будет бесплатным. Киньте монетку, и она уйдёт на время разработки, часы GPU и кофе.</p><p>Этот мод — признание в любви оригинальной игре, поэтому здесь ничего не продаётся. Но каждый донат реально помогает нам продолжать разработку. Спасибо.</p><div><a class="btn primary" href="https://ko-fi.com/brutaldiablo"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M11.351 2.715c-2.7 0-4.986.025-6.83.26C2.078 3.285 0 5.154 0 8.61c0 3.506.182 6.13 1.585 8.493 1.584 2.701 4.233 4.182 7.662 4.182h.83c4.209 0 6.494-2.234 7.637-4a9.5 9.5 0 0 0 1.091-2.338C21.792 14.688 24 12.22 24 9.208v-.415c0-3.247-2.13-5.507-5.792-5.87-1.558-.156-2.65-.208-6.857-.208m0 1.947c4.208 0 5.09.052 6.571.182 2.624.311 4.13 1.584 4.13 4v.39c0 2.156-1.792 3.844-3.87 3.844h-.935l-.156.649c-.208 1.013-.597 1.818-1.039 2.546-.909 1.428-2.545 3.064-5.922 3.064h-.805c-2.571 0-4.831-.883-6.078-3.195-1.09-2-1.298-4.155-1.298-7.506 0-2.181.857-3.402 3.012-3.714 1.533-.233 3.559-.26 6.39-.26m6.547 2.287c-.416 0-.65.234-.65.546v2.935c0 .311.234.545.65.545 1.324 0 2.051-.754 2.051-2s-.727-2.026-2.052-2.026m-10.39.182c-1.818 0-3.013 1.48-3.013 3.142 0 1.533.858 2.857 1.949 3.897.727.701 1.87 1.429 2.649 1.896a1.47 1.47 0 0 0 1.507 0c.78-.467 1.922-1.195 2.623-1.896 1.117-1.039 1.974-2.364 1.974-3.897 0-1.662-1.247-3.142-3.039-3.142-1.065 0-1.792.545-2.338 1.298-.493-.753-1.246-1.298-2.312-1.298"></path></svg>Донат на Ko-fi</a></div></div>
+</div></section>
+</main>
+<footer><div class="wrap"><p>Фанатский мод, не связан с Blizzard Entertainment. ©1996 Blizzard Entertainment, Inc. Все права защищены. Diablo — товарный знак Blizzard Entertainment, Inc.</p><p>Сварено в Чехии 🇨🇿🍻 · Работает на <a href="https://github.com/diasurgical/devilutionX">DevilutionX</a>.</p><p><a href="/ru/">brutaldiablo.com</a></p></div></footer>
+<script>
+/* The before/after sliders, as devlog.js: two images, the divider follows a drag or the range input (arrow keys).
+   The opening one (.show) is drawn at the largest allowed size: one capture pixel is two device pixels, so its CSS
+   px per capture px is 2 / devicePixelRatio, smaller only when its column or the screen is too small for it. */
+var SCALES = {};
+if (/[?&]check(&|$)/.test(location.search)) window.__scales = SCALES;
+// Calls fn again whenever the screen's pixel ratio changes (a window moved to another screen) without a resize.
+function onDpr(fn) {
+  var mq = matchMedia('(resolution: ' + (window.devicePixelRatio || 1) + 'dppx)');
+  mq.addEventListener('change', function () { fn(); onDpr(fn); }, { once: true });
+}
+(function(){
+  document.querySelectorAll('.cmp').forEach(function(f){
+    var r=f.querySelector('input'),h=f.querySelector('.handle');
+    function set(p){p=Math.max(0,Math.min(1,p));f.style.setProperty('--s',p);h.style.left=(p*100)+'%';r.value=Math.round(p*100)}
+    function fromX(e){var b=f.getBoundingClientRect();set((e.clientX-b.left)/b.width)}
+    var drag=false;
+    f.addEventListener('pointerdown',function(e){drag=true;try{f.setPointerCapture(e.pointerId)}catch(_){}fromX(e)});
+    f.addEventListener('pointermove',function(e){if(drag||e.pointerType==='mouse')fromX(e)});
+    f.addEventListener('pointerup',function(){drag=false});f.addEventListener('pointercancel',function(){drag=false});
+    r.addEventListener('input',function(){set(r.value/100)});
+    set(.5);
+  });
+  var show=document.querySelector('.cmp.show');
+  if(!show)return;
+  var img=show.querySelector('img'),w=+img.getAttribute('width'),h=+img.getAttribute('height'),wrap=show.closest('.wrap');
+  function fit(){
+    var dpr=window.devicePixelRatio||1,cs=getComputedStyle(wrap);
+    var avail=wrap.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+    if(matchMedia('(min-width:821px)').matches)avail*=.5;  // beside the text
+    var fitK=Math.min(avail/w,innerHeight*.8/h),k=2/dpr<=fitK?2/dpr:Math.floor(fitK*10000)/10000;  // exact, unless it must fit
+    show.style.width=(w*k)+'px';
+    SCALES.showcase={cssPxPerCapturePx:k,devicePxPerCapturePx:+(k*dpr).toFixed(4),dpr:dpr,cssWidth:+(w*k).toFixed(2)};
+  }
+  fit();addEventListener('resize',fit);onDpr(fit);
+})();
+/* The haul: every picture from the bags once, each in its own slot cells cut from the bag's capture, packed as a
+   sheet (big items take their footprint, small ones fill the gaps). Chips filter it; H or the stone key turns the
+   whole sheet over at once; pressing an item and holding (or Space or Enter on it) shows its other picture while
+   held. The sheet's scale is capped: one capture pixel at most two device pixels. */
+(function(){
+window.bdT=window.bdT||function(s,v){return v?s.replace(/\{(\w+)\}/g,function(m,k){return v[k]!=null?v[k]:m}):s};window.bdN=window.bdN||function(n,a,b,v){var o={n:n};for(var k in v)o[k]=v[k];return window.bdT(n===1?a:b,o)};
+const D = /*i18n:label,line*/{"items":[{"inv":"A","label":"Отвага Аркейна","c":0,"r":0,"w":2,"h":3,"q":"unique","kind":"Unique","line":"Все помнят, как надели её в первый раз.","curs":157,"type":8},{"inv":"A","label":"Тесак Мясника","c":2,"r":0,"w":2,"h":3,"q":"unique","kind":"Unique","line":"Вырван из рук Мясника. До сих пор липкий.","curs":106,"type":2},{"inv":"A","label":"Дедушка","c":4,"r":0,"w":2,"h":3,"q":"unique","kind":"Unique","line":"Двуручный меч в одной руке. Не спрашивайте как.","curs":161,"type":1},{"inv":"A","label":"Гребень Арлекина","c":6,"r":0,"w":2,"h":2,"q":"unique","kind":"Unique","line":"Минус три к защите. Всё равно надевайте.","curs":81,"type":7},{"inv":"A","label":"Корона Нежити","c":8,"r":0,"w":2,"h":2,"q":"unique","kind":"Unique","line":"Прямо с головы Короля-Скелета. Он её и так достаточно поносил.","curs":77,"type":7},{"inv":"A","label":"Золото","c":6,"r":2,"w":1,"h":1,"q":"normal","kind":"Gold","line":null,"curs":6,"type":11},{"inv":"A","label":"Эликсир Ловкости","c":7,"r":2,"w":1,"h":1,"q":"normal","kind":"Elixir","line":null,"curs":36,"type":0},{"inv":"A","label":"Эликсир Живучести","c":8,"r":2,"w":1,"h":1,"q":"normal","kind":"Elixir","line":null,"curs":31,"type":0},{"inv":"A","label":"Зелье Полного Исцеления","c":9,"r":2,"w":1,"h":1,"q":"normal","kind":"Potion","line":null,"curs":35,"type":0},{"inv":"A","label":"Зелье Исцеления","c":0,"r":3,"w":1,"h":1,"q":"normal","kind":"Potion","line":"Клик, клик, клик… и всё равно умираем.","curs":32,"type":0},{"inv":"A","label":"Зелье Маны","c":1,"r":3,"w":1,"h":1,"q":"normal","kind":"Potion","line":null,"curs":39,"type":0},{"inv":"A","label":"Зелье Полного Омоложения","c":2,"r":3,"w":1,"h":1,"q":"normal","kind":"Potion","line":null,"curs":33,"type":0},{"inv":"A","label":"Эликсир Силы","c":3,"r":3,"w":1,"h":1,"q":"normal","kind":"Elixir","line":null,"curs":38,"type":0},{"inv":"A","label":"Кольцо Истины","c":4,"r":3,"w":1,"h":1,"q":"unique","kind":"Unique","line":null,"curs":10,"type":12},{"inv":"A","label":"Оптический Амулет","c":5,"r":3,"w":1,"h":1,"q":"unique","kind":"Unique","line":null,"curs":44,"type":13},{"inv":"A","label":"Ежевика","c":6,"r":3,"w":1,"h":1,"q":"unique","kind":"Unique","line":null,"curs":9,"type":12},{"inv":"A","label":"Эмпирейское Кольцо","c":7,"r":3,"w":1,"h":1,"q":"unique","kind":"Unique","line":null,"curs":18,"type":12},{"inv":"A","label":"Свиток Портала в Город","c":8,"r":3,"w":1,"h":1,"q":"normal","kind":"Scroll","line":"Прочитать и сбежать. Ничего стыдного.","curs":1,"type":0},{"inv":"A","label":"Кольцо магии","c":9,"r":3,"w":1,"h":1,"q":"magic","kind":"Magic","line":null,"curs":12,"type":12},{"inv":"B","label":"Сила Ветра","c":0,"r":0,"w":2,"h":3,"q":"unique","kind":"Unique","line":"Отбрасывает их назад. Далеко назад.","curs":164,"type":3},{"inv":"B","label":"Разоритель Мессершмидта","c":2,"r":0,"w":2,"h":3,"q":"unique","kind":"Unique","line":"Мессершмидт значит «кузнец ножей». А это не нож.","curs":163,"type":2},{"inv":"B","label":"Посох Лазаря","c":4,"r":0,"w":2,"h":3,"q":"normal","kind":"Quest","line":null,"curs":155,"type":0},{"inv":"B","label":"Дьявольская Наковальня","c":6,"r":0,"w":2,"h":3,"q":"normal","kind":"Quest","line":null,"curs":140,"type":0},{"inv":"B","label":"Коготь Грифона","c":8,"r":0,"w":1,"h":3,"q":"unique","kind":"Unique","line":null,"curs":68,"type":1},{"inv":"B","label":"Клинок Палача","c":9,"r":0,"w":1,"h":3,"q":"unique","kind":"Unique","line":null,"curs":58,"type":1},{"inv":"B","label":"Золотой Эликсир","c":0,"r":3,"w":1,"h":1,"q":"normal","kind":"Quest","line":null,"curs":17,"type":0},{"inv":"B","label":"Призрачный Эликсир","c":1,"r":3,"w":1,"h":1,"q":"normal","kind":"Quest","line":null,"curs":15,"type":0},{"inv":"B","label":"Кровавый Камень","c":2,"r":3,"w":1,"h":1,"q":"normal","kind":"Quest","line":null,"curs":25,"type":0},{"inv":"B","label":"Мозг","c":3,"r":3,"w":1,"h":1,"q":"normal","kind":"Quest","line":null,"curs":40,"type":0},{"inv":"B","label":"Проливатель Крови","c":4,"r":3,"w":1,"h":1,"q":"unique","kind":"Unique","line":null,"curs":8,"type":12},{"inv":"B","label":"Кольцо Регхи","c":5,"r":3,"w":1,"h":1,"q":"unique","kind":"Unique","line":null,"curs":11,"type":12},{"inv":"B","label":"Сужающее Кольцо","c":6,"r":3,"w":1,"h":1,"q":"unique","kind":"Unique","line":null,"curs":14,"type":12},{"inv":"B","label":"Обручальное Кольцо","c":7,"r":3,"w":1,"h":1,"q":"unique","kind":"Unique","line":null,"curs":13,"type":12},{"inv":"B","label":"Бронзовый Амулет лисы","c":8,"r":3,"w":1,"h":1,"q":"magic","kind":"Magic","line":null,"curs":45,"type":13},{"inv":"B","label":"Зелье Полной Маны","c":9,"r":3,"w":1,"h":1,"q":"normal","kind":"Potion","line":null,"curs":0,"type":0},{"inv":"C","label":"Каменный Тесак","c":0,"r":0,"w":2,"h":3,"q":"unique","kind":"Unique","line":null,"curs":104,"type":2},{"inv":"C","label":"Вывеска Таверны","c":2,"r":0,"w":2,"h":3,"q":"normal","kind":"Quest","line":"Огден просит её вернуть уже 30 лет.","curs":126,"type":0},{"inv":"C","label":"Грибной Фолиант","c":4,"r":0,"w":2,"h":2,"q":"normal","kind":"Quest","line":null,"curs":97,"type":0},{"inv":"C","label":"Волшебный Камень","c":6,"r":0,"w":2,"h":2,"q":"normal","kind":"Quest","line":null,"curs":76,"type":0},{"inv":"C","label":"Королевский Венец","c":8,"r":0,"w":2,"h":2,"q":"unique","kind":"Unique","line":null,"curs":79,"type":7},{"inv":"C","label":"Книга","c":4,"r":2,"w":2,"h":2,"q":"normal","kind":"Book","line":null,"curs":86,"type":0},{"inv":"C","label":"Чёрный Гриб","c":6,"r":2,"w":2,"h":2,"q":"normal","kind":"Quest","line":null,"curs":89,"type":0},{"inv":"C","label":"Стальная Завеса","c":8,"r":2,"w":2,"h":2,"q":"unique","kind":"Unique","line":"Отнимает у вас немного света. И это в Diablo, подумать только.","curs":85,"type":7},{"inv":"C","label":"Свиток Идентификации","c":0,"r":3,"w":1,"h":1,"q":"normal","kind":"Scroll","line":null,"curs":1,"type":0},{"inv":"C","label":"Эликсир Магии","c":1,"r":3,"w":1,"h":1,"q":"normal","kind":"Elixir","line":null,"curs":34,"type":0},{"inv":"C","label":"Зелье Омоложения","c":3,"r":3,"w":1,"h":1,"q":"normal","kind":"Potion","line":null,"curs":37,"type":0},{"inv":"D","label":"Полная Пластинчатая Кольчуга","c":0,"r":0,"w":2,"h":3,"q":"magic","kind":"Magic","line":"Мечта каждого Воина. Немного лязгает.","curs":151,"type":9},{"inv":"D","label":"Башенный Щит","c":2,"r":0,"w":2,"h":3,"q":"magic","kind":"Magic","line":"Прячьтесь за ним. Мы никому не скажем.","curs":132,"type":5},{"inv":"D","label":"Радужный Плащ","c":4,"r":0,"w":2,"h":3,"q":"unique","kind":"Unique","line":"Ничто так не передаёт готический ужас, как радуга.","curs":138,"type":6},{"inv":"D","label":"Шлем Владыки","c":6,"r":0,"w":2,"h":2,"q":"unique","kind":"Unique","line":null,"curs":99,"type":7},{"inv":"D","label":"Корона","c":8,"r":0,"w":2,"h":2,"q":"magic","kind":"Magic","line":null,"curs":95,"type":7},{"inv":"D","label":"Шапка","c":6,"r":2,"w":2,"h":2,"q":"magic","kind":"Magic","line":null,"curs":91,"type":7},{"inv":"D","label":"Большой Шлем","c":8,"r":2,"w":2,"h":2,"q":"magic","kind":"Magic","line":null,"curs":98,"type":7},{"inv":"D","label":"Кольцо баланса","c":0,"r":3,"w":1,"h":1,"q":"magic","kind":"Magic","line":null,"curs":12,"type":12},{"inv":"D","label":"Амулет лисы","c":1,"r":3,"w":1,"h":1,"q":"magic","kind":"Magic","line":null,"curs":45,"type":13},{"inv":"D","label":"Свиток Исцеления","c":2,"r":3,"w":1,"h":1,"q":"normal","kind":"Scroll","line":null,"curs":1,"type":0},{"inv":"D","label":"Зелье Полного Исцеления","c":3,"r":3,"w":1,"h":1,"q":"normal","kind":"Potion","line":null,"curs":35,"type":0},{"inv":"D","label":"Эликсир Живучести","c":4,"r":3,"w":1,"h":1,"q":"normal","kind":"Elixir","line":null,"curs":31,"type":0},{"inv":"D","label":"Золото","c":5,"r":3,"w":1,"h":1,"q":"normal","kind":"Gold","line":null,"curs":5,"type":11},{"inv":"E","label":"Игольщик","c":0,"r":0,"w":2,"h":3,"q":"unique","kind":"Unique","line":"Его зовут Игольщик, и занимается он ровно этим.","curs":158,"type":3},{"inv":"E","label":"Двуручный Топор","c":2,"r":0,"w":2,"h":3,"q":"magic","kind":"Magic","line":null,"curs":143,"type":2},{"inv":"E","label":"Ятаган","c":4,"r":0,"w":1,"h":3,"q":"magic","kind":"Magic","line":null,"curs":72,"type":1},{"inv":"E","label":"Клеймор","c":5,"r":0,"w":1,"h":3,"q":"magic","kind":"Magic","line":null,"curs":65,"type":1},{"inv":"E","label":"Полуторный Меч","c":6,"r":0,"w":1,"h":3,"q":"magic","kind":"Magic","line":null,"curs":57,"type":1},{"inv":"E","label":"Моргенштерн","c":7,"r":0,"w":1,"h":3,"q":"magic","kind":"Magic","line":null,"curs":63,"type":4},{"inv":"E","label":"Кортик Гоннагала","c":8,"r":0,"w":1,"h":2,"q":"unique","kind":"Unique","line":null,"curs":54,"type":1},{"inv":"E","label":"Волшебный Шип","c":9,"r":0,"w":1,"h":2,"q":"unique","kind":"Unique","line":null,"curs":50,"type":1},{"inv":"E","label":"Кинжал","c":8,"r":2,"w":1,"h":2,"q":"magic","kind":"Magic","line":null,"curs":51,"type":1},{"inv":"E","label":"Чёрная Бритва","c":9,"r":2,"w":1,"h":2,"q":"unique","kind":"Unique","line":"Маленькая, и пришла сюда не дружить.","curs":53,"type":1},{"inv":"E","label":"Зелье Исцеления","c":0,"r":3,"w":1,"h":1,"q":"normal","kind":"Potion","line":"Клик, клик, клик… и всё равно умираем.","curs":32,"type":0},{"inv":"E","label":"Зелье Омоложения","c":1,"r":3,"w":1,"h":1,"q":"normal","kind":"Potion","line":null,"curs":37,"type":0},{"inv":"E","label":"Эликсир Силы","c":2,"r":3,"w":1,"h":1,"q":"normal","kind":"Elixir","line":null,"curs":38,"type":0},{"inv":"E","label":"Эликсир Ловкости","c":3,"r":3,"w":1,"h":1,"q":"normal","kind":"Elixir","line":null,"curs":36,"type":0},{"inv":"E","label":"Бронзовое Кольцо","c":4,"r":3,"w":1,"h":1,"q":"magic","kind":"Magic","line":null,"curs":12,"type":12},{"inv":"E","label":"Амулет живучести","c":5,"r":3,"w":1,"h":1,"q":"magic","kind":"Magic","line":null,"curs":45,"type":13},{"inv":"E","label":"Свиток Окаменения","c":6,"r":3,"w":1,"h":1,"q":"normal","kind":"Scroll","line":null,"curs":1,"type":0},{"inv":"E","label":"Золото","c":7,"r":3,"w":1,"h":1,"q":"normal","kind":"Gold","line":null,"curs":4,"type":11},{"inv":"F","label":"Военный Посох","c":0,"r":0,"w":2,"h":3,"q":"magic","kind":"Magic","line":null,"curs":124,"type":10},{"inv":"F","label":"Длинный Посох","c":2,"r":0,"w":2,"h":3,"q":"magic","kind":"Magic","line":null,"curs":123,"type":10},{"inv":"F","label":"Защитник","c":4,"r":0,"w":2,"h":3,"q":"unique","kind":"Unique","line":null,"curs":162,"type":10},{"inv":"F","label":"Шапка Размышлений","c":6,"r":0,"w":2,"h":2,"q":"unique","kind":"Unique","line":"Нам бы такую на работу.","curs":93,"type":7},{"inv":"F","label":"Книга Огненной Стрелы","c":8,"r":0,"w":2,"h":2,"q":"normal","kind":"Book","line":"Первое заклинание каждого Мага. Наше тоже.","curs":87,"type":0},{"inv":"F","label":"Тюбетейка","c":6,"r":2,"w":2,"h":2,"q":"magic","kind":"Magic","line":null,"curs":90,"type":7},{"inv":"F","label":"Книга Заряженной Стрелы","c":8,"r":2,"w":2,"h":2,"q":"normal","kind":"Book","line":null,"curs":88,"type":0},{"inv":"F","label":"Зелье Маны","c":0,"r":3,"w":1,"h":1,"q":"normal","kind":"Potion","line":null,"curs":39,"type":0},{"inv":"F","label":"Зелье Полной Маны","c":1,"r":3,"w":1,"h":1,"q":"normal","kind":"Potion","line":null,"curs":0,"type":0},{"inv":"F","label":"Эликсир Магии","c":2,"r":3,"w":1,"h":1,"q":"normal","kind":"Elixir","line":null,"curs":34,"type":0},{"inv":"F","label":"Кольцо лисы","c":3,"r":3,"w":1,"h":1,"q":"magic","kind":"Magic","line":null,"curs":12,"type":12},{"inv":"F","label":"Амулет баланса","c":4,"r":3,"w":1,"h":1,"q":"magic","kind":"Magic","line":null,"curs":45,"type":13},{"inv":"F","label":"Свиток Огненного Шара","c":5,"r":3,"w":1,"h":1,"q":"normal","kind":"Scroll","line":null,"curs":1,"type":0}],"img":{"A_hi":"/items/img/grida_brutal.webp","A_1x":"/items/img/grida_1996.webp","B_hi":"/items/img/gridb_brutal.webp","B_1x":"/items/img/gridb_1996.webp","C_hi":"/items/img/gridc_brutal.webp","C_1x":"/items/img/gridc_1996.webp","D_hi":"/items/img/gridd_brutal.webp","D_1x":"/items/img/gridd_1996.webp","E_hi":"/items/img/gride_brutal.webp","E_1x":"/items/img/gride_1996.webp","F_hi":"/items/img/gridf_brutal.webp","F_1x":"/items/img/gridf_1996.webp"},"cell":116,"cols":10,"rows":4};
+const $ = (s, r = document) => r.querySelector(s);
+const el = (tag, cls, attrs) => { const e = document.createElement(tag); if (cls) e.className = cls; if (attrs) for (const k in attrs) e.setAttribute(k, attrs[k]); return e; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const INVS = [...new Set(D.items.map(i => i.inv))];
+const KIND = { Quest: bdT('Quest item'), Item: '', Unique: bdT('Unique'), Magic: bdT('Magic'), Gold: bdT('Gold'), Potion: bdT('Potion'), Elixir: bdT('Elixir'), Scroll: bdT('Scroll'), Book: bdT('Book') };
+const kindOf = it => it.kind in KIND ? KIND[it.kind] : it.kind;
+const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+const other = m => m === 'hi' ? '1x' : 'hi';
+const name = m => m === 'hi' ? 'Brutal Diablo' : 'Diablo (1996)';
+// Both pictures of every bag, fetched up front so a card never turns over to an empty face.
+for (const k in D.img) { const i = new Image(); i.src = D.img[k]; }
+
+// The element shows cells (src.c, src.r)... of a grid picture, at cell size cs.
+function crop(e, url, cs, src, pix) {
+  e.style.backgroundImage = `url(${url})`;
+  e.style.backgroundSize = `${D.cols * cs}px ${D.rows * cs}px`;
+  e.style.backgroundPosition = `${-src.c * cs}px ${-src.r * cs}px`;
+  e.classList.toggle('pix', !!pix);
+}
+// The game's description: the name in the item's colour, its kind, its one-liner.
+function tipHTML(it) {
+  let h = `<span class="tn q-${it.q}">${esc(it.label)}</span>`;
+  const k = kindOf(it);
+  if (k) h += `<span class="tk">${esc(k)}</span>`;
+  if (it.line) h += `<span class="tl">${esc(it.line)}</span>`;
+  return h;
+}
+
+// Arrow keys move the focus between the cards by where they are; one tab stop for the sheet.
+function rove(container, sel) {
+  container.addEventListener('keydown', e => {
+    const d = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[e.key];
+    const cur = e.target.closest && e.target.closest(sel);
+    if (!d || !cur || e.defaultPrevented) return;
+    e.preventDefault();
+    const btns = [...container.querySelectorAll(sel)].filter(b => !b.hidden);
+    const ctr = b => ({ x: b.offsetLeft + b.offsetWidth / 2, y: b.offsetTop + b.offsetHeight / 2 });
+    const cb = ctr(cur);
+    let best = null, bs = Infinity;
+    for (const b of btns) {
+      if (b === cur) continue;
+      const p = ctr(b), dx = p.x - cb.x, dy = p.y - cb.y, along = dx * d[0] + dy * d[1];
+      if (along <= 1) continue;
+      const s = along + 2.5 * Math.abs(dx * d[1] + dy * d[0]);
+      if (s < bs) { bs = s; best = b; }
+    }
+    if (best) focusItem(container, best, sel);
+  });
+}
+function focusItem(container, b, sel) { container.querySelectorAll(sel).forEach(x => x.tabIndex = -1); b.tabIndex = 0; b.focus(); }
+function firstStop(container, sel) { const b = [...container.querySelectorAll(sel)].find(x => !x.hidden); if (b) b.tabIndex = 0; }
+
+function haul(sec) {
+  const host = $('.galhost', sec), status = $('.status', sec), say = t => { status.textContent = t; };
+  const ORDER = { unique: 0, quest: 1, armour: 2, weapon: 3, jewel: 4, potion: 5, gold: 6 };
+  const isArmour = it => [5, 6, 7, 8, 9].includes(it.type), isWeapon = it => [1, 2, 3, 4, 10].includes(it.type);
+  const isJewel = it => it.type === 12 || it.type === 13, isQuest = it => it.kind === 'Quest';
+  const CHIPS = [
+    [bdT('All'), () => true],
+    [bdT('Uniques'), it => it.q === 'unique'],
+    [bdT('Quest items'), isQuest],
+    [bdT('Armour'), isArmour],
+    [bdT('Weapons'), isWeapon],
+    [bdT('Jewellery'), isJewel],
+    [bdT('Potions, scrolls and books'), it => it.type === 0 && !isQuest(it)],
+  ];
+  const group = it => it.q === 'unique' ? 'unique' : isQuest(it) ? 'quest' : isArmour(it) ? 'armour' : isWeapon(it) ? 'weapon'
+    : isJewel(it) ? 'jewel' : it.type === 11 ? 'gold' : 'potion';
+  // One card per picture: the first item that shows it, in the bags' order.
+  const seen = new Set(), list = [];
+  for (const it of D.items) { if (!seen.has(it.curs)) { seen.add(it.curs); list.push(it); } }
+  const bagIndex = it => INVS.indexOf(it.inv);
+  list.sort((a, b) => ORDER[group(a)] - ORDER[group(b)] || b.w * b.h - a.w * a.h || bagIndex(a) - bagIndex(b) || a.r - b.r || a.c - b.c);
+
+  let mode = 'hi', filter = 0;
+  const frame = el('div', 'haul'), bar = el('div', 'haulbar'), chips = el('div', 'chips', { role: 'group', 'aria-label': bdT('Show') });
+  const side = el('div', '', { style: 'display:flex;align-items:center;gap:.6rem;margin-left:auto' });
+  const gstate = el('span', 'gstate', { 'aria-hidden': 'true' });
+  const hk = el('div', 'hkey'), hl = el('span', 'hl', { 'aria-hidden': 'true' }), hb = el('button', '', { type: 'button', 'aria-pressed': 'false', 'aria-label': bdT('H: show every item as in Diablo (1996)') });
+  hb.textContent = 'H'; hk.append(hl, hb); side.append(gstate, hk); bar.append(chips, side);
+  const sheet = el('div', 'gsheet'), tip = el('div', 'gtip', { 'aria-hidden': 'true' }); tip.hidden = true;
+  frame.append(bar, sheet, tip); host.append(frame);
+  const chipBtns = CHIPS.map(([label, test], i) => {
+    const n = list.filter(test).length;
+    const b = el('button', 'chip', { type: 'button', 'aria-pressed': i === 0 ? 'true' : 'false' });
+    b.innerHTML = `${esc(label)}<span class="n">${n}</span>`;
+    b.setAttribute('aria-label', bdN(n, '{label}, {n} item', '{label}, {n} items', { label }));
+    b.addEventListener('click', () => { filter = i; chipBtns.forEach(x => x.setAttribute('aria-pressed', String(x === b))); apply(); say(bdN(n, 'Showing {label}: {n} item.', 'Showing {label}: {n} items.', { label: label.toLocaleLowerCase(window.BD_LANG || 'en'), Label: label })); });
+    chips.append(b); return b;
+  });
+  const cards = list.map(it => {
+    const b = el('button', 'gcard', { type: 'button', 'aria-label': it.label + (it.line ? `. ${it.line}` : '') });
+    const pic = el('span', 'pic', { 'aria-hidden': 'true' });
+    b.append(pic); b._it = it; b._pic = pic; b._peek = false; b.tabIndex = -1;
+    sheet.append(b); return b;
+  });
+  let g = null;
+  function layout() {
+    const dpr = window.devicePixelRatio || 1, W = sheet.clientWidth;
+    const gap = W < 560 ? 4 : 6, target = W < 560 ? 62 : 56, cap = D.cell * 2 / dpr;
+    const cols = Math.max(4, Math.floor((W + gap) / (target + gap)));
+    const cs = Math.floor(Math.min(cap, (W + gap) / cols - gap) * 1000) / 1000;
+    g = { cs, gap, cols };
+    Object.assign(sheet.style, { gridTemplateColumns: `repeat(${cols}, ${cs}px)`, gridAutoRows: cs + 'px', gap: gap + 'px' });
+    SCALES[sec.id] = { cssPxPerCapturePx: +(cs / D.cell).toFixed(4), devicePxPerCapturePx: +(cs / D.cell * dpr).toFixed(3), dpr, cols, cellCssPx: cs };
+    for (const b of cards) {
+      const it = b._it;
+      b.style.gridColumn = `span ${it.w}`; b.style.gridRow = `span ${it.h}`;
+      b._pic.style.width = it.w * cs + 'px'; b._pic.style.height = it.h * cs + 'px';
+    }
+    cards.forEach(paintCard);
+    paintLabels(); hideTip();
+  }
+  function paintCard(b) {
+    if (!g) return;
+    const m = b._peek ? other(mode) : mode;
+    crop(b._pic, D.img[`${b._it.inv}_${m}`], g.cs, b._it, m === '1x');
+    b.classList.toggle('peek', b._peek); b.dataset.peek = name(m);
+  }
+  const hgo = $('#hgo');
+  function paintLabels() {
+    gstate.textContent = name(mode); gstate.classList.toggle('old', mode === '1x');
+    hl.textContent = mode === 'hi' ? bdT('Press for 1996') : bdT('Back to now');
+    hk.dataset.on = String(mode === '1x'); hb.setAttribute('aria-pressed', String(mode === '1x'));
+    if (hgo) hgo.textContent = mode === 'hi' ? bdT('Press H for 1996') : bdT('Press H for Brutal Diablo');
+  }
+  function apply() {
+    const test = CHIPS[filter][1];
+    cards.forEach(b => { b.hidden = !test(b._it); b.tabIndex = -1; });
+    firstStop(sheet, '.gcard'); hideTip();
+  }
+
+  // The flip: the labels and every card change at once.
+  function flip() {
+    mode = other(mode); paintLabels(); say(bdT('Showing every item as {name}.', { name: name(mode) }));
+    cards.forEach(paintCard);
+  }
+  hb.addEventListener('click', () => flip());
+
+  // The description: the name in the item's colour, its kind, its one-liner, over the item (under it at the top).
+  function showTip(b) {
+    tip.innerHTML = tipHTML(b._it); tip.hidden = false;
+    const f = frame.getBoundingClientRect(), r = b._pic.getBoundingClientRect(), tw = tip.offsetWidth, th = tip.offsetHeight;
+    const x = Math.max(4, Math.min(f.width - tw - 4, r.left - f.left + r.width / 2 - tw / 2));
+    let y = r.top - f.top - th - 6;
+    if (y < 4) y = r.bottom - f.top + 6;
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  }
+  function hideTip() { tip.hidden = true; }
+  const cardOf = e => e.target.closest && e.target.closest('.gcard');
+  function peek(b, on) { if (b._peek === on) return; b._peek = on; paintCard(b); }
+  sheet.addEventListener('pointerover', e => { const b = cardOf(e); if (b && e.pointerType === 'mouse') showTip(b); });
+  sheet.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') hideTip(); });
+  // A press shows the other picture at once, for as long as it is held.
+  sheet.addEventListener('pointerdown', e => {
+    const b = cardOf(e); if (!b || (e.pointerType === 'mouse' && e.button !== 0)) return;
+    if (e.pointerType !== 'mouse') e.preventDefault();
+    peek(b, true); showTip(b);
+    const off = ev => {
+      peek(b, false);
+      if (ev.type === 'pointercancel') hideTip();  // the touch became a scroll
+      for (const t of ['pointerup', 'pointercancel', 'pointerleave']) b.removeEventListener(t, off);
+    };
+    for (const t of ['pointerup', 'pointercancel', 'pointerleave']) b.addEventListener(t, off);
+  });
+  sheet.addEventListener('contextmenu', e => { if (cardOf(e)) e.preventDefault(); });
+  document.addEventListener('pointerdown', e => { if (!tip.hidden && !(cardOf(e) && sheet.contains(e.target))) hideTip(); }, true);
+  sheet.addEventListener('focusin', e => { const b = cardOf(e); if (b) showTip(b); });
+  sheet.addEventListener('focusout', e => { const b = cardOf(e); if (b) peek(b, false); hideTip(); });
+  // Keys on a card: Space or Enter shows the other picture while held.
+  sheet.addEventListener('keydown', e => {
+    const b = cardOf(e); if (!b) return;
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (!e.repeat) peek(b, true); }
+  });
+  sheet.addEventListener('keyup', e => {
+    const b = cardOf(e); if (!b || (e.key !== ' ' && e.key !== 'Enter')) return;
+    e.preventDefault(); peek(b, false);
+  });
+  rove(sheet, '.gcard');
+
+  // H turns the sheet over, from inside the section or anywhere on the page (the only H here); a held key flips once.
+  const isFlip = e => (e.key === 'h' || e.key === 'H') && !e.repeat && !e.metaKey && !e.ctrlKey && !e.altKey;
+  sec.addEventListener('keydown', e => { if ((e.key === 'h' || e.key === 'H') && e.repeat) { e.preventDefault(); e.stopPropagation(); return; } if (isFlip(e)) { e.preventDefault(); e.stopPropagation(); flip(); } }, true);
+  document.addEventListener('keydown', e => {
+    if (sec.contains(e.target)) return;
+    if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable]')) return;
+    if (isFlip(e)) flip();
+  });
+  // The header's "Press H for 1996": to the gallery, then the flip once it is in view.
+  if (hgo) hgo.addEventListener('click', e => {
+    e.preventDefault();
+    const barH = ($('.bar') || { offsetHeight: 0 }).offsetHeight, want = barH + 10;
+    const dy = frame.getBoundingClientRect().top - want;
+    let fired = false;
+    const go = () => { if (fired) return; fired = true; hb.focus({ preventScroll: true }); flip(); };
+    scrollTo({ top: scrollY + dy, behavior: reduced() ? 'auto' : 'smooth' });
+    if (Math.abs(dy) < 8 || reduced()) return go();
+    if ('onscrollend' in window) addEventListener('scrollend', go, { once: true });
+    setTimeout(go, 900);
+  });
+  let rz = 0;
+  addEventListener('resize', () => { cancelAnimationFrame(rz); rz = requestAnimationFrame(layout); });
+  onDpr(layout);
+  apply(); layout();
+}
+
+haul($('#haul'));
+})();
+</script>
+<script async="" data-goatcounter="https://brutaldiablo.goatcounter.com/count" src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

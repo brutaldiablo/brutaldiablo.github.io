@@ -1,0 +1,547 @@
+{
+ "Adria": {
+  "tr": "Адрия",
+  "from": "game",
+  "kind": "name"
+ },
+ "Amulet": {
+  "tr": "Амулет",
+  "from": "game",
+  "kind": "name"
+ },
+ "Amulet of balance": {
+  "tr": "Амулет баланса",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Amulet of the fox": {
+  "tr": "Амулет лисы",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Amulet of vitality": {
+  "tr": "Амулет живучести",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Anvil of Fury": {
+  "tr": "Дьявольская Наковальня",
+  "from": "game",
+  "kind": "item"
+ },
+ "Arkaine's Valor": {
+  "tr": "Отвага Аркейна",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bastard Sword": {
+  "tr": "Полуторный Меч",
+  "from": "game",
+  "kind": "item"
+ },
+ "Black Mushroom": {
+  "tr": "Чёрный Гриб",
+  "from": "game",
+  "kind": "item"
+ },
+ "Black Razor": {
+  "tr": "Чёрная Бритва",
+  "from": "game",
+  "kind": "item"
+ },
+ "Blood Stone": {
+  "tr": "Кровавый Камень",
+  "from": "game",
+  "kind": "item"
+ },
+ "Book of Charged Bolt": {
+  "tr": "Книга Заряженная Стрела",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Book of Firebolt": {
+  "tr": "Книга Огненная Стрела",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Brain": {
+  "tr": "Мозг",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bramble": {
+  "tr": "Ежевика",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bronze Amulet of the fox": {
+  "tr": "Бронзовый Амулет лисы",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Bronze Ring": {
+  "tr": "Бронзовый Кольцо",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Cap": {
+  "tr": "Шапка",
+  "from": "game",
+  "kind": "item"
+ },
+ "Catacombs": {
+  "tr": "Катакомбы",
+  "from": "game",
+  "kind": "name"
+ },
+ "Cathedral": {
+  "tr": "Собор",
+  "from": "game",
+  "kind": "name"
+ },
+ "Caves": {
+  "tr": "Пещеры",
+  "from": "game",
+  "kind": "name"
+ },
+ "Chain Mail": {
+  "tr": "Кольчатая Кольчуга",
+  "from": "game",
+  "kind": "name"
+ },
+ "Charged Bolt": {
+  "tr": "Заряженная Стрела",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Claymore": {
+  "tr": "Клеймор",
+  "from": "game",
+  "kind": "item"
+ },
+ "Cleaver": {
+  "tr": "Тесак",
+  "from": "game",
+  "kind": "name"
+ },
+ "Constricting Ring": {
+  "tr": "Сужающее Кольцо",
+  "from": "game",
+  "kind": "item"
+ },
+ "Crown": {
+  "tr": "Корона",
+  "from": "game",
+  "kind": "item"
+ },
+ "Dagger": {
+  "tr": "Кинжал",
+  "from": "game",
+  "kind": "item"
+ },
+ "Dark One": {
+  "tr": "Тёмный",
+  "from": "game",
+  "kind": "name"
+ },
+ "Elixir of Dexterity": {
+  "tr": "Эликсир Ловкости",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Magic": {
+  "tr": "Эликсир Магии",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Strength": {
+  "tr": "Эликсир Силы",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Vitality": {
+  "tr": "Эликсир Живучести",
+  "from": "game",
+  "kind": "item"
+ },
+ "Empyrean Band": {
+  "tr": "Эмпирейское Кольцо",
+  "from": "game",
+  "kind": "item"
+ },
+ "Fire Wall": {
+  "tr": "Стена Огня",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Full Helm": {
+  "tr": "Закрытый Шлем",
+  "from": "game",
+  "kind": "name"
+ },
+ "Full Plate Mail": {
+  "tr": "Полная Пластинчатая Кольчуга",
+  "from": "game",
+  "kind": "item"
+ },
+ "Fungal Tome": {
+  "tr": "Грибной Фолиант",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ghoul": {
+  "tr": "Упырь",
+  "from": "game",
+  "kind": "name"
+ },
+ "Golden Elixir": {
+  "tr": "Золотой Эликсир",
+  "from": "game",
+  "kind": "item"
+ },
+ "Gonnagal's Dirk": {
+  "tr": "Кортик Гоннагала",
+  "from": "game",
+  "kind": "item"
+ },
+ "Gothic Plate": {
+  "tr": "Готические Латы",
+  "from": "game",
+  "kind": "name"
+ },
+ "Great Axe": {
+  "tr": "Двуручный Топор",
+  "from": "game",
+  "kind": "item"
+ },
+ "Great Helm": {
+  "tr": "Большой Шлем",
+  "from": "game",
+  "kind": "item"
+ },
+ "Griswold": {
+  "tr": "Гризвольд",
+  "from": "game",
+  "kind": "name"
+ },
+ "Gryphon's Claw": {
+  "tr": "Коготь Грифона",
+  "from": "game",
+  "kind": "item"
+ },
+ "Harlequin Crest": {
+  "tr": "Гребень Арлекина",
+  "from": "game",
+  "kind": "item"
+ },
+ "Hellfire": {
+  "tr": "Hellfire",
+  "from": "site",
+  "note": "the owner's decision: stays in English, as the expansion's name and as the name of a look on the items devlog"
+ },
+ "Horror": {
+  "tr": "Ужас",
+  "from": "game",
+  "kind": "name"
+ },
+ "Kite Shield": {
+  "tr": "Треугольный Щит",
+  "from": "game",
+  "kind": "name"
+ },
+ "Long Staff": {
+  "tr": "Длинный Посох",
+  "from": "game",
+  "kind": "item"
+ },
+ "Long War Bow": {
+  "tr": "Длинный Военный Лук",
+  "from": "game",
+  "kind": "name"
+ },
+ "Magic Rock": {
+  "tr": "Волшебный Камень",
+  "from": "game",
+  "kind": "item"
+ },
+ "Mail": {
+  "tr": "Кольчуга",
+  "from": "game",
+  "kind": "name"
+ },
+ "Messerschmidt's Reaver": {
+  "tr": "Разоритель Мессершмидта",
+  "from": "game",
+  "kind": "item"
+ },
+ "Morning Star": {
+  "tr": "Моргенштерн",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ogden": {
+  "tr": "Огден",
+  "from": "game",
+  "kind": "name"
+ },
+ "Optic Amulet": {
+  "tr": "Оптический Амулет",
+  "from": "game",
+  "kind": "item"
+ },
+ "OverLord's Helm": {
+  "tr": "Шлем Владыки",
+  "from": "game",
+  "kind": "item"
+ },
+ "Plate Mail": {
+  "tr": "Пластинчатый Доспех",
+  "from": "game",
+  "kind": "name"
+ },
+ "Potion of Full Healing": {
+  "tr": "Зелье Полного Исцеления",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Full Mana": {
+  "tr": "Зелье Полной Маны",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Full Rejuvenation": {
+  "tr": "Зелье Полного Омоложения",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Healing": {
+  "tr": "Зелье Исцеления",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Mana": {
+  "tr": "Зелье Маны",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Rejuvenation": {
+  "tr": "Зелье Омоложения",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of balance": {
+  "tr": "Кольцо баланса",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Engagement": {
+  "tr": "Обручальное Кольцо",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of magic": {
+  "tr": "Кольцо магии",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Regha": {
+  "tr": "Кольцо Регхи",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of the fox": {
+  "tr": "Кольцо лисы",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Truth": {
+  "tr": "Кольцо Истины",
+  "from": "game",
+  "kind": "item"
+ },
+ "Royal Circlet": {
+  "tr": "Королевский Венец",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scimitar": {
+  "tr": "Ятаган",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll": {
+  "tr": "Свиток",
+  "from": "game",
+  "kind": "name"
+ },
+ "Scroll of Fireball": {
+  "tr": "Свиток Огненного Шара",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Healing": {
+  "tr": "Свиток Исцеления",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Identify": {
+  "tr": "Свиток Идентификации",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Stone Curse": {
+  "tr": "Свиток Окаменения",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Town Portal": {
+  "tr": "Свиток Портала в Город",
+  "from": "game",
+  "kind": "item"
+ },
+ "Skeleton": {
+  "tr": "Скелет",
+  "from": "game",
+  "kind": "name"
+ },
+ "Skeleton King": {
+  "tr": "Король-Скелет",
+  "from": "game",
+  "kind": "name"
+ },
+ "Skull Cap": {
+  "tr": "Тюбетейка",
+  "from": "game",
+  "kind": "item"
+ },
+ "Sorcerer": {
+  "tr": "Маг",
+  "from": "game",
+  "kind": "name"
+ },
+ "Spectral Elixir": {
+  "tr": "Призрачный Эликсир",
+  "from": "game",
+  "kind": "item"
+ },
+ "Splint Mail": {
+  "tr": "Шинная Кольчуга",
+  "from": "game",
+  "kind": "name"
+ },
+ "Staff of Lazarus": {
+  "tr": "Посох Лазаря",
+  "from": "game",
+  "kind": "item"
+ },
+ "Stone Curse": {
+  "tr": "Окаменение",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Stonecleaver": {
+  "tr": "Каменный Тесак",
+  "from": "game",
+  "kind": "item"
+ },
+ "Tavern Sign": {
+  "tr": "Вывеска Таверны",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Bleeder": {
+  "tr": "Проливатель Крови",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Butcher": {
+  "tr": "Мясник",
+  "from": "game",
+  "kind": "name"
+ },
+ "The Butcher's Cleaver": {
+  "tr": "Тесак Мясника",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Executioner's Blade": {
+  "tr": "Клинок Палача",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Grandfather": {
+  "tr": "Дедушка",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Needler": {
+  "tr": "Игольщик",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Protector": {
+  "tr": "Защитник",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Rainbow Cloak": {
+  "tr": "Радужный Плащ",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Undead Crown": {
+  "tr": "Корона Нежити",
+  "from": "game",
+  "kind": "item"
+ },
+ "Thinking Cap": {
+  "tr": "Шапка Размышлений",
+  "from": "game",
+  "kind": "item"
+ },
+ "Tower Shield": {
+  "tr": "Башенный Щит",
+  "from": "game",
+  "kind": "item"
+ },
+ "Town Portal": {
+  "tr": "Town Portal",
+  "from": "site",
+  "note": "the owner's decision: the name stays in English in every language, the spell, the scroll's portal and the devlog's subject alike; build the sentence so it needs no case ending (\"portál Town Portal\" where the language needs a noun to decline). The item \"Scroll of Town Portal\" keeps the game's name."
+ },
+ "town portal": {
+  "tr": "Town Portal",
+  "from": "site",
+  "note": "in running text too: the name stays in English, written Town Portal"
+ },
+ "Veil of Steel": {
+  "tr": "Стальная Завеса",
+  "from": "game",
+  "kind": "item"
+ },
+ "War Staff": {
+  "tr": "Военный Посох",
+  "from": "game",
+  "kind": "item"
+ },
+ "Warrior": {
+  "tr": "Воин",
+  "from": "game",
+  "kind": "name"
+ },
+ "Windforce": {
+  "tr": "Сила Ветра",
+  "from": "game",
+  "kind": "item"
+ },
+ "Wizardspike": {
+  "tr": "Волшебный Шип",
+  "from": "game",
+  "kind": "item"
+ },
+ "Zombie": {
+  "tr": "Зомби",
+  "from": "game",
+  "kind": "name"
+ }
+}

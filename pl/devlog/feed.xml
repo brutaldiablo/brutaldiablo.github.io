@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Devlog Brutal Diablo</title>
+  <link>https://brutaldiablo.com/pl/devlog/</link>
+  <atom:link href="https://brutaldiablo.com/pl/devlog/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Jak powstawały większe elementy Brutal Diablo: technikalia, ślepe uliczki i to, czego się nauczyliśmy.</description>
+  <language>pl</language>
+  <lastBuildDate>Thu, 12 Nov 2026 09:30:00 +0100</lastBuildDate>
+  <image><url>https://brutaldiablo.com/img/mark_180.png</url><title>Devlog Brutal Diablo</title><link>https://brutaldiablo.com/pl/devlog/</link></image>
+  <item>
+    <title>Woła cię po imieniu?</title>
+    <link>https://brutaldiablo.com/pl/devlog/town-portal/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/pl/devlog/town-portal/</guid>
+    <pubDate>Thu, 12 Nov 2026 09:30:00 +0100</pubDate>
+    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/town-portal/og.jpg" width="1200"/></p><p>Jak Town Portal z Diablo znów ożył i dlaczego większość została taka, jak narysowało ją Blizzard North.</p>]]></description>
+  </item>
+  <item>
+    <title>Odkurzamy loot z&amp;nbsp;Diablo</title>
+    <link>https://brutaldiablo.com/pl/devlog/items/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/pl/devlog/items/</guid>
+    <pubDate>Mon, 09 Nov 2026 09:03:00 +0100</pubDate>
+    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/items/og.jpg" width="1200"/></p><p>Jak przemalowaliśmy wszystkie 179 obrazków ekwipunku z Diablo i dlaczego najtrudniej było zostawić je w spokoju.</p>]]></description>
+  </item>
+  <item>
+    <title>Krew, jaką Diablo miało mieć</title>
+    <link>https://brutaldiablo.com/pl/devlog/gore/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/pl/devlog/gore/</guid>
+    <pubDate>Sun, 08 Nov 2026 12:00:00 +0100</pubDate>
+    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/gore/og_post.jpg" width="1200"/></p><p>Twórcy Diablo chcieli, żeby było brudno i krwawo. Gra wyszła z większością krwi wmalowaną w podłogę jednej komnaty. Wróciliśmy do niej, żeby podpatrzeć, jak to zrobili, a potem nauczyliśmy silnik malować krew tak samo: wszędzie i na bieżąco.</p>]]></description>
+  </item>
+</channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Devlog Brutal Diablo</title>
+  <link>https://brutaldiablo.com/cs/devlog/</link>
+  <atom:link href="https://brutaldiablo.com/cs/devlog/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Jak vznikaly větší části Brutal Diablo: technologie, slepé uličky a co jsme se naučili.</description>
+  <language>cs</language>
+  <lastBuildDate>Thu, 12 Nov 2026 09:30:00 +0100</lastBuildDate>
+  <image><url>https://brutaldiablo.com/img/mark_180.png</url><title>Devlog Brutal Diablo</title><link>https://brutaldiablo.com/cs/devlog/</link></image>
+  <item>
+    <title>Volá tě jménem?</title>
+    <link>https://brutaldiablo.com/cs/devlog/town-portal/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/cs/devlog/town-portal/</guid>
+    <pubDate>Thu, 12 Nov 2026 09:30:00 +0100</pubDate>
+    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/town-portal/og.jpg" width="1200"/></p><p>Jak Town Portal z Diabla znovu ožil a proč z něj většina zůstala tak, jak ji nakreslili v Blizzard North.</p>]]></description>
+  </item>
+  <item>
+    <title>Oprašujeme loot z&amp;nbsp;Diabla</title>
+    <link>https://brutaldiablo.com/cs/devlog/items/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/cs/devlog/items/</guid>
+    <pubDate>Mon, 09 Nov 2026 09:03:00 +0100</pubDate>
+    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/items/og.jpg" width="1200"/></p><p>Jak jsme přemalovali všech 179 obrázků z inventáře Diabla a proč bylo nejtěžší nechat je na pokoji.</p>]]></description>
+  </item>
+  <item>
+    <title>Krev, jakou Diablo mělo mít</title>
+    <link>https://brutaldiablo.com/cs/devlog/gore/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/cs/devlog/gore/</guid>
+    <pubDate>Sun, 08 Nov 2026 12:00:00 +0100</pubDate>
+    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/gore/og_post.jpg" width="1200"/></p><p>Tvůrci Diabla ho chtěli drsné a krvavé. Hra vyšla s většinou krve namalovanou do podlahy jediné místnosti. Vrátili jsme se do ní, abychom zjistili, jak to udělali, a pak jsme engine naučili malovat krev stejně, všude a za běhu.</p>]]></description>
+  </item>
+</channel>
+</rss>

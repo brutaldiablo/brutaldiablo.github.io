@@ -1,12 +1,14 @@
 /* The devlog's shared pieces: videos that load when seen, the before/after slider, the loupe. */
+/* Translated text: bdT/bdN come from the page's head; without it they return the English. */
+window.bdT=window.bdT||function(s,v){return v?s.replace(/\{(\w+)\}/g,function(m,k){return v[k]!=null?v[k]:m}):s};window.bdN=window.bdN||function(n,a,b,v){var o={n:n};for(var k in v)o[k]=v[k];return window.bdT(n===1?a:b,o)};
 (function(){
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce)document.querySelectorAll('.posthero video').forEach(function(v){v.removeAttribute('autoplay');v.pause()});
 
   // The sidebar: one link per section heading of the post, the one in view marked.
   var hs=[].slice.call(document.querySelectorAll('article h2[id]'));
-  if(hs.length>2){var t=document.createElement('nav');t.className='toc';t.setAttribute('aria-label','In this post');
-    t.innerHTML='<p>In this post</p><ol>'+hs.map(function(h){return '<li><a href="#'+h.id+'">'+h.textContent+'</a></li>'}).join('')+'</ol>';
+  if(hs.length>2){var t=document.createElement('nav');t.className='toc';t.setAttribute('aria-label',bdT('In this post'));
+    t.innerHTML='<p>'+bdT('In this post')+'</p><ol>'+hs.map(function(h){return '<li><a href="#'+h.id+'">'+h.textContent+'</a></li>'}).join('')+'</ol>';
     document.body.appendChild(t);var ls=[].slice.call(t.querySelectorAll('a'));
     var hero=document.querySelector('.posthero');
     var onScroll=function(){var y=innerHeight*.35,k=-1;hs.forEach(function(h,i){if(h.getBoundingClientRect().top<y)k=i});ls.forEach(function(a,i){a.classList.toggle('on',i===k)});

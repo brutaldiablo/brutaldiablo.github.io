@@ -1,0 +1,547 @@
+{
+ "Adria": {
+  "tr": "Adria",
+  "from": "game",
+  "kind": "name"
+ },
+ "Amulet": {
+  "tr": "Amulett",
+  "from": "game",
+  "kind": "name"
+ },
+ "Amulet of balance": {
+  "tr": "Amulett der Balance",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Amulet of the fox": {
+  "tr": "Amulett des Fuchses",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Amulet of vitality": {
+  "tr": "Amulett der Vitalität",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Anvil of Fury": {
+  "tr": "Amboss des Zornes",
+  "from": "game",
+  "kind": "item"
+ },
+ "Arkaine's Valor": {
+  "tr": "Arkaines Tapferstahl",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bastard Sword": {
+  "tr": "Bastardschwert",
+  "from": "game",
+  "kind": "item"
+ },
+ "Black Mushroom": {
+  "tr": "Schwarzer Pilz",
+  "from": "game",
+  "kind": "item"
+ },
+ "Black Razor": {
+  "tr": "Schwarzer Schnitter",
+  "from": "game",
+  "kind": "item"
+ },
+ "Blood Stone": {
+  "tr": "Blutstein",
+  "from": "game",
+  "kind": "item"
+ },
+ "Book of Charged Bolt": {
+  "tr": "Buch mit Geladener Blitz",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Book of Firebolt": {
+  "tr": "Buch mit Feuerblitz",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Brain": {
+  "tr": "Gehirn",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bramble": {
+  "tr": "Dornenzweig",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bronze Amulet of the fox": {
+  "tr": "Bronze-Amulett des Fuchses",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Bronze Ring": {
+  "tr": "Bronze-Ring",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Cap": {
+  "tr": "Kappe",
+  "from": "game",
+  "kind": "item"
+ },
+ "Catacombs": {
+  "tr": "Katakomben",
+  "from": "game",
+  "kind": "name"
+ },
+ "Cathedral": {
+  "tr": "Kathedrale",
+  "from": "game",
+  "kind": "name"
+ },
+ "Caves": {
+  "tr": "Höhlen",
+  "from": "game",
+  "kind": "name"
+ },
+ "Chain Mail": {
+  "tr": "Kettenhemd",
+  "from": "game",
+  "kind": "name"
+ },
+ "Charged Bolt": {
+  "tr": "Geladener Blitz",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Claymore": {
+  "tr": "Flamberg",
+  "from": "game",
+  "kind": "item"
+ },
+ "Cleaver": {
+  "tr": "Beil",
+  "from": "game",
+  "kind": "name"
+ },
+ "Constricting Ring": {
+  "tr": "Würgering",
+  "from": "game",
+  "kind": "item"
+ },
+ "Crown": {
+  "tr": "Krone",
+  "from": "game",
+  "kind": "item"
+ },
+ "Dagger": {
+  "tr": "Dolch",
+  "from": "game",
+  "kind": "item"
+ },
+ "Dark One": {
+  "tr": "Dunkle Kreatur",
+  "from": "game",
+  "kind": "name"
+ },
+ "Elixir of Dexterity": {
+  "tr": "Elixir der Agilität",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Magic": {
+  "tr": "Elixir der Magie",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Strength": {
+  "tr": "Elixir der Stärke",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Vitality": {
+  "tr": "Elixir der Vitalität",
+  "from": "game",
+  "kind": "item"
+ },
+ "Empyrean Band": {
+  "tr": "Der himmlische Ring",
+  "from": "game",
+  "kind": "item"
+ },
+ "Fire Wall": {
+  "tr": "Feuerwand",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Full Helm": {
+  "tr": "Vollhelm",
+  "from": "game",
+  "kind": "name"
+ },
+ "Full Plate Mail": {
+  "tr": "Plattenpanzer",
+  "from": "game",
+  "kind": "item"
+ },
+ "Fungal Tome": {
+  "tr": "Pilzbuch",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ghoul": {
+  "tr": "Ghul",
+  "from": "game",
+  "kind": "name"
+ },
+ "Golden Elixir": {
+  "tr": "Goldenes Elixier",
+  "from": "game",
+  "kind": "item"
+ },
+ "Gonnagal's Dirk": {
+  "tr": "Gonnagals Dolch",
+  "from": "game",
+  "kind": "item"
+ },
+ "Gothic Plate": {
+  "tr": "Gotischer Harnisch",
+  "from": "game",
+  "kind": "name"
+ },
+ "Great Axe": {
+  "tr": "Kriegsaxt",
+  "from": "game",
+  "kind": "item"
+ },
+ "Great Helm": {
+  "tr": "Kammhelm",
+  "from": "game",
+  "kind": "item"
+ },
+ "Griswold": {
+  "tr": "Griswold",
+  "from": "game",
+  "kind": "name"
+ },
+ "Gryphon's Claw": {
+  "tr": "Greifenklaue",
+  "from": "game",
+  "kind": "item"
+ },
+ "Harlequin Crest": {
+  "tr": "Harlekinskrone",
+  "from": "game",
+  "kind": "item"
+ },
+ "Hellfire": {
+  "tr": "Hellfire",
+  "from": "site",
+  "note": "the owner's decision: stays in English, as the expansion's name and as the name of a look on the items devlog"
+ },
+ "Horror": {
+  "tr": "Horror",
+  "from": "game",
+  "kind": "name"
+ },
+ "Kite Shield": {
+  "tr": "Drachenschild",
+  "from": "game",
+  "kind": "name"
+ },
+ "Long Staff": {
+  "tr": "Langstab",
+  "from": "game",
+  "kind": "item"
+ },
+ "Long War Bow": {
+  "tr": "Kriegsbogen",
+  "from": "game",
+  "kind": "name"
+ },
+ "Magic Rock": {
+  "tr": "Magischer Stein",
+  "from": "game",
+  "kind": "item"
+ },
+ "Mail": {
+  "tr": "Brünne",
+  "from": "game",
+  "kind": "name"
+ },
+ "Messerschmidt's Reaver": {
+  "tr": "Messerschmidts Räuber",
+  "from": "game",
+  "kind": "item"
+ },
+ "Morning Star": {
+  "tr": "Morgenstern",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ogden": {
+  "tr": "Ogden",
+  "from": "game",
+  "kind": "name"
+ },
+ "Optic Amulet": {
+  "tr": "Das Optische Amulett",
+  "from": "game",
+  "kind": "item"
+ },
+ "OverLord's Helm": {
+  "tr": "Helm des Aufsehers",
+  "from": "game",
+  "kind": "item"
+ },
+ "Plate Mail": {
+  "tr": "Kettenpanzer",
+  "from": "game",
+  "kind": "name"
+ },
+ "Potion of Full Healing": {
+  "tr": "Großer Heiltrank",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Full Mana": {
+  "tr": "Großer Manatrank",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Full Rejuvenation": {
+  "tr": "Trank der vollen Genesung",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Healing": {
+  "tr": "Heiltrank",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Mana": {
+  "tr": "Manatrank",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Rejuvenation": {
+  "tr": "Trank der Genesung",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of balance": {
+  "tr": "Ring der Balance",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Engagement": {
+  "tr": "Verlobungsring",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of magic": {
+  "tr": "Ring der Magie",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Regha": {
+  "tr": "Ring von Regha",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of the fox": {
+  "tr": "Ring des Fuchses",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Truth": {
+  "tr": "Ring der Wahrheit",
+  "from": "game",
+  "kind": "item"
+ },
+ "Royal Circlet": {
+  "tr": "Königlicher Reif",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scimitar": {
+  "tr": "Krummsäbel",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll": {
+  "tr": "Schriftrolle",
+  "from": "game",
+  "kind": "name"
+ },
+ "Scroll of Fireball": {
+  "tr": "Schriftrolle des Feuerballs",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Healing": {
+  "tr": "Schriftrolle der Heilung",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Identify": {
+  "tr": "Schriftrolle der Identifikation",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Stone Curse": {
+  "tr": "Schriftrolle des Steinfluchs",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Town Portal": {
+  "tr": "Schriftrolle des Stadtportals",
+  "from": "game",
+  "kind": "item"
+ },
+ "Skeleton": {
+  "tr": "Skelett",
+  "from": "game",
+  "kind": "name"
+ },
+ "Skeleton King": {
+  "tr": "Skelettkönig",
+  "from": "game",
+  "kind": "name"
+ },
+ "Skull Cap": {
+  "tr": "Schädelkappe",
+  "from": "game",
+  "kind": "item"
+ },
+ "Sorcerer": {
+  "tr": "Magier",
+  "from": "game",
+  "kind": "name"
+ },
+ "Spectral Elixir": {
+  "tr": "Spektralelixier",
+  "from": "game",
+  "kind": "item"
+ },
+ "Splint Mail": {
+  "tr": "Schienenrüstung",
+  "from": "game",
+  "kind": "name"
+ },
+ "Staff of Lazarus": {
+  "tr": "Stab des Lazarus",
+  "from": "game",
+  "kind": "item"
+ },
+ "Stone Curse": {
+  "tr": "Steinfluch",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Stonecleaver": {
+  "tr": "Steinspalter",
+  "from": "game",
+  "kind": "item"
+ },
+ "Tavern Sign": {
+  "tr": "Tavernenschild",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Bleeder": {
+  "tr": "Der Bluter",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Butcher": {
+  "tr": "Der Schlächter",
+  "from": "game",
+  "kind": "name"
+ },
+ "The Butcher's Cleaver": {
+  "tr": "Metzgerbeil des Schlächters",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Executioner's Blade": {
+  "tr": "Die Henkersklinge",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Grandfather": {
+  "tr": "Der Großvater",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Needler": {
+  "tr": "Der Nadler",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Protector": {
+  "tr": "Der Beschützer",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Rainbow Cloak": {
+  "tr": "Der Regenbogenumhang",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Undead Crown": {
+  "tr": "Die Krone der Untoten",
+  "from": "game",
+  "kind": "item"
+ },
+ "Thinking Cap": {
+  "tr": "Die Denkkappe",
+  "from": "game",
+  "kind": "item"
+ },
+ "Tower Shield": {
+  "tr": "Turmschild",
+  "from": "game",
+  "kind": "item"
+ },
+ "Town Portal": {
+  "tr": "Town Portal",
+  "from": "site",
+  "note": "the owner's decision: the name stays in English in every language, the spell, the scroll's portal and the devlog's subject alike; build the sentence so it needs no case ending (\"portál Town Portal\" where the language needs a noun to decline). The item \"Scroll of Town Portal\" keeps the game's name."
+ },
+ "town portal": {
+  "tr": "Town Portal",
+  "from": "site",
+  "note": "in running text too: the name stays in English, written Town Portal"
+ },
+ "Veil of Steel": {
+  "tr": "Stählerner Schleier",
+  "from": "game",
+  "kind": "item"
+ },
+ "War Staff": {
+  "tr": "Kriegsstab",
+  "from": "game",
+  "kind": "item"
+ },
+ "Warrior": {
+  "tr": "Krieger",
+  "from": "game",
+  "kind": "name"
+ },
+ "Windforce": {
+  "tr": "Windmacht",
+  "from": "game",
+  "kind": "item"
+ },
+ "Wizardspike": {
+  "tr": "Keris des Zauberers",
+  "from": "game",
+  "kind": "item"
+ },
+ "Zombie": {
+  "tr": "Zombie",
+  "from": "game",
+  "kind": "name"
+ }
+}

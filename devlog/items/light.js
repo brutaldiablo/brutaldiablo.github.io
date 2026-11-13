@@ -4,6 +4,8 @@
    the whole picture held to 96% of the unlit picture's brightness, then, if asked, each pixel snapped to the run of
    shades the shipped pixel was locked to. The item is drawn with one picture pixel at most two device pixels.
    The light starts at the shipped light, the upper right at the shipped strength; the reset puts it back there. */
+/* Translated text: bdT/bdN come from the page's head; without it they return the English. */
+window.bdT=window.bdT||function(s,v){return v?s.replace(/\{(\w+)\}/g,function(m,k){return v[k]!=null?v[k]:m}):s};window.bdN=window.bdN||function(n,a,b,v){var o={n:n};for(var k in v)o[k]=v[k];return window.bdT(n===1?a:b,o)};
 (function(){
   var root=document.getElementById('light'),D=window.LIGHT_DATA;
   if(!root||!D)return;
@@ -74,11 +76,11 @@
     var hr=Math.hypot(HOME[0],HOME[1])*K;ctx.strokeStyle='rgba(232,220,196,.12)';ctx.beginPath();ctx.arc(cx,cy,hr,0,Math.PI*2);ctx.stroke();
     ctx.fillStyle='#e58b3a';ctx.beginPath();ctx.arc(lx,ly,13,0,Math.PI*2);ctx.fill();
     ctx.strokeStyle='#e58b3a';ctx.lineWidth=3;for(var a=0;a<8;a++){var an=a*Math.PI/4;ctx.beginPath();ctx.moveTo(lx+Math.cos(an)*18,ly+Math.sin(an)*18);ctx.lineTo(lx+Math.cos(an)*25,ly+Math.sin(an)*25);ctx.stroke()}
-    var deg=Math.round(Math.atan2(hx,hy)*180/Math.PI),side=Math.abs(deg)<8?'straight up':Math.abs(deg)>172?'straight down':(Math.abs(deg)+'° '+(deg>0?'right':'left')+' of up');
-    var where=Math.abs(hx-HOME[0])<1e-6&&Math.abs(hy-HOME[1])<1e-6?', as shipped':'';
-    msg.textContent='Light: '+side+where+'.'+(lock?' Snapped to the game’s colours.':' Free colours, not snapped to the game’s.');
-    sval.textContent=(+strength.value).toFixed(2)+(Math.abs(strength.value-D.strength)<1e-6?' (shipped)':'');
-    cv.setAttribute('aria-valuenow',deg);cv.setAttribute('aria-valuetext',side+where);
+    var deg=Math.round(Math.atan2(hx,hy)*180/Math.PI),side=Math.abs(deg)<8?bdT('straight up'):Math.abs(deg)>172?bdT('straight down'):deg>0?bdT('{deg}° right of up',{deg:Math.abs(deg)}):bdT('{deg}° left of up',{deg:Math.abs(deg)});
+    var home=Math.abs(hx-HOME[0])<1e-6&&Math.abs(hy-HOME[1])<1e-6;
+    msg.textContent=(home?bdT('Light: {side}, as shipped.',{side:side}):bdT('Light: {side}.',{side:side}))+' '+(lock?bdT('Snapped to the game’s colours.'):bdT('Free colours, not snapped to the game’s.'));
+    sval.textContent=(+strength.value).toFixed(2)+(Math.abs(strength.value-D.strength)<1e-6?' ('+bdT('shipped')+')':'');
+    cv.setAttribute('aria-valuenow',deg);cv.setAttribute('aria-valuetext',home?bdT('{side}, as shipped',{side:side}):side);
     fit()}
   var pend=false;function update(){if(pend||ready<5)return;pend=true;requestAnimationFrame(function(){pend=false;shade();draw()})}
   function setH(x,y){var ax=(cx-24)/K,ay=(cy-24)/K;hx=Math.max(-ax,Math.min(ax,x));hy=Math.max(-ay,Math.min(ay,y));update()}   // the sun stays on the canvas

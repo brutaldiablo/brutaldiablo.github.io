@@ -1,10 +1,12 @@
 /* Strike the monster, watch the blood: the game's blood code (blood.js) on a patch of the Cathedral's floor, a Zombie
    on it. Simulated at the game's 20 ticks a second, drawn every frame between ticks; asleep off screen. */
+/* Translated text: bdT/bdN come from the page's head; without it they return the English. */
+window.bdT=window.bdT||function(s,v){return v?s.replace(/\{(\w+)\}/g,function(m,k){return v[k]!=null?v[k]:m}):s};window.bdN=window.bdN||function(n,a,b,v){var o={n:n};for(var k in v)o[k]=v[k];return window.bdT(n===1?a:b,o)};
 (function(){
   var root=document.getElementById('strike');if(!root||!window.BloodPort)return;
   var cv=root.querySelector('canvas'),msg=root.querySelector('.n-msg');
   var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!BloodPort.supported){if(msg)msg.textContent='This browser cannot unpack the floor; try a current one.';return}
+  if(!BloodPort.supported){if(msg)msg.textContent=bdT('This browser cannot unpack the floor; try a current one.');return}
   var w=null,acc=0,last=0,running=false,visible=false,dirty=true,started=false,fatal=false,lastAway=6;
   var nAir=root.querySelector('.n-air'),nBlock=root.querySelector('.n-block');
   function readout(){if(nAir)nAir.textContent=w.particles();if(nBlock)nBlock.textContent=w.block()}
@@ -47,5 +49,5 @@
         if(visible)wake()},{threshold:.15}).observe(cv)}
     else{visible=true;wake()}
     var rw=0;window.addEventListener('resize',function(){clearTimeout(rw);rw=setTimeout(function(){w.layout();w.updateTiles(true);w.compose(0)},200)})
-  }).catch(function(){if(msg)msg.textContent='The floor did not load.'});
+  }).catch(function(){if(msg)msg.textContent=bdT('The floor did not load.')});
 })();

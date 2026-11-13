@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Mais sangrento · Brutal Diablo</title>
+<meta content="Mais sangrento, como os criadores do Diablo queriam: cada monstro morre de várias formas, e o sangue empoça, escorre e deixa pegadas. Brutal Diablo, um mod gratuito de Diablo (1996) feito por fãs, em desenvolvimento." name="description"/>
+<link href="/pt-br/devlog/feed.xml" rel="alternate" title="Devlog do Brutal Diablo" type="application/rss+xml"/>
+<link href="https://brutaldiablo.com/pt-br/gore/" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" sizes="32x32"/>
+<link href="/img/mark_64.png" rel="icon" sizes="64x64" type="image/png"/>
+<link href="/img/mark_180.png" rel="apple-touch-icon"/>
+<meta content="website" property="og:type"/>
+<meta content="Mais sangrento · Brutal Diablo" property="og:title"/>
+<meta content="Mais sangrento, como os criadores do Diablo queriam. Cada morte é diferente, e o sangue fica. Mod gratuito feito por fãs, em desenvolvimento." property="og:description"/>
+<meta content="https://brutaldiablo.com/pt-br/gore/" property="og:url"/>
+<meta content="https://brutaldiablo.com/img/gore/og.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@brutaldiablo" name="twitter:site"/>
+<meta content="#0c0908" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&amp;family=Crimson+Pro:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Layout: one full-bleed image opens the page; everything after it sits in a single 64ch column,
+   sections parted by a thin ember rule. Single dark theme by choice: this is a dungeon. */
+:root{
+  --ink:#0c0908;        /* the page, warm near-black */
+  --stone:#17120f;      /* raised surfaces */
+  --stone-2:#241c17;    /* borders, hover */
+  --bone:#e8dcc4;       /* text */
+  --ash:#a3957f;        /* muted text */
+  --ember:#b4281d;      /* the accent: dried blood, the monogram's red */
+  --torch:#e58b3a;      /* highlights, links on hover */
+  --display:"Cinzel",Georgia,"Times New Roman",serif;
+  --body:"Crimson Pro",Georgia,"Times New Roman",serif;
+  --ui:system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--bone);font-family:var(--body);font-size:1.2rem;line-height:1.55}
+a{color:var(--bone);text-decoration-color:var(--ember);text-underline-offset:.15em;text-decoration-thickness:1px}
+a:hover{color:var(--torch)}
+:focus-visible{outline:2px solid var(--torch);outline-offset:3px}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:1.5rem;letter-spacing:.04em;text-transform:uppercase;color:var(--bone)}
+p{margin:0}
+.wrap{max-width:64ch;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--ink)}
+.hero img.bg{width:100%;height:auto;max-height:78vh;object-fit:cover;object-position:50% 45%;filter:saturate(1.05)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,9,8,.15) 0%,rgba(12,9,8,0) 30%,rgba(12,9,8,.55) 65%,var(--ink) 100%)}
+.hero .text{position:relative;z-index:1;margin-top:-9rem;padding-bottom:2rem;display:grid;gap:1rem;justify-items:start}
+.mark{width:84px;height:84px;border-radius:50%;box-shadow:0 0 0 2px var(--ink),0 0 0 3px var(--stone-2),0 10px 30px rgba(0,0,0,.6)}
+h1{font-size:clamp(2.4rem,7vw,4.4rem);letter-spacing:.06em;text-transform:uppercase;color:var(--bone);text-shadow:0 2px 24px rgba(0,0,0,.8)}
+h1 small{display:block;font-family:var(--ui);font-weight:600;font-size:.8rem;letter-spacing:.3em;color:var(--torch);margin-bottom:.6rem}
+.pitch{font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.3;max-width:28ch}
+.pitch em{font-style:italic;color:var(--ash)}
+.ctas{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.4rem}
+.btn{display:inline-flex;align-items:center;gap:.55em;font-family:var(--ui);font-weight:600;font-size:.95rem;letter-spacing:.02em;text-decoration:none;padding:.7em 1.1em;border:1px solid var(--stone-2);background:var(--stone);color:var(--bone);border-radius:3px;transition:border-color .15s,background .15s}
+.btn:hover{border-color:var(--torch);color:var(--bone);background:var(--stone-2)}
+.btn.primary{background:var(--ember);border-color:#d4463a;color:#fff6ea}
+.btn.primary:hover{background:#c9311f;color:#fff}
+.btn svg{width:1.1em;height:1.1em;fill:currentColor}
+
+/* sections */
+section{padding-block:3rem;border-top:1px solid var(--stone-2)}
+section .wrap{display:grid;gap:1.1rem}
+section h2::before{content:"";display:inline-block;width:.55em;height:.55em;background:var(--ember);transform:rotate(45deg);margin-right:.7em;vertical-align:.08em}
+.lead{font-size:1.3rem}
+ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:.8rem}
+ul.plain li{padding-left:1.4rem;position:relative}
+ul.plain li::before{content:"";position:absolute;left:0;top:.6em;width:.5em;height:.5em;background:var(--ember);transform:rotate(45deg)}
+ul.plain b{font-weight:600;color:var(--bone)}
+.muted{color:var(--ash)}
+small,.small{font-size:.95rem}
+
+/* follow */
+.links{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.6rem;list-style:none;margin:0;padding:0}
+.links a{display:flex;align-items:center;gap:.7em;padding:.8em .9em;background:var(--stone);border:1px solid var(--stone-2);border-radius:3px;text-decoration:none;font-family:var(--ui);font-size:.95rem;font-weight:600}
+.links a:hover{border-color:var(--torch);color:var(--bone)}
+.links svg{width:1.25em;height:1.25em;fill:var(--ash);flex:none}
+.links a:hover svg{fill:var(--torch)}
+.links span small{display:block;font-weight:400;color:var(--ash);font-size:.8rem;letter-spacing:.02em}
+
+/* tips */
+.tipbox{border:1px solid var(--stone-2);background:var(--stone);padding:1.3rem 1.4rem;display:grid;gap:1rem;border-left:3px solid var(--ember)}
+
+/* contact */
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem}
+.mail code{font-family:var(--ui);font-size:1.05rem;background:var(--stone);border:1px solid var(--stone-2);padding:.5em .8em;border-radius:3px;user-select:all}
+.copy{font-family:var(--ui);font-size:.85rem;font-weight:600;background:none;border:1px solid var(--stone-2);color:var(--ash);padding:.5em .8em;border-radius:3px;cursor:pointer}
+.copy:hover{border-color:var(--torch);color:var(--bone)}
+
+footer{border-top:1px solid var(--stone-2);padding-block:2.2rem 3rem;color:var(--ash);font-size:.95rem}
+footer .wrap{display:grid;gap:.5rem}
+footer a{color:var(--ash)}
+
+@media (max-width:600px){
+  .hero img.bg{aspect-ratio:4/3;max-height:52vh}
+  .hero .text{margin-top:-5rem}
+  .mark{width:64px;height:64px}
+  body{font-size:1.1rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.hero video.bg{width:100%;height:auto;max-height:82vh;object-fit:cover;object-position:50% 40%;display:block}
+.hero .text{margin-top:-11rem}
+.iconrow{margin-top:.6rem;list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.iconrow a{display:grid;place-items:center;width:2.6rem;height:2.6rem;border:1px solid var(--stone-2);background:rgba(23,18,15,.7);border-radius:3px;transition:border-color .15s}
+.iconrow a:hover{border-color:var(--torch)}.iconrow svg{width:1.15rem;height:1.15rem;fill:var(--ash)}.iconrow a:hover svg{fill:var(--torch)}
+.painting{margin:1.4rem calc(50% - 50vw) 0;width:100vw;max-width:100vw}
+.painting img{width:100%;max-height:60vh;object-fit:cover;object-position:50% 60%;filter:brightness(.92)}
+.painting figcaption{font-family:var(--ui);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ash);text-align:center;padding:.6rem 1rem 0}
+footer .iconrow{margin-top:.6rem;margin-top:.6rem}
+@media (max-width:600px){.hero video.bg{aspect-ratio:4/3;max-height:56vh}.hero .text{margin-top:-6rem}}
+
+.strips{display:grid;gap:3rem;margin-top:.5rem}
+.strip{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.strip:nth-child(even) .media{order:-1}
+.strip h3{font-family:var(--display);font-size:1.2rem;letter-spacing:.06em;text-transform:uppercase;color:var(--torch);margin-bottom:.5rem}
+.strip .media{margin:0;border:1px solid var(--stone-2);background:var(--stone)}
+.strip .media video,.strip .media img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+.strip .media figcaption{font-family:var(--ui);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ash);padding:.5rem .7rem}
+.strip ul.plain{margin-top:.6rem;font-size:1.08rem}
+#about .wrap{max-width:1000px}
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--stone-2)}
+.rows a{display:grid;grid-template-columns:2rem 1fr auto 1.2rem;align-items:center;gap:1rem;padding:.9em .4em;border-bottom:1px solid var(--stone-2);text-decoration:none;font-family:var(--ui);font-weight:600;transition:background .15s}
+.rows a:hover{background:var(--stone);color:var(--bone)}.rows svg{width:1.3rem;height:1.3rem;fill:var(--ash)}.rows a:hover svg{fill:var(--torch)}
+.rows small{font-weight:400;color:var(--ash);font-size:.9rem}.rows .arr{color:var(--ash);font-family:var(--ui)}
+@media (max-width:760px){.strip{grid-template-columns:1fr}.strip:nth-child(even) .media{order:0}}
+
+.hero video.bg{max-height:62vh}
+.hero .text{margin-top:-8rem;padding-bottom:1.6rem}
+h1{font-size:clamp(2.2rem,5.5vw,3.4rem)}
+.mark{width:64px;height:64px}
+section{padding-block:2.4rem}
+.strips{gap:2rem}
+.strip{grid-template-columns:2fr 3fr;gap:1.6rem}
+.strip:nth-child(even){grid-template-columns:3fr 2fr}
+.strip h3{font-size:1.05rem}
+.strip p{font-size:1.1rem}
+#follow .wrap{max-width:1000px}
+.rows{display:grid;grid-template-columns:1fr 1fr;gap:0 2.5rem;border-top:0}
+.rows li{border-top:1px solid var(--stone-2)}.rows a{border-bottom:0}
+.pair{max-width:1000px;margin-inline:auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.pair section{border-top:0;padding-block:0}.pair section .wrap{padding:0;max-width:none}
+.pairwrap{border-top:1px solid var(--stone-2);padding-block:2.4rem}
+@media (max-width:760px){.strip,.strip:nth-child(even){grid-template-columns:1fr}.rows{grid-template-columns:1fr}.pair{grid-template-columns:1fr}}
+
+.tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);gap:.5rem}
+.tiles a{display:grid;justify-items:center;text-align:center;gap:.45rem;padding:1rem .4rem .8rem;background:var(--stone);border:1px solid var(--stone-2);border-radius:3px;text-decoration:none;font-family:var(--ui);font-weight:600;font-size:.85rem;transition:border-color .15s}
+.tiles a:hover{border-color:var(--torch);color:var(--bone)}.tiles svg{width:1.7rem;height:1.7rem;fill:var(--ash)}.tiles a:hover svg{fill:var(--torch)}
+.tiles small{display:block;font-weight:400;color:var(--ash);font-size:.7rem;overflow-wrap:anywhere}
+.followhead{display:flex;flex-wrap:wrap;align-items:center;gap:1rem}.followhead h2{margin-right:auto}
+@media (max-width:860px){.tiles{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:480px){.tiles{grid-template-columns:repeat(3,1fr)}.tiles small{display:none}}
+
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:1.2rem;padding:.5rem max(16px,env(safe-area-inset-right,0px)) .5rem max(16px,env(safe-area-inset-left,0px));background:rgba(12,9,8,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--stone-2)}
+.bar .home{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.9rem;text-decoration:none}
+.bar .home img{border-radius:50%}
+.bar .anchors{display:flex;gap:1.1rem;margin-left:auto;font-family:var(--ui);font-size:.85rem;font-weight:600}
+.bar .anchors a{text-decoration:none;color:var(--ash)}.bar .anchors a:hover{color:var(--torch)}
+.bar .btn{padding:.4em .8em;font-size:.82rem}
+.hero{margin-top:-3.2rem}
+[id]{scroll-margin-top:4rem}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (max-width:760px){.bar .anchors{display:none}}
+
+.status{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;font-family:var(--ui);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ash)}
+.status span{display:inline-flex;align-items:center;height:2.1em;padding:0 .6em;line-height:1;white-space:nowrap;border:1px solid var(--stone-2);border-radius:2px;background:rgba(23,18,15,.7)}
+.status span:first-child{color:var(--torch);border-color:var(--torch)}
+
+.copy{display:inline-grid;place-items:center;width:2.4rem;height:2.4rem;padding:0}
+.copy svg{width:1.15rem;height:1.15rem;fill:currentColor;grid-area:1/1}
+.copy .i-ok{opacity:0}.copy.done .i-clip{opacity:0}.copy.done .i-ok{opacity:1}.copy.done{color:var(--torch);border-color:var(--torch)}
+
+.strip p.next{margin-top:.6rem;color:var(--ash);font-style:italic}
+
+.hero .pitch{max-width:none}
+@media (min-width:600px){.hero .pitch em{white-space:nowrap}}
+
+.mail{display:inline-flex;flex-wrap:nowrap;align-items:stretch;gap:0;max-width:100%;width:fit-content;border:1px solid var(--stone-2);border-radius:3px;background:var(--stone);transition:border-color .15s}
+.mail:hover,.mail:focus-within{border-color:var(--torch)}
+.mail code{border:0;border-radius:0;background:none;padding:.55em .8em;min-width:0;overflow-wrap:anywhere;display:flex;align-items:center}
+.mail .copy{border:0;border-left:1px solid var(--stone-2);border-radius:0;height:auto;width:2.8rem;background:none;color:var(--ash)}
+.mail .copy:hover{color:var(--bone);background:var(--stone-2)}
+.mail .copy.done{color:var(--torch)}
+
+.cmp{position:relative;touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
+.cmp canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--stone)}
+.cmp video{position:absolute;width:2px;height:2px;opacity:0;pointer-events:none;left:0;top:0}
+.cmp .lab{position:absolute;top:.6rem;font-family:var(--ui);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bone);background:rgba(12,9,8,.72);padding:.3em .55em;border-radius:2px;pointer-events:none}
+.cmp .lab.l{left:.6rem}.cmp .lab.r{right:.6rem;color:var(--torch)}
+.cmp .handle{position:absolute;top:0;bottom:2.1rem;left:50%;width:2px;margin-left:-1px;background:var(--bone);box-shadow:0 0 8px rgba(0,0,0,.6);pointer-events:none}
+.cmp .handle::after{content:"";position:absolute;top:50%;left:50%;width:1.9rem;height:1.9rem;margin:-.95rem 0 0 -.95rem;border-radius:50%;background:var(--ink);border:2px solid var(--bone);box-shadow:0 2px 10px rgba(0,0,0,.6)}
+.cmp .handle::before{content:"\2039\00a0\203A";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;color:var(--bone);font-family:var(--ui);font-size:.95rem;font-weight:700;white-space:nowrap}
+.cmp input[type=range]{position:absolute;left:0;right:0;bottom:0;width:100%;height:1px;opacity:0;margin:0}
+.cmp:focus-within .handle::after{border-color:var(--torch)}
+
+.cmp .side{position:absolute;left:0;top:0;width:100%;aspect-ratio:16/9;pointer-events:none}
+.cmp .side.l{clip-path:inset(0 calc((1 - var(--s, .5)) * 100%) 0 0)}
+.cmp .side.r{clip-path:inset(0 0 0 calc(var(--s, .5) * 100%))}
+.cmp .lab{white-space:nowrap}
+
+
+.wip{font-family:var(--ui);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);font-style:normal}
+.wip::before{content:"* "}
+figcaption .wip{display:block;margin-top:.35rem;opacity:.8}
+.hero-wip{position:absolute;z-index:2;top:calc(3.2rem + .7rem);right:max(16px,env(safe-area-inset-right,0px));background:rgba(12,9,8,.65);padding:.3em .6em;border-radius:2px}
+@media (max-width:600px){.hero-wip{font-size:.6rem}}
+
+.cmp .handle{bottom:auto;height:0;padding-bottom:56.25%}
+
+.wip{display:inline-block;background:rgba(12,9,8,.7);color:var(--bone);opacity:.85;padding:.3em .6em;border-radius:2px;font-size:.62rem;letter-spacing:.1em}
+.cmp .framenote{position:absolute;left:0;top:0;width:100%;aspect-ratio:16/9;pointer-events:none}
+.cmp .framenote .wip{position:absolute;right:.6rem;bottom:.6rem}
+.hv{position:relative}
+.hv .wip{position:absolute;z-index:2;right:max(16px,env(safe-area-inset-right,0px));bottom:.8rem}
+@media (max-width:600px){.wip{font-size:.55rem;letter-spacing:.06em}.hv .wip{bottom:auto;top:.6rem}}
+
+@media (max-width:600px){.hv .wip{top:calc(3.2rem + .5rem)}}
+
+/* gore page */
+.gore-hero .text{margin-top:-9rem}
+.gore-hero h1 small{margin-bottom:.4rem}
+.wide .wrap{max-width:1000px}
+section .wrap>*{min-width:0}
+.tile,.fig{min-width:0;overflow:hidden}
+.grid{list-style:none;margin:.4rem 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.6rem}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tile{margin:0;border:1px solid var(--stone-2);background:var(--stone)}
+.tile video{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:var(--ink)}
+.tile.w video{aspect-ratio:4/3}
+.tile figcaption{font-family:var(--ui);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ash);padding:.5rem .6rem}
+.fig{margin:0;border:1px solid var(--stone-2);background:var(--stone)}
+.fig video{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:var(--ink)}
+.fig figcaption{font-family:var(--ui);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ash);padding:.5rem .7rem}
+.facts{display:flex;flex-wrap:wrap;gap:.5rem;font-family:var(--ui);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ash)}
+.facts span{border:1px solid var(--stone-2);padding:.3em .6em;border-radius:2px;background:rgba(23,18,15,.7)}
+.facts span:first-child{color:var(--torch);border-color:var(--torch)}
+.cmpwrap .cmp{border:1px solid var(--stone-2);background:var(--stone)}
+.cmpwrap figcaption{font-family:var(--ui);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ash);padding:.5rem .7rem}
+/* the sidebar: the page's sections, fixed at the left on wide screens, the one in view marked */
+.toc{position:fixed;z-index:15;top:5.5rem;left:max(16px,env(safe-area-inset-left,0px));width:var(--tocw,150px);display:none;font-family:var(--ui);font-size:.78rem;line-height:1.3}
+.toc p{margin:0 0 .6rem;font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--torch)}
+.toc ol{list-style:none;margin:0;padding:0;display:grid}
+.toc a{display:block;padding:.38em 0 .38em .8em;border-left:2px solid var(--stone-2);color:var(--ash);text-decoration:none}
+.toc a:hover{color:var(--bone)}
+.toc a.on{color:var(--bone);border-left-color:var(--ember)}
+.toc{opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}.toc.shown{opacity:1;visibility:visible}
+@media (min-width:1400px){.toc{display:block}}
+.quote{margin:0;padding:.1rem 0 .1rem 1.1rem;border-left:3px solid var(--ember);display:grid;gap:.35rem}
+.quote p{font-size:1.45rem;line-height:1.35;font-style:italic}
+.quote cite{font-family:var(--ui);font-style:normal;font-size:.8rem;color:var(--ash)}
+.next3d{border:1px solid var(--stone-2);border-left:3px solid var(--ember);background:var(--stone);padding:1.1rem 1.3rem;display:grid;gap:.5rem;margin-top:.6rem}
+.next3d h3{font-family:var(--display);font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;color:var(--torch)}
+.tribute{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:2rem;align-items:center}
+.tribute .reel{margin:0;border:1px solid var(--stone-2);background:var(--ink)}
+.tribute .reel video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:var(--ink)}
+.tribute-text{display:grid;gap:1rem}
+.posted p{margin:0 0 .5rem;font-family:var(--ui);font-size:.9rem}
+@media (max-width:760px){.tribute{grid-template-columns:minmax(0,1fr)}.tribute .reel{max-width:340px;margin-inline:auto}}
+@media (max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.three{grid-template-columns:minmax(0,1fr)}.gore-hero .text{margin-top:-6rem}}
+
+/* the bar, as on the devlog: Gore, Devlog, Discord */
+.bar .navlinks{display:flex;gap:1.1rem;margin-left:auto;font-family:var(--ui);font-size:.85rem;font-weight:600}
+.bar .navlinks a{text-decoration:none;color:var(--ash)}.bar .navlinks a:hover,.bar .navlinks a[aria-current]{color:var(--torch)}
+
+/* narrow phones: the bar on one line */
+.bar .home{white-space:nowrap}
+@media (max-width:420px){.bar{gap:.7rem}.bar .home{font-size:.8rem;gap:.45rem}.bar .navlinks,.bar .anchors{gap:.75rem}.bar .btn{padding:.4em .6em}}
+</style>
+<!--i18n-head--><link rel="alternate" hreflang="en" href="https://brutaldiablo.com/gore/"><link rel="alternate" hreflang="es" href="https://brutaldiablo.com/es/gore/"><link rel="alternate" hreflang="pt-BR" href="https://brutaldiablo.com/pt-br/gore/"><link rel="alternate" hreflang="cs" href="https://brutaldiablo.com/cs/gore/"><link rel="alternate" hreflang="de" href="https://brutaldiablo.com/de/gore/"><link rel="alternate" hreflang="ru" href="https://brutaldiablo.com/ru/gore/"><link rel="alternate" hreflang="pl" href="https://brutaldiablo.com/pl/gore/"><link rel="alternate" hreflang="x-default" href="https://brutaldiablo.com/gore/"><meta property="og:locale" content="pt_BR"><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="es_ES"><meta property="og:locale:alternate" content="cs_CZ"><meta property="og:locale:alternate" content="de_DE"><meta property="og:locale:alternate" content="ru_RU"><meta property="og:locale:alternate" content="pl_PL"><style>.lang{position:relative;font-family:var(--ui);font-size:.8rem;font-weight:600;flex:none}.lang summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35em;color:var(--ash);padding:.35em .15em;letter-spacing:.05em;white-space:nowrap;user-select:none}.lang summary::-webkit-details-marker{display:none}.lang .flag{display:inline-flex;flex:none;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px rgba(232,220,196,.18)}.lang .flag svg{display:block}.lang summary:hover,.lang[open] summary{color:var(--torch)}.lang ul{position:absolute;right:0;top:calc(100% + .55rem);margin:0;padding:.35rem 0;list-style:none;background:var(--stone);border:1px solid var(--stone-2);border-radius:6px;min-width:9.5rem;box-shadow:0 10px 28px rgba(0,0,0,.55);z-index:40}.lang li a{display:flex;align-items:center;gap:.65em;padding:.45rem 1rem;color:var(--bone);text-decoration:none;font-size:.9rem}.lang li a:hover{background:var(--stone-2);color:var(--torch)}.lang li a[aria-current]{color:var(--torch)}@media (max-width:480px){.bar .btn.dc{width:2.8em;overflow:hidden;white-space:nowrap;justify-content:flex-start;gap:3em;padding-left:.78em;padding-right:0}.bar .btn.dc svg{flex:none}}@media (max-width:420px){.lang summary .code{display:none}}</style><script>window.BD_LANG="pt-BR";window.BD_T={"Copy the address":"Copiar o endereço","Copied":"Copiado","Press H for 1996":"Aperte H para 1996","Quest item":"Item de quest","Unique":"Único","Magic":"Mágico","Gold":"Ouro","Potion":"Poção","Elixir":"Elixir","Scroll":"Pergaminho","Book":"Livro","All":"Todos","Uniques":"Únicos","Quest items":"Itens de quest","Armour":"Armaduras","Weapons":"Armas","Jewellery":"Joias","Potions, scrolls and books":"Poções, pergaminhos e livros","Show":"Mostrar","H: show every item as in Diablo (1996)":"H: mostrar todos os itens como no Diablo (1996)","{label}, {n} item":"{label}, {n} item","{label}, {n} items":"one:{label}, {n} item | other:{label}, {n} itens","Showing {label}: {n} item.":"Mostrando {label}: {n} item.","Showing {label}: {n} items.":"one:Mostrando {label}: {n} item. | other:Mostrando {label}: {n} itens.","Press for 1996":"Aperte para ver 1996","Back to now":"Voltar para hoje","Press H for Brutal Diablo":"Aperte H para o Brutal Diablo","Showing every item as {name}.":"Mostrando todos os itens como no {name}.","Zombie":"Zumbi","Ghoul":"Carniçal","Skeleton":"Esqueleto","Horror":"Horror","Dark One":"Sombrio","In this post":"Neste post","none":"nenhuma","{n} step":"{n} passo","{n} steps":"one:{n} passo | other:{n} passos","black":"preto","still red":"ainda vermelho","This browser cannot unpack the floor; try a current one.":"Este navegador não consegue descompactar o piso; tente um mais atual.","The floor did not load.":"O piso não carregou.","straight up":"direto de cima","straight down":"direto de baixo","{deg}° right of up":"{deg}° à direita da vertical","{deg}° left of up":"{deg}° à esquerda da vertical","Light: {side}, as shipped.":"Luz: {side}, como no jogo.","Light: {side}.":"Luz: {side}.","Snapped to the game’s colours.":"Cores encaixadas nas do jogo.","Free colours, not snapped to the game’s.":"Cores livres, sem encaixar nas do jogo.","shipped":"no jogo","{side}, as shipped":"{side}, como no jogo","{base}: {label}":"{base}: {label}"};function bdT(s,v){var d=window.BD_T,r=d&&d[s]!=null?d[s]:s;return v?r.replace(/\{(\w+)\}/g,function(m,k){return v[k]!=null?v[k]:m}):r}function bdN(n,one,other,v){var d=window.BD_T,r=d&&d[other],o={n:n};for(var k in v)o[k]=v[k];if(r==null)return bdT(n===1?one:other,o);var c="other";try{c=new Intl.PluralRules(window.BD_LANG).select(n)}catch(e){}var f={};r.split("|").forEach(function(p){var i=p.indexOf(":");f[p.slice(0,i).trim()]=p.slice(i+1).trim()});return (f[c]!=null?f[c]:f.other).replace(/\{(\w+)\}/g,function(m,k){return o[k]!=null?o[k]:m})}function bdKeep(e){var a=e.target.closest&&e.target.closest('a[data-lang]');if(a)try{localStorage.setItem('bd-lang',a.getAttribute('data-lang'))}catch(_){}}['click','auxclick','contextmenu'].forEach(function(t){document.addEventListener(t,bdKeep)});document.addEventListener('click',function(e){document.querySelectorAll('details.lang[open]').forEach(function(x){if(!x.contains(e.target))x.removeAttribute('open')})});</script><!--/i18n-head--></head>
+<body>
+<a id="top"></a><nav class="bar"><a class="home" href="/pt-br/"><img alt="" height="28" src="/img/mark_180.png" width="28"/>Brutal Diablo</a><div class="navlinks"><a href="/pt-br/">Início</a></div><a class="btn primary dc" href="https://discord.gg/NsG8gnhnJH"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"></path></svg>Discord</a><!--i18n-switch--><details class="lang" translate="no"><summary aria-label="Idioma: Português"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#009c3b"/><path d="M15 2.6L27.6 10 15 17.4 2.4 10z" fill="#ffdf00"/><circle cx="15" cy="10" r="4.3" fill="#002776"/></svg></span><span class="code">PT</span></summary><ul><li><a href="/gore/" hreflang="en" lang="en" data-lang="en"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><clipPath id="uklen"><path d="M15 10h15v10zv10H0zH0V0zV0h15z"/></clipPath><rect width="30" height="20" fill="#012169"/><path d="M0 0l30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0l30 20M30 0L0 20" stroke="#c8102e" stroke-width="2.4" clip-path="url(#uklen)"/><path d="M15 0v20M0 10h30" stroke="#fff" stroke-width="6.5"/><path d="M15 0v20M0 10h30" stroke="#c8102e" stroke-width="3.8"/></svg></span>English</a></li><li><a href="/es/gore/" hreflang="es" lang="es" data-lang="es"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#aa151b"/><rect y="5" width="30" height="10" fill="#f1bf00"/></svg></span>Español</a></li><li><a href="/pt-br/gore/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-br" aria-current="true"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#009c3b"/><path d="M15 2.6L27.6 10 15 17.4 2.4 10z" fill="#ffdf00"/><circle cx="15" cy="10" r="4.3" fill="#002776"/></svg></span>Português</a></li><li><a href="/cs/gore/" hreflang="cs" lang="cs" data-lang="cs"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#d7141a"/><rect width="30" height="10" fill="#fff"/><path d="M0 0l15 10L0 20z" fill="#11457e"/></svg></span>Čeština</a></li><li><a href="/de/gore/" hreflang="de" lang="de" data-lang="de"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#ffce00"/><rect width="30" height="13.33" fill="#dd0000"/><rect width="30" height="6.67" fill="#000"/></svg></span>Deutsch</a></li><li><a href="/ru/gore/" hreflang="ru" lang="ru" data-lang="ru"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#d52b1e"/><rect width="30" height="13.33" fill="#0039a6"/><rect width="30" height="6.67" fill="#fff"/></svg></span>Русский</a></li><li><a href="/pl/gore/" hreflang="pl" lang="pl" data-lang="pl"><span class="flag" aria-hidden="true"><svg viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#dc143c"/><rect width="30" height="10" fill="#fff"/></svg></span>Polski</a></li></ul></details><!--/i18n-switch--></nav>
+<nav aria-label="Nesta página" class="toc"><p>Nesta página</p><ol><li><a href="#makers">Como os criadores queriam</a></li><li><a href="#deaths">Cada morte é diferente</a></li><li><a href="#blood">Sangue que fica</a></li><li><a href="#fire">Fogo</a></li><li><a href="#h">Aperte H para 1996</a></li><li><a href="#doom">Um salve ao Brutal Doom</a></li></ol></nav>
+<header class="hero gore-hero">
+<div class="hv"><video aria-label="O Guerreiro num canto da Catedral, zumbis caindo e sangue nas paredes" autoplay="" class="bg" height="720" loop="" muted="" playsinline="" poster="/img/gore/hero_poster.jpg" preload="metadata" width="1280"><source src="/img/gore/hero.mp4" type="video/mp4"/></video></div>
+<div class="wrap text">
+<h1><small>Brutal Diablo</small>Mais sangrento</h1>
+<p class="pitch">Sangra. Então pode morrer. E deixa uma sujeira para trás.</p>
+</div>
+</header>
+<main>
+<section class="wide" id="makers"><div class="wrap"><h2>Como os criadores queriam</h2>
+<blockquote class="quote"><p>“Cada monstro terá várias mortes explícitas.”</p><cite>Condor, o estúdio que virou a Blizzard North, no seu <a href="http://www.graybeardgames.com/download/diablo_pitch.pdf">pitch de Diablo</a>, 1994</cite></blockquote>
+<blockquote class="quote"><p>“Queríamos que fosse cru e sangrento.”</p><cite>Erich Schaefer, designer-chefe e diretor de arte do Diablo, à <a href="https://web.archive.org/web/20170731050137/http://www.ign.com/articles/2017/07/30/20-years-of-diablo-an-ign-retrospective">IGN</a>, 2017</cite></blockquote>
+<p>O jogo que saiu em 1996 deu uma morte só para cada monstro e guardou quase todo o sangue na sala do Açougueiro. O Brutal Diablo é o jogo que eles descreveram: o mesmo jogo, só que mais sangrento. <a href="/pt-br/devlog/gore/">Como fizemos o sangue →</a></p>
+</div></section>
+<section class="wide" id="deaths"><div class="wrap"><h2>Cada morte é diferente</h2>
+<p class="lead">Cada monstro tem várias formas de morrer. Eles racham ao meio, estouram, perdem a cabeça.</p>
+<p class="muted small">O mesmo zumbi, a mesma espada, dez mortes diferentes.</p>
+<ul class="grid"><li><figure class="tile"><video aria-label="Estraçalhar" data-src="/img/gore/death_gib.mp4" height="480" loop="" muted="" playsinline="" poster="/img/gore/death_gib.jpg" preload="none" width="480"></video><figcaption>Estraçalhar</figcaption></figure></li><li><figure class="tile"><video aria-label="Arrebentar" data-src="/img/gore/death_burst.mp4" height="480" loop="" muted="" playsinline="" poster="/img/gore/death_burst.jpg" preload="none" width="480"></video><figcaption>Arrebentar</figcaption></figure></li><li><figure class="tile"><video aria-label="Estourar" data-src="/img/gore/death_pop.mp4" height="480" loop="" muted="" playsinline="" poster="/img/gore/death_pop.jpg" preload="none" width="480"></video><figcaption>Estourar</figcaption></figure></li><li><figure class="tile"><video aria-label="Partir ao meio" data-src="/img/gore/death_bisect.mp4" height="480" loop="" muted="" playsinline="" poster="/img/gore/death_bisect.jpg" preload="none" width="480"></video><figcaption>Partir ao meio</figcaption></figure></li><li><figure class="tile"><video aria-label="Rachar" data-src="/img/gore/death_split.mp4" height="480" loop="" muted="" playsinline="" poster="/img/gore/death_split.jpg" preload="none" width="480"></video><figcaption>Rachar</figcaption></figure></li><li><figure class="tile"><video aria-label="Dilacerar" data-src="/img/gore/death_rend.mp4" height="480" loop="" muted="" playsinline="" poster="/img/gore/death_rend.jpg" preload="none" width="480"></video><figcaption>Dilacerar</figcaption></figure></li><li><figure class="tile"><video aria-label="Decapitar" data-src="/img/gore/death_decap.mp4" height="480" loop="" muted="" playsinline="" poster="/img/gore/death_decap.jpg" preload="none" width="480"></video><figcaption>Decapitar</figcaption></figure></li><li><figure class="tile"><video aria-label="Desmembrar" data-src="/img/gore/death_dismember.mp4" height="480" loop="" muted="" playsinline="" poster="/img/gore/death_dismember.jpg" preload="none" width="480"></video><figcaption>Desmembrar</figcaption></figure></li><li><figure class="tile"><video aria-label="Estripar" data-src="/img/gore/death_eviscerate.mp4" height="480" loop="" muted="" playsinline="" poster="/img/gore/death_eviscerate.jpg" preload="none" width="480"></video><figcaption>Estripar</figcaption></figure></li><li><figure class="tile"><video aria-label="Retalhar" data-src="/img/gore/death_shred.mp4" height="480" loop="" muted="" playsinline="" poster="/img/gore/death_shred.jpg" preload="none" width="480"></video><figcaption>Retalhar</figcaption></figure></li></ul>
+<div class="next3d"><h3>Em desenvolvimento: mortes a partir de modelos 3D</h3><p>Hoje cada morte é feita com os próprios sprites 2D do jogo, frame a frame. Agora estamos tentando recriar os modelos 3D originais dos monstros, para que as mortes sejam calculadas a partir dos próprios modelos: um jeito novo de cair a cada vez, e muito mais legal de ver.</p></div>
+</div></section>
+<section class="wide" id="blood"><div class="wrap"><h2>Sangue que fica</h2>
+<p class="lead">Ninguém limpa nada na Catedral. O sangue empoça na pedra e seca devagar, respinga nas paredes e desce em filetes. Passe por cima, e a masmorra lembra por onde você andou: as suas pegadas de sangue mostram o caminho.</p>
+<ul class="grid three">
+<li><figure class="fig"><video aria-label="Uma poça se espalha e depois seca" data-src="/img/gore/blood_pool.mp4" height="720" loop="" muted="" playsinline="" poster="/img/gore/blood_pool.jpg" preload="none" width="960"></video><figcaption>Uma poça se espalha e depois seca</figcaption></figure></li>
+<li><figure class="fig"><video aria-label="Sangue na parede, escorrendo em filetes" data-src="/img/gore/blood_wall.mp4" height="720" loop="" muted="" playsinline="" poster="/img/gore/blood_wall.jpg" preload="none" width="960"></video><figcaption>Sangue na parede, escorrendo em filetes</figcaption></figure></li>
+<li><figure class="fig"><video aria-label="Pegadas atravessando as poças" data-src="/img/gore/blood_steps.mp4" height="720" loop="" muted="" playsinline="" poster="/img/gore/blood_steps.jpg" preload="none" width="960"></video><figcaption>Pegadas atravessando as poças</figcaption></figure></li>
+</ul></div></section>
+<section class="wide" id="fire"><div class="wrap"><h2>Fogo</h2>
+<p class="lead">O fogo mata do seu próprio jeito. Os monstros queimam, explodem, viram cinzas. Solte uma Parede de Fogo em cima de um banho de sangue e a sala inteira se acende, com a sombra do Guerreiro esticada de ponta a ponta.</p>
+<ul class="grid three"><li><figure class="tile w"><video aria-label="Chuva de cinzas" data-src="/img/gore/fire_ashfall.mp4" height="480" loop="" muted="" playsinline="" poster="/img/gore/fire_ashfall.jpg" preload="none" width="480"></video><figcaption>Chuva de cinzas</figcaption></figure></li><li><figure class="tile w"><video aria-label="Incendiar" data-src="/img/gore/fire_torch.mp4" height="480" loop="" muted="" playsinline="" poster="/img/gore/fire_torch.jpg" preload="none" width="480"></video><figcaption>Incendiar</figcaption></figure></li><li><figure class="tile w"><video aria-label="Detonar" data-src="/img/gore/fire_detonate.mp4" height="480" loop="" muted="" playsinline="" poster="/img/gore/fire_detonate.jpg" preload="none" width="480"></video><figcaption>Detonar</figcaption></figure></li></ul>
+<figure class="fig"><video aria-label="Uma Parede de Fogo sobre o banho de sangue" data-src="/img/gore/fire_wall.mp4" height="720" loop="" muted="" playsinline="" poster="/img/gore/fire_wall.jpg" preload="none" width="960"></video><figcaption>Uma Parede de Fogo sobre o banho de sangue</figcaption></figure>
+</div></section>
+<section class="wide" id="h"><div class="wrap"><h2>Aperte H para 1996</h2>
+<p>O Diablo (1996) nunca parou de rodar. Ele está bem ali debaixo do sangue, golpe a golpe. Arraste o divisor para descascar essa camada. No jogo, o H faz a mesma coisa, a qualquer momento.</p>
+<div class="cmpwrap"><figure class="media cmp" data-poster="/img/pair_fight_poster.jpg" data-src="/img/pair_fight.mp4" style="margin:0"><canvas aria-label="A mesma luta, Diablo (1996) à esquerda e Brutal Diablo à direita" height="720" width="1280"></canvas><video aria-hidden="true" loop="" muted="" playsinline="" preload="none" tabindex="-1"></video><span class="side l"><span class="lab l">Diablo (1996)</span></span><span class="side r"><span class="lab r">Brutal Diablo</span></span><span aria-hidden="true" class="handle"></span><span class="framenote"><span class="wip">Trabalho em andamento, não é a versão final</span></span><input aria-label="Mova o divisor entre Diablo (1996) e Brutal Diablo" max="100" min="0" type="range" value="50"/><figcaption>A Catedral, nível um</figcaption></figure></div>
+</div></section>
+<section class="wide" id="doom"><div class="wrap"><div class="tribute">
+<figure class="reel"><video aria-label="O Guerreiro encurralado por zumbis na Catedral, editado no ritmo de At Doom's Gate" controls="" height="1280" playsinline="" poster="/img/gore/doom_tribute.jpg" preload="none" width="720"><source src="/img/gore/doom_tribute.mp4" type="video/mp4"/></video></figure>
+<div class="tribute-text"><h2>Um salve ao Brutal Doom</h2>
+<p>O Brutal Doom mostrou como um clássico mais sangrento pode ser divertido. Então soltamos o riff do Doom na Catedral do Diablo. Ligue o som.</p>
+<div class="posted"><p class="muted">Comente e compartilhe:</p><ul class="iconrow"><li><a aria-label="O reel no YouTube" href="https://www.youtube.com/shorts/aYN3DO5d2nE" title="YouTube"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></a></li>
+<li><a aria-label="O reel no Instagram" href="https://www.instagram.com/reel/DfZ4hK6meY6/" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"></path></svg></a></li>
+<li><a aria-label="O reel no X" href="https://x.com/brutaldiablo/status/2118720539145433375" title="X"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg></a></li>
+<li><a aria-label="O reel no TikTok" href="https://www.tiktok.com/@brutaldiablo/video/7705074259072126240" title="TikTok"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg></a></li>
+<li><a aria-label="O reel no Threads" href="https://www.threads.com/@brutaldiablo/post/DfZ4aZUBhY-" title="Threads"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"></path></svg></a></li>
+<li><a aria-label="O reel no Bluesky" href="https://bsky.app/profile/brutaldiablo.com/post/3mznnnlwakf2l" title="Bluesky"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"></path></svg></a></li></ul></div></div>
+</div></div></section>
+<section class="wide" id="wip"><div class="wrap"><h2>Trabalho em andamento</h2>
+<p>Este é um mod em desenvolvimento, então o que você vê aqui não é a versão final. Por enquanto, as mortes cobrem os monstros da Catedral e são feitas com os sprites 2D; as versões em 3D estão em desenvolvimento. O resto da masmorra vem depois, nível por nível.</p>
+<div class="ctas"><a class="btn primary" href="/pt-br/">← Voltar ao Brutal Diablo</a><a class="btn" href="/pt-br/devlog/gore/">Como fizemos →</a></div>
+</div></section>
+<section class="wide" id="tips"><div class="wrap"><h2>Gorjetas</h2><div class="tipbox"><p>O Brutal Diablo vai ser gratuito quando sair. Jogue uma moeda e ela vira tempo de desenvolvimento, horas de GPU e café.</p><p>Este mod é uma carta de amor ao jogo original, então nada aqui está à venda. Mas cada gorjeta ajuda de verdade a manter o desenvolvimento andando. Obrigado.</p><div><a class="btn primary" href="https://ko-fi.com/brutaldiablo"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M11.351 2.715c-2.7 0-4.986.025-6.83.26C2.078 3.285 0 5.154 0 8.61c0 3.506.182 6.13 1.585 8.493 1.584 2.701 4.233 4.182 7.662 4.182h.83c4.209 0 6.494-2.234 7.637-4a9.5 9.5 0 0 0 1.091-2.338C21.792 14.688 24 12.22 24 9.208v-.415c0-3.247-2.13-5.507-5.792-5.87-1.558-.156-2.65-.208-6.857-.208m0 1.947c4.208 0 5.09.052 6.571.182 2.624.311 4.13 1.584 4.13 4v.39c0 2.156-1.792 3.844-3.87 3.844h-.935l-.156.649c-.208 1.013-.597 1.818-1.039 2.546-.909 1.428-2.545 3.064-5.922 3.064h-.805c-2.571 0-4.831-.883-6.078-3.195-1.09-2-1.298-4.155-1.298-7.506 0-2.181.857-3.402 3.012-3.714 1.533-.233 3.559-.26 6.39-.26m6.547 2.287c-.416 0-.65.234-.65.546v2.935c0 .311.234.545.65.545 1.324 0 2.051-.754 2.051-2s-.727-2.026-2.052-2.026m-10.39.182c-1.818 0-3.013 1.48-3.013 3.142 0 1.533.858 2.857 1.949 3.897.727.701 1.87 1.429 2.649 1.896a1.47 1.47 0 0 0 1.507 0c.78-.467 1.922-1.195 2.623-1.896 1.117-1.039 1.974-2.364 1.974-3.897 0-1.662-1.247-3.142-3.039-3.142-1.065 0-1.792.545-2.338 1.298-.493-.753-1.246-1.298-2.312-1.298"></path></svg>Gorjeta no Ko-fi</a></div></div></div></section>
+</main>
+<footer><div class="wrap"><p>Mod feito por fãs, sem vínculo com a Blizzard Entertainment. ©1996 Blizzard Entertainment, Inc. Todos os direitos reservados. Diablo é uma marca comercial da Blizzard Entertainment, Inc.</p><p>Fermentado na Tchéquia 🇨🇿🍻 · Roda no <a href="https://github.com/diasurgical/devilutionX">DevilutionX</a>.</p><p><a href="/pt-br/">brutaldiablo.com</a></p></div></footer>
+<script>
+(function(){
+  var vs=[].slice.call(document.querySelectorAll('video[data-src]')),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function load(v){if(!v.getAttribute('src')){v.setAttribute('src',v.dataset.src);v.load()}}
+  if(!('IntersectionObserver' in window)){if(!reduce)vs.forEach(function(v){load(v);v.play().catch(function(){})});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+    if(e.isIntersecting){if(!reduce){load(v);v.play().catch(function(){})}}else{v.pause()}})},{rootMargin:'200px 0px',threshold:.1});
+  vs.forEach(function(v){io.observe(v)});
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.cmp').forEach(function(f){
+    var c=f.querySelector('canvas'),x=c.getContext('2d'),v=f.querySelector('video'),r=f.querySelector('input'),h=f.querySelector('.handle'),split=.5,poster=new Image(),live=false;
+    poster.onload=function(){if(!live)draw(poster,poster.naturalWidth,poster.naturalHeight/2)};poster.src=f.dataset.poster;
+    function draw(src,w,hh){var W=c.width,H=c.height,s=Math.round(W*split),sw=Math.round(w*split);
+      try{if(s>0)x.drawImage(src,0,0,sw,hh,0,0,s,H);if(s<W)x.drawImage(src,sw,hh,w-sw,hh,s,0,W-s,H)}catch(e){}}
+    function frame(){if(v.readyState>=2){live=true;draw(v,v.videoWidth,v.videoHeight/2)}}
+    function loop(){frame();if(!v.paused){if(v.requestVideoFrameCallback)v.requestVideoFrameCallback(loop);else requestAnimationFrame(loop)}}
+    v.addEventListener('play',loop);v.addEventListener('loadeddata',frame);v.addEventListener('seeked',frame);
+    function set(p){split=Math.max(0,Math.min(1,p));f.style.setProperty('--s',split);h.style.left=(split*100)+'%';r.value=Math.round(split*100);if(live)frame();else if(poster.complete&&poster.naturalWidth)draw(poster,poster.naturalWidth,poster.naturalHeight/2)}
+    function fromX(e){var b=c.getBoundingClientRect();set((e.clientX-b.left)/b.width)}
+    var drag=false;
+    f.addEventListener('pointerdown',function(e){drag=true;try{f.setPointerCapture(e.pointerId)}catch(_){}fromX(e)});
+    f.addEventListener('pointermove',function(e){if(drag||e.pointerType==='mouse')fromX(e)});
+    f.addEventListener('pointerup',function(){drag=false});f.addEventListener('pointercancel',function(){drag=false});
+    r.addEventListener('input',function(){set(r.value/100)});
+    var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var go=function(){if(!v.getAttribute('src')){v.setAttribute('src',f.dataset.src);v.preload='auto';v.load()}if(!reduce)v.play().catch(function(){})};
+    if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go()}else{v.pause()}})},{rootMargin:'300px 0px',threshold:0}).observe(f)}
+    else{go()}
+  });
+})();
+</script>
+<script>
+(function(){var t=document.querySelector('.toc');if(!t)return;var ls=[].slice.call(t.querySelectorAll('a[href^="#"]'));
+  var ss=ls.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+  var hero=document.querySelector('.hero');
+  function on(){var y=innerHeight*.35,k=0;ss.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<y)k=i});ls.forEach(function(a,i){a.classList.toggle('on',i===k)});
+    t.classList.toggle('shown',!hero||hero.getBoundingClientRect().bottom<innerHeight*.3)}
+  addEventListener('scroll',on,{passive:true});addEventListener('resize',on);on()})();
+</script>
+<script async="" data-goatcounter="https://brutaldiablo.goatcounter.com/count" src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,6 +1,8 @@
 /* The town portal post's own pieces: the stepped sequences (chips or a slider over a set of pictures, a stack for
    animated ones), the size cap every picture of the game's art keeps (one picture pixel at most two device pixels),
    the layers toy and the scene buttons of "Press H". Started from the items post's items.js. */
+/* Translated text: bdT/bdN come from the page's head; without it they return the English. */
+window.bdT=window.bdT||function(s,v){return v?s.replace(/\{(\w+)\}/g,function(m,k){return v[k]!=null?v[k]:m}):s};window.bdN=window.bdN||function(n,a,b,v){var o={n:n};for(var k in v)o[k]=v[k];return window.bdT(n===1?a:b,o)};
 (function(){
   // The cap: an image or a slider marked .cap2 is never drawn larger than twice its pixels in device pixels. The CSS
   // holds it from the width in the markup (--w) before this runs; this makes it exact for the screen's pixel ratio
@@ -39,7 +41,7 @@
       im.dataset.stackKey=key;im.dataset.stackV=st[key];im.removeAttribute('data-src');im.classList.add('on');
       Object.keys(labs).forEach(function(v){if(v===st[key])return;var c=im.cloneNode();
         c.removeAttribute('src');c.removeAttribute('loading');c.dataset.later=pat.replace('{'+key+'}',v);
-        c.dataset.stackV=v;c.classList.remove('on');c.alt=base+': '+labs[v];c.setAttribute('aria-hidden','true');
+        c.dataset.stackV=v;c.classList.remove('on');c.alt=bdT('{base}: {label}',{base:base,label:labs[v]});c.setAttribute('aria-hidden','true');
         box.appendChild(c);later.push(c)});
       im.alt=base+': '+labs[st[key]];box.classList.add('ready');
     });

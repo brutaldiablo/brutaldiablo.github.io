@@ -1,10 +1,12 @@
 /* Stains drawn two ways: the game's stain code (blood.js) on the Cathedral's floor after a fixed fight, each tile
    painting its diamond from its own splashes alone (the lattice), or from its 3x3 neighbourhood's (the game's way).
    A still: the same fight every load. */
+/* Translated text: bdT/bdN come from the page's head; without it they return the English. */
+window.bdT=window.bdT||function(s,v){return v?s.replace(/\{(\w+)\}/g,function(m,k){return v[k]!=null?v[k]:m}):s};window.bdN=window.bdN||function(n,a,b,v){var o={n:n};for(var k in v)o[k]=v[k];return window.bdT(n===1?a:b,o)};
 (function(){
   var root=document.getElementById('stains');if(!root||!window.BloodPort)return;
   var cv=root.querySelector('canvas'),msg=root.querySelector('.n-msg'),mode='alone',w=null;
-  if(!BloodPort.supported){if(msg)msg.textContent='This browser cannot unpack the floor; try a current one.';return}
+  if(!BloodPort.supported){if(msg)msg.textContent=bdT('This browser cannot unpack the floor; try a current one.');return}
   var chips=root.querySelectorAll('[data-v]');
   function show(){chips.forEach(function(c){c.setAttribute('aria-pressed',String(c.dataset.v===mode))});
     if(!w)return;w.setGather(mode);w.updateTiles(true);w.compose(0)}
@@ -21,5 +23,5 @@
     for(t=0;t<420;t++)w.Tick();
     show();
     var rw=0;window.addEventListener('resize',function(){clearTimeout(rw);rw=setTimeout(function(){w.layout();show()},200)})
-  }).catch(function(){if(msg)msg.textContent='The floor did not load.'});
+  }).catch(function(){if(msg)msg.textContent=bdT('The floor did not load.')});
 })();

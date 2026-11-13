@@ -1,4 +1,6 @@
 /* The blood post's own pieces: the colour tables and the run of sixteen. Colours read from the game's palettes. */
+/* Translated text: bdT/bdN come from the page's head; without it they return the English. */
+window.bdT=window.bdT||function(s,v){return v?s.replace(/\{(\w+)\}/g,function(m,k){return v[k]!=null?v[k]:m}):s};window.bdN=window.bdN||function(n,a,b,v){var o={n:n};for(var k in v)o[k]=v[k];return window.bdT(n===1?a:b,o)};
 (function(){
   var D={"red":["#ffbdbd","#f49696","#e87d7d","#e06c6c","#d85b5b","#cf4949","#c73838","#bf2727","#a92222","#931e1e","#7c1919","#661515","#4f1111","#390d0d","#230909","#0c0505"],
     "b48":{"l1_1":["#a35959","#9c4f4f","#954545","#8d3a3a","#863030","#7f2626","#771c1c","#701111","#680707","#5b0606","#4d0505","#3f0404"],"l2_1":["#878775","#7d7d6c","#737364","#6a6a5b","#606052","#565649","#4c4c41","#424238","#3b3b31","#33332a","#2c2c24","#25251d"],"l3_1":["#663f38","#603b34","#593730","#53332d","#4d2e29","#462a25","#402621","#3a221e","#331d1a","#2d1916","#271512","#20110f"],"l4_1":["#78666b","#715f64","#6a585e","#635157","#5c4a50","#554349","#4e3c43","#47353c","#3f2e35","#38282f","#312228","#2a1c22"]},
@@ -12,9 +14,9 @@
 
   // 1. The colour tables: the game's red through each monster's table, and the red no table touches, on each level.
   var t=document.getElementById('trn');
-  if(t){var mon='Skeleton',lvl='l1_1';
+  if(t){var mon='Skeleton',lvl='l1_1',NAMES={'Zombie':bdT('Zombie'),'Ghoul':bdT('Ghoul'),'Skeleton':bdT('Skeleton'),'Horror':bdT('Horror'),'Dark One':bdT('Dark One')};
     function drawT(){fill(t.querySelector('.r224'),D.mon[mon]);fill(t.querySelector('.r48'),D.b48[lvl]);
-      t.querySelector('.mname').textContent=mon;
+      t.querySelector('.mname').textContent=NAMES[mon]||mon;
       chips(t.querySelector('.mons'),null,mon,function(v){mon=v;drawT()});chips(t.querySelector('.lvls'),null,lvl,function(v){lvl=v;drawT()})}
     drawT()}
 
@@ -25,8 +27,8 @@
       var sp=L.querySelectorAll('.ramp span');sp.forEach(function(e,i){e.classList.toggle('on',i===kept+s||i===rej+s)});
       function at(i){return i+s>15?'#000000':D.red[i+s]}
       L.querySelector('.kept').style.background=at(kept);L.querySelector('.rej').style.background=at(rej);
-      L.querySelector('.sval').textContent=s===0?'none':s+' step'+(s>1?'s':'');
-      L.querySelector('.rejn').textContent=rej+s>15?'black':'still red'}
+      L.querySelector('.sval').textContent=s===0?bdT('none'):bdN(s,'{n} step','{n} steps');
+      L.querySelector('.rejn').textContent=rej+s>15?bdT('black'):bdT('still red')}
     inp.addEventListener('input',drawL);drawL()}
 
 })();

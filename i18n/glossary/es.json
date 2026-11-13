@@ -1,0 +1,547 @@
+{
+ "Adria": {
+  "tr": "Adria",
+  "from": "game",
+  "kind": "name"
+ },
+ "Amulet": {
+  "tr": "Amuleto",
+  "from": "game",
+  "kind": "name"
+ },
+ "Amulet of balance": {
+  "tr": "Amuleto del equilibrio",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Amulet of the fox": {
+  "tr": "Amuleto del zorro",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Amulet of vitality": {
+  "tr": "Amuleto de la vitalidad",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Anvil of Fury": {
+  "tr": "Yunque de furia",
+  "from": "game",
+  "kind": "item"
+ },
+ "Arkaine's Valor": {
+  "tr": "Valor de Arkaine",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bastard Sword": {
+  "tr": "Espada bastarda",
+  "from": "game",
+  "kind": "item"
+ },
+ "Black Mushroom": {
+  "tr": "Hongo negro",
+  "from": "game",
+  "kind": "item"
+ },
+ "Black Razor": {
+  "tr": "Navaja negra",
+  "from": "game",
+  "kind": "item"
+ },
+ "Blood Stone": {
+  "tr": "Piedra de sangre",
+  "from": "game",
+  "kind": "item"
+ },
+ "Book of Charged Bolt": {
+  "tr": "libro de descarga eléctrica",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Book of Firebolt": {
+  "tr": "libro de flecha de fuego",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Brain": {
+  "tr": "Cerebro",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bramble": {
+  "tr": "Zarza",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bronze Amulet of the fox": {
+  "tr": "Amuleto de bronce del zorro",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Bronze Ring": {
+  "tr": "Anillo de bronce",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Cap": {
+  "tr": "Gorro",
+  "from": "game",
+  "kind": "item"
+ },
+ "Catacombs": {
+  "tr": "Catacumbas",
+  "from": "game",
+  "kind": "name"
+ },
+ "Cathedral": {
+  "tr": "Catedral",
+  "from": "game",
+  "kind": "name"
+ },
+ "Caves": {
+  "tr": "Cuevas",
+  "from": "game",
+  "kind": "name"
+ },
+ "Chain Mail": {
+  "tr": "Cota de malla",
+  "from": "game",
+  "kind": "name"
+ },
+ "Charged Bolt": {
+  "tr": "descarga eléctrica",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Claymore": {
+  "tr": "Claymore",
+  "from": "game",
+  "kind": "item"
+ },
+ "Cleaver": {
+  "tr": "Cuchillo de carnicero",
+  "from": "game",
+  "kind": "name"
+ },
+ "Constricting Ring": {
+  "tr": "Anillo de constricción",
+  "from": "game",
+  "kind": "item"
+ },
+ "Crown": {
+  "tr": "Corona",
+  "from": "game",
+  "kind": "item"
+ },
+ "Dagger": {
+  "tr": "Daga",
+  "from": "game",
+  "kind": "item"
+ },
+ "Dark One": {
+  "tr": "El oscuro",
+  "from": "game",
+  "kind": "name"
+ },
+ "Elixir of Dexterity": {
+  "tr": "Elixir de destreza",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Magic": {
+  "tr": "Elixir de magia",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Strength": {
+  "tr": "Elixir de fuerza",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Vitality": {
+  "tr": "Elixir de vitalidad",
+  "from": "game",
+  "kind": "item"
+ },
+ "Empyrean Band": {
+  "tr": "Banda empírea",
+  "from": "game",
+  "kind": "item"
+ },
+ "Fire Wall": {
+  "tr": "muro de fuego",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Full Helm": {
+  "tr": "Yelmo completo",
+  "from": "game",
+  "kind": "name"
+ },
+ "Full Plate Mail": {
+  "tr": "Cota de placas completa",
+  "from": "game",
+  "kind": "item"
+ },
+ "Fungal Tome": {
+  "tr": "Tomo de hongos",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ghoul": {
+  "tr": "Necrófago",
+  "from": "game",
+  "kind": "name"
+ },
+ "Golden Elixir": {
+  "tr": "Elixir dorado",
+  "from": "game",
+  "kind": "item"
+ },
+ "Gonnagal's Dirk": {
+  "tr": "Puñal de Gonnagal",
+  "from": "game",
+  "kind": "item"
+ },
+ "Gothic Plate": {
+  "tr": "Coraza gótica",
+  "from": "game",
+  "kind": "name"
+ },
+ "Great Axe": {
+  "tr": "Gran hacha",
+  "from": "game",
+  "kind": "item"
+ },
+ "Great Helm": {
+  "tr": "Gran yelmo",
+  "from": "game",
+  "kind": "item"
+ },
+ "Griswold": {
+  "tr": "Griswold",
+  "from": "game",
+  "kind": "name"
+ },
+ "Gryphon's Claw": {
+  "tr": "Garra del grifo",
+  "from": "game",
+  "kind": "item"
+ },
+ "Harlequin Crest": {
+  "tr": "Cresta del arlequín",
+  "from": "game",
+  "kind": "item"
+ },
+ "Hellfire": {
+  "tr": "Hellfire",
+  "from": "site",
+  "note": "the owner's decision: stays in English, as the expansion's name and as the name of a look on the items devlog"
+ },
+ "Horror": {
+  "tr": "Horror",
+  "from": "game",
+  "kind": "name"
+ },
+ "Kite Shield": {
+  "tr": "Escudo con vértices",
+  "from": "game",
+  "kind": "name"
+ },
+ "Long Staff": {
+  "tr": "Bastón largo",
+  "from": "game",
+  "kind": "item"
+ },
+ "Long War Bow": {
+  "tr": "Arco largo de guerra",
+  "from": "game",
+  "kind": "name"
+ },
+ "Magic Rock": {
+  "tr": "Roca mágica",
+  "from": "game",
+  "kind": "item"
+ },
+ "Mail": {
+  "tr": "Cota",
+  "from": "game",
+  "kind": "name"
+ },
+ "Messerschmidt's Reaver": {
+  "tr": "Atracador de Messerschmidt",
+  "from": "game",
+  "kind": "item"
+ },
+ "Morning Star": {
+  "tr": "Estrella del alba",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ogden": {
+  "tr": "Ogden",
+  "from": "game",
+  "kind": "name"
+ },
+ "Optic Amulet": {
+  "tr": "Amuleto óptico",
+  "from": "game",
+  "kind": "item"
+ },
+ "OverLord's Helm": {
+  "tr": "Yelmo del señor supremo",
+  "from": "game",
+  "kind": "item"
+ },
+ "Plate Mail": {
+  "tr": "Cota de placas",
+  "from": "game",
+  "kind": "name"
+ },
+ "Potion of Full Healing": {
+  "tr": "Poción curativa completa",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Full Mana": {
+  "tr": "Poción de maná completa",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Full Rejuvenation": {
+  "tr": "Poción rejuvenecedora completa",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Healing": {
+  "tr": "Poción curativa",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Mana": {
+  "tr": "Poción de maná",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Rejuvenation": {
+  "tr": "Poción rejuvenecedora",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of balance": {
+  "tr": "Anillo del equilibrio",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Engagement": {
+  "tr": "Anillo de compromiso",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of magic": {
+  "tr": "Anillo de la energía",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Regha": {
+  "tr": "Anillo de Regha",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of the fox": {
+  "tr": "Anillo del zorro",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Truth": {
+  "tr": "Anillo de la verdad",
+  "from": "game",
+  "kind": "item"
+ },
+ "Royal Circlet": {
+  "tr": "Aro real",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scimitar": {
+  "tr": "Cimitarra",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll": {
+  "tr": "Pergamino",
+  "from": "game",
+  "kind": "name"
+ },
+ "Scroll of Fireball": {
+  "tr": "Pergamino de bola de fuego",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Healing": {
+  "tr": "Pergamino de curación",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Identify": {
+  "tr": "Pergamino de la identidad",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Stone Curse": {
+  "tr": "Pergamino de maldición de piedra",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Town Portal": {
+  "tr": "Pergamino del portal a la ciudad",
+  "from": "game",
+  "kind": "item"
+ },
+ "Skeleton": {
+  "tr": "Esqueleto",
+  "from": "game",
+  "kind": "name"
+ },
+ "Skeleton King": {
+  "tr": "Rey Esqueleto",
+  "from": "game",
+  "kind": "name"
+ },
+ "Skull Cap": {
+  "tr": "Gorro metálico",
+  "from": "game",
+  "kind": "item"
+ },
+ "Sorcerer": {
+  "tr": "Hechicero",
+  "from": "game",
+  "kind": "name"
+ },
+ "Spectral Elixir": {
+  "tr": "Elixir espectral",
+  "from": "game",
+  "kind": "item"
+ },
+ "Splint Mail": {
+  "tr": "Cota de láminas",
+  "from": "game",
+  "kind": "name"
+ },
+ "Staff of Lazarus": {
+  "tr": "Bastón de Lazarus",
+  "from": "game",
+  "kind": "item"
+ },
+ "Stone Curse": {
+  "tr": "maldición de piedra",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Stonecleaver": {
+  "tr": "Cuchilla de Piedra",
+  "from": "game",
+  "kind": "item"
+ },
+ "Tavern Sign": {
+  "tr": "Letrero de la taberna",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Bleeder": {
+  "tr": "El sangrante",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Butcher": {
+  "tr": "El Carnicero",
+  "from": "game",
+  "kind": "name"
+ },
+ "The Butcher's Cleaver": {
+  "tr": "El cuchillo del Carnicero",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Executioner's Blade": {
+  "tr": "La espada del verdugo",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Grandfather": {
+  "tr": "El abuelo",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Needler": {
+  "tr": "El insoportable",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Protector": {
+  "tr": "El protector",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Rainbow Cloak": {
+  "tr": "La capa arcoíris",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Undead Crown": {
+  "tr": "Corona de los muertos vivientes",
+  "from": "game",
+  "kind": "item"
+ },
+ "Thinking Cap": {
+  "tr": "Gorro del pensamiento",
+  "from": "game",
+  "kind": "item"
+ },
+ "Tower Shield": {
+  "tr": "Escudo de la torre",
+  "from": "game",
+  "kind": "item"
+ },
+ "Town Portal": {
+  "tr": "Town Portal",
+  "from": "site",
+  "note": "the owner's decision: the name stays in English in every language, the spell, the scroll's portal and the devlog's subject alike; build the sentence so it needs no case ending (\"portál Town Portal\" where the language needs a noun to decline). The item \"Scroll of Town Portal\" keeps the game's name."
+ },
+ "town portal": {
+  "tr": "Town Portal",
+  "from": "site",
+  "note": "in running text too: the name stays in English, written Town Portal"
+ },
+ "Veil of Steel": {
+  "tr": "Velo de acero",
+  "from": "game",
+  "kind": "item"
+ },
+ "War Staff": {
+  "tr": "Bastón de guerra",
+  "from": "game",
+  "kind": "item"
+ },
+ "Warrior": {
+  "tr": "Guerrero",
+  "from": "game",
+  "kind": "name"
+ },
+ "Windforce": {
+  "tr": "Fuerza del viento",
+  "from": "game",
+  "kind": "item"
+ },
+ "Wizardspike": {
+  "tr": "Pico del mago",
+  "from": "game",
+  "kind": "item"
+ },
+ "Zombie": {
+  "tr": "Zombi",
+  "from": "game",
+  "kind": "name"
+ }
+}

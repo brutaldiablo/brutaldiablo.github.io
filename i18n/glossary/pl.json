@@ -1,0 +1,557 @@
+{
+ "Adria": {
+  "tr": "Adria",
+  "from": "game",
+  "kind": "name"
+ },
+ "Amulet": {
+  "tr": "Amulet",
+  "from": "game",
+  "kind": "name"
+ },
+ "Amulet of balance": {
+  "tr": "Amulet równowagi",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Amulet of the fox": {
+  "tr": "Amulet lisa",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Amulet of vitality": {
+  "tr": "Amulet żywotności",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Anvil of Fury": {
+  "tr": "Kowadło Gniewu",
+  "from": "game",
+  "kind": "item"
+ },
+ "Arkaine's Valor": {
+  "tr": "Odwaga Arkaina",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bastard Sword": {
+  "tr": "Bękarcki Miecz",
+  "from": "game",
+  "kind": "item"
+ },
+ "Black Mushroom": {
+  "tr": "Czarny Grzyb",
+  "from": "game",
+  "kind": "item"
+ },
+ "Black Razor": {
+  "tr": "Czarna Brzytwa",
+  "from": "game",
+  "kind": "item"
+ },
+ "Blood Stone": {
+  "tr": "Kamień Krwi",
+  "from": "game",
+  "kind": "item"
+ },
+ "Book of Charged Bolt": {
+  "tr": "Księga czaru: Wiązka Błyskawic",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Book of Firebolt": {
+  "tr": "Księga czaru: Ognisty Pocisk",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Brain": {
+  "tr": "Mózg",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bramble": {
+  "tr": "Cierń",
+  "from": "game",
+  "kind": "item"
+ },
+ "Bronze Amulet of the fox": {
+  "tr": "Brązowy Amulet lisa",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Bronze Ring": {
+  "tr": "Brązowy Pierścień",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Cap": {
+  "tr": "Kaptur",
+  "from": "game",
+  "kind": "item"
+ },
+ "Catacombs": {
+  "tr": "Katakumby",
+  "from": "game",
+  "kind": "name"
+ },
+ "Cathedral": {
+  "tr": "Katedra",
+  "from": "game",
+  "kind": "name"
+ },
+ "Caves": {
+  "tr": "Jaskinie",
+  "from": "game",
+  "kind": "name"
+ },
+ "Chain Mail": {
+  "tr": "Kolczuga",
+  "from": "game",
+  "kind": "name"
+ },
+ "Charged Bolt": {
+  "tr": "Wiązka Błyskawic",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Claymore": {
+  "tr": "Claymore",
+  "from": "game",
+  "kind": "item"
+ },
+ "Cleaver": {
+  "tr": "Tasak",
+  "from": "game",
+  "kind": "name"
+ },
+ "Constricting Ring": {
+  "tr": "Pierścień Uciśnienia",
+  "from": "game",
+  "kind": "item"
+ },
+ "Crown": {
+  "tr": "Korona",
+  "from": "game",
+  "kind": "item"
+ },
+ "Dagger": {
+  "tr": "Sztylet",
+  "from": "game",
+  "kind": "item"
+ },
+ "Dark One": {
+  "tr": "Mroczny",
+  "from": "game",
+  "kind": "name"
+ },
+ "Elixir of Dexterity": {
+  "tr": "Eliksir Zręczności",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Magic": {
+  "tr": "Eliksir Magii",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Strength": {
+  "tr": "Eliksir Siły",
+  "from": "game",
+  "kind": "item"
+ },
+ "Elixir of Vitality": {
+  "tr": "Eliksir Żywotności",
+  "from": "game",
+  "kind": "item"
+ },
+ "Empyrean Band": {
+  "tr": "Pierścień Niebios",
+  "from": "game",
+  "kind": "item"
+ },
+ "Fire Wall": {
+  "tr": "Ściana Ognia",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Full Helm": {
+  "tr": "Zamknięty Hełm",
+  "from": "game",
+  "kind": "name"
+ },
+ "Full Plate Mail": {
+  "tr": "Pełna Płytowa Zbroja",
+  "from": "game",
+  "kind": "item"
+ },
+ "Fungal Tome": {
+  "tr": "Atlas Grzybów",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ghoul": {
+  "tr": "Ghul",
+  "from": "game",
+  "kind": "name"
+ },
+ "Golden Elixir": {
+  "tr": "Złoty Eliksir",
+  "from": "game",
+  "kind": "item"
+ },
+ "Gonnagal's Dirk": {
+  "tr": "Sztylet Gonnagala",
+  "from": "game",
+  "kind": "item"
+ },
+ "Gothic Plate": {
+  "tr": "Gotycka Płytowa Zbroja",
+  "from": "game",
+  "kind": "name"
+ },
+ "Great Axe": {
+  "tr": "Wielki Topór",
+  "from": "game",
+  "kind": "item"
+ },
+ "Great Helm": {
+  "tr": "Wielki Hełm",
+  "from": "game",
+  "kind": "item"
+ },
+ "Griswold": {
+  "tr": "Griswold",
+  "from": "game",
+  "kind": "name"
+ },
+ "Gryphon's Claw": {
+  "tr": "Pazur Gryfa",
+  "from": "game",
+  "kind": "item"
+ },
+ "Harlequin Crest": {
+  "tr": "Przyodziewek Arlekina",
+  "from": "game",
+  "kind": "item"
+ },
+ "Hellfire": {
+  "tr": "Hellfire",
+  "from": "site",
+  "note": "the owner's decision: stays in English, as the expansion's name and as the name of a look on the items devlog"
+ },
+ "Horror": {
+  "tr": "Kościej",
+  "from": "game",
+  "kind": "name"
+ },
+ "Kite Shield": {
+  "tr": "Trójkątna Tarcza",
+  "from": "game",
+  "kind": "name"
+ },
+ "Long Staff": {
+  "tr": "Długi Kostur",
+  "from": "game",
+  "kind": "item"
+ },
+ "Long War Bow": {
+  "tr": "Długi Bojowy Łuk",
+  "from": "game",
+  "kind": "name"
+ },
+ "Magic Rock": {
+  "tr": "Magiczny Kamień",
+  "from": "game",
+  "kind": "item"
+ },
+ "Mail": {
+  "tr": "Zbroja",
+  "from": "game",
+  "kind": "name"
+ },
+ "Messerschmidt's Reaver": {
+  "tr": "Rozpruwacz Messerschmidta",
+  "from": "game",
+  "kind": "item"
+ },
+ "Morning Star": {
+  "tr": "Wekiera",
+  "from": "game",
+  "kind": "item"
+ },
+ "New Tristram": {
+  "tr": "Nowy Tristram",
+  "from": "site",
+  "note": "Diablo III; not declined: \"w Nowym Tristram\""
+ },
+ "Ogden": {
+  "tr": "Ogden",
+  "from": "game",
+  "kind": "name"
+ },
+ "Optic Amulet": {
+  "tr": "Optyczny Amulet",
+  "from": "game",
+  "kind": "item"
+ },
+ "OverLord's Helm": {
+  "tr": "Hełm Nadzorcy",
+  "from": "game",
+  "kind": "item"
+ },
+ "Plate Mail": {
+  "tr": "Płytowa Zbroja",
+  "from": "game",
+  "kind": "name"
+ },
+ "Potion of Full Healing": {
+  "tr": "Mikstura Pełnego Leczenia",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Full Mana": {
+  "tr": "Mikstura Pełnej Many",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Full Rejuvenation": {
+  "tr": "Mikstura Pełnego Wzmocnienia",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Healing": {
+  "tr": "Mikstura Leczenia",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Mana": {
+  "tr": "Mikstura Many",
+  "from": "game",
+  "kind": "item"
+ },
+ "Potion of Rejuvenation": {
+  "tr": "Mikstura Wzmocnienia",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of balance": {
+  "tr": "Pierścień równowagi",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Engagement": {
+  "tr": "Pierścień Zobowiązania",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of magic": {
+  "tr": "Pierścień magii",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Regha": {
+  "tr": "Pierścień Regha",
+  "from": "game",
+  "kind": "item"
+ },
+ "Ring of the fox": {
+  "tr": "Pierścień lisa",
+  "from": "game",
+  "kind": "composed"
+ },
+ "Ring of Truth": {
+  "tr": "Pierścień Prawdy",
+  "from": "game",
+  "kind": "item"
+ },
+ "Royal Circlet": {
+  "tr": "Królewski Diadem",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scimitar": {
+  "tr": "Sejmitar",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll": {
+  "tr": "Zwój",
+  "from": "game",
+  "kind": "name"
+ },
+ "Scroll of Fireball": {
+  "tr": "Zwój Ognistej Kuli",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Healing": {
+  "tr": "Zwój Uzdrowienia",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Identify": {
+  "tr": "Zwój Identyfikacji",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Stone Curse": {
+  "tr": "Zwój Petryfikacji",
+  "from": "game",
+  "kind": "item"
+ },
+ "Scroll of Town Portal": {
+  "tr": "Zwój Miejskiego Portalu",
+  "from": "game",
+  "kind": "item"
+ },
+ "Skeleton": {
+  "tr": "Szkielet",
+  "from": "game",
+  "kind": "name"
+ },
+ "Skeleton King": {
+  "tr": "Król Szkieletów",
+  "from": "game",
+  "kind": "name"
+ },
+ "Skull Cap": {
+  "tr": "Szyszak",
+  "from": "game",
+  "kind": "item"
+ },
+ "Sorcerer": {
+  "tr": "Czarodziej",
+  "from": "game",
+  "kind": "name"
+ },
+ "Spectral Elixir": {
+  "tr": "Widmowy Eliksir",
+  "from": "game",
+  "kind": "item"
+ },
+ "Splint Mail": {
+  "tr": "Karacenowa Zbroja",
+  "from": "game",
+  "kind": "name"
+ },
+ "Staff of Lazarus": {
+  "tr": "Kostur Lazarusa",
+  "from": "game",
+  "kind": "item"
+ },
+ "Stone Curse": {
+  "tr": "Petryfikacja",
+  "from": "game",
+  "kind": "spell"
+ },
+ "Stonecleaver": {
+  "tr": "Kamienny Tasak",
+  "from": "game",
+  "kind": "item"
+ },
+ "Tavern Sign": {
+  "tr": "Szyld Gospody",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Bleeder": {
+  "tr": "Krwotok",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Butcher": {
+  "tr": "Rzeźnik",
+  "from": "game",
+  "kind": "name"
+ },
+ "The Butcher's Cleaver": {
+  "tr": "Tasak Rzeźnika",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Executioner's Blade": {
+  "tr": "Miecz Kata",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Grandfather": {
+  "tr": "Pradziad",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Needler": {
+  "tr": "Iglica",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Protector": {
+  "tr": "Orędownik",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Rainbow Cloak": {
+  "tr": "Szata Tęczy",
+  "from": "game",
+  "kind": "item"
+ },
+ "The Undead Crown": {
+  "tr": "Korona Nieumarłych",
+  "from": "game",
+  "kind": "item"
+ },
+ "Thinking Cap": {
+  "tr": "Kaptur Umysłu",
+  "from": "game",
+  "kind": "item"
+ },
+ "Tower Shield": {
+  "tr": "Ciężka Tarcza",
+  "from": "game",
+  "kind": "item"
+ },
+ "Town Portal": {
+  "tr": "Town Portal",
+  "from": "site",
+  "note": "the owner's decision: the name stays in English in every language, the spell, the scroll's portal and the devlog's subject alike; build the sentence so it needs no case ending (\"portál Town Portal\" where the language needs a noun to decline). The item \"Scroll of Town Portal\" keeps the game's name."
+ },
+ "town portal": {
+  "tr": "Town Portal",
+  "from": "site",
+  "note": "in running text too: the name stays in English, written Town Portal"
+ },
+ "Tristram": {
+  "tr": "Tristram",
+  "from": "site",
+  "note": "not declined, as the game, Blizzard and the Polish press write it: \"w Tristram\", \"z Tristram\""
+ },
+ "Veil of Steel": {
+  "tr": "Stalowy Woal",
+  "from": "game",
+  "kind": "item"
+ },
+ "War Staff": {
+  "tr": "Bojowy Kostur",
+  "from": "game",
+  "kind": "item"
+ },
+ "Warrior": {
+  "tr": "Wojownik",
+  "from": "game",
+  "kind": "name"
+ },
+ "Windforce": {
+  "tr": "Siła Wiatru",
+  "from": "game",
+  "kind": "item"
+ },
+ "Wizardspike": {
+  "tr": "Kolec Czarownika",
+  "from": "game",
+  "kind": "item"
+ },
+ "Zombie": {
+  "tr": "Zombie",
+  "from": "game",
+  "kind": "name"
+ }
+}
