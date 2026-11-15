@@ -410,9 +410,9 @@
   "kind": "item"
  },
  "Skeleton": {
-  "tr": "Skelet",
-  "from": "game",
-  "kind": "name"
+  "tr": "Kostlivec",
+  "from": "site",
+  "note": "the owner's decision (2026-11-15): the everyday Kostlivec, in running text kostlivec, not the game's Skelet; the game itself says Kostlivec in Král Kostlivců"
  },
  "Skeleton King": {
   "tr": "Král Kostlivců",
