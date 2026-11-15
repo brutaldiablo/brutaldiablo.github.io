@@ -1,0 +1,6 @@
+# Folder metadata from macOS and Windows. GitHub Pages serves every committed
+# file, so a committed .DS_Store would be public.
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
