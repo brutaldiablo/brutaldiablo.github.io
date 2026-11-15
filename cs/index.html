@@ -159,6 +159,12 @@ section{padding-block:2.4rem}
 .tiles a{display:grid;justify-items:center;text-align:center;gap:.45rem;padding:1rem .4rem .8rem;background:var(--stone);border:1px solid var(--stone-2);border-radius:3px;text-decoration:none;font-family:var(--ui);font-weight:600;font-size:.85rem;transition:border-color .15s}
 .tiles a:hover{border-color:var(--torch);color:var(--bone)}.tiles svg{width:1.7rem;height:1.7rem;fill:var(--ash)}.tiles a:hover svg{fill:var(--torch)}
 .tiles small{display:block;font-weight:400;color:var(--ash);font-size:.7rem;overflow-wrap:anywhere}
+.thanks{display:grid;gap:.2rem;margin-top:.2rem}
+.thanksline{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(1.25rem,2.6vw,1.6rem);line-height:1.25;color:var(--bone);text-wrap:balance}
+.thanksline b{color:var(--torch);white-space:nowrap}
+.thanksnote{margin:0;font-size:1rem;color:var(--ash)}
+.thanksnote a{color:var(--torch);font-family:var(--ui);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(229,139,58,.4);white-space:nowrap}
+.thanksnote a:hover{color:var(--bone);border-color:var(--bone)}
 .followhead{display:flex;flex-wrap:wrap;align-items:center;gap:1rem}.followhead h2{margin-right:auto}
 @media (max-width:860px){.tiles{grid-template-columns:repeat(4,1fr)}}
 @media (max-width:480px){.tiles{grid-template-columns:repeat(3,1fr)}.tiles small{display:none}}
@@ -321,7 +327,7 @@ figcaption .wip{display:block;margin-top:.35rem;opacity:.8}
 <div class="wrap text">
 <img alt="" class="mark" height="84" src="/img/mark_180.png" width="84"/>
 <h1><small>Mod pro Diablo (1996)</small>Brutal Diablo</h1>
-<p class="pitch">Honíme se za tím horečnatým snem o Diablu, co se nám všem zdál v roce 1996.<br/><em>Stejná hra. Lepší grafika, temnější, krvavější.</em></p><p class="status"><span>Vyjde začátkem roku 2027</span><span>Zdarma</span><span>Ve vývoji</span></p><p class="notifyline"><a href="#notify">Dejte mi vědět, až vyjde →</a></p>
+<p class="pitch">Honíme se za tím horečnatým snem o Diablu, co se nám všem zdál v roce 1996.<br/><em>Stejná hra. Lepší grafika, temnější, krvavější.</em></p><p class="status"><span>Vyjde začátkem roku 2027</span><span>Zdarma</span><span>Ve vývoji</span></p><div class="thanks"><p class="thanksline"><b>2M+ zhlédnutí</b>, <b>10k+ příznivců</b> za měsíc.</p><p class="thanksnote"><span>Díky za úžasnou podporu.</span> <a href="#follow">Přidej se k nim →</a></p></div><p class="notifyline"><a href="#notify">Dejte mi vědět, až vyjde →</a></p>
 <div class="ctas"><a class="btn primary dc" href="https://discord.gg/NsG8gnhnJH"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><use href="#i-discord"></use></svg>Přidej se na Discord</a><a class="btn dc-alt" href="#follow">Sleduj</a><a class="btn" href="https://ko-fi.com/brutaldiablo"><svg aria-hidden="true" class="" viewbox="0 0 24 24"><use href="#i-kofi"></use></svg>Kasička</a></div>
 </div>
 </header>
