@@ -112,3 +112,9 @@ figure.clip{justify-items:center}
 figure.clip figcaption{justify-self:stretch}
 figure.clip .frame{line-height:0}
 figure.clip video{aspect-ratio:var(--ar,600/580);image-rendering:pixelated}
+/* the reel's posts as icons, the homepage's icon row */
+.iconrow{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.iconrow a{display:grid;place-items:center;width:2.6rem;height:2.6rem;border:1px solid var(--stone-2);background:rgba(23,18,15,.7);border-radius:3px;transition:border-color .15s}
+.iconrow a:hover,.iconrow a:focus-visible{border-color:var(--torch)}
+.iconrow svg{width:1.15rem;height:1.15rem;fill:var(--ash)}
+.iconrow a:hover svg,.iconrow a:focus-visible svg{fill:var(--torch)}
