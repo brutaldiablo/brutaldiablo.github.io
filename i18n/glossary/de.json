@@ -49,6 +49,11 @@
   "from": "game",
   "kind": "item"
  },
+ "Blood Knight": {
+  "tr": "Blutritter",
+  "from": "game",
+  "kind": "name"
+ },
  "Blood Stone": {
   "tr": "Blutstein",
   "from": "game",
@@ -83,6 +88,11 @@
   "tr": "Bronze-Ring",
   "from": "game",
   "kind": "composed"
+ },
+ "Burning Dead": {
+  "tr": "Brennender Toter",
+  "from": "game",
+  "kind": "name"
  },
  "Cap": {
   "tr": "Kappe",
@@ -144,6 +154,11 @@
   "from": "game",
   "kind": "name"
  },
+ "Demon": {
+  "tr": "Dämonisch",
+  "from": "game",
+  "kind": "name"
+ },
  "Elixir of Dexterity": {
   "tr": "Elixir der Agilität",
   "from": "game",
@@ -173,6 +188,11 @@
   "tr": "Feuerwand",
   "from": "game",
   "kind": "spell"
+ },
+ "Flesh Clan": {
+  "tr": "Blut-Clan",
+  "from": "game",
+  "kind": "name"
  },
  "Full Helm": {
   "tr": "Vollhelm",
@@ -239,6 +259,11 @@
   "from": "site",
   "note": "the owner's decision: stays in English, as the expansion's name and as the name of a look on the items devlog"
  },
+ "Horned Demon": {
+  "tr": "Gehörnter Drescher",
+  "from": "game",
+  "kind": "name"
+ },
  "Horror": {
   "tr": "Horror",
   "from": "game",
@@ -279,6 +304,16 @@
   "from": "game",
   "kind": "item"
  },
+ "Nightmare": {
+  "tr": "Alptraum",
+  "from": "game",
+  "kind": "name"
+ },
+ "Normal": {
+  "tr": "Normal",
+  "from": "game",
+  "kind": "name"
+ },
  "Ogden": {
   "tr": "Ogden",
   "from": "game",
@@ -293,6 +328,11 @@
   "tr": "Helm des Aufsehers",
   "from": "game",
   "kind": "item"
+ },
+ "Pause": {
+  "tr": "Pause",
+  "from": "game",
+  "kind": "name"
  },
  "Plate Mail": {
   "tr": "Kettenpanzer",
@@ -358,6 +398,11 @@
   "tr": "Ring der Wahrheit",
   "from": "game",
   "kind": "item"
+ },
+ "Rogue": {
+  "tr": "Jägerin",
+  "from": "game",
+  "kind": "name"
  },
  "Royal Circlet": {
   "tr": "Königlicher Reif",
@@ -443,6 +488,11 @@
   "tr": "Steinspalter",
   "from": "game",
   "kind": "item"
+ },
+ "Succubus": {
+  "tr": "Sukkubus",
+  "from": "game",
+  "kind": "name"
  },
  "Tavern Sign": {
   "tr": "Tavernenschild",

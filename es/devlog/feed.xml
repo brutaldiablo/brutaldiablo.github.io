@@ -6,8 +6,15 @@
   <atom:link href="https://brutaldiablo.com/es/devlog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Cómo hicimos las partes más grandes de Brutal Diablo: la técnica, los callejones sin salida y lo que aprendimos.</description>
   <language>es</language>
-  <lastBuildDate>Thu, 12 Nov 2026 09:30:00 +0100</lastBuildDate>
+  <lastBuildDate>Mon, 16 Nov 2026 18:00:00 +0100</lastBuildDate>
   <image><url>https://brutaldiablo.com/img/mark_180.png</url><title>Devlog de Brutal Diablo</title><link>https://brutaldiablo.com/es/devlog/</link></image>
+  <item>
+    <title>Quitando las sombras pintadas: los personajes</title>
+    <link>https://brutaldiablo.com/es/devlog/shadows-characters/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/es/devlog/shadows-characters/</guid>
+    <pubDate>Mon, 16 Nov 2026 18:00:00 +0100</pubDate>
+    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/shadows-characters/og.jpg" width="1200"/></p><p>Cada héroe y cada monstruo de Diablo lleva su sombra pintada en la imagen. Te contamos cómo distinguimos sombra de personaje en 92 424 fotogramas, y por qué una bota negra sobre una sombra negra nos tuvo entretenidos.</p>]]></description>
+  </item>
   <item>
     <title>¿Te llama por tu nombre?</title>
     <link>https://brutaldiablo.com/es/devlog/town-portal/</link>

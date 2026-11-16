@@ -49,6 +49,11 @@
   "from": "game",
   "kind": "item"
  },
+ "Blood Knight": {
+  "tr": "Caballero de sangre",
+  "from": "game",
+  "kind": "name"
+ },
  "Blood Stone": {
   "tr": "Piedra de sangre",
   "from": "game",
@@ -83,6 +88,11 @@
   "tr": "Anillo de bronce",
   "from": "game",
   "kind": "composed"
+ },
+ "Burning Dead": {
+  "tr": "Muerte ardiente",
+  "from": "game",
+  "kind": "name"
  },
  "Cap": {
   "tr": "Gorro",
@@ -144,6 +154,11 @@
   "from": "game",
   "kind": "name"
  },
+ "Demon": {
+  "tr": "Demonio",
+  "from": "game",
+  "kind": "name"
+ },
  "Elixir of Dexterity": {
   "tr": "Elixir de destreza",
   "from": "game",
@@ -173,6 +188,11 @@
   "tr": "muro de fuego",
   "from": "game",
   "kind": "spell"
+ },
+ "Flesh Clan": {
+  "tr": "Clan de carne",
+  "from": "game",
+  "kind": "name"
  },
  "Full Helm": {
   "tr": "Yelmo completo",
@@ -239,6 +259,11 @@
   "from": "site",
   "note": "the owner's decision: stays in English, as the expansion's name and as the name of a look on the items devlog"
  },
+ "Horned Demon": {
+  "tr": "Demonio cornudo",
+  "from": "game",
+  "kind": "name"
+ },
  "Horror": {
   "tr": "Horror",
   "from": "game",
@@ -279,6 +304,16 @@
   "from": "game",
   "kind": "item"
  },
+ "Nightmare": {
+  "tr": "Pesadilla",
+  "from": "game",
+  "kind": "name"
+ },
+ "Normal": {
+  "tr": "Normal",
+  "from": "game",
+  "kind": "name"
+ },
  "Ogden": {
   "tr": "Ogden",
   "from": "game",
@@ -293,6 +328,11 @@
   "tr": "Yelmo del señor supremo",
   "from": "game",
   "kind": "item"
+ },
+ "Pause": {
+  "tr": "Pausa",
+  "from": "game",
+  "kind": "name"
  },
  "Plate Mail": {
   "tr": "Cota de placas",
@@ -358,6 +398,11 @@
   "tr": "Anillo de la verdad",
   "from": "game",
   "kind": "item"
+ },
+ "Rogue": {
+  "tr": "Arpía",
+  "from": "game",
+  "kind": "name"
  },
  "Royal Circlet": {
   "tr": "Aro real",
@@ -443,6 +488,11 @@
   "tr": "Cuchilla de Piedra",
   "from": "game",
   "kind": "item"
+ },
+ "Succubus": {
+  "tr": "Súcubo",
+  "from": "game",
+  "kind": "name"
  },
  "Tavern Sign": {
   "tr": "Letrero de la taberna",

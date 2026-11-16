@@ -1,0 +1,114 @@
+/* The painted-shadows post's own pieces, on top of devlog.css: the cut pictures (figure.cutpair), the stepper with its
+   counter, the projection toy, the scale strip and the bat (all driven by shadows.js). The stepper's range is
+   the town portal post's (portal.css), repeated here so this post does not load that one. */
+
+/* pictures of the game's art: the 1996 frames, each pixel already a whole s x s block in the file. They are drawn at
+   most at their own size (--w, the picture's width in the markup, plus the 1px border), so a wide screen shows them
+   exactly as made; a narrower one shrinks them, and nearest-neighbour scaling keeps every pixel sharp */
+.natural{max-width:calc(var(--w,232) * 1px + 2px);margin-inline:auto;width:100%}
+.cutpair img,.project img,.project canvas,.still img{image-rendering:pixelated}
+
+/* the cut pictures: the cut and the as-drawn picture stacked in one cell; the as-drawn one shows while pressed */
+figure.cutpair{justify-items:center}
+figure.cutpair figcaption{justify-self:stretch}
+/* the stepper's panel keeps the figure's full width whatever its caption's length */
+figure.stepper-fig>.stepper{justify-self:stretch}
+.cutpair .pair{position:relative;display:grid;border:1px solid var(--stone-2);background:#808080;line-height:0;-webkit-tap-highlight-color:transparent}
+.cutpair .pair>img,.cutpair .pair>.stack{grid-area:1/1;width:100%;height:auto}
+.cutpair .pair img{display:block;width:100%;height:auto;-webkit-user-drag:none;user-select:none;-webkit-user-select:none}
+.cutpair .pair img.drawn{visibility:hidden}
+.cutpair .pair.is-drawn img.drawn{visibility:visible}
+.cutpair .pair[role=button]{cursor:pointer}
+.cutpair .pair[role=button]:focus-visible{outline:2px solid var(--torch);outline-offset:3px}
+.cutpair .hint{position:absolute;left:50%;bottom:.6rem;transform:translateX(-50%);padding:.4em .75em;border-radius:3px;background:rgba(12,9,8,.8);color:var(--bone);font-family:var(--ui);font-size:.78rem;font-weight:600;line-height:1.2;white-space:nowrap;pointer-events:none;transition:opacity .4s}
+.cutpair .hint.gone{opacity:0}
+.cutpair .tag{line-height:1.2}
+/* the label shows which picture is up */
+.cutpair .pair .when-drawn{display:none}
+.cutpair .pair.is-drawn .when-drawn{display:inline}
+.cutpair .pair.is-drawn .when-cut{display:none}
+@media (max-width:420px){.cutpair .hint{font-size:.7rem}}
+
+/* the obvious way's two pictures side by side; stacked on the narrowest phones, where a hint or a label would not fit
+   half the width */
+.duo{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;width:100%}
+.duo figure{margin:0}
+.duo>li>figure{justify-items:center}
+@media (max-width:420px){.duo{grid-template-columns:minmax(0,1fr)}}
+
+/* the stepper: a stack of cut pictures, one shown, under one as-drawn picture */
+.stepper .stage{display:grid;justify-items:center;gap:.4rem}
+.stepper .stack{position:relative;display:grid}
+.stepper .stack img{grid-area:1/1;visibility:hidden}
+.stepper .stack img.on{visibility:visible}
+.stepper .rangewrap{display:grid;gap:.25rem}
+.stepper .cap{color:var(--bone);font-size:.88rem;line-height:1.5;min-height:3em}
+.stepper input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:22px;background:transparent;margin:0;accent-color:var(--ember)}
+.stepper input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:rgba(163,149,127,.35)}
+.stepper input[type=range]::-moz-range-track{height:4px;border-radius:2px;background:rgba(163,149,127,.35)}
+.stepper input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;margin-top:-7px;border-radius:50%;background:var(--ember);border:2px solid var(--bone)}
+.stepper input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--ember);border:2px solid var(--bone)}
+.stepper .steps{display:flex;flex-wrap:nowrap;gap:.35rem}
+.stepper .steps .chip{flex:1 1 0;min-width:0;padding-inline:0;text-align:center}
+.counter{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.counter div{border:1px solid var(--stone-2);background:var(--ink);padding:.5rem .7rem;display:grid;gap:.1rem}
+.counter b{font-family:var(--display);font-size:1.6rem;line-height:1.1;color:var(--bone);font-variant-numeric:tabular-nums}
+.counter span{color:var(--ash);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.counter div.zero b{color:var(--ash)}
+.stepper .note{color:var(--ash);font-size:.76rem}
+
+/* the projection toy: a canvas over the knight as drawn; without the script, its poster */
+.project .stage{display:grid;justify-items:center}
+.project .pic{position:relative;border:1px solid var(--stone-2);background:#808080;line-height:0}
+.project .pic img,.project .pic canvas{display:block;width:100%;height:auto}
+
+/* the scale strip: chosen frames on one floor, three numbers over the empty floor above them (under it on phones) */
+.strip{width:100%}
+.strip .nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;width:100%;pointer-events:none}
+.strip .nums div{display:grid;gap:.15rem;text-align:center}
+.strip .nums b{font-family:var(--display);font-weight:700;font-size:clamp(1.1rem,4.6vw,2.8rem);white-space:nowrap;line-height:1;color:var(--bone);font-variant-numeric:lining-nums}
+.strip .nums span{font-family:var(--ui);font-size:clamp(.66rem,1.6vw,.85rem);letter-spacing:.16em;text-transform:uppercase;color:var(--ash)}
+.strip .over{position:relative;width:100%}
+@media (min-width:601px){
+  .strip .over .nums{position:absolute;left:1px;right:1px;top:1px;padding:1rem 1rem 2.2rem;background:linear-gradient(180deg,rgba(12,9,8,.85) 45%,rgba(12,9,8,0))}
+  .strip .over .nums span{color:var(--bone)}
+}
+/* on phones the numbers go under the strip, so the empty floor kept for them above the figures is cropped off
+   (--head: that floor's height over the strip's width, set by build_5_strip.py) */
+@media (max-width:600px){.strip .nums{margin-top:.6rem}.strip .pair{overflow:hidden}.strip .pair>img{margin-top:calc(var(--head,0) * -100%)}}
+/* on the narrowest phones a number may break at its space ("28 / Millionen"), so a longer word in another language stays
+   inside its third of the row */
+@media (max-width:420px){.strip .nums div{min-width:0}.strip .nums b{white-space:normal}}
+/* a picture that is not a cut: the bat */
+.still{position:relative;border:1px solid var(--stone-2);background:#808080;line-height:0}
+.still img{display:block;width:100%;height:auto}
+.still .tag{line-height:1.2}
+
+/* the ground row: a bat's frames side by side in one picture, stepped through by CSS; frame 0 alone under reduced motion */
+.flapfig{justify-items:center}
+.flapfig figcaption{justify-self:stretch}
+.flap{width:100%;max-width:calc(var(--w,216) * 1px + 2px);overflow:hidden;margin-inline:auto}
+.flap img{display:block;width:calc(var(--n,1) * 100%);max-width:none;height:auto;animation:flap calc(var(--n,1) * 85ms) steps(var(--n,1)) infinite}
+@keyframes flap{to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){.flap img{animation:none}}
+
+
+/* the projection's "Show our prediction": its swatch filled with the prediction's orange while pressed */
+.project .chip.pred::before{content:"";display:inline-block;width:.75em;height:.75em;margin-right:.45em;vertical-align:-.05em;border:1px solid var(--torch);border-radius:1px}
+.project .chip.pred[aria-pressed=true]{background:color-mix(in srgb,var(--torch) 22%,transparent);border-color:var(--torch);color:var(--bone)}
+.project .chip.pred[aria-pressed=true]::before{background:var(--torch)}
+
+
+/* the picture's description for screen readers (the alt text of the picture showing), kept off the screen */
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+
+/* The post's own page pieces (assemble/post.css, appended to the visuals' shadows.css by assemble.py). */
+
+/* the opening is devlog.css's header video (.posthero video.bg), as the other posts': nothing of its own here */
+
+
+/* the clips (figures s13, s14): at most at their own size; each frame's --ar is its video's width/height (s13's the default) */
+figure.clip{justify-items:center}
+figure.clip figcaption{justify-self:stretch}
+figure.clip .frame{line-height:0}
+figure.clip video{aspect-ratio:var(--ar,600/580);image-rendering:pixelated}

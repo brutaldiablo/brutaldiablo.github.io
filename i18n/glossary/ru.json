@@ -49,6 +49,11 @@
   "from": "game",
   "kind": "item"
  },
+ "Blood Knight": {
+  "tr": "Рыцарь Крови",
+  "from": "game",
+  "kind": "name"
+ },
  "Blood Stone": {
   "tr": "Кровавый Камень",
   "from": "game",
@@ -83,6 +88,11 @@
   "tr": "Бронзовый Кольцо",
   "from": "game",
   "kind": "composed"
+ },
+ "Burning Dead": {
+  "tr": "Горящий Мертвец",
+  "from": "game",
+  "kind": "name"
  },
  "Cap": {
   "tr": "Шапка",
@@ -144,6 +154,11 @@
   "from": "game",
   "kind": "name"
  },
+ "Demon": {
+  "tr": "Демон",
+  "from": "game",
+  "kind": "name"
+ },
  "Elixir of Dexterity": {
   "tr": "Эликсир Ловкости",
   "from": "game",
@@ -173,6 +188,11 @@
   "tr": "Стена Огня",
   "from": "game",
   "kind": "spell"
+ },
+ "Flesh Clan": {
+  "tr": "Клан Плоти",
+  "from": "game",
+  "kind": "name"
  },
  "Full Helm": {
   "tr": "Закрытый Шлем",
@@ -239,6 +259,11 @@
   "from": "site",
   "note": "the owner's decision: stays in English, as the expansion's name and as the name of a look on the items devlog"
  },
+ "Horned Demon": {
+  "tr": "Рогатый Демон",
+  "from": "game",
+  "kind": "name"
+ },
  "Horror": {
   "tr": "Ужас",
   "from": "game",
@@ -279,6 +304,16 @@
   "from": "game",
   "kind": "item"
  },
+ "Nightmare": {
+  "tr": "Кошмарная",
+  "from": "game",
+  "kind": "name"
+ },
+ "Normal": {
+  "tr": "Нормальная",
+  "from": "game",
+  "kind": "name"
+ },
  "Ogden": {
   "tr": "Огден",
   "from": "game",
@@ -293,6 +328,11 @@
   "tr": "Шлем Владыки",
   "from": "game",
   "kind": "item"
+ },
+ "Pause": {
+  "tr": "Пауза",
+  "from": "game",
+  "kind": "name"
  },
  "Plate Mail": {
   "tr": "Пластинчатый Доспех",
@@ -358,6 +398,11 @@
   "tr": "Кольцо Истины",
   "from": "game",
   "kind": "item"
+ },
+ "Rogue": {
+  "tr": "Разбойница",
+  "from": "game",
+  "kind": "name"
  },
  "Royal Circlet": {
   "tr": "Королевский Венец",
@@ -443,6 +488,11 @@
   "tr": "Каменный Тесак",
   "from": "game",
   "kind": "item"
+ },
+ "Succubus": {
+  "tr": "Суккуб",
+  "from": "game",
+  "kind": "name"
  },
  "Tavern Sign": {
   "tr": "Вывеска Таверны",

@@ -49,6 +49,11 @@
   "from": "game",
   "kind": "item"
  },
+ "Blood Knight": {
+  "tr": "Rycerz Krwi",
+  "from": "game",
+  "kind": "name"
+ },
  "Blood Stone": {
   "tr": "Kamień Krwi",
   "from": "game",
@@ -83,6 +88,11 @@
   "tr": "Brązowy Pierścień",
   "from": "game",
   "kind": "composed"
+ },
+ "Burning Dead": {
+  "tr": "Płonący Trup",
+  "from": "game",
+  "kind": "name"
  },
  "Cap": {
   "tr": "Kaptur",
@@ -144,6 +154,11 @@
   "from": "game",
   "kind": "name"
  },
+ "Demon": {
+  "tr": "Demon",
+  "from": "game",
+  "kind": "name"
+ },
  "Elixir of Dexterity": {
   "tr": "Eliksir Zręczności",
   "from": "game",
@@ -173,6 +188,11 @@
   "tr": "Ściana Ognia",
   "from": "game",
   "kind": "spell"
+ },
+ "Flesh Clan": {
+  "tr": "Klan Rozpruwaczy",
+  "from": "game",
+  "kind": "name"
  },
  "Full Helm": {
   "tr": "Zamknięty Hełm",
@@ -239,6 +259,11 @@
   "from": "site",
   "note": "the owner's decision: stays in English, as the expansion's name and as the name of a look on the items devlog"
  },
+ "Horned Demon": {
+  "tr": "Rogaty Demon",
+  "from": "game",
+  "kind": "name"
+ },
  "Horror": {
   "tr": "Kościej",
   "from": "game",
@@ -284,6 +309,16 @@
   "from": "site",
   "note": "Diablo III; not declined: \"w Nowym Tristram\""
  },
+ "Nightmare": {
+  "tr": "Koszmar",
+  "from": "game",
+  "kind": "name"
+ },
+ "Normal": {
+  "tr": "Normalny",
+  "from": "game",
+  "kind": "name"
+ },
  "Ogden": {
   "tr": "Ogden",
   "from": "game",
@@ -298,6 +333,11 @@
   "tr": "Hełm Nadzorcy",
   "from": "game",
   "kind": "item"
+ },
+ "Pause": {
+  "tr": "Pauza",
+  "from": "game",
+  "kind": "name"
  },
  "Plate Mail": {
   "tr": "Płytowa Zbroja",
@@ -363,6 +403,11 @@
   "tr": "Pierścień Prawdy",
   "from": "game",
   "kind": "item"
+ },
+ "Rogue": {
+  "tr": "Łotrzyca",
+  "from": "game",
+  "kind": "name"
  },
  "Royal Circlet": {
   "tr": "Królewski Diadem",
@@ -448,6 +493,11 @@
   "tr": "Kamienny Tasak",
   "from": "game",
   "kind": "item"
+ },
+ "Succubus": {
+  "tr": "Sukkub",
+  "from": "game",
+  "kind": "name"
  },
  "Tavern Sign": {
   "tr": "Szyld Gospody",

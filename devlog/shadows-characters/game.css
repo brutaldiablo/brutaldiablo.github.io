@@ -1,0 +1,164 @@
+/* "Your turn", the shadow painting game, on top of devlog.css (its .widget, .wlab, .btn). game.js adds this sheet
+   itself. The look: a carved stone panel, the levels as a menu in the display serif, the picture in a dark bronze frame
+   with rivets, torchlight on what the pointer or the focus is on. Only CSS and inline SVG, the site's fonts and tokens. */
+.game .sg{--cut:#e0249a;--ok:#2e964e;--bad:#eb3024;--miss:#facc28;
+  --glow:rgba(229,139,58,.55);--gold:#f1d7a4;--bz-hi:#9a7a4e;--bz:#5e4529;--bz-lo:#2a1d11}
+.game .sg [hidden]{display:none!important}
+
+/* the panel: stone, a faint torchlight from above, a carved groove inside the edge */
+.game .sg.on{position:relative;padding:1.1rem 1.2rem 1.2rem;gap:0;border:1px solid #33271f;border-radius:3px;
+  background:
+    radial-gradient(120% 60% at 50% -10%,rgba(229,139,58,.075),transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.1 .62'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,#1c1612,#130f0c 70%,#100c0a);
+  box-shadow:inset 0 1px 0 rgba(232,220,196,.07),inset 0 0 0 5px rgba(12,9,8,.0),inset 0 0 0 6px rgba(0,0,0,.55),
+    inset 0 0 0 7px rgba(232,220,196,.045),0 14px 34px rgba(0,0,0,.55)}
+.game .sg-ui{display:grid;gap:.7rem;min-width:0}
+.game .sg-ui>*{min-width:0}
+
+/* the levels: Normal, Nightmare, Hell in the serif, the chosen one lit with ember marks either side */
+.game .sg-diff{display:flex;justify-content:center;flex-wrap:wrap;gap:.1rem .9rem}
+.game .sg-lvl{position:relative;font-family:var(--display);font-size:1.18rem;font-weight:600;letter-spacing:.02em;
+  color:var(--ash);background:none;border:0;border-radius:3px;min-height:44px;padding:.2em 1.05em;cursor:pointer;
+  transition:color .15s,text-shadow .15s}
+.game .sg-lvl:hover{color:var(--bone);text-shadow:0 0 12px rgba(229,139,58,.35)}
+.game .sg-lvl[aria-pressed=true]{color:var(--gold);text-shadow:0 0 14px var(--glow),0 0 2px rgba(229,139,58,.6)}
+.game .sg-lvl[aria-pressed=true]::before,.game .sg-lvl[aria-pressed=true]::after{content:"";position:absolute;top:50%;
+  width:.36em;height:.36em;margin-top:-.18em;background:var(--ember);transform:rotate(45deg);
+  box-shadow:0 0 8px rgba(229,139,58,.7)}
+.game .sg-lvl[aria-pressed=true]::before{left:.25em}
+.game .sg-lvl[aria-pressed=true]::after{right:.25em}
+.game .sg-lvl:focus-visible{outline:1px solid var(--torch);outline-offset:0;text-shadow:0 0 12px var(--glow)}
+.game .sg-about{color:var(--ash);font-family:var(--display);font-style:italic;font-size:.95rem;line-height:1.4;text-align:center;
+  margin:-.25rem 0 0;min-height:1.4em;text-wrap:balance}
+
+/* the frame's title and number, under a thin ember rule */
+.game .sg-head{align-items:baseline;padding-top:.75rem;margin-top:.1rem;
+  background:linear-gradient(90deg,transparent,rgba(180,40,29,.55) 20%,rgba(180,40,29,.55) 80%,transparent) top/100% 1px no-repeat}
+.game .sg-head:focus{outline:none}
+.game .sg-head b{font-family:var(--display);font-size:1.18rem;font-weight:700;letter-spacing:0;color:var(--bone)}
+.game .sg-head span{white-space:nowrap;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ash)}
+
+/* the stage: a dark well; the picture in it in a bronze frame with a rivet at each corner */
+.game .sg-stage{position:relative;display:flex;flex-direction:column;min-height:14rem;padding:18px;border-radius:2px;
+  background:radial-gradient(ellipse 80% 70% at 50% 45%,#17110d,#090706 75%);border:1px solid #070504;
+  box-shadow:inset 0 2px 12px rgba(0,0,0,.85),0 1px 0 rgba(232,220,196,.05)}
+.game .sg-wrap{position:relative;margin:auto;flex:none;background:#808080;box-shadow:0 0 0 1px #050302}
+.game .sg-wrap::before{content:"";position:absolute;inset:-7px;pointer-events:none;border:5px solid;border-radius:1px;
+  border-color:var(--bz-hi) var(--bz) var(--bz-lo) var(--bz);
+  box-shadow:0 0 0 1px #050302,inset 0 0 0 1px #050302,0 6px 18px rgba(0,0,0,.75);transition:box-shadow .2s}
+.game .sg-wrap::after{content:"";position:absolute;inset:-10px;pointer-events:none;
+  --r:radial-gradient(circle at 42% 38%,#f0d9a8 0,#b08a56 1.6px,#5a3f22 3px,#1a1008 4px,rgba(0,0,0,.5) 4.6px,transparent 5.2px);
+  background:var(--r) left top/11px 11px no-repeat,var(--r) right top/11px 11px no-repeat,
+    var(--r) left bottom/11px 11px no-repeat,var(--r) right bottom/11px 11px no-repeat}
+.game .sg-wrap:hover::before{box-shadow:0 0 0 1px #050302,inset 0 0 0 1px #050302,0 6px 18px rgba(0,0,0,.75),0 0 22px rgba(229,139,58,.2)}
+.game .sg-stage canvas{display:block;image-rendering:pixelated;touch-action:none;cursor:crosshair;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+.game .sg-cur{position:absolute;display:none;pointer-events:none;outline:1px solid #fff;box-shadow:0 0 0 2px rgba(0,0,0,.6)}
+.game .sg-msg{margin:auto;color:var(--ash);text-align:center;display:grid;gap:.8rem;justify-items:center}
+.game .sg-msg:empty{display:none}
+.game .sg-msg:focus{outline:none}
+
+/* under the picture: one line (the hint while painting, the frame's result after Check), then the tools on the left
+   and the one action on the right; on a phone the action takes its own row */
+.game .sg-acts{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"status status" "tools go";align-items:center;gap:.55rem 1rem}
+.game .sg-tools{grid-area:tools}
+.game .sg-status{grid-area:status;min-height:44px;display:grid;align-items:center;text-align:center;min-width:0}
+.game .sg-acts .btn{grid-area:go}
+.game .sg-hint{color:var(--ash);font-size:.85rem;margin:0;text-wrap:balance}
+.game .sg-res{display:grid;gap:.3rem;justify-items:center;min-width:0}
+.game .sg-res:empty{display:none}
+.game .sg-res p{margin:0}
+.game .sg-score{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:.1rem 1.6rem;
+  font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--bone);line-height:1.3}
+.game .sg-score span{position:relative;white-space:nowrap}
+.game .sg-score .sg-cutline::before{content:"";position:absolute;left:-1.02rem;top:50%;width:.32em;height:.32em;margin-top:-.16em;
+  background:var(--ember);transform:rotate(45deg)}
+.game .sg-key{display:flex;flex-wrap:wrap;justify-content:center;gap:.2rem 1rem;color:var(--ash);font-size:.76rem}
+.game .sg-k{display:inline-flex;align-items:center;gap:.4em}
+.game .sg-k::before{content:"";width:.75em;height:.75em;border-radius:1px;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.35)}
+.game .sg-k.ok::before{background:var(--ok)}
+.game .sg-k.cut::before{background:var(--bad)}
+.game .sg-k.left::before{background:var(--miss)}
+
+/* the tools (the eye, Undo) and the one action */
+.game .sg-tools{display:flex;flex-wrap:wrap;gap:.45rem}
+/* a tool: its icon over its name */
+.game .sg-ico{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:4.3rem;
+  min-height:52px;padding:4px .55rem 5px;cursor:pointer;color:var(--ash);font:inherit;
+  background:linear-gradient(180deg,#241c16,#140f0c);border:1px solid;border-color:#40322a #241b15 #0e0a08 #2c221b;border-radius:3px;
+  box-shadow:inset 0 1px 0 rgba(232,220,196,.06),0 1px 2px rgba(0,0,0,.6);transition:color .15s,box-shadow .15s,border-color .15s}
+.game .sg-ico svg{width:21px;height:21px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.game .sg-ico span{font-size:.76rem;font-weight:600;line-height:1.1;white-space:nowrap}
+.game .sg-brush svg rect{stroke-width:1.1}
+.game .sg-brush svg rect.on{fill:currentColor}
+.game .sg-brush svg rect.off{stroke-dasharray:1.4 1.2;opacity:.6}
+.game .sg-brush{min-width:5.6rem}
+.game .sg-ico:hover:not(:disabled),.game .sg-ico:focus-visible{color:var(--bone);border-color:#6a4a2c #3a2a1e #1a120c #4a3424;
+  box-shadow:inset 0 1px 0 rgba(232,220,196,.08),0 0 14px rgba(229,139,58,.3)}
+.game .sg-ico:focus-visible{outline:2px solid var(--torch);outline-offset:2px}
+.game .sg-ico[aria-pressed=true]{color:var(--torch);background:linear-gradient(180deg,#120d0a,#1d1611);
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.7),inset 0 0 12px rgba(229,139,58,.22),0 0 12px rgba(229,139,58,.25)}
+.game .sg-ico:disabled{opacity:.35;cursor:default}
+.game .sg .btn{cursor:pointer;justify-content:center;min-height:44px;font-family:var(--display);font-size:1.02rem;font-weight:700;
+  letter-spacing:.03em;border-radius:3px;background:linear-gradient(180deg,#241c16,#140f0c);border-color:#40322a #241b15 #0e0a08 #2c221b;
+  box-shadow:inset 0 1px 0 rgba(232,220,196,.06),0 1px 2px rgba(0,0,0,.6);transition:box-shadow .15s,border-color .15s,filter .15s}
+.game .sg .btn.primary{color:#fff4e4;background:linear-gradient(180deg,#c3341f,#8e1f13 60%,#7a1a10);
+  border-color:#dc5a44 #9a2416 #4e0f09 #a92a1b;text-shadow:0 1px 1px rgba(0,0,0,.5);
+  box-shadow:inset 0 1px 0 rgba(255,214,180,.3),inset 0 -2px 4px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.6)}
+.game .sg .btn:hover:not(:disabled),.game .sg .btn:focus-visible{border-color:#8a6236 #4a3424 #1a120c #5a3e26;box-shadow:inset 0 1px 0 rgba(232,220,196,.08),0 0 16px rgba(229,139,58,.32)}
+.game .sg .btn.primary:hover:not(:disabled),.game .sg .btn.primary:focus-visible{background:linear-gradient(180deg,#d23c25,#9c2516 60%,#861d12);
+  border-color:#f07a5c #a82a1a #5a120a #b8321f;
+  box-shadow:inset 0 1px 0 rgba(255,214,180,.35),inset 0 -2px 4px rgba(0,0,0,.25),0 0 18px rgba(229,139,58,.45)}
+.game .sg .btn:disabled{opacity:.45;cursor:default}
+.game .sg-acts .btn{min-width:10rem}
+
+/* the round's end, in the well where the picture was */
+.game .sg-stage.done{min-height:0}
+.game .sg-sum{margin:auto;display:grid;gap:.85rem;max-width:30rem;width:100%;padding:.6rem .2rem;text-align:center}
+.game .sg-sum p{margin:0}
+.game .sg-total{font-family:var(--display);font-size:1.75rem;font-weight:700;line-height:1.15;color:var(--gold);text-wrap:balance;
+  text-shadow:0 0 18px rgba(229,139,58,.3)}
+.game .sg-sum .sg-total.sg-cutline{font-size:1.08rem;color:var(--bone);text-shadow:none;margin-top:-.45rem}
+.game .sg-list{list-style:none;counter-reset:f;margin:.1rem 0 0;padding:.75rem 0 0;display:grid;gap:.3rem;text-align:left;
+  color:var(--ash);font-size:.84rem;
+  background:linear-gradient(90deg,transparent,rgba(180,40,29,.55) 20%,rgba(180,40,29,.55) 80%,transparent) top/100% 1px no-repeat}
+.game .sg-list li{display:flex;align-items:baseline;gap:.5em;counter-increment:f}
+.game .sg-list li::before{content:counter(f);flex:none;width:1.1em;color:var(--ember);font-family:var(--display);font-weight:700}
+.game .sg-list span{flex:0 1 auto;min-width:0}
+.game .sg-list i{flex:1 1 .8rem;min-width:.8rem;border-bottom:1px dotted rgba(163,149,127,.35);transform:translateY(-.3em)}
+.game .sg-list b{flex:none;color:var(--bone);font-weight:600;white-space:nowrap}
+.game .sg-line{font-family:var(--display);font-style:italic;font-size:1.05rem;line-height:1.4;color:var(--bone);text-wrap:balance}
+.game .sg-discord{font-size:.9rem}
+.game .sg-discord a:hover{color:var(--torch)}
+.game .sg-again{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:.15rem}
+.game .sg-again .btn{min-width:9rem}
+
+@media (max-width:600px){
+  .game .sg.on{padding:.75rem 9px .8rem}
+  .game .sg-ui{gap:.6rem}
+  .game .sg-diff{gap:0}
+  .game .sg-lvl{font-size:1.02rem;padding:.2em .66em}
+  .game .sg-lvl[aria-pressed=true]::before{left:.12em}
+  .game .sg-lvl[aria-pressed=true]::after{right:.12em}
+  .game .sg-about{font-size:.88rem}
+  .game .sg-stage{padding:12px 11px}
+  .game .sg-acts{grid-template-columns:minmax(0,1fr);grid-template-areas:"status" "tools" "go";gap:.5rem}
+  .game .sg-tools{justify-content:center;gap:.4rem}
+  .game .sg-ico{flex:1 1 0;min-width:0;max-width:7rem;padding-inline:.3rem}
+  .game .sg-brush{min-width:0;flex-grow:1.25}
+  .game .sg-status{min-height:2.4rem}
+  .game .sg-score{flex-direction:column;align-items:center;gap:0;font-size:1.05rem}
+  .game .sg-score .sg-cutline::before{display:none}
+  /* a longer line or caption in another language wraps at its spaces instead of reaching past the phone's width */
+  .game .sg-score span{white-space:normal;text-align:center}
+  .game .sg-ico span{white-space:normal;text-align:center;overflow-wrap:break-word}
+  .game .sg-acts .btn{min-width:0}
+  .game .sg-total{font-size:1.3rem}
+  .game .sg-list{font-size:.8rem}
+  .game .sg-list span{flex:1 1 auto}
+  .game .sg-list i{display:none}
+}
+@media (prefers-reduced-motion:reduce){.game .sg *{transition:none!important}}
+/* the frame's announcement, for screen readers only */
+.game .sg-live{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}

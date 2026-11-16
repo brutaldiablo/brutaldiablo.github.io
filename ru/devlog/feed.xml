@@ -6,8 +6,15 @@
   <atom:link href="https://brutaldiablo.com/ru/devlog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Как делались большие куски Brutal Diablo: что под капотом, какие были тупики и чему мы научились.</description>
   <language>ru</language>
-  <lastBuildDate>Thu, 12 Nov 2026 09:30:00 +0100</lastBuildDate>
+  <lastBuildDate>Mon, 16 Nov 2026 18:00:00 +0100</lastBuildDate>
   <image><url>https://brutaldiablo.com/img/mark_180.png</url><title>Девлог Brutal Diablo</title><link>https://brutaldiablo.com/ru/devlog/</link></image>
+  <item>
+    <title>Убираем нарисованные тени: персонажи</title>
+    <link>https://brutaldiablo.com/ru/devlog/shadows-characters/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/ru/devlog/shadows-characters/</guid>
+    <pubDate>Mon, 16 Nov 2026 18:00:00 +0100</pubDate>
+    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/shadows-characters/og.jpg" width="1200"/></p><p>У каждого героя и монстра в Diablo тень нарисована прямо на картинке. Вот как мы отличали тень от персонажа на 92 424 кадрах и почему чёрный сапог на чёрной тени задал нам работы.</p>]]></description>
+  </item>
   <item>
     <title>Он зовёт вас по имени?</title>
     <link>https://brutaldiablo.com/ru/devlog/town-portal/</link>

@@ -49,6 +49,11 @@
   "from": "game",
   "kind": "item"
  },
+ "Blood Knight": {
+  "tr": "Krvavý Rytíř",
+  "from": "game",
+  "kind": "name"
+ },
  "Blood Stone": {
   "tr": "Krvavý Kámen",
   "from": "game",
@@ -83,6 +88,11 @@
   "tr": "Bronzový Prsten",
   "from": "game",
   "kind": "composed"
+ },
+ "Burning Dead": {
+  "tr": "Uhořelý",
+  "from": "game",
+  "kind": "name"
  },
  "Cap": {
   "tr": "Šišák",
@@ -144,6 +154,11 @@
   "from": "game",
   "kind": "name"
  },
+ "Demon": {
+  "tr": "Démon",
+  "from": "game",
+  "kind": "name"
+ },
  "Elixir of Dexterity": {
   "tr": "Elixír Obratnosti",
   "from": "game",
@@ -173,6 +188,11 @@
   "tr": "Ohnivá Zeď",
   "from": "game",
   "kind": "spell"
+ },
+ "Flesh Clan": {
+  "tr": "Klan Masa",
+  "from": "game",
+  "kind": "name"
  },
  "Full Helm": {
   "tr": "Hrncová Helma",
@@ -244,6 +264,11 @@
   "from": "site",
   "note": "the owner's decision: stays in English, as the expansion's name and as the name of a look on the items devlog"
  },
+ "Horned Demon": {
+  "tr": "Rohatý Démon",
+  "from": "game",
+  "kind": "name"
+ },
  "Horror": {
   "tr": "Horor",
   "from": "game",
@@ -289,6 +314,16 @@
   "from": "game",
   "kind": "item"
  },
+ "Nightmare": {
+  "tr": "Nightmare",
+  "from": "game",
+  "kind": "name"
+ },
+ "Normal": {
+  "tr": "Normal",
+  "from": "game",
+  "kind": "name"
+ },
  "Ogden": {
   "tr": "Ogden",
   "from": "game",
@@ -303,6 +338,11 @@
   "tr": "Mocipánova Helma",
   "from": "game",
   "kind": "item"
+ },
+ "Pause": {
+  "tr": "Pauza",
+  "from": "game",
+  "kind": "name"
  },
  "Plate Mail": {
   "tr": "Plátová Zbroj",
@@ -368,6 +408,11 @@
   "tr": "Prsten Pravdy",
   "from": "game",
   "kind": "item"
+ },
+ "Rogue": {
+  "tr": "Zlodějka",
+  "from": "game",
+  "kind": "name"
  },
  "Royal Circlet": {
   "tr": "Královská Čelenka",
@@ -453,6 +498,11 @@
   "tr": "Sekač Kamene",
   "from": "game",
   "kind": "item"
+ },
+ "Succubus": {
+  "tr": "Sukuba",
+  "from": "game",
+  "kind": "name"
  },
  "Tavern Sign": {
   "tr": "Vývěsní Štít",

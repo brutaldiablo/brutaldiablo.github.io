@@ -6,8 +6,15 @@
   <atom:link href="https://brutaldiablo.com/devlog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>How the bigger pieces of Brutal Diablo were made: the tech, the dead ends and what we learned.</description>
   <language>en</language>
-  <lastBuildDate>Thu, 12 Nov 2026 09:30:00 +0100</lastBuildDate>
+  <lastBuildDate>Mon, 16 Nov 2026 18:00:00 +0100</lastBuildDate>
   <image><url>https://brutaldiablo.com/img/mark_180.png</url><title>Brutal Diablo devlog</title><link>https://brutaldiablo.com/devlog/</link></image>
+  <item>
+    <title>Removing the painted shadows: the characters</title>
+    <link>https://brutaldiablo.com/devlog/shadows-characters/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/devlog/shadows-characters/</guid>
+    <pubDate>Mon, 16 Nov 2026 18:00:00 +0100</pubDate>
+    <description><![CDATA[<p><img src="https://brutaldiablo.com/img/devlog/shadows-characters/og.jpg" alt="" width="1200" height="630"></p><p>Every hero and monster in Diablo carries its shadow painted into the picture. Here's how we told shadow from character in 92,424 frames, and why a black boot on a black shadow kept us busy.</p>]]></description>
+  </item>
   <item>
     <title>Does it call your name?</title>
     <link>https://brutaldiablo.com/devlog/town-portal/</link>

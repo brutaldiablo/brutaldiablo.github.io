@@ -49,6 +49,11 @@
   "from": "game",
   "kind": "item"
  },
+ "Blood Knight": {
+  "tr": "Cavaleiro Sangrento",
+  "from": "game",
+  "kind": "name"
+ },
  "Blood Stone": {
   "tr": "Pedra sanguínea",
   "from": "game",
@@ -83,6 +88,11 @@
   "tr": "de bronze Anel",
   "from": "game",
   "kind": "composed"
+ },
+ "Burning Dead": {
+  "tr": "Morto Calcinante",
+  "from": "game",
+  "kind": "name"
  },
  "Cap": {
   "tr": "Quepe",
@@ -144,6 +154,11 @@
   "from": "game",
   "kind": "name"
  },
+ "Demon": {
+  "tr": "Demônio",
+  "from": "game",
+  "kind": "name"
+ },
  "Elixir of Dexterity": {
   "tr": "Elixir da Destreza",
   "from": "game",
@@ -173,6 +188,11 @@
   "tr": "Parede de Fogo",
   "from": "game",
   "kind": "spell"
+ },
+ "Flesh Clan": {
+  "tr": "Clã Carne Fresca",
+  "from": "game",
+  "kind": "name"
  },
  "Full Helm": {
   "tr": "Elmo Completo",
@@ -239,6 +259,11 @@
   "from": "site",
   "note": "the owner's decision: stays in English, as the expansion's name and as the name of a look on the items devlog"
  },
+ "Horned Demon": {
+  "tr": "Demônio com Chifres",
+  "from": "game",
+  "kind": "name"
+ },
  "Horror": {
   "tr": "Horror",
   "from": "game",
@@ -279,6 +304,16 @@
   "from": "game",
   "kind": "item"
  },
+ "Nightmare": {
+  "tr": "Pesadelo",
+  "from": "game",
+  "kind": "name"
+ },
+ "Normal": {
+  "tr": "Normal",
+  "from": "game",
+  "kind": "name"
+ },
  "Ogden": {
   "tr": "Ogden",
   "from": "game",
@@ -293,6 +328,11 @@
   "tr": "Elmo do Suserano",
   "from": "game",
   "kind": "item"
+ },
+ "Pause": {
+  "tr": "Pausa",
+  "from": "game",
+  "kind": "name"
  },
  "Plate Mail": {
   "tr": "Malha de Placas",
@@ -358,6 +398,11 @@
   "tr": "Anel da verdade",
   "from": "game",
   "kind": "item"
+ },
+ "Rogue": {
+  "tr": "Ladina",
+  "from": "game",
+  "kind": "name"
  },
  "Royal Circlet": {
   "tr": "Diadema real",
@@ -443,6 +488,11 @@
   "tr": "Cutelo de pedra",
   "from": "game",
   "kind": "item"
+ },
+ "Succubus": {
+  "tr": "Súcubo",
+  "from": "game",
+  "kind": "name"
  },
  "Tavern Sign": {
   "tr": "Placa da taverna",
