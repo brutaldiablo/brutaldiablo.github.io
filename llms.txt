@@ -1,0 +1,31 @@
+# Brutal Diablo
+
+> Brutal Diablo is a free fan mod for Diablo 1 (Diablo, 1996), built on DevilutionX. Same game, improved graphics, darker, bloodier. It is in development and coming in early 2027.
+
+- The gameplay does not change: everything the mod adds is visual. Every picture in the game is recreated to match the original, with more blood and gore.
+- Press H at any time to switch back to the original 1996 graphics, and again to come back.
+- It needs your own copy of Diablo (1996), the old CD or the one sold on GOG: its DIABDAT.MPQ file, the same way DevilutionX does.
+- PC first: Windows, Mac and Linux. Multiplayer for up to four players, as in DevilutionX.
+- Free, and it stays free. A tip jar on Ko-fi, but a tip buys nothing extra.
+- Hellfire is not supported for now. The gore cannot be switched off.
+- An unofficial fan mod, not affiliated with Blizzard Entertainment.
+
+## Pages
+
+- [Home](https://brutaldiablo.com/): what it is, the videos, the FAQ, the release list
+- [Bloodier](https://brutaldiablo.com/gore/): the deaths and the blood
+- [Items](https://brutaldiablo.com/items/): every item beside its 1996 picture
+- [Devlog](https://brutaldiablo.com/devlog/): how the bigger features were made ([RSS](https://brutaldiablo.com/devlog/feed.xml))
+
+## Devlog posts
+
+- [The blood Diablo was meant to have](https://brutaldiablo.com/devlog/gore/)
+- [Dusting off Diablo's loot](https://brutaldiablo.com/devlog/items/)
+- [Does it call your name?](https://brutaldiablo.com/devlog/town-portal/): the town portal
+- [Removing the painted shadows: the characters](https://brutaldiablo.com/devlog/shadows-characters/)
+
+## Optional
+
+- The site is also in Spanish (/es/), Brazilian Portuguese (/pt-br/), Czech (/cs/), German (/de/), Russian (/ru/) and Polish (/pl/).
+- Follow: YouTube, Instagram, X, TikTok and Threads as @brutaldiablo, Bluesky as @brutaldiablo.com, and the Discord server.
+- Contact: hello@brutaldiablo.com
