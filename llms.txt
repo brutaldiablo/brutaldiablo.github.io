@@ -1,6 +1,6 @@
 # Brutal Diablo
 
-> Brutal Diablo is a free fan mod for Diablo 1 (Diablo, 1996), built on DevilutionX. Same game, improved graphics, darker, bloodier. It is in development and coming in early 2027.
+> Brutal Diablo is a free remaster mod for Diablo 1 (Diablo, 1996), built on DevilutionX. Same game, improved graphics, darker, bloodier. It is in development and coming in early 2027.
 
 - The gameplay does not change: everything the mod adds is visual. Every picture in the game is recreated to match the original, with more blood and gore.
 - Press H at any time to switch back to the original 1996 graphics, and again to come back.
@@ -8,7 +8,7 @@
 - PC first: Windows, Mac and Linux. Multiplayer for up to four players, as in DevilutionX.
 - Free, and it stays free. A tip jar on Ko-fi, but a tip buys nothing extra.
 - Hellfire is not supported for now. The gore cannot be switched off.
-- An unofficial fan mod, not affiliated with Blizzard Entertainment.
+- It is a fan mod, not made by or affiliated with Blizzard Entertainment.
 
 ## Pages
 

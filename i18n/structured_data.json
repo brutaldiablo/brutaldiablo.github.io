@@ -14,21 +14,41 @@
     ]
   },
   "game": {
-    "alternateName": "Brutal Diablo mod",
+    "alternateName": "Brutal Diablo: a Diablo 1 remaster mod",
     "applicationCategory": "Game",
     "applicationSubCategory": "Mod",
-    "genre": ["Action role-playing game", "Hack and slash", "Dungeon crawler"],
-    "keywords": "Diablo 1 mod, Diablo (1996) mod, Diablo gore mod, DevilutionX mod",
-    "gamePlatform": ["PC"],
+    "genre": [
+      "Action role-playing game",
+      "Hack and slash",
+      "Dungeon crawler"
+    ],
+    "keywords": "Diablo 1 remaster mod, Diablo 1 remaster, Diablo 1 mod, Diablo (1996) mod, Diablo gore mod, DevilutionX mod",
+    "gamePlatform": [
+      "PC"
+    ],
     "operatingSystem": "Windows, macOS, Linux",
-    "playMode": ["SinglePlayer", "MultiPlayer"],
-    "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 1, "maxValue": 4},
+    "playMode": [
+      "SinglePlayer",
+      "MultiPlayer"
+    ],
+    "numberOfPlayers": {
+      "@type": "QuantitativeValue",
+      "minValue": 1,
+      "maxValue": 4
+    },
     "isAccessibleForFree": true,
     "isBasedOn": [
-      {"@type": "VideoGame", "name": "Diablo", "datePublished": "1996",
-       "sameAs": "https://en.wikipedia.org/wiki/Diablo_(video_game)"},
-      {"@type": "SoftwareApplication", "name": "DevilutionX",
-       "url": "https://github.com/diasurgical/devilutionX"}
+      {
+        "@type": "VideoGame",
+        "name": "Diablo",
+        "datePublished": "1996",
+        "sameAs": "https://en.wikipedia.org/wiki/Diablo_(video_game)"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "DevilutionX",
+        "url": "https://github.com/diasurgical/devilutionX"
+      }
     ]
   }
 }
