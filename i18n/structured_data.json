@@ -1,0 +1,34 @@
+{
+  "organization": {
+    "name": "Brutal Diablo",
+    "logo": "/img/mark_512.png",
+    "email": "hello@brutaldiablo.com",
+    "sameAs": [
+      "https://www.youtube.com/@brutaldiablo",
+      "https://www.instagram.com/brutaldiablo/",
+      "https://x.com/brutaldiablo",
+      "https://www.tiktok.com/@brutaldiablo",
+      "https://www.threads.net/@brutaldiablo",
+      "https://bsky.app/profile/brutaldiablo.com",
+      "https://ko-fi.com/brutaldiablo"
+    ]
+  },
+  "game": {
+    "alternateName": "Brutal Diablo mod",
+    "applicationCategory": "Game",
+    "applicationSubCategory": "Mod",
+    "genre": ["Action role-playing game", "Hack and slash", "Dungeon crawler"],
+    "keywords": "Diablo 1 mod, Diablo (1996) mod, Diablo gore mod, DevilutionX mod",
+    "gamePlatform": ["PC"],
+    "operatingSystem": "Windows, macOS, Linux",
+    "playMode": ["SinglePlayer", "MultiPlayer"],
+    "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 1, "maxValue": 4},
+    "isAccessibleForFree": true,
+    "isBasedOn": [
+      {"@type": "VideoGame", "name": "Diablo", "datePublished": "1996",
+       "sameAs": "https://en.wikipedia.org/wiki/Diablo_(video_game)"},
+      {"@type": "SoftwareApplication", "name": "DevilutionX",
+       "url": "https://github.com/diasurgical/devilutionX"}
+    ]
+  }
+}
