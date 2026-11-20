@@ -15,6 +15,7 @@
 - [Home](https://brutaldiablo.com/): what it is, the videos, the FAQ, the release list
 - [Bloodier](https://brutaldiablo.com/gore/): the deaths and the blood
 - [Items](https://brutaldiablo.com/items/): every item beside its 1996 picture
+- [Tristram in 3D](https://brutaldiablo.com/tristram-3d/): the town rebuilt in 3D from the game's painting, to turn around and to download free as clay models (CC BY-NC 4.0)
 - [Devlog](https://brutaldiablo.com/devlog/): how the bigger features were made ([RSS](https://brutaldiablo.com/devlog/feed.xml))
 
 ## Devlog posts

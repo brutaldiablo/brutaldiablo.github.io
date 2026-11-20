@@ -304,16 +304,6 @@
   "from": "game",
   "kind": "item"
  },
- "Nightmare": {
-  "tr": "Pesadilla",
-  "from": "game",
-  "kind": "name"
- },
- "Normal": {
-  "tr": "Normal",
-  "from": "game",
-  "kind": "name"
- },
  "Ogden": {
   "tr": "Ogden",
   "from": "game",
@@ -331,6 +321,11 @@
  },
  "Pause": {
   "tr": "Pausa",
+  "from": "game",
+  "kind": "name"
+ },
+ "Pepin": {
+  "tr": "Pepin",
   "from": "game",
   "kind": "name"
  },
@@ -398,6 +393,11 @@
   "tr": "Anillo de la verdad",
   "from": "game",
   "kind": "item"
+ },
+ "Rising Sun": {
+  "tr": "taberna del Sol Naciente",
+  "from": "game",
+  "kind": "name"
  },
  "Rogue": {
   "tr": "Arpía",

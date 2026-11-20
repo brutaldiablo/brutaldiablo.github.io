@@ -304,16 +304,6 @@
   "from": "game",
   "kind": "item"
  },
- "Nightmare": {
-  "tr": "Alptraum",
-  "from": "game",
-  "kind": "name"
- },
- "Normal": {
-  "tr": "Normal",
-  "from": "game",
-  "kind": "name"
- },
  "Ogden": {
   "tr": "Ogden",
   "from": "game",
@@ -331,6 +321,11 @@
  },
  "Pause": {
   "tr": "Pause",
+  "from": "game",
+  "kind": "name"
+ },
+ "Pepin": {
+  "tr": "Pepin",
   "from": "game",
   "kind": "name"
  },
@@ -398,6 +393,11 @@
   "tr": "Ring der Wahrheit",
   "from": "game",
   "kind": "item"
+ },
+ "Rising Sun": {
+  "tr": "Aufgehende Sonne",
+  "from": "game",
+  "kind": "name"
  },
  "Rogue": {
   "tr": "Jägerin",

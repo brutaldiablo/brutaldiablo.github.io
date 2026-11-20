@@ -314,16 +314,6 @@
   "from": "game",
   "kind": "item"
  },
- "Nightmare": {
-  "tr": "Nightmare",
-  "from": "game",
-  "kind": "name"
- },
- "Normal": {
-  "tr": "Normal",
-  "from": "game",
-  "kind": "name"
- },
  "Ogden": {
   "tr": "Ogden",
   "from": "game",
@@ -341,6 +331,11 @@
  },
  "Pause": {
   "tr": "Pauza",
+  "from": "game",
+  "kind": "name"
+ },
+ "Pepin": {
+  "tr": "Pepin",
   "from": "game",
   "kind": "name"
  },
@@ -408,6 +403,11 @@
   "tr": "Prsten Pravdy",
   "from": "game",
   "kind": "item"
+ },
+ "Rising Sun": {
+  "tr": "Vycházející Slunce",
+  "from": "game",
+  "kind": "name"
  },
  "Rogue": {
   "tr": "Zlodějka",

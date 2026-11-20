@@ -309,16 +309,6 @@
   "from": "site",
   "note": "Diablo III; not declined: \"w Nowym Tristram\""
  },
- "Nightmare": {
-  "tr": "Koszmar",
-  "from": "game",
-  "kind": "name"
- },
- "Normal": {
-  "tr": "Normalny",
-  "from": "game",
-  "kind": "name"
- },
  "Ogden": {
   "tr": "Ogden",
   "from": "game",
@@ -336,6 +326,11 @@
  },
  "Pause": {
   "tr": "Pauza",
+  "from": "game",
+  "kind": "name"
+ },
+ "Pepin": {
+  "tr": "Pepin",
   "from": "game",
   "kind": "name"
  },
@@ -403,6 +398,11 @@
   "tr": "Pierścień Prawdy",
   "from": "game",
   "kind": "item"
+ },
+ "Rising Sun": {
+  "tr": "Wschodzące Słońce",
+  "from": "game",
+  "kind": "name"
  },
  "Rogue": {
   "tr": "Łotrzyca",

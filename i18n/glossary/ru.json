@@ -304,16 +304,6 @@
   "from": "game",
   "kind": "item"
  },
- "Nightmare": {
-  "tr": "Кошмарная",
-  "from": "game",
-  "kind": "name"
- },
- "Normal": {
-  "tr": "Нормальная",
-  "from": "game",
-  "kind": "name"
- },
  "Ogden": {
   "tr": "Огден",
   "from": "game",
@@ -331,6 +321,11 @@
  },
  "Pause": {
   "tr": "Пауза",
+  "from": "game",
+  "kind": "name"
+ },
+ "Pepin": {
+  "tr": "Пепин",
   "from": "game",
   "kind": "name"
  },
@@ -398,6 +393,11 @@
   "tr": "Кольцо Истины",
   "from": "game",
   "kind": "item"
+ },
+ "Rising Sun": {
+  "tr": "таверну \"Восход\"",
+  "from": "game",
+  "kind": "name"
  },
  "Rogue": {
   "tr": "Разбойница",
