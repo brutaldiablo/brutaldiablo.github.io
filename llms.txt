@@ -6,7 +6,7 @@
 - Press H at any time to switch back to the original 1996 graphics, and again to come back.
 - It needs your own copy of Diablo (1996), the old CD or the one sold on GOG: its DIABDAT.MPQ file, the same way DevilutionX does.
 - PC first: Windows, Mac and Linux. Multiplayer for up to four players, as in DevilutionX.
-- Free, and it stays free. A tip jar on Ko-fi, but a tip buys nothing extra.
+- Free, and it stays free. Donations on Ko-fi, but a donation buys nothing extra.
 - Hellfire is not supported for now. The gore cannot be switched off.
 - It is a fan mod, not made by or affiliated with Blizzard Entertainment.
 
