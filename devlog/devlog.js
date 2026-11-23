@@ -70,3 +70,5 @@ window.bdT=window.bdT||function(s,v){return v?s.replace(/\{(\w+)\}/g,function(m,
     box.addEventListener('pointerup',function(e){if(e.pointerType==='touch')lens.style.display='none'});
   });
 })();
+/* the release list: posts the address and the page language to the Google form */
+(function(){document.querySelectorAll('form.notify').forEach(function(f){if(!window.fetch||!window.URLSearchParams)return;var st=f.querySelector('.nstatus'),b=f.querySelector('button'),em=f.querySelector('input[type=email]'),hp=f.querySelector('.hp');function ok(){f.classList.add('sent');st.className='nstatus ok';st.textContent=bdT('You’re on the list. See you in early 2027.')}f.addEventListener('submit',function(e){e.preventDefault();if(hp.value){ok();return}var d=new URLSearchParams();d.append('entry.157588107',em.value.trim());d.append('entry.1770624026',window.BD_LANG||'en');b.disabled=true;st.className='nstatus';st.textContent='';fetch(f.action,{method:'POST',mode:'no-cors',body:d}).then(ok,function(){b.disabled=false;st.className='nstatus err';st.textContent=bdT('That didn’t go through. Try again in a moment?')})})})})();
