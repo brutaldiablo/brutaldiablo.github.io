@@ -6,8 +6,15 @@
   <atom:link href="https://brutaldiablo.com/es/devlog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Cómo hicimos las partes más grandes de Brutal Diablo: la técnica, los callejones sin salida y lo que aprendimos.</description>
   <language>es</language>
-  <lastBuildDate>Mon, 16 Nov 2026 18:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Tue, 24 Nov 2026 15:00:00 +0100</lastBuildDate>
   <image><url>https://brutaldiablo.com/img/mark_180.png</url><title>Devlog de Brutal Diablo</title><link>https://brutaldiablo.com/es/devlog/</link></image>
+  <item>
+    <title>Tallando las sombras de los personajes</title>
+    <link>https://brutaldiablo.com/es/devlog/carved-shadows/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/es/devlog/carved-shadows/</guid>
+    <pubDate>Tue, 24 Nov 2026 15:00:00 +0100</pubDate>
+    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/carved-shadows/og.jpg" width="1200"/></p><p>Los héroes y los monstruos de Diablo son imágenes planas con la sombra ya pintada. Queríamos que cada brasero, cada antorcha y cada bola de fuego proyectara sombras de verdad, así que le tallamos a cada personaje un cuerpo a partir de las imágenes con las que el juego lo dibuja.</p>]]></description>
+  </item>
   <item>
     <title>Quitando las sombras pintadas: los personajes</title>
     <link>https://brutaldiablo.com/es/devlog/shadows-characters/</link>

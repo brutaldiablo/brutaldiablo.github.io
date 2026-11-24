@@ -6,8 +6,15 @@
   <atom:link href="https://brutaldiablo.com/devlog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>How the bigger pieces of Brutal Diablo were made: the tech, the dead ends and what we learned.</description>
   <language>en</language>
-  <lastBuildDate>Mon, 16 Nov 2026 18:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Tue, 24 Nov 2026 15:00:00 +0100</lastBuildDate>
   <image><url>https://brutaldiablo.com/img/mark_180.png</url><title>Brutal Diablo devlog</title><link>https://brutaldiablo.com/devlog/</link></image>
+  <item>
+    <title>Carving out the characters' shadows</title>
+    <link>https://brutaldiablo.com/devlog/carved-shadows/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/devlog/carved-shadows/</guid>
+    <pubDate>Tue, 24 Nov 2026 15:00:00 +0100</pubDate>
+    <description><![CDATA[<p><img src="https://brutaldiablo.com/img/devlog/carved-shadows/og.jpg" alt="" width="1200" height="630"></p><p>Diablo's heroes and monsters are flat pictures with their shadows painted in. We wanted every brazier, torch and fireball to cast real ones, so we carved each character a body out of the pictures the game draws it from.</p>]]></description>
+  </item>
   <item>
     <title>Removing the painted shadows: the characters</title>
     <link>https://brutaldiablo.com/devlog/shadows-characters/</link>

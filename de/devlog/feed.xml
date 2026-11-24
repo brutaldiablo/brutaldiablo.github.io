@@ -6,8 +6,15 @@
   <atom:link href="https://brutaldiablo.com/de/devlog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Wie die großen Brocken von Brutal Diablo entstanden sind: die Technik, die Sackgassen und was wir dabei gelernt haben.</description>
   <language>de</language>
-  <lastBuildDate>Mon, 16 Nov 2026 18:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Tue, 24 Nov 2026 15:00:00 +0100</lastBuildDate>
   <image><url>https://brutaldiablo.com/img/mark_180.png</url><title>Devlog von Brutal Diablo</title><link>https://brutaldiablo.com/de/devlog/</link></image>
+  <item>
+    <title>Gemeißelte Schatten für die Figuren</title>
+    <link>https://brutaldiablo.com/de/devlog/carved-shadows/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/de/devlog/carved-shadows/</guid>
+    <pubDate>Tue, 24 Nov 2026 15:00:00 +0100</pubDate>
+    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/carved-shadows/og.jpg" width="1200"/></p><p>Diablos Helden und Monster sind flache Bilder, ihre Schatten sind mit hineingemalt. Wir wollten, dass jede Feuerschale, jede Fackel und jeder Feuerball echte wirft, also haben wir jeder Figur einen Körper gemeißelt, aus den Bildern, aus denen das Spiel sie zeichnet.</p>]]></description>
+  </item>
   <item>
     <title>Weg mit den gemalten Schatten: die Figuren</title>
     <link>https://brutaldiablo.com/de/devlog/shadows-characters/</link>

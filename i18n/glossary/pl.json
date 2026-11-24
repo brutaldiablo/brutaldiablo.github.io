@@ -189,6 +189,11 @@
   "from": "game",
   "kind": "spell"
  },
+ "Fireball": {
+  "tr": "Ognista Kula",
+  "from": "game",
+  "kind": "spell"
+ },
  "Flesh Clan": {
   "tr": "Klan Rozpruwaczy",
   "from": "game",

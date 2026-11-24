@@ -189,6 +189,11 @@
   "from": "game",
   "kind": "spell"
  },
+ "Fireball": {
+  "tr": "Bola de Fogo",
+  "from": "game",
+  "kind": "spell"
+ },
  "Flesh Clan": {
   "tr": "Clã Carne Fresca",
   "from": "game",

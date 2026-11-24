@@ -1,0 +1,91 @@
+/* The carved-shadows post's own pieces, on top of devlog.css: the eight drawings, the methods and their table, the
+   bodies, the slices and the toy (carved.js and cast.js). */
+
+/* pictures of the game's captures: never larger than two device pixels a picture pixel. --w is the picture's width in
+   the markup; these are the cap's values for common screens, before carved.js makes it exact (the town portal post's) */
+:root{--k2:1}
+@media (max-resolution:1dppx){:root{--k2:2}}
+@media (min-resolution:2.01dppx){:root{--k2:.6667}}
+.cap2{max-width:calc(var(--w,232) * var(--k2) * 1px)}
+.cmp.cap2{margin-inline:auto;width:100%}
+.noscript-poster{width:100%;height:auto;display:block}
+figure.pairfig,figure.clip{justify-items:center}
+figure.pairfig figcaption,figure.clip figcaption{justify-self:stretch}
+figure.clip .frame{line-height:0;width:100%;margin-inline:auto}
+figure.clip video{width:100%;height:auto}
+
+/* shared bits of the widgets */
+.widget .ctl{display:grid;gap:.6rem}
+.widget .rng{display:grid;gap:.2rem;min-width:0}
+.widget .rng .k,.widget .row .k{color:var(--ash);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.widget .rng .k b{color:var(--bone);font-weight:600;letter-spacing:.04em;text-transform:none;margin-left:.3em}
+.widget .row .k{min-width:0;margin-right:.3rem}
+.widget .note{color:var(--ash);font-size:.76rem;line-height:1.45}
+.widget input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:24px;background:transparent;margin:0;accent-color:var(--ember)}
+.widget input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:rgba(163,149,127,.35)}
+.widget input[type=range]::-moz-range-track{height:4px;border-radius:2px;background:rgba(163,149,127,.35)}
+.widget input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;margin-top:-7px;border-radius:50%;background:var(--ember);border:2px solid var(--bone)}
+.widget input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--ember);border:2px solid var(--bone)}
+.cv{position:relative;line-height:0}
+.cv canvas,.cv img.poster{display:block;width:100%;height:auto}
+
+/* a table that scrolls sideways on phones */
+.tablewrap{overflow-x:auto;margin-top:.5rem}
+
+/* the toy: a canvas on its floor; the controls stay inside the widget */
+.toy .stage{display:grid;justify-items:center}
+.toy .cv{width:100%;max-width:640px;margin-inline:auto;border:1px solid var(--stone-2);background:#4a423a;touch-action:none;cursor:crosshair;user-select:none;-webkit-user-select:none}
+.toy .cv:focus-visible{outline:2px solid var(--torch);outline-offset:3px}
+.toy .ctl{grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem 1rem;align-items:end}
+.toy .ctl .row{gap:.4rem}
+.toy .ctl .row{grid-column:1/-1}
+@media (max-width:520px){.toy .ctl{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:420px){.toy .row .chip{font-size:.76rem;padding:.4em .55em}}
+
+
+/* the eight drawings of one pose in a row, four to a row on phones */
+.strip{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:.35rem;margin:0;padding:0;list-style:none}
+.strip li{border:1px solid var(--stone-2);background:#1d1713;line-height:0}
+.strip img{width:100%;height:auto}
+@media (max-width:600px){.strip{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* the five methods: each a short loop beside its paragraph, a small square on phones */
+.methods{display:grid;gap:1.1rem;margin:1.4rem 0}
+.method{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr);gap:1.1rem;align-items:center}
+.method .mv{position:relative;border:1px solid var(--stone-2);background:#16110e;aspect-ratio:1/1;line-height:0;overflow:hidden}
+.method .mv video,.method .mv img{width:100%;height:100%;object-fit:cover;display:block}
+.method p{margin:0}
+@media (max-width:560px){.method{grid-template-columns:6.5rem minmax(0,1fr);gap:.85rem;align-items:start}.method p{font-size:.95rem}}
+
+/* the methods side by side: the carved body's row lit */
+.mtable table{border-collapse:collapse;width:100%;font-size:.82rem;line-height:1.35;table-layout:fixed}
+.mtable th,.mtable td{text-align:left;vertical-align:top;padding:.55rem .4rem;border-bottom:1px solid var(--stone-2);font-weight:400}
+.mtable thead th{color:var(--ash);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;vertical-align:bottom}
+.mtable thead th:first-child,.mtable tbody th{width:24%}
+.mtable tbody th{color:var(--bone);font-weight:600}
+.mtable td{color:var(--bone)}
+.mtable .dots{display:flex;gap:.22rem;padding-top:.3rem}
+.mtable .dots i{display:block;width:.62rem;height:.62rem;border-radius:50%;border:1.5px solid var(--ash);opacity:.45;box-sizing:border-box}
+.mtable .dots i.on{opacity:1}
+.mtable .more{color:var(--ash)}
+.mtable .dots i.on{background:var(--bone);border-color:var(--bone)}
+.mtable .lbl{display:block;color:var(--ash);font-size:.74rem;margin-top:.3rem}
+.mtable td.yn{padding-top:.55rem}
+.mtable .no{color:var(--ash)}
+.mtable tr.win th,.mtable tr.win td{background:rgba(217,89,38,.12)}
+.mtable tr.win th{color:var(--torch)}
+.mtable tr.win .dots i.on{background:var(--torch);border-color:var(--torch)}
+@media (max-width:600px){.mtable .lbl,.mtable .more{display:none}.mtable thead th{hyphens:auto;overflow-wrap:anywhere}.mtable table{font-size:.74rem}.mtable thead th{font-size:.56rem;letter-spacing:.04em}.mtable th,.mtable td{padding:.5rem .22rem}.mtable .dots{gap:.14rem}.mtable .dots i{width:.5rem;height:.5rem}}
+
+/* the slices: the carved knight in 3D, cut at the slider's slice */
+.slices .stage .cv{border:1px solid var(--stone-2);background:#1d1713;line-height:0;max-width:640px;margin-inline:auto}
+.slices .stage .cv canvas,.slices .stage .cv img{width:100%;height:auto;display:block}
+.slices .ctl{grid-template-columns:minmax(0,1fr) auto;gap:.8rem;align-items:end}
+.slices .note{color:var(--bone);font-size:.85rem;min-height:2.9em}
+
+/* the turnable bodies: the monster buttons, then the body on its dark stage */
+.bodies .row{gap:.4rem}
+.bodies .cv{border:1px solid var(--stone-2);background:#1d1713;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;max-width:640px;margin-inline:auto;width:100%}
+.bodies .cv:active{cursor:grabbing}
+.bodies .cv:focus-visible{outline:2px solid var(--torch);outline-offset:3px}
+@media (max-width:420px){.bodies .row .chip{font-size:.76rem;padding:.4em .55em}}

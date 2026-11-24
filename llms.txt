@@ -24,6 +24,7 @@
 - [Dusting off Diablo's loot](https://brutaldiablo.com/devlog/items/)
 - [Does it call your name?](https://brutaldiablo.com/devlog/town-portal/): the town portal
 - [Removing the painted shadows: the characters](https://brutaldiablo.com/devlog/shadows-characters/)
+- [Carving out the characters' shadows](https://brutaldiablo.com/devlog/carved-shadows/): casting shadows from carved bodies
 
 ## Optional
 

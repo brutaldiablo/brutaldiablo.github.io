@@ -6,8 +6,15 @@
   <atom:link href="https://brutaldiablo.com/pl/devlog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Jak powstawały większe elementy Brutal Diablo: technikalia, ślepe uliczki i to, czego się nauczyliśmy.</description>
   <language>pl</language>
-  <lastBuildDate>Mon, 16 Nov 2026 18:00:00 +0100</lastBuildDate>
+  <lastBuildDate>Tue, 24 Nov 2026 15:00:00 +0100</lastBuildDate>
   <image><url>https://brutaldiablo.com/img/mark_180.png</url><title>Devlog Brutal Diablo</title><link>https://brutaldiablo.com/pl/devlog/</link></image>
+  <item>
+    <title>Rzeźbimy cienie postaci</title>
+    <link>https://brutaldiablo.com/pl/devlog/carved-shadows/</link>
+    <guid isPermaLink="true">https://brutaldiablo.com/pl/devlog/carved-shadows/</guid>
+    <pubDate>Tue, 24 Nov 2026 15:00:00 +0100</pubDate>
+    <description><![CDATA[<p><img alt="" height="630" src="https://brutaldiablo.com/img/devlog/carved-shadows/og.jpg" width="1200"/></p><p>Bohaterowie i potwory w Diablo to płaskie obrazki z wmalowanymi cieniami. Chcieliśmy, żeby każdy koksownik, każda pochodnia i każda ognista kula rzucały prawdziwe, więc każdej postaci wyrzeźbiliśmy ciało z obrazków, z których gra ją rysuje.</p>]]></description>
+  </item>
   <item>
     <title>Usuwamy namalowane cienie: postacie</title>
     <link>https://brutaldiablo.com/pl/devlog/shadows-characters/</link>

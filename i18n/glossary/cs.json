@@ -189,6 +189,11 @@
   "from": "game",
   "kind": "spell"
  },
+ "Fireball": {
+  "tr": "Ohnivá Koule",
+  "from": "game",
+  "kind": "spell"
+ },
  "Flesh Clan": {
   "tr": "Klan Masa",
   "from": "game",
