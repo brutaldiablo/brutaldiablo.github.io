@@ -89,3 +89,10 @@ figure.clip video{width:100%;height:auto}
 .bodies .cv:active{cursor:grabbing}
 .bodies .cv:focus-visible{outline:2px solid var(--torch);outline-offset:3px}
 @media (max-width:420px){.bodies .row .chip{font-size:.76rem;padding:.4em .55em}}
+
+/* the reel's posts as icons, the homepage's icon row */
+.iconrow{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.iconrow a{display:grid;place-items:center;width:2.6rem;height:2.6rem;border:1px solid var(--stone-2);background:rgba(23,18,15,.7);border-radius:3px;transition:border-color .15s}
+.iconrow a:hover,.iconrow a:focus-visible{border-color:var(--torch)}
+.iconrow svg{width:1.15rem;height:1.15rem;fill:var(--ash)}
+.iconrow a:hover svg,.iconrow a:focus-visible svg{fill:var(--torch)}
